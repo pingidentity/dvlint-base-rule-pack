@@ -1,0 +1,57 @@
+{
+  "name": "PingOne DaVinci Linter",
+  "pass": false,
+  "errorCount": 3,
+  "rulePackResults": [
+    {
+      "pass": false,
+      "errorCount": 3,
+      "lintResults": [
+        {
+          "flowId": "b26646703ba9519ee71d327f8a462a6b",
+          "flowName": "Test - Company Logo",
+          "pass": false,
+          "errorCount": 3,
+          "errors": [
+            "useCustomCSS not set to true",
+            "companyLogo class not included in custom CSS",
+            "companyName environment variable not found. (Flow Id - b26646703ba9519ee71d327f8a462a6b)"
+          ],
+          "rulesApplied": [
+            "dv-rule-logo-001"
+          ],
+          "ruleResults": [
+            {
+              "ruleId": "dv-rule-logo-001",
+              "ruleDescription": "Ensure logos are not hard coded and useCSS is used with a css logo tag.  Does not apply to subflows",
+              "pass": false,
+              "errorCount": 3,
+              "errors": [
+                {
+                  "code": "dv-bp-logo-001",
+                  "message": "useCustomCSS not set to true",
+                  "type": "best-practice",
+                  "recommendation": "Use recommended CSS settings for Ping developed flows"
+                },
+                {
+                  "code": "dv-bp-logo-002",
+                  "message": "companyLogo class not included in custom CSS",
+                  "type": "best-practice",
+                  "recommendation": "Use recommended CSS settings for Ping developed flows"
+                },
+                {
+                  "code": "dv-bp-logo-004",
+                  "message": "companyName environment variable not found. (Flow Id - b26646703ba9519ee71d327f8a462a6b)",
+                  "type": "best-practice",
+                  "recommendation": "Use companyName environment variable for Ping developed flows"
+                }
+              ]
+            }
+          ],
+          "rulesIgnored": []
+        }
+      ],
+      "rulesIgnored": true
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "name": "PingOne DaVinci Linter",
+  "pass": false,
+  "errorCount": 1,
+  "rulePackResults": [
+    {
+      "pass": false,
+      "errorCount": 1,
+      "lintResults": [
+        {
+          "flowId": "7aa6735caaac1350eb2ef3c200de06eb",
+          "flowName": "dv-rule-debug-off-001",
+          "pass": false,
+          "errorCount": 1,
+          "errors": [
+            "Log level set to Debug"
+          ],
+          "rulesApplied": [
+            "dv-rule-debug-off-001"
+          ],
+          "ruleResults": [
+            {
+              "ruleId": "dv-rule-debug-off-001",
+              "ruleDescription": "Ensure the flow has debug mode turned off",
+              "pass": false,
+              "errorCount": 1,
+              "errors": [
+                {
+                  "code": "dv-bp-debug-off-001",
+                  "message": "Log level set to Debug",
+                  "type": "best-practice",
+                  "recommendation": "Change flow log level to Info or None"
+                }
+              ]
+            }
+          ],
+          "rulesIgnored": []
+        }
+      ],
+      "rulesIgnored": true
+    }
+  ]
+}

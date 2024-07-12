@@ -1,0 +1,34 @@
+{
+  "name": "PingOne DaVinci Linter",
+  "pass": true,
+  "errorCount": 0,
+  "rulePackResults": [
+    {
+      "pass": true,
+      "errorCount": 0,
+      "lintResults": [
+        {
+          "flowId": "2291498df43a63457abad5d2d1fa4df9",
+          "flowName": "dv-rule-general-001",
+          "pass": true,
+          "errorCount": 0,
+          "errors": [],
+          "rulesApplied": [
+            "dv-rule-general-001"
+          ],
+          "ruleResults": [
+            {
+              "ruleId": "dv-rule-general-001",
+              "ruleDescription": "Perform a bunch of general checks that cleaning ability",
+              "pass": true,
+              "errorCount": 0,
+              "errors": []
+            }
+          ],
+          "rulesIgnored": []
+        }
+      ],
+      "rulesIgnored": true
+    }
+  ]
+}

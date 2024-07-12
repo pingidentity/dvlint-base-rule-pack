@@ -1,0 +1,43 @@
+{
+  "name": "PingOne DaVinci Linter",
+  "pass": false,
+  "errorCount": 1,
+  "rulePackResults": [
+    {
+      "pass": false,
+      "errorCount": 1,
+      "lintResults": [
+        {
+          "flowId": "b8f27c7f0ff6794a831c57b43ad9bcce",
+          "flowName": "Node Schema",
+          "pass": false,
+          "errorCount": 1,
+          "errors": [
+            "Teleport schema mismatch.  Attribute 'userid' found, but not defined"
+          ],
+          "rulesApplied": [
+            "dv-rule-teleport-001"
+          ],
+          "ruleResults": [
+            {
+              "ruleId": "dv-rule-teleport-001",
+              "ruleDescription": "Check for unused teleport nodes",
+              "pass": false,
+              "errorCount": 1,
+              "errors": [
+                {
+                  "code": "dv-er-teleport-002",
+                  "message": "Teleport schema mismatch.  Attribute 'userid' found, but not defined",
+                  "type": "error",
+                  "recommendation": "Edit JSON to Teleport schema."
+                }
+              ]
+            }
+          ],
+          "rulesIgnored": []
+        }
+      ],
+      "rulesIgnored": true
+    }
+  ]
+}

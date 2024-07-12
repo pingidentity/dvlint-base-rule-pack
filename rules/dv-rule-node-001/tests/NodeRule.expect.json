@@ -1,0 +1,44 @@
+{
+  "name": "PingOne DaVinci Linter",
+  "pass": false,
+  "errorCount": 1,
+  "rulePackResults": [
+    {
+      "pass": false,
+      "errorCount": 1,
+      "lintResults": [
+        {
+          "flowId": "47360733f8216ad35114e9a787ca83e0",
+          "flowName": "Starter Flow",
+          "pass": false,
+          "errorCount": 1,
+          "errors": [
+            "Missing nodeTitle on node (13xqy80afe - Http)"
+          ],
+          "rulesApplied": [
+            "dv-rule-node-001"
+          ],
+          "ruleResults": [
+            {
+              "ruleId": "dv-rule-node-001",
+              "ruleDescription": "Ensure nodes have names/titles",
+              "pass": false,
+              "errorCount": 1,
+              "errors": [
+                {
+                  "code": "dv-bp-node-001",
+                  "message": "Missing nodeTitle on node (13xqy80afe - Http)",
+                  "type": "best-practice",
+                  "recommendation": "A node title should be added",
+                  "nodeId": "13xqy80afe"
+                }
+              ]
+            }
+          ],
+          "rulesIgnored": []
+        }
+      ],
+      "rulesIgnored": true
+    }
+  ]
+}
