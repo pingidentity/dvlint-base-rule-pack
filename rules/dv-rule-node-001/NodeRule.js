@@ -1,4 +1,4 @@
-const { LintRule } = require("@pingidentity/dvlint");
+const { LintRule } = require("@ping-identity/dvlint");
 
 const backgroundColor = {
   httpConnector_createSuccessResponse: "#9dc967",

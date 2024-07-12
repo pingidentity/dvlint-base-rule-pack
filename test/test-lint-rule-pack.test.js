@@ -1,5 +1,5 @@
-// const { TestLinter } = require("@pingidentity/dvlint");
-const { TestLinter } = require("@pingidentity/dvlint");
+// const { TestLinter } = require("@ping-identity/dvlint");
+const { TestLinter } = require("@ping-identity/dvlint");
 
 const { name } = require("../package.json");
 

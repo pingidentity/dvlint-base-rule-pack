@@ -1,4 +1,4 @@
-const { LintRule } = require("@pingidentity/dvlint");
+const { LintRule } = require("@ping-identity/dvlint");
 
 class DisabledNodeRule extends LintRule {
   constructor() {

@@ -1,5 +1,5 @@
 /* eslint-disable no-param-reassign */
-const { LintRule } = require("@pingidentity/dvlint");
+const { LintRule } = require("@ping-identity/dvlint");
 
 class ExampleRule extends LintRule {
   constructor() {

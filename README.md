@@ -1,4 +1,4 @@
-@pingidentity/dvlint-base-rule-pack  - DaVinci Linter Base Rule Pack
+@ping-identity/dvlint-base-rule-pack  - DaVinci Linter Base Rule Pack
 =========
 
 [![RulePack Tests](https://github.com/pingidentity/dvlint-base-rule-pack/actions/workflows/tests.yml/badge.svg)](https://github.com/pingidentity/dvlint-base-rule-pack/actions/workflows/tests.yml)

@@ -40,7 +40,7 @@ jobs:
       - name: Install Dependencies
         run: npm ci
       - name: Generate rules
-        run: node_modules/@pingidentity/dvlint/lib/dvlint -R ../../../../RulePack --lintRules --json > docs/rules.json
+        run: node_modules/@ping-identity/dvlint/lib/dvlint -R ../../../../RulePack --lintRules --json > docs/rules.json
       - name: Commit and push if changes
         run: |
           git config --global user.email "action@github.com"

@@ -1,4 +1,4 @@
-const { LintRulePack } = require("@pingidentity/dvlint");
+const { LintRulePack } = require("@ping-identity/dvlint");
 
 const {
   name,
