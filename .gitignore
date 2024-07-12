@@ -1,0 +1,7 @@
+.env
+.glitchdotcom.json
+.node-gyp
+node_modules
+cert
+logs/
+.DS_Store
