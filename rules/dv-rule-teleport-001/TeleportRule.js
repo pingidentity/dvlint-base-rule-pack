@@ -47,46 +47,47 @@ class TeleportRule extends LintRule {
       });
 
       // If there is a start node that is not referenced by a go to, generate an error for that node
-      Object.entries(startNodes).forEach(([nodeId, nodeTitle]) => {
-        if (!gotoNodes.includes(nodeId)) {
+      Object.entries(startNodes).forEach(([startNodeId, startNodeTitle]) => {
+        if (!gotoNodes.includes(startNodeId)) {
           this.addError("dv-er-teleport-001", {
-            messageArgs: [`${nodeTitle} (${nodeId})`],
-            nodeId,
+            messageArgs: [`${startNodeTitle} (${startNodeId})`],
+            nodeId: startNodeId,
           });
         } else {
           // Check if the goto node has the correct input schema
-          const gotoNodeInputSchema =
-            this.dvUtil.getNodeById(nodeId).data.properties.inputSchema?.value;
+          const startNodeInputSchema =
+            this.dvUtil.getNodeById(startNodeId).data.properties.inputSchema?.value;
 
-          let gotoNodeInputSchemaJSON = {};
-          if (gotoNodeInputSchema) {
-            gotoNodeInputSchemaJSON = JSON.parse(gotoNodeInputSchema);
+          let startNodeInputSchemaJSON = {};
+          if (startNodeInputSchema) {
+            startNodeInputSchemaJSON = JSON.parse(startNodeInputSchema);
           }
 
-          // Get all nodes with the instanceId of the goto node
-          const nodes = this.mainFlow?.graphData?.elements?.nodes?.filter(
+          // Get all gotoNodes with the instanceId of the goto node
+          const gotoNodes = this.mainFlow?.graphData?.elements?.nodes?.filter(
             (node) =>
-              node.data?.properties?.nodeInstanceId?.value?.match(nodeId)
+              node.data?.properties?.nodeInstanceId?.value?.match(startNodeId) &&
+              node.data.capabilityName === "goToNode"
           );
 
-          nodes?.forEach((node) => {
+          gotoNodes?.forEach((gotoNode) => {
             // get all schema items from properties, except nodeInstanceId
-            const callingSchema = Object.keys(node.data.properties).filter(
-              (prop) => prop !== "nodeInstanceId" && prop !== "nodeTitle"
+            const gotoSchema = Object.keys(gotoNode.data.properties).filter(
+              (props) => props !== "nodeInstanceId" && props !== "nodeTitle"
             );
 
-            callingSchema.forEach((attrName) => {
+            gotoSchema.forEach((attrName) => {
               if (
-                gotoNodeInputSchemaJSON.properties &&
-                gotoNodeInputSchemaJSON.properties[attrName] === undefined
+                startNodeInputSchemaJSON.properties &&
+                startNodeInputSchemaJSON.properties[attrName] === undefined
               ) {
                 this.addError("dv-er-teleport-002", {
                   messageArgs: [attrName],
-                  nodeId: node.data.id,
+                  nodeId: gotoNode.data.id,
                 });
 
                 if (this.cleanFlow) {
-                  const { data } = node;
+                  const { data } = gotoNode;
                   delete data.properties[attrName];
                   this.addCleanResult(
                     `Removed teleport goto node attribute ${attrName}`
