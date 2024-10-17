@@ -13,8 +13,20 @@
           "pass": false,
           "errorCount": 2,
           "errors": [
-            "Annotation color is not in palette [#e7e7e7ff] (4pmrtt0pi7)",
-            "Annotation font is not in sans-serif [verdana] (4pmrtt0pi7)"
+            {
+              "code": "dv-bp-annotation-001",
+              "message": "Annotation color is not in palette [#e7e7e7ff] (4pmrtt0pi7)",
+              "type": "best-practice",
+              "recommendation": "Use recommended CSS settings for Ping developed flows",
+              "nodeId": "4pmrtt0pi7"
+            },
+            {
+              "code": "dv-bp-annotation-002",
+              "message": "Annotation font is not in sans-serif [verdana] (4pmrtt0pi7)",
+              "type": "best-practice",
+              "recommendation": "Use sans-serif fontFamily for Annotations",
+              "nodeId": "4pmrtt0pi7"
+            }
           ],
           "rulesApplied": [
             "dv-rule-annotations-001"

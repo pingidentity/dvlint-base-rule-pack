@@ -13,8 +13,18 @@
           "pass": false,
           "errorCount": 2,
           "errors": [
-            "Variable '{{global.flow.variables.notFound}}' used, but never defined in a Variable connector",
-            "Variable '{{global.flow.variables.notUsed}}' found, but never used"
+            {
+              "code": "dv-er-variable-002",
+              "message": "Variable '{{global.flow.variables.notFound}}' used, but never defined in a Variable connector",
+              "recommendation": "This can lead to data that is expected causing undesired results in the flow.",
+              "type": "error"
+            },
+            {
+              "code": "dv-er-variable-001",
+              "message": "Variable '{{global.flow.variables.notUsed}}' found, but never used",
+              "recommendation": "This can lead to variables/data to be included in flows that should be removed.",
+              "type": "error"
+            }
           ],
           "rulesApplied": [
             "dv-rule-variables-001"

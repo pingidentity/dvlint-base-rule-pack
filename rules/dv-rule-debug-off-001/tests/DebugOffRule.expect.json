@@ -13,7 +13,12 @@
           "pass": false,
           "errorCount": 1,
           "errors": [
-            "Log level set to Debug"
+            {
+              "code": "dv-bp-debug-off-001",
+              "message": "Log level set to Debug",
+              "type": "best-practice",
+              "recommendation": "Change flow log level to Info or None"
+            }
           ],
           "rulesApplied": [
             "dv-rule-debug-off-001"

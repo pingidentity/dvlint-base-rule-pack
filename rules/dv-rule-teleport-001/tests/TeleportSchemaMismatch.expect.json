@@ -13,7 +13,13 @@
           "pass": false,
           "errorCount": 1,
           "errors": [
-            "Teleport schema mismatch.  Attribute 'userid' found, but not defined"
+            {
+              "code": "dv-er-teleport-002",
+              "message": "Teleport schema mismatch.  Attribute 'userid' found, but not defined",
+              "nodeId": "2shaj7vbbu",
+              "recommendation": "Edit JSON to Teleport schema.",
+              "type": "error"
+            }
           ],
           "rulesApplied": [
             "dv-rule-teleport-001"

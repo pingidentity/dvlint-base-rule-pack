@@ -13,8 +13,19 @@
           "pass": false,
           "errorCount": 2,
           "errors": [
-            "Annotation color is not in palette [#3030aeff] (4pmrtt0pi7)",
-            "Each flow should contain a title annotation node with a background color of #4462ed"
+            {
+              "code": "dv-bp-annotation-001",
+              "message": "Annotation color is not in palette [#3030aeff] (4pmrtt0pi7)",
+              "type": "best-practice",
+              "recommendation": "Use recommended CSS settings for Ping developed flows",
+              "nodeId": "4pmrtt0pi7"
+            },
+            {
+              "code": "dv-bp-missing-title-annotation-001",
+              "message": "Each flow should contain a title annotation node with a background color of #4462ed",
+              "type": "best-practice",
+              "recommendation": "Add a title annotation node"
+            }
           ],
           "rulesApplied": [
             "dv-rule-annotations-001"

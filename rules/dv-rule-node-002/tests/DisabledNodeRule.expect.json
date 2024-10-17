@@ -13,7 +13,13 @@
           "pass": false,
           "errorCount": 1,
           "errors": [
-            "Disabled node (v9172ugldd) found"
+            {
+              "code": "dv-er-node-001",
+              "message": "Disabled node (v9172ugldd) found",
+              "type": "best-practice",
+              "recommendation": "Remove disabled node from flow.",
+              "nodeId": "v9172ugldd"
+            }
           ],
           "rulesApplied": [
             "dv-rule-node-002"
