@@ -13,7 +13,13 @@
           "pass": false,
           "errorCount": 1,
           "errors": [
-            "The topmost node in your flow should be a title annotation (v5t8nizy0z)"
+            {
+              "code": "dv-bp-title-not-on-top-001",
+              "message": "The topmost node in your flow should be a title annotation (v5t8nizy0z)",
+              "type": "best-practice",
+              "recommendation": "Position title annotation at top of the flow",
+              "nodeId": "v5t8nizy0z"
+            }
           ],
           "rulesApplied": [
             "dv-rule-annotations-001"

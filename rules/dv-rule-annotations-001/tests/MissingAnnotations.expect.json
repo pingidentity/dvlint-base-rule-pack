@@ -13,8 +13,18 @@
           "pass": false,
           "errorCount": 2,
           "errors": [
-            "Each flow should contain a title annotation node with a background color of #4462ed",
-            "Flow contains no annotations"
+            {
+              "code": "dv-bp-missing-title-annotation-001",
+              "message": "Each flow should contain a title annotation node with a background color of #4462ed",
+              "type": "best-practice",
+              "recommendation": "Add a title annotation node"
+            },
+            {
+              "code": "dv-bp-annotation-003",
+              "message": "Flow contains no annotations",
+              "type": "best-practice",
+              "recommendation": "Add annotations to flow"
+            }
           ],
           "rulesApplied": [
             "dv-rule-annotations-001"

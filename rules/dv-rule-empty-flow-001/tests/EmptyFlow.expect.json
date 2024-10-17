@@ -13,7 +13,12 @@
           "pass": false,
           "errorCount": 1,
           "errors": [
-            "Flow is empty"
+            {
+              "code": "dv-er-empty-flow-001",
+              "message": "Flow is empty",
+              "type": "error",
+              "recommendation": "Remove the flow if not in use"
+            }
           ],
           "rulesApplied": [
             "dv-rule-empty-flow-001"

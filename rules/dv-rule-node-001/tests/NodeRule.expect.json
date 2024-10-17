@@ -13,7 +13,13 @@
           "pass": false,
           "errorCount": 1,
           "errors": [
-            "Missing nodeTitle on node (13xqy80afe - Http)"
+            {
+              "code": "dv-bp-node-001",
+              "message": "Missing nodeTitle on node (13xqy80afe - Http)",
+              "type": "best-practice",
+              "recommendation": "A node title should be added",
+              "nodeId": "13xqy80afe"
+            }
           ],
           "rulesApplied": [
             "dv-rule-node-001"

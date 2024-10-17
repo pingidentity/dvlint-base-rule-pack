@@ -13,9 +13,24 @@
           "pass": false,
           "errorCount": 3,
           "errors": [
-            "Node v9172ugldd (httpConnector) could be one of multiple start points, or floating",
-            "Node 20n6fhhgqz (httpConnector) could be one of multiple start points, or floating",
-            "Node ilgr9525d6 (httpConnector) could be one of multiple start points, or floating"
+            {
+              "code": "dv-er-multi-start-001",
+              "message": "Node v9172ugldd (httpConnector) could be one of multiple start points, or floating",
+              "type": "error",
+              "recommendation": "Ensure flow has one defined start point, and that no nodes are floating (completely disconnected)"
+            },
+            {
+              "code": "dv-er-multi-start-001",
+              "message": "Node 20n6fhhgqz (httpConnector) could be one of multiple start points, or floating",
+              "type": "error",
+              "recommendation": "Ensure flow has one defined start point, and that no nodes are floating (completely disconnected)"
+            },
+            {
+              "code": "dv-er-multi-start-001",
+              "message": "Node ilgr9525d6 (httpConnector) could be one of multiple start points, or floating",
+              "type": "error",
+              "recommendation": "Ensure flow has one defined start point, and that no nodes are floating (completely disconnected)"
+            }
           ],
           "rulesApplied": [
             "dv-rule-multi-start-001"

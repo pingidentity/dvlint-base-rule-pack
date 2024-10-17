@@ -13,7 +13,12 @@
           "pass": false,
           "errorCount": 1,
           "errors": [
-            "Teleport 'UNUSED (8ln2qk7de5)' found, but never used"
+            {
+              "code": "dv-er-teleport-001",
+              "message": "Teleport 'UNUSED (8ln2qk7de5)' found, but never used",
+              "type": "error",
+              "recommendation": "Teleport start nodes that are not used should be removed from a flow."
+            }
           ],
           "rulesApplied": [
             "dv-rule-teleport-001"
