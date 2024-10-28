@@ -146,19 +146,26 @@
             "recommendation": "The (% %) node is missing a title. For optimal clarity, add a descriptive title.",
             "code": "dv-bp-node-001"
           },
-          "dv-er-node-002": {
+          "dv-bp-node-002": {
             "description": "All success/error JSON nodes should proper colors",
             "message": "Incorrect node color [%] - %",
-            "type": "error",
+            "type": "best-practice",
             "recommendation": "The [%] - % is not using the correct color. To ensure consistency, use the recommended color: [%].",
-            "code": "dv-er-node-002"
+            "code": "dv-bp-node-002"
           },
           "dv-bp-node-003": {
             "description": "All nodes should have a description",
-            "message": "Missing nodeDescription on node (% - %)",
+            "message": "Missing node description on node (% - %)",
             "type": "best-practice",
             "recommendation": "The (% %) node is missing a description. For optimal clarity, add a meaninful description.",
             "code": "dv-bp-node-003"
+          },
+          "dv-er-node-004": {
+            "description": "Form not selected",
+            "message": "Form not selected",
+            "type": "error",
+            "recommendation": "A form is not selected in the <%> connector. Select a form to complete the configuration.",
+            "code": "dv-er-node-004"
           }
         },
         "reference": "",
@@ -179,7 +186,23 @@
             "description": "Unconfigured Node Found",
             "message": "Unconfigured node % found",
             "type": "error",
-            "recommendation": "Configure unconfigured node from flow."
+            "recommendation": "Configure unconfigured node from flow.",
+            "code": "dv-er-node-002"
+          }
+        },
+        "reference": "",
+        "cleans": false
+      },
+      {
+        "id": "dv-rule-pingOneFlow-001",
+        "description": "Checks for PingOne Flow configurations",
+        "codes": {
+          "dv-er-pingOneFlow-001": {
+            "description": "Incorrect ending nodes for PingOne flow.",
+            "message": "Incorrect ending nodes for PingOne flow.",
+            "type": "error",
+            "recommendation": "This PingOne-enabled flow is missing an appropriate ending node. These flows should conclude with either a 'Return a Success Response' node or a 'Return an Error Response' node.",
+            "code": "dv-er-pingOneFlow-001"
           }
         },
         "reference": "",
@@ -253,21 +276,6 @@
             "type": "error",
             "recommendation": "The '%' variable is not defined within a variable connector, which may lead to unexpected behavior. Define the variable appropriately.",
             "code": "dv-er-variable-002"
-          }
-        },
-        "reference": "",
-        "cleans": false
-      },
-      {
-        "id": "dv-rule-pingOneFlow-001",
-        "description": "Checks for PingOne Flow configurations",
-        "codes": {
-          "dv-er-pingOneFlow-001": {
-            "description": "Incorrect ending nodes for PingOne flow.",
-            "message": "Incorrect ending nodes for PingOne flow.",
-            "type": "error",
-            "recommendation": "This PingOne-enabled flow is missing an appropriate ending node. These flows should conclude with either a 'Return a Success Response' node or a 'Return an Error Response' node.",
-            "code": "dv-er-pingOneFlow-001"
           }
         },
         "reference": "",
