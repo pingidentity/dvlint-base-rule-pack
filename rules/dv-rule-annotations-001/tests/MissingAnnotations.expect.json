@@ -17,13 +17,13 @@
               "code": "dv-bp-missing-title-annotation-001",
               "message": "Each flow should contain a title annotation node with a background color of #4462ed",
               "type": "best-practice",
-              "recommendation": "Add a title annotation node"
+              "recommendation": "This flow is missing a title annotation node with a proper description. To improve flow organization, add a title annotation node and set the background color to #4462ed."
             },
             {
               "code": "dv-bp-annotation-003",
               "message": "Flow contains no annotations",
               "type": "best-practice",
-              "recommendation": "Add annotations to flow"
+              "recommendation": "This flow lacks annotations. For improved clarity and structure, add annotations to the flow."
             }
           ],
           "rulesApplied": [
@@ -39,13 +39,13 @@
                   "code": "dv-bp-missing-title-annotation-001",
                   "message": "Each flow should contain a title annotation node with a background color of #4462ed",
                   "type": "best-practice",
-                  "recommendation": "Add a title annotation node"
+                  "recommendation": "This flow is missing a title annotation node with a proper description. To improve flow organization, add a title annotation node and set the background color to #4462ed."
                 },
                 {
                   "code": "dv-bp-annotation-003",
                   "message": "Flow contains no annotations",
                   "type": "best-practice",
-                  "recommendation": "Add annotations to flow"
+                  "recommendation": "This flow lacks annotations. For improved clarity and structure, add annotations to the flow."
                 }
               ]
             }

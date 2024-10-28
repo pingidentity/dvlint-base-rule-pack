@@ -17,7 +17,7 @@
               "code": "dv-er-subflow-002",
               "message": "Circular SubFlow Dependency Found - 'TLS Main' points back to 'TLS Subflow' via subflow",
               "type": "error",
-              "recommendation": "This can cause export/import errors, it is recommended to return to a parent flow via HTML JSON success/error"
+              "recommendation": "In this subflow, 'TLS Main' points back to 'TLS Subflow', which can cause import and export errors. Configure the subflow to return to the parent flow."
             }
           ],
           "rulesApplied": [
@@ -34,7 +34,7 @@
                   "code": "dv-er-subflow-002",
                   "message": "Circular SubFlow Dependency Found - 'TLS Main' points back to 'TLS Subflow' via subflow",
                   "type": "error",
-                  "recommendation": "This can cause export/import errors, it is recommended to return to a parent flow via HTML JSON success/error"
+                  "recommendation": "In this subflow, 'TLS Main' points back to 'TLS Subflow', which can cause import and export errors. Configure the subflow to return to the parent flow."
                 }
               ]
             }

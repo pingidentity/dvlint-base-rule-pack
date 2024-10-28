@@ -18,13 +18,25 @@ class NodeRule extends LintRule {
       description: "All nodes should have a title",
       message: "Missing nodeTitle on node (% - %)",
       type: "best-practice",
-      recommendation: "A node title should be added",
+      recommendation: "The (% %) node is missing a title. For optimal clarity, add a descriptive title.",
     });
     this.addCode("dv-bp-node-002", {
       description: "All success/error JSON nodes should proper colors",
       message: "Incorrect node color [%] - %",
       type: "best-practice",
-      recommendation: "Please use this color: [%]",
+      recommendation: "The [%] - % is not using the correct color. To ensure consistency, use the recommended color: [%].",
+    });
+    this.addCode("dv-bp-node-003", {
+      description: "All nodes should have a description",
+      message: "Missing node description on node (% - %)",
+      type: "best-practice",
+      recommendation: "The (% %) node is missing a description. For optimal clarity, add a meaninful description.",
+    });
+    this.addCode("dv-er-node-004", {
+      description: "Form not selected",
+      message: "Form not selected",
+      type: "error",
+      recommendation: "A form is not selected in the <%> connector. Select a form to complete the configuration.",
     });
   }
 
@@ -45,9 +57,26 @@ class NodeRule extends LintRule {
           ) {
             this.addError("dv-bp-node-001", {
               messageArgs: [data.id, data.name],
+              recommendationArgs: [data.id, data.name],
               nodeId: data.id,
             });
           }
+
+            // Check for node description
+            if (
+              data.nodeType === "CONNECTION" &&
+              !data.properties?.nodeDescription?.value &&
+              !(
+                (data.name === "Teleport" || data.name === "Node") &&
+                data.capabilityName === "goToNode"
+              )
+            ) {
+              this.addError("dv-bp-node-003", {
+                messageArgs: [data.id, data.name],
+                recommendationArgs: [data.id, data.name],
+                nodeId: data.id,
+              });
+            }
 
           // Check for Success/Error JSON background colors
           const connectorCapability = `${data.connectorId}_${data.capabilityName}`;
@@ -66,10 +95,22 @@ class NodeRule extends LintRule {
                   data.properties?.backgroundColor?.value.toLowerCase(),
                   `${data.name} (${data.id}) - ${data.capabilityName}`,
                 ],
-                recommendationArgs: [backgroundColor[connectorCapability]],
+                recommendationArgs: [backgroundColor[connectorCapability], `${data.name} (${data.id}) - ${data.capabilityName}`],
                 nodeId: data.id,
               });
             }
+          }
+
+          //check for form selection (connectorId:pingOneFormsConnector)
+          if (
+            data.nodeType === "CONNECTION" &&
+            data.connectorId === "pingOneFormsConnector" &&
+            !data.properties?.form?.value
+          ) {
+            this.addError("dv-er-node-004", {
+              recommendationArgs: [data.id],
+              nodeId: data.id,
+            });
           }
         });
       }

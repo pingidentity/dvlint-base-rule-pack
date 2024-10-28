@@ -14,28 +14,28 @@ class LogoRule extends LintRule {
       description: "In flow settings, useCustomCSS not set to true",
       message: "useCustomCSS not set to true",
       type: "best-practice",
-      recommendation: "Use recommended CSS settings for Ping developed flows",
+      recommendation: "Use the recommended CSS settings for flows developed by Ping to ensure consistency."
     });
     this.addCode("dv-bp-logo-002", {
       description:
         "In flow settings, companyLogo class not included in custom CSS",
       message: "companyLogo class not included in custom CSS",
       type: "best-practice",
-      recommendation: "Use recommended CSS settings for Ping developed flows",
+      recommendation: "Use the recommended CSS settings for flows developed by Ping to ensure consistency."
     });
     this.addCode("dv-bp-logo-003", {
       description:
         "Didn't find companyLogo environment variable in variables connector, this variable should be present in the flow.",
       message: "companyLogo environment variable not found. (% - %)",
       type: "best-practice",
-      recommendation: "Use companyLogo environment variable for Ping developed flows",
+      recommendation: "Use the companyLogo environment variable for Ping-developed flows to ensure the correct branding.",
     });
     this.addCode("dv-bp-logo-004", {
       description:
         "Didn't find companyName environment variable in variables connector, this variable should be present in the flow.",
       message: "companyName environment variable not found. (% - %)",
       type: "best-practice",
-      recommendation: "Use companyName environment variable for Ping developed flows",
+      recommendation: "Use the companyName environment variable for Ping-developed flows to display the appropriate company name.",
     });
   }
 

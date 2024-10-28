@@ -17,7 +17,7 @@
               "code": "dv-bp-title-not-on-top-001",
               "message": "The topmost node in your flow should be a title annotation (v5t8nizy0z)",
               "type": "best-practice",
-              "recommendation": "Position title annotation at top of the flow",
+              "recommendation": "The title annotation node is not positioned at the top of the flow. For better readability, move the title annotation node to the top.",
               "nodeId": "v5t8nizy0z"
             }
           ],
@@ -34,7 +34,7 @@
                   "code": "dv-bp-title-not-on-top-001",
                   "message": "The topmost node in your flow should be a title annotation (v5t8nizy0z)",
                   "type": "best-practice",
-                  "recommendation": "Position title annotation at top of the flow",
+                  "recommendation": "The title annotation node is not positioned at the top of the flow. For better readability, move the title annotation node to the top.",
                   "nodeId": "v5t8nizy0z"
                 }
               ]

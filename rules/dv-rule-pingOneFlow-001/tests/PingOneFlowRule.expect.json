@@ -1,0 +1,48 @@
+{
+    "name": "PingOne DaVinci Linter",
+    "pass": false,
+    "errorCount": 1,
+    "rulePackResults": [
+        {
+            "pass": false,
+            "errorCount": 1,
+            "lintResults": [
+                {
+                    "flowId": "f78ec9aa1c267c440e46e0db665c64a0",
+                    "flowName": "testPingOneFlow",
+                    "pass": false,
+                    "errorCount": 1,
+                    "errors": [
+                        {
+                            "code": "dv-er-pingOneFlow-001",
+                            "message": "Incorrect ending nodes for PingOne flow.",
+                            "type": "error",
+                            "recommendation": "This PingOne-enabled flow is missing an appropriate ending node. These flows should conclude with either a 'Return a Success Response' node or a 'Return an Error Response' node."
+                        }
+                    ],
+                    "rulesApplied": [
+                        "dv-rule-pingOneFlow-001"
+                    ],
+                    "ruleResults": [
+                        {
+                            "ruleId": "dv-rule-pingOneFlow-001",
+                            "ruleDescription": "Checks for PingOne Flow configurations",
+                            "pass": false,
+                            "errorCount": 1,
+                            "errors": [
+                                {
+                                    "code": "dv-er-pingOneFlow-001",
+                                    "message": "Incorrect ending nodes for PingOne flow.",
+                                    "type": "error",
+                                    "recommendation": "This PingOne-enabled flow is missing an appropriate ending node. These flows should conclude with either a 'Return a Success Response' node or a 'Return an Error Response' node."
+                                }
+                            ]
+                        }
+                    ],
+                    "rulesIgnored": []
+                }
+            ],
+            "rulesIgnored": true
+        }
+    ]
+}
