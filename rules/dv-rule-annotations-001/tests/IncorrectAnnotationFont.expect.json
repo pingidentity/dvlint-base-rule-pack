@@ -17,14 +17,14 @@
               "code": "dv-bp-annotation-001",
               "message": "Annotation color is not in palette [#e7e7e7ff] (4pmrtt0pi7)",
               "type": "best-practice",
-              "recommendation": "Use recommended CSS settings for Ping developed flows",
+              "recommendation": "The annotation color is not part of the recommended palette. To ensure optimal results, use the suggested colors.",
               "nodeId": "4pmrtt0pi7"
             },
             {
               "code": "dv-bp-annotation-002",
               "message": "Annotation font is not in sans-serif [verdana] (4pmrtt0pi7)",
               "type": "best-practice",
-              "recommendation": "Use sans-serif fontFamily for Annotations",
+              "recommendation": "The current annotation font is not Sans-Serif. For best clarity and consistency, it is recommended to use a Sans-Serif font",
               "nodeId": "4pmrtt0pi7"
             }
           ],
@@ -41,14 +41,14 @@
                   "code": "dv-bp-annotation-001",
                   "message": "Annotation color is not in palette [#e7e7e7ff] (4pmrtt0pi7)",
                   "type": "best-practice",
-                  "recommendation": "Use recommended CSS settings for Ping developed flows",
+                  "recommendation": "The annotation color is not part of the recommended palette. To ensure optimal results, use the suggested colors.",
                   "nodeId": "4pmrtt0pi7"
                 },
                 {
                   "code": "dv-bp-annotation-002",
                   "message": "Annotation font is not in sans-serif [verdana] (4pmrtt0pi7)",
                   "type": "best-practice",
-                  "recommendation": "Use sans-serif fontFamily for Annotations",
+                  "recommendation": "The current annotation font is not Sans-Serif. For best clarity and consistency, it is recommended to use a Sans-Serif font",
                   "nodeId": "4pmrtt0pi7"
                 }
               ]

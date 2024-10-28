@@ -1,0 +1,48 @@
+{
+    "name": "PingOne DaVinci Linter",
+    "pass": false,
+    "errorCount": 1,
+    "rulePackResults": [
+        {
+            "pass": false,
+            "errorCount": 1,
+            "lintResults": [
+                {
+                    "flowId": "536d2240bb70b78137416562a87f1f81",
+                    "flowName": "Main flow",
+                    "pass": false,
+                    "errorCount": 1,
+                    "errors": [
+                        {
+                            "code": "dv-er-subflow-003",
+                            "message": "Input Schema values 'inputSchemaSubflow1' for 'subflow1' subflow is not configured in main flow.",
+                            "type": "error",
+                            "recommendation": "The input schema values for the 'subflow1' subflow are not currently configured. Configure the schema in the subflow."
+                        }
+                    ],
+                    "rulesApplied": [
+                        "dv-rule-subflow-001"
+                    ],
+                    "ruleResults": [
+                        {
+                            "ruleId": "dv-rule-subflow-001",
+                            "ruleDescription": "Checks for subflow name mismatches",
+                            "pass": false,
+                            "errorCount": 1,
+                            "errors": [
+                                {
+                                    "code": "dv-er-subflow-003",
+                                    "message": "Input Schema values 'inputSchemaSubflow1' for 'subflow1' subflow is not configured in main flow.",
+                                    "type": "error",
+                                    "recommendation": "The input schema values for the 'subflow1' subflow are not currently configured. Configure the schema in the subflow."
+                                }
+                            ]
+                        }
+                    ],
+                    "rulesIgnored": []
+                }
+            ],
+            "rulesIgnored": true
+        }
+    ]
+}

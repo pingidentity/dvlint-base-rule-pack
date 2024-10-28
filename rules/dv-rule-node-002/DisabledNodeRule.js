@@ -13,8 +13,15 @@ class DisabledNodeRule extends LintRule {
       description: "Disabled Node Found",
       message: "Disabled node % found",
       type: "best-practice",
-      recommendation: "Remove disabled node from flow.",
+      recommendation: "A disabled '%' node has been found. Consider removing it from the flow.",
     });
+    this.addCode("dv-er-node-002", {
+      description: "Unconfigured Node Found",
+      message: "Unconfigured node % found",
+      type: "error",
+      recommendation: "Configure unconfigured node from flow.",
+    });
+
   }
 
   runRule() {
@@ -25,6 +32,14 @@ class DisabledNodeRule extends LintRule {
 
           if (data.isDisabled === true) {
             this.addError("dv-er-node-001", {
+              messageArgs: [`(${data.id})`],
+              recommendationArgs: [`(${data.id})`],
+              nodeId: data.id,
+            });
+          }
+
+          if (data.status === 'unconfigured') {
+            this.addError("dv-er-node-002", {
               messageArgs: [`(${data.id})`],
               nodeId: data.id,
             });

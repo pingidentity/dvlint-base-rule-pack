@@ -14,33 +14,33 @@ class AnnotationRules extends LintRule {
         "Found color not included in best practices list for annotation node",
       message: "Annotation color is not in palette [%] (%)",
       type: "best-practice",
-      recommendation: "Use recommended CSS settings for Ping developed flows",
+      recommendation: "The annotation color is not part of the recommended palette. To ensure optimal results, use the suggested colors.",
     });
     this.addCode("dv-bp-annotation-002", {
       description: "Found non-standard fontFamily used for Annotation",
       message: "Annotation font is not in sans-serif [%] (%)",
       type: "best-practice",
-      recommendation: "Use sans-serif fontFamily for Annotations",
+      recommendation: "The current annotation font is not Sans-Serif. For best clarity and consistency, it is recommended to use a Sans-Serif font",
     });
     this.addCode("dv-bp-missing-title-annotation-001", {
       description: "Title annotation node not found",
       message:
         "Each flow should contain a title annotation node with a background color of #4462ed",
       type: "best-practice",
-      recommendation: "Add a title annotation node",
+      recommendation: "This flow is missing a title annotation node with a proper description. To improve flow organization, add a title annotation node and set the background color to #4462ed.",
     });
     this.addCode("dv-bp-title-not-on-top-001", {
       description: "Title annotation not on top of flow",
       message: "The topmost node in your flow should be a title annotation (%)",
       type: "best-practice",
-      recommendation: "Position title annotation at top of the flow",
+      recommendation: "The title annotation node is not positioned at the top of the flow. For better readability, move the title annotation node to the top.",
     });
     this.addCode("dv-bp-annotation-003", {
       description:
         "It is a best practice to include annotations to document your flow",
       message: "Flow contains no annotations",
       type: "best-practice",
-      recommendation: "Add annotations to flow",
+      recommendation: "This flow lacks annotations. For improved clarity and structure, add annotations to the flow.",
     });
   }
 

@@ -17,7 +17,7 @@
               "code": "dv-er-teleport-001",
               "message": "Teleport 'UNUSED (8ln2qk7de5)' found, but never used",
               "type": "error",
-              "recommendation": "Teleport start nodes that are not used should be removed from a flow."
+              "recommendation": "A '%' teleport start node has been found, but is not being used. Consider removing it from the flow."
             }
           ],
           "rulesApplied": [
@@ -34,7 +34,7 @@
                   "code": "dv-er-teleport-001",
                   "message": "Teleport 'UNUSED (8ln2qk7de5)' found, but never used",
                   "type": "error",
-                  "recommendation": "Teleport start nodes that are not used should be removed from a flow."
+                  "recommendation": "A '%' teleport start node has been found, but is not being used. Consider removing it from the flow."
                 }
               ]
             }

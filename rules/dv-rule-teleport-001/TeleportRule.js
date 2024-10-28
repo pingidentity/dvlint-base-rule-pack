@@ -14,14 +14,14 @@ class TeleportRule extends LintRule {
       message: "Teleport '%' found, but never used",
       type: "error",
       recommendation:
-        "Teleport start nodes that are not used should be removed from a flow.",
+        "A '%' teleport start node has been found, but is not being used. Consider removing it from the flow.",
     });
     this.addCode("dv-er-teleport-002", {
       description: "Teleport schema mismatch",
       message:
         "Teleport schema mismatch.  Attribute '%' found, but not defined",
       type: "error",
-      recommendation: "Edit JSON to Teleport schema.",
+      recommendation: "Update the JSON to align with the Teleport node schema, ensuring that the '%' attribute is properly defined..",
     });
   }
 
