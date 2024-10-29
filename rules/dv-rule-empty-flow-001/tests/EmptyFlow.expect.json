@@ -17,7 +17,7 @@
               "code": "dv-er-empty-flow-001",
               "message": "Flow is empty",
               "type": "error",
-              "recommendation": "Remove the flow if not in use"
+              "recommendation": "An empty flow has been found. If it's not being used, remove it."
             }
           ],
           "rulesApplied": [
@@ -34,7 +34,7 @@
                   "code": "dv-er-empty-flow-001",
                   "message": "Flow is empty",
                   "type": "error",
-                  "recommendation": "Remove the flow if not in use"
+                  "recommendation": "An empty flow has been found. If it's not being used, remove it."
                 }
               ]
             }

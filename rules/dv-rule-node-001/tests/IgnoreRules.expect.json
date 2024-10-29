@@ -21,14 +21,28 @@
               "ruleId": "dv-rule-node-001",
               "ruleDescription": "Ensure nodes have names/titles",
               "pass": true,
-              "errorCount": 1,
+              "errorCount": 3,
               "errors": [
+                {
+                  "code": "dv-bp-node-003",
+                  "message": "Missing node description on node (osyiff3qqw - Variables)",
+                  "nodeId": "osyiff3qqw",
+                  "recommendation": "The (osyiff3qqw Variables) node is missing a description. For optimal clarity, add a meaningful description.",
+                  "type": "best-practice"
+                },
                 {
                   "code": "dv-bp-node-001",
                   "message": "Missing nodeTitle on node (61te8qo77t - HTTP)",
-                  "type": "best-practice",
-                  "recommendation": "A node title should be added",
-                  "nodeId": "61te8qo77t"
+                  "nodeId": "61te8qo77t",
+                  "recommendation": "The (61te8qo77t HTTP) node is missing a title. For optimal clarity, add a descriptive title.",
+                  "type": "best-practice"
+                },
+                {
+                  "code": "dv-bp-node-003",
+                  "message": "Missing node description on node (61te8qo77t - HTTP)",
+                  "nodeId": "61te8qo77t",
+                  "recommendation": "The (61te8qo77t HTTP) node is missing a description. For optimal clarity, add a meaningful description.",
+                  "type": "best-practice"
                 }
               ],
               "ruleIgnored": true

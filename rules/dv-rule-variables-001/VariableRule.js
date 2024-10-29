@@ -11,11 +11,11 @@ class DVRule extends LintRule {
     });
 
     this.addCode("dv-er-variable-001", {
-      description: "Unsused Variable Found",
+      description: "Unused Variable Found",
       message: "Variable '%' found, but never used",
       type: "error",
       recommendation:
-        "This can lead to variables/data to be included in flows that should be removed.",
+        "The '%' variable has been found but is not utilized in the flow. Consider removing the unused variable.",
     });
     this.addCode("dv-er-variable-002", {
       description:
@@ -23,7 +23,7 @@ class DVRule extends LintRule {
       message: "Variable '%' used, but never defined in a Variable connector",
       type: "error",
       recommendation:
-        "This can lead to data that is expected causing undesired results in the flow.",
+        "The '%' variable is not defined within a variable connector, which may lead to unexpected behavior. Define the variable appropriately.",
     });
   }
 

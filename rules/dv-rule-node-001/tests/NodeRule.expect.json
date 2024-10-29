@@ -1,24 +1,38 @@
 {
   "name": "PingOne DaVinci Linter",
   "pass": false,
-  "errorCount": 1,
+  "errorCount": 3,
   "rulePackResults": [
     {
       "pass": false,
-      "errorCount": 1,
+      "errorCount": 3,
       "lintResults": [
         {
           "flowId": "47360733f8216ad35114e9a787ca83e0",
           "flowName": "Starter Flow",
           "pass": false,
-          "errorCount": 1,
+          "errorCount": 3,
           "errors": [
+            {
+              "code": "dv-bp-node-003",
+              "message": "Missing node description on node (4zjizi23c6 - Node)",
+              "nodeId": "4zjizi23c6",
+              "recommendation": "The (4zjizi23c6 Node) node is missing a description. For optimal clarity, add a meaningful description.",
+              "type": "best-practice"
+            },
             {
               "code": "dv-bp-node-001",
               "message": "Missing nodeTitle on node (13xqy80afe - Http)",
               "type": "best-practice",
-              "recommendation": "A node title should be added",
+              "recommendation": "The (13xqy80afe Http) node is missing a title. For optimal clarity, add a descriptive title.",
               "nodeId": "13xqy80afe"
+            },
+            {
+              "code": "dv-bp-node-003",
+              "message": "Missing node description on node (13xqy80afe - Http)",
+              "nodeId": "13xqy80afe",
+              "recommendation": "The (13xqy80afe Http) node is missing a description. For optimal clarity, add a meaningful description.",
+              "type": "best-practice"
             }
           ],
           "rulesApplied": [
@@ -29,14 +43,28 @@
               "ruleId": "dv-rule-node-001",
               "ruleDescription": "Ensure nodes have names/titles",
               "pass": false,
-              "errorCount": 1,
+              "errorCount": 3,
               "errors": [
+                {
+                  "code": "dv-bp-node-003",
+                  "message": "Missing node description on node (4zjizi23c6 - Node)",
+                  "nodeId": "4zjizi23c6",
+                  "recommendation": "The (4zjizi23c6 Node) node is missing a description. For optimal clarity, add a meaningful description.",
+                  "type": "best-practice"
+                },
                 {
                   "code": "dv-bp-node-001",
                   "message": "Missing nodeTitle on node (13xqy80afe - Http)",
                   "type": "best-practice",
-                  "recommendation": "A node title should be added",
+                  "recommendation": "The (13xqy80afe Http) node is missing a title. For optimal clarity, add a descriptive title.",
                   "nodeId": "13xqy80afe"
+                },
+                {
+                  "code": "dv-bp-node-003",
+                  "message": "Missing node description on node (13xqy80afe - Http)",
+                  "nodeId": "13xqy80afe",
+                  "recommendation": "The (13xqy80afe Http) node is missing a description. For optimal clarity, add a meaningful description.",
+                  "type": "best-practice"
                 }
               ]
             }

@@ -13,7 +13,7 @@ class DebugOffRule extends LintRule {
       description: "In flow settings, log level is currently set to Debug",
       message: "Log level set to Debug",
       type: "best-practice",
-      recommendation: "Change flow log level to Info or None",
+      recommendation: "The flow log level is set to Debug. For standard operation, it's recommended to set the log level to Info or None unless active troubleshooting is needed.",
     });
   }
 

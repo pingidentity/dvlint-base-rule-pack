@@ -13,7 +13,7 @@ class EmptyFlow extends LintRule {
       description: "The flow has no nodes, it is empty",
       message: "Flow is empty",
       type: "error",
-      recommendation: "Remove the flow if not in use",
+      recommendation: "An empty flow has been found. If it's not being used, remove it.",
     });
   }
 

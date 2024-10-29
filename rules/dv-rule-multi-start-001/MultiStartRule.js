@@ -15,7 +15,7 @@ class MultiStartRule extends LintRule {
       message: "Node % could be one of multiple start points, or floating",
       type: "error",
       recommendation:
-        "Ensure flow has one defined start point, and that no nodes are floating (completely disconnected)",
+        "The '%' node is either disconnected or has multiple starting points. Ensure that the node is correctly connected and has only one starting point.",
     });
   }
 
@@ -48,6 +48,7 @@ class MultiStartRule extends LintRule {
           notTargets.forEach((node) =>
             this.addError("dv-er-multi-start-001", {
               messageArgs: [`${node.nodeId} (${node.nodeType})`],
+              recommendationArgs: [`${node.nodeId} (${node.nodeType})`],
             })
           );
         }

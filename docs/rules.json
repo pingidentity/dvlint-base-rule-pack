@@ -2,45 +2,45 @@
   {
     "name": "@ping-identity/dvlint-base-rule-pack",
     "description": "Collection of base rules used to lint DaVinci flows.",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "rules": [
       {
         "id": "dv-rule-annotations-001",
-        "description": "Verify several best prctices for annotations nodes include checks on color, font and positions on the canvas",
+        "description": "Verify several best practices for annotations nodes include checks on color, font and positions on the canvas",
         "codes": {
           "dv-bp-annotation-001": {
             "description": "Found color not included in best practices list for annotation node",
             "message": "Annotation color is not in palette [%] (%)",
             "type": "best-practice",
-            "recommendation": "Use recommended CSS settings for Ping developed flows",
+            "recommendation": "The annotation color is not part of the recommended palette. To ensure optimal results, use the suggested colors.",
             "code": "dv-bp-annotation-001"
           },
           "dv-bp-annotation-002": {
             "description": "Found non-standard fontFamily used for Annotation",
             "message": "Annotation font is not in sans-serif [%] (%)",
             "type": "best-practice",
-            "recommendation": "Use sans-serif fontFamily for Annotations",
+            "recommendation": "The current annotation font is not Sans-Serif. For best clarity and consistency, it is recommended to use a Sans-Serif font",
             "code": "dv-bp-annotation-002"
           },
           "dv-bp-missing-title-annotation-001": {
             "description": "Title annotation node not found",
             "message": "Each flow should contain a title annotation node with a background color of #4462ed",
             "type": "best-practice",
-            "recommendation": "Add a title annotation node",
+            "recommendation": "This flow is missing a title annotation node with a proper description. To improve flow organization, add a title annotation node and set the background color to #4462ed.",
             "code": "dv-bp-missing-title-annotation-001"
           },
           "dv-bp-title-not-on-top-001": {
             "description": "Title annotation not on top of flow",
             "message": "The topmost node in your flow should be a title annotation (%)",
             "type": "best-practice",
-            "recommendation": "Position title annotation at top of the flow",
+            "recommendation": "The title annotation node is not positioned at the top of the flow. For better readability, move the title annotation node to the top.",
             "code": "dv-bp-title-not-on-top-001"
           },
           "dv-bp-annotation-003": {
             "description": "It is a best practice to include annotations to document your flow",
             "message": "Flow contains no annotations",
             "type": "best-practice",
-            "recommendation": "Add annotations to flow",
+            "recommendation": "This flow lacks annotations. For improved clarity and structure, add annotations to the flow.",
             "code": "dv-bp-annotation-003"
           }
         },
@@ -55,7 +55,7 @@
             "description": "In flow settings, log level is currently set to Debug",
             "message": "Log level set to Debug",
             "type": "best-practice",
-            "recommendation": "Change flow log level to Info or None",
+            "recommendation": "The flow log level is set to Debug. For standard operation, it's recommended to set the log level to Info or None unless active troubleshooting is needed.",
             "code": "dv-bp-debug-off-001"
           }
         },
@@ -70,7 +70,7 @@
             "description": "The flow has no nodes, it is empty",
             "message": "Flow is empty",
             "type": "error",
-            "recommendation": "Remove the flow if not in use",
+            "recommendation": "An empty flow has been found. If it's not being used, remove it.",
             "code": "dv-er-empty-flow-001"
           }
         },
@@ -92,28 +92,28 @@
             "description": "In flow settings, useCustomCSS not set to true",
             "message": "useCustomCSS not set to true",
             "type": "best-practice",
-            "recommendation": "Use recommended CSS settings for Ping developed flows",
+            "recommendation": "Use the recommended CSS settings for flows developed by Ping to ensure consistency.",
             "code": "dv-bp-logo-001"
           },
           "dv-bp-logo-002": {
             "description": "In flow settings, companyLogo class not included in custom CSS",
             "message": "companyLogo class not included in custom CSS",
             "type": "best-practice",
-            "recommendation": "Use recommended CSS settings for Ping developed flows",
+            "recommendation": "Use the recommended CSS settings for flows developed by Ping to ensure consistency.",
             "code": "dv-bp-logo-002"
           },
           "dv-bp-logo-003": {
             "description": "Didn't find companyLogo environment variable in variables connector, this variable should be present in the flow.",
             "message": "companyLogo environment variable not found. (% - %)",
             "type": "best-practice",
-            "recommendation": "Use companyLogo environment variable for Ping developed flows",
+            "recommendation": "Use the companyLogo environment variable for Ping-developed flows to ensure the correct branding.",
             "code": "dv-bp-logo-003"
           },
           "dv-bp-logo-004": {
             "description": "Didn't find companyName environment variable in variables connector, this variable should be present in the flow.",
             "message": "companyName environment variable not found. (% - %)",
             "type": "best-practice",
-            "recommendation": "Use companyName environment variable for Ping developed flows",
+            "recommendation": "Use the companyName environment variable for Ping-developed flows to display the appropriate company name.",
             "code": "dv-bp-logo-004"
           }
         },
@@ -128,7 +128,7 @@
             "description": "Multiple start points or floating node(s) found",
             "message": "Node % could be one of multiple start points, or floating",
             "type": "error",
-            "recommendation": "Ensure flow has one defined start point, and that no nodes are floating (completely disconnected)",
+            "recommendation": "The '%' node is either disconnected or has multiple starting points. Ensure that the node is correctly connected and has only one starting point.",
             "code": "dv-er-multi-start-001"
           }
         },
@@ -143,15 +143,29 @@
             "description": "All nodes should have a title",
             "message": "Missing nodeTitle on node (% - %)",
             "type": "best-practice",
-            "recommendation": "A node title should be added",
+            "recommendation": "The (% %) node is missing a title. For optimal clarity, add a descriptive title.",
             "code": "dv-bp-node-001"
           },
           "dv-bp-node-002": {
             "description": "All success/error JSON nodes should proper colors",
             "message": "Incorrect node color [%] - %",
             "type": "best-practice",
-            "recommendation": "Please use this color: [%]",
+            "recommendation": "The [%] - % is not using the correct color. To ensure consistency, use the recommended color: [%].",
             "code": "dv-bp-node-002"
+          },
+          "dv-bp-node-003": {
+            "description": "All nodes should have a description",
+            "message": "Missing node description on node (% - %)",
+            "type": "best-practice",
+            "recommendation": "The (% %) node is missing a description. For optimal clarity, add a meaningful description.",
+            "code": "dv-bp-node-003"
+          },
+          "dv-er-node-004": {
+            "description": "Form not selected",
+            "message": "Form not selected",
+            "type": "error",
+            "recommendation": "A form is not selected in the <%> connector. Select a form to complete the configuration.",
+            "code": "dv-er-node-004"
           }
         },
         "reference": "",
@@ -165,8 +179,30 @@
             "description": "Disabled Node Found",
             "message": "Disabled node % found",
             "type": "best-practice",
-            "recommendation": "Remove disabled node from flow.",
+            "recommendation": "A disabled '%' node has been found. Consider removing it from the flow.",
             "code": "dv-er-node-001"
+          },
+          "dv-er-node-002": {
+            "description": "Unconfigured Node Found",
+            "message": "Unconfigured node % found",
+            "type": "error",
+            "recommendation": "Configure unconfigured node from flow.",
+            "code": "dv-er-node-002"
+          }
+        },
+        "reference": "",
+        "cleans": false
+      },
+      {
+        "id": "dv-rule-pingOneFlow-001",
+        "description": "Checks for PingOne Flow configurations",
+        "codes": {
+          "dv-er-pingOneFlow-001": {
+            "description": "Incorrect ending nodes for PingOne flow.",
+            "message": "Incorrect ending nodes for PingOne flow.",
+            "type": "error",
+            "recommendation": "This PingOne-enabled flow is missing an appropriate ending node. These flows should conclude with either a 'Return a Success Response' node or a 'Return an Error Response' node.",
+            "code": "dv-er-pingOneFlow-001"
           }
         },
         "reference": "",
@@ -180,15 +216,22 @@
             "description": "Subflow names mismatched",
             "message": "Incorrect or Missing Subflow in (%)",
             "type": "error",
-            "recommendation": "Typically caused by having a flow conductor node, but no subflow selected or name mismatch in its configuration",
+            "recommendation": "There is an incorrect or missing subflow in the (%) flow. Ensure that the appropriate subflow is selected and that the names match within the configuration.",
             "code": "dv-er-subflow-001"
           },
           "dv-er-subflow-002": {
             "description": "Circular SubFlow Found",
             "message": "Circular SubFlow Dependency Found - '%' points back to '%' via subflow",
             "type": "error",
-            "recommendation": "This can cause export/import errors, it is recommended to return to a parent flow via HTML JSON success/error",
+            "recommendation": "In this subflow, '%' points back to '%', which can cause import and export errors. Configure the subflow to return to the parent flow.",
             "code": "dv-er-subflow-002"
+          },
+          "dv-er-subflow-003": {
+            "description": "Missing Input schema values.",
+            "message": "Input Schema values '%' for '%' subflow is not configured in main flow.",
+            "type": "error",
+            "recommendation": "The input schema values for the '%' subflow are not currently configured. Configure the schema in the subflow.",
+            "code": "dv-er-subflow-003"
           }
         },
         "reference": "",
@@ -199,17 +242,17 @@
         "description": "Check for unused teleport nodes",
         "codes": {
           "dv-er-teleport-001": {
-            "description": "Unsused Teleport Found",
+            "description": "Unused Teleport Found",
             "message": "Teleport '%' found, but never used",
             "type": "error",
-            "recommendation": "Teleport start nodes that are not used should be removed from a flow.",
+            "recommendation": "A '%' teleport start node has been found, but is not being used. Consider removing it from the flow.",
             "code": "dv-er-teleport-001"
           },
           "dv-er-teleport-002": {
             "description": "Teleport schema mismatch",
             "message": "Teleport schema mismatch.  Attribute '%' found, but not defined",
             "type": "error",
-            "recommendation": "Edit JSON to Teleport schema.",
+            "recommendation": "Update the JSON to align with the Teleport node schema, ensuring that the '%' attribute is properly defined..",
             "code": "dv-er-teleport-002"
           }
         },
@@ -221,17 +264,17 @@
         "description": "Ensure that flow variables are used in flow.  And check for flow variables referenced in nodes but not defined",
         "codes": {
           "dv-er-variable-001": {
-            "description": "Unsused Variable Found",
+            "description": "Unused Variable Found",
             "message": "Variable '%' found, but never used",
             "type": "error",
-            "recommendation": "This can lead to variables/data to be included in flows that should be removed.",
+            "recommendation": "The '%' variable has been found but is not utilized in the flow. Consider removing the unused variable.",
             "code": "dv-er-variable-001"
           },
           "dv-er-variable-002": {
             "description": "Variable '%' used, but never defined in a Variable connector",
             "message": "Variable '%' used, but never defined in a Variable connector",
             "type": "error",
-            "recommendation": "This can lead to data that is expected causing undesired results in the flow.",
+            "recommendation": "The '%' variable is not defined within a variable connector, which may lead to unexpected behavior. Define the variable appropriately.",
             "code": "dv-er-variable-002"
           }
         },

@@ -1,0 +1,289 @@
+{
+    "flows": [
+      {
+        "companyId": "6YWgejhFHGFyhZM57KfdhnYf7fmeMZKM",
+        "connectorIds": [
+          "httpConnector",
+          "flowConnector"
+        ],
+        "createdDate": 1729755409544,
+        "currentVersion": 7,
+        "customerId": "1576bd3c19c0fb0a828342b21d46a57e",
+        "description": "",
+        "flowStatus": "enabled",
+        "name": "Main flow",
+        "flowId": "536d2240bb70b78137416562a87f1f81",
+        "versionId": 7,
+        "graphData": {
+          "elements": {
+            "nodes": [
+              {
+                "data": {
+                  "id": "yksst2pjki",
+                  "nodeType": "CONNECTION",
+                  "connectionId": "26389add19130693fbd0dfc5217c6d9b",
+                  "connectorId": "httpConnector",
+                  "name": "HTTP-1729677766708",
+                  "label": "HTTP-1729677766708",
+                  "status": "configured",
+                  "capabilityName": "customHtmlMessage",
+                  "type": "trigger",
+                  "properties": {
+                    "message": {
+                      "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"hello\"\n      }\n    ]\n  }\n]"
+                    },
+                    "nodeTitle": {
+                      "value": "MainFLow Start Node"
+                    },
+                    "nodeDescription": {
+                      "value": "some desc"
+                    }
+                  }
+                },
+                "position": {
+                  "x": 277,
+                  "y": 236.5898482447891
+                },
+                "group": "nodes",
+                "removed": false,
+                "selected": false,
+                "selectable": true,
+                "locked": false,
+                "grabbable": true,
+                "pannable": false,
+                "classes": ""
+              },
+              {
+                "data": {
+                  "id": "yghlv8a492",
+                  "nodeType": "EVAL",
+                  "label": "Evaluator"
+                },
+                "position": {
+                  "x": 427.9999695051989,
+                  "y": 236.29492412239455
+                },
+                "group": "nodes",
+                "removed": false,
+                "selected": false,
+                "selectable": true,
+                "locked": false,
+                "grabbable": true,
+                "pannable": false,
+                "classes": ""
+              },
+              {
+                "data": {
+                  "id": "rmlvzfp7qq",
+                  "nodeType": "CONNECTION",
+                  "connectionId": "1b14bfd5e910bb06ad963ca61db60c6d",
+                  "connectorId": "flowConnector",
+                  "name": "Flow Conductor",
+                  "label": "Flow Conductor",
+                  "status": "configured",
+                  "capabilityName": "startUiSubFlow",
+                  "type": "trigger",
+                  "properties": {
+                    "subFlowId": {
+                      "value": {
+                        "label": "subflow1",
+                        "value": "c3458f9ea32059d916196ce6e3442162"
+                      }
+                    },
+                    "subFlowVersionId": {
+                      "value": -1
+                    },
+                    "nodeTitle": {
+                      "value": "Main FLow : Flow conductor node"
+                    },
+                    "nodeDescription": {
+                      "value": "some desc"
+                    }
+                  }
+                },
+                "position": {
+                  "x": 578.9999390103978,
+                  "y": 236
+                },
+                "group": "nodes",
+                "removed": false,
+                "selected": false,
+                "selectable": true,
+                "locked": false,
+                "grabbable": true,
+                "pannable": false,
+                "classes": ""
+              }
+            ],
+            "edges": [
+              {
+                "data": {
+                  "id": "73nahlhbxr",
+                  "source": "yksst2pjki",
+                  "target": "yghlv8a492"
+                },
+                "position": {
+                  "x": 0,
+                  "y": 0
+                },
+                "group": "edges",
+                "removed": false,
+                "selected": false,
+                "selectable": true,
+                "locked": false,
+                "grabbable": true,
+                "pannable": true,
+                "classes": ""
+              },
+              {
+                "data": {
+                  "id": "fpxuze9rwu",
+                  "source": "yghlv8a492",
+                  "target": "rmlvzfp7qq"
+                },
+                "position": {
+                  "x": 0,
+                  "y": 0
+                },
+                "group": "edges",
+                "removed": false,
+                "selected": false,
+                "selectable": true,
+                "locked": false,
+                "grabbable": true,
+                "pannable": true,
+                "classes": ""
+              }
+            ]
+          },
+          "data": {},
+          "zoomingEnabled": true,
+          "userZoomingEnabled": true,
+          "zoom": 1,
+          "minZoom": 1e-50,
+          "maxZoom": 1e+50,
+          "panningEnabled": true,
+          "userPanningEnabled": true,
+          "pan": {
+            "x": 0,
+            "y": 0
+          },
+          "boxSelectionEnabled": true,
+          "renderer": {
+            "name": "null"
+          }
+        },
+        "flowColor": "#AFD5FF",
+        "savedDate": 1729755409499,
+        "variables": [],
+        "connections": [],
+        "parentFlowId": "536d2240bb70b78137416562a87f1f81"
+      },
+      {
+        "companyId": "6YWgejhFHGFyhZM57KfdhnYf7fmeMZKM",
+        "connectorIds": [
+          "httpConnector"
+        ],
+        "createdDate": 1729755451644,
+        "currentVersion": 4,
+        "customerId": "1576bd3c19c0fb0a828342b21d46a57e",
+        "description": "",
+        "flowStatus": "enabled",
+        "name": "subflow1",
+        "flowId": "c3458f9ea32059d916196ce6e3442162",
+        "versionId": 4,
+        "graphData": {
+          "elements": {
+            "nodes": [
+              {
+                "data": {
+                  "id": "xpr2aswg6m",
+                  "nodeType": "CONNECTION",
+                  "connectionId": "26389add19130693fbd0dfc5217c6d9b",
+                  "connectorId": "httpConnector",
+                  "name": "HTTP-1729677766708",
+                  "label": "HTTP-1729677766708",
+                  "status": "configured",
+                  "capabilityName": "customHtmlMessage",
+                  "type": "trigger",
+                  "properties": {
+                    "message": {
+                      "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"subflow1edit\"\n      }\n    ]\n  }\n]"
+                    },
+                    "nodeTitle": {
+                      "value": "Subflow Start Node"
+                    },
+                    "nodeDescription": {
+                      "value": "some desc"
+                    }
+                  }
+                },
+                "position": {
+                  "x": 277,
+                  "y": 236
+                },
+                "group": "nodes",
+                "removed": false,
+                "selected": false,
+                "selectable": true,
+                "locked": false,
+                "grabbable": true,
+                "pannable": false,
+                "classes": ""
+              }
+            ]
+          },
+          "data": {},
+          "zoomingEnabled": true,
+          "userZoomingEnabled": true,
+          "zoom": 1,
+          "minZoom": 1e-50,
+          "maxZoom": 1e+50,
+          "panningEnabled": true,
+          "userPanningEnabled": true,
+          "pan": {
+            "x": 0,
+            "y": 0
+          },
+          "boxSelectionEnabled": true,
+          "renderer": {
+            "name": "null"
+          }
+        },
+        "isInputSchemaSaved": true,
+        "inputSchemaCompiled": {
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "inputSchemaSubflow1": {
+                "description": "asd",
+                "preferredDataType": "string",
+                "isExpanded": true,
+                "type": "string",
+                "name": "inputSchemaSubflow1"
+              }
+            },
+            "additionalProperties": false,
+            "required": [
+              "inputSchemaSubflow1"
+            ]
+          }
+        },
+        "inputSchema": [
+          {
+            "propertyName": "inputSchemaSubflow1",
+            "description": "asd",
+            "preferredDataType": "string",
+            "preferredControlType": "textField",
+            "isExpanded": true,
+            "required": true
+          }
+        ],
+        "flowColor": "#AFD5FF",
+        "savedDate": 1729755451611,
+        "variables": []
+      }
+    ],
+    "companyId": "6YWgejhFHGFyhZM57KfdhnYf7fmeMZKM",
+    "customerId": "1576bd3c19c0fb0a828342b21d46a57e"
+  }

@@ -1,0 +1,271 @@
+{
+    "companyId": "6YWgejhFHGFyhZM57KfdhnYf7fmeMZKM",
+    "connectorIds": [
+      "httpConnector"
+    ],
+    "createdDate": 1729754257220,
+    "currentVersion": 9,
+    "customerId": "1576bd3c19c0fb0a828342b21d46a57e",
+    "description": "",
+    "flowStatus": "enabled",
+    "name": "testPingOneFlow",
+    "flowId": "f78ec9aa1c267c440e46e0db665c64a0",
+    "versionId": 9,
+    "graphData": {
+      "elements": {
+        "nodes": [
+          {
+            "data": {
+              "id": "wt491cq4ts",
+              "nodeType": "CONNECTION",
+              "connectionId": "26389add19130693fbd0dfc5217c6d9b",
+              "connectorId": "httpConnector",
+              "name": "HTTP-1729677766708",
+              "label": "HTTP-1729677766708",
+              "status": "configured",
+              "capabilityName": "customHtmlMessage",
+              "type": "trigger",
+              "properties": {
+                "showContinueButton": {
+                  "value": true
+                },
+                "button": {
+                  "displayName": "Node 1"
+                },
+                "messageTitle": {
+                  "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Start Node\"\n      }\n    ]\n  }\n]"
+                },
+                "nodeTitle": {
+                  "value": "Start Node"
+                },
+                "nodeDescription": {
+                  "value": "Start Node Desc"
+                }
+              }
+            },
+            "position": {
+              "x": 277,
+              "y": 236.58954310166553
+            },
+            "group": "nodes",
+            "removed": false,
+            "selected": false,
+            "selectable": true,
+            "locked": false,
+            "grabbable": true,
+            "pannable": false,
+            "classes": ""
+          },
+          {
+            "data": {
+              "id": "xmghk6n80n",
+              "nodeType": "EVAL",
+              "label": "Evaluator"
+            },
+            "position": {
+              "x": 402.49996622569824,
+              "y": 236.29477155083276
+            },
+            "group": "nodes",
+            "removed": false,
+            "selected": false,
+            "selectable": true,
+            "locked": false,
+            "grabbable": true,
+            "pannable": false,
+            "classes": ""
+          },
+          {
+            "data": {
+              "id": "vt3yauyg3q",
+              "nodeType": "CONNECTION",
+              "connectionId": "26389add19130693fbd0dfc5217c6d9b",
+              "connectorId": "httpConnector",
+              "name": "HTTP-1729677766708",
+              "label": "HTTP-1729677766708",
+              "status": "configured",
+              "capabilityName": "createErrorResponse",
+              "type": "action",
+              "properties": {
+                "nodeTitle": {
+                  "value": "Error Response Json"
+                },
+                "nodeDescription": {
+                  "value": "some desc"
+                }
+              }
+            },
+            "position": {
+              "x": 527.9999324513966,
+              "y": 236
+            },
+            "group": "nodes",
+            "removed": false,
+            "selected": false,
+            "selectable": true,
+            "locked": false,
+            "grabbable": true,
+            "pannable": false,
+            "classes": ""
+          },
+          {
+            "data": {
+              "id": "q4p9w2dqbc",
+              "nodeType": "EVAL",
+              "label": "Evaluator"
+            },
+            "position": {
+              "x": 708.9999159627962,
+              "y": 238.500004651572
+            },
+            "group": "nodes",
+            "removed": false,
+            "selected": false,
+            "selectable": true,
+            "locked": false,
+            "grabbable": true,
+            "pannable": false,
+            "classes": ""
+          },
+          {
+            "data": {
+              "id": "q1iytjg9at",
+              "nodeType": "CONNECTION",
+              "connectionId": "26389add19130693fbd0dfc5217c6d9b",
+              "connectorId": "httpConnector",
+              "name": "HTTP-1729677766708",
+              "label": "HTTP-1729677766708",
+              "status": "configured",
+              "capabilityName": "createSuccessResponse",
+              "type": "action",
+              "properties": {
+                "nodeTitle": {
+                  "value": "Success Json"
+                },
+                "nodeDescription": {
+                  "value": "some desc"
+                }
+              }
+            },
+            "position": {
+              "x": 889.9998994741958,
+              "y": 241.000009303144
+            },
+            "group": "nodes",
+            "removed": false,
+            "selected": false,
+            "selectable": true,
+            "locked": false,
+            "grabbable": true,
+            "pannable": false,
+            "classes": ""
+          }
+        ],
+        "edges": [
+          {
+            "data": {
+              "id": "10p794d2ng",
+              "source": "wt491cq4ts",
+              "target": "xmghk6n80n"
+            },
+            "position": {
+              "x": 0,
+              "y": 0
+            },
+            "group": "edges",
+            "removed": false,
+            "selected": false,
+            "selectable": true,
+            "locked": false,
+            "grabbable": true,
+            "pannable": true,
+            "classes": ""
+          },
+          {
+            "data": {
+              "id": "hxfp64z4jw",
+              "source": "xmghk6n80n",
+              "target": "vt3yauyg3q"
+            },
+            "position": {
+              "x": 0,
+              "y": 0
+            },
+            "group": "edges",
+            "removed": false,
+            "selected": false,
+            "selectable": true,
+            "locked": false,
+            "grabbable": true,
+            "pannable": true,
+            "classes": ""
+          },
+          {
+            "data": {
+              "id": "ip8qln89xs",
+              "source": "vt3yauyg3q",
+              "target": "q4p9w2dqbc"
+            },
+            "position": {
+              "x": 0,
+              "y": 0
+            },
+            "group": "edges",
+            "removed": false,
+            "selected": false,
+            "selectable": true,
+            "locked": false,
+            "grabbable": true,
+            "pannable": true,
+            "classes": ""
+          },
+          {
+            "data": {
+              "id": "0968uubr7w",
+              "source": "q4p9w2dqbc",
+              "target": "q1iytjg9at"
+            },
+            "position": {
+              "x": 0,
+              "y": 0
+            },
+            "group": "edges",
+            "removed": false,
+            "selected": false,
+            "selectable": true,
+            "locked": false,
+            "grabbable": true,
+            "pannable": true,
+            "classes": ""
+          }
+        ]
+      },
+      "data": {},
+      "zoomingEnabled": true,
+      "userZoomingEnabled": true,
+      "zoom": 1,
+      "minZoom": 1e-50,
+      "maxZoom": 1e+50,
+      "panningEnabled": true,
+      "userPanningEnabled": true,
+      "pan": {
+        "x": 0,
+        "y": 0
+      },
+      "boxSelectionEnabled": true,
+      "renderer": {
+        "name": "null"
+      }
+    },
+    "settings": {
+      "csp": "worker-src 'self' blob:; script-src 'self' https://cdn.jsdelivr.net https://code.jquery.com https://devsdk.singularkey.com http://cdnjs.cloudflare.com 'unsafe-inline' 'unsafe-eval';",
+      "intermediateLoadingScreenCSS": "",
+      "intermediateLoadingScreenHTML": "",
+      "pingOneFlow": true
+    },
+    "flowColor": "#AFD5FF",
+    "savedDate": 1729754257175,
+    "variables": [],
+    "connections": []
+  }
+  
