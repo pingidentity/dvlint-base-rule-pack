@@ -10,7 +10,7 @@ class TeleportRule extends LintRule {
     });
 
     this.addCode("dv-er-teleport-001", {
-      description: "Unsused Teleport Found",
+      description: "Unused Teleport Found",
       message: "Teleport '%' found, but never used",
       type: "error",
       recommendation:

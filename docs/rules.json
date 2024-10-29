@@ -70,7 +70,7 @@
             "description": "The flow has no nodes, it is empty",
             "message": "Flow is empty",
             "type": "error",
-            "recommendation": "An empty flow has been found. If it’s not being used, remove it.",
+            "recommendation": "An empty flow has been found. If it's not being used, remove it.",
             "code": "dv-er-empty-flow-001"
           }
         },
@@ -157,7 +157,7 @@
             "description": "All nodes should have a description",
             "message": "Missing node description on node (% - %)",
             "type": "best-practice",
-            "recommendation": "The (% %) node is missing a description. For optimal clarity, add a meaninful description.",
+            "recommendation": "The (% %) node is missing a description. For optimal clarity, add a meaningful description.",
             "code": "dv-bp-node-003"
           },
           "dv-er-node-004": {
@@ -242,7 +242,7 @@
         "description": "Check for unused teleport nodes",
         "codes": {
           "dv-er-teleport-001": {
-            "description": "Unsused Teleport Found",
+            "description": "Unused Teleport Found",
             "message": "Teleport '%' found, but never used",
             "type": "error",
             "recommendation": "A '%' teleport start node has been found, but is not being used. Consider removing it from the flow.",
@@ -264,7 +264,7 @@
         "description": "Ensure that flow variables are used in flow.  And check for flow variables referenced in nodes but not defined",
         "codes": {
           "dv-er-variable-001": {
-            "description": "Unsused Variable Found",
+            "description": "Unused Variable Found",
             "message": "Variable '%' found, but never used",
             "type": "error",
             "recommendation": "The '%' variable has been found but is not utilized in the flow. Consider removing the unused variable.",

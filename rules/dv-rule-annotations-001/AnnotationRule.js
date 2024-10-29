@@ -5,7 +5,7 @@ class AnnotationRules extends LintRule {
     super({
       id: "dv-rule-annotations-001",
       description:
-        "Verify several best prctices for annotations nodes include checks on color, font and positions on the canvas",
+        "Verify several best practices for annotations nodes include checks on color, font and positions on the canvas",
       cleans: false,
       reference: "https://library.pingidentity.com/page/davinci-color-palette",
     });

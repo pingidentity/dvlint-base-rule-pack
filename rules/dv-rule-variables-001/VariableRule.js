@@ -11,7 +11,7 @@ class DVRule extends LintRule {
     });
 
     this.addCode("dv-er-variable-001", {
-      description: "Unsused Variable Found",
+      description: "Unused Variable Found",
       message: "Variable '%' found, but never used",
       type: "error",
       recommendation:
