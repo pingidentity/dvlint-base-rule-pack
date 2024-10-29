@@ -157,7 +157,7 @@
             "description": "All nodes should have a description",
             "message": "Missing node description on node (% - %)",
             "type": "best-practice",
-            "recommendation": "The (% %) node is missing a description. For optimal clarity, add a meaninful description.",
+            "recommendation": "The (% %) node is missing a description. For optimal clarity, add a meaningful description.",
             "code": "dv-bp-node-003"
           },
           "dv-er-node-004": {
