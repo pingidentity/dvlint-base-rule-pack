@@ -6,7 +6,7 @@
     "rules": [
       {
         "id": "dv-rule-annotations-001",
-        "description": "Verify several best prctices for annotations nodes include checks on color, font and positions on the canvas",
+        "description": "Verify several best practices for annotations nodes include checks on color, font and positions on the canvas",
         "codes": {
           "dv-bp-annotation-001": {
             "description": "Found color not included in best practices list for annotation node",
@@ -157,7 +157,7 @@
             "description": "All nodes should have a description",
             "message": "Missing node description on node (% - %)",
             "type": "best-practice",
-            "recommendation": "The (% %) node is missing a description. For optimal clarity, add a meaningful description.",
+            "recommendation": "The (% %) node is missing a description. For optimal clarity, add a meaninful description.",
             "code": "dv-bp-node-003"
           },
           "dv-er-node-004": {
