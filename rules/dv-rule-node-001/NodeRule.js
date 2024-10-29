@@ -30,7 +30,7 @@ class NodeRule extends LintRule {
       description: "All nodes should have a description",
       message: "Missing node description on node (% - %)",
       type: "best-practice",
-      recommendation: "The (% %) node is missing a description. For optimal clarity, add a meaninful description.",
+      recommendation: "The (% %) node is missing a description. For optimal clarity, add a meaningful description.",
     });
     this.addCode("dv-er-node-004", {
       description: "Form not selected",
@@ -62,21 +62,21 @@ class NodeRule extends LintRule {
             });
           }
 
-            // Check for node description
-            if (
-              data.nodeType === "CONNECTION" &&
-              !data.properties?.nodeDescription?.value &&
-              !(
-                (data.name === "Teleport" || data.name === "Node") &&
-                data.capabilityName === "goToNode"
-              )
-            ) {
-              this.addError("dv-bp-node-003", {
-                messageArgs: [data.id, data.name],
-                recommendationArgs: [data.id, data.name],
-                nodeId: data.id,
-              });
-            }
+          // Check for node description
+          if (
+            data.nodeType === "CONNECTION" &&
+            !data.properties?.nodeDescription?.value &&
+            !(
+              (data.name === "Teleport" || data.name === "Node") &&
+              data.capabilityName === "goToNode"
+            )
+          ) {
+            this.addError("dv-bp-node-003", {
+              messageArgs: [data.id, data.name],
+              recommendationArgs: [data.id, data.name],
+              nodeId: data.id,
+            });
+          }
 
           // Check for Success/Error JSON background colors
           const connectorCapability = `${data.connectorId}_${data.capabilityName}`;
