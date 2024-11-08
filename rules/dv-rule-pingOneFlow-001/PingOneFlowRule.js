@@ -23,9 +23,9 @@ class PingOneFlowRule extends LintRule {
       // Incorrect ending nodes for PingOne flow
       if (targetFlow?.settings?.pingOneFlow) {
         const endNodesCapability = ['createErrorResponse', 'createSuccessResponse'];
-        const endNodesData = targetFlow.graphData.elements.nodes.filter(node => endNodesCapability.includes(node.data.capabilityName));
+        const endNodesData = targetFlow.graphData.elements.nodes?.filter(node => endNodesCapability.includes(node.data.capabilityName)) || [];
         const nodeIdMap = endNodesData.map(node => node.data.id);
-        const nodeSourceMap = targetFlow.graphData.elements.edges.map(edge => edge.data.source);
+        const nodeSourceMap = targetFlow.graphData.elements.edges?.map(edge => edge.data.source) || [];
         let validEndNode = true;
         nodeIdMap.forEach(id => {
           if (nodeSourceMap.includes(id)) {

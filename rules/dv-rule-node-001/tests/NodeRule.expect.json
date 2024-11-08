@@ -15,7 +15,7 @@
           "errors": [
             {
               "code": "dv-bp-node-003",
-              "message": "Missing node description on node (4zjizi23c6 - Node)",
+              "message": "Missing Node Description on node (4zjizi23c6 - Node)",
               "nodeId": "4zjizi23c6",
               "recommendation": "The (4zjizi23c6 Node) node is missing a description. For optimal clarity, add a meaningful description.",
               "type": "best-practice"
@@ -29,7 +29,7 @@
             },
             {
               "code": "dv-bp-node-003",
-              "message": "Missing node description on node (13xqy80afe - Http)",
+              "message": "Missing Node Description on node (13xqy80afe - Http)",
               "nodeId": "13xqy80afe",
               "recommendation": "The (13xqy80afe Http) node is missing a description. For optimal clarity, add a meaningful description.",
               "type": "best-practice"
@@ -47,7 +47,7 @@
               "errors": [
                 {
                   "code": "dv-bp-node-003",
-                  "message": "Missing node description on node (4zjizi23c6 - Node)",
+                  "message": "Missing Node Description on node (4zjizi23c6 - Node)",
                   "nodeId": "4zjizi23c6",
                   "recommendation": "The (4zjizi23c6 Node) node is missing a description. For optimal clarity, add a meaningful description.",
                   "type": "best-practice"
@@ -61,7 +61,7 @@
                 },
                 {
                   "code": "dv-bp-node-003",
-                  "message": "Missing node description on node (13xqy80afe - Http)",
+                  "message": "Missing Node Description on node (13xqy80afe - Http)",
                   "nodeId": "13xqy80afe",
                   "recommendation": "The (13xqy80afe Http) node is missing a description. For optimal clarity, add a meaningful description.",
                   "type": "best-practice"

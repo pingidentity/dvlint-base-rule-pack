@@ -28,7 +28,7 @@ class NodeRule extends LintRule {
     });
     this.addCode("dv-bp-node-003", {
       description: "All nodes should have a description",
-      message: "Missing node description on node (% - %)",
+      message: "Missing Node Description on node (% - %)",
       type: "best-practice",
       recommendation: "The (% %) node is missing a description. For optimal clarity, add a meaningful description.",
     });

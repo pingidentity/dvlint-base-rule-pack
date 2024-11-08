@@ -2,7 +2,7 @@
   {
     "name": "@ping-identity/dvlint-base-rule-pack",
     "description": "Collection of base rules used to lint DaVinci flows.",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "rules": [
       {
         "id": "dv-rule-annotations-001",
@@ -155,7 +155,7 @@
           },
           "dv-bp-node-003": {
             "description": "All nodes should have a description",
-            "message": "Missing node description on node (% - %)",
+            "message": "Missing Node Description on node (% - %)",
             "type": "best-practice",
             "recommendation": "The (% %) node is missing a description. For optimal clarity, add a meaningful description.",
             "code": "dv-bp-node-003"
@@ -183,10 +183,10 @@
             "code": "dv-er-node-001"
           },
           "dv-er-node-002": {
-            "description": "Unconfigured Node Found",
-            "message": "Unconfigured node % found",
+            "description": "Connector Capability not configured",
+            "message": "Connector Capability not configured",
             "type": "error",
-            "recommendation": "Configure unconfigured node from flow.",
+            "recommendation": "Configure a capability in <%> connector to ensure proper operation.",
             "code": "dv-er-node-002"
           }
         },
