@@ -25,7 +25,7 @@
               "errors": [
                 {
                   "code": "dv-bp-node-003",
-                  "message": "Missing node description on node (osyiff3qqw - Variables)",
+                  "message": "Missing Node Description on node (osyiff3qqw - Variables)",
                   "nodeId": "osyiff3qqw",
                   "recommendation": "The (osyiff3qqw Variables) node is missing a description. For optimal clarity, add a meaningful description.",
                   "type": "best-practice"
@@ -39,7 +39,7 @@
                 },
                 {
                   "code": "dv-bp-node-003",
-                  "message": "Missing node description on node (61te8qo77t - HTTP)",
+                  "message": "Missing Node Description on node (61te8qo77t - HTTP)",
                   "nodeId": "61te8qo77t",
                   "recommendation": "The (61te8qo77t HTTP) node is missing a description. For optimal clarity, add a meaningful description.",
                   "type": "best-practice"
