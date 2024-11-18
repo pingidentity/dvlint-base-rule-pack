@@ -12,7 +12,7 @@ class PingOneFlowRule extends LintRule {
       description: "Incorrect ending nodes for PingOne flow.",
       message: "Incorrect ending nodes for PingOne flow.",
       type: "error",
-      recommendation: "This PingOne-enabled flow is missing an appropriate ending node. These flows should conclude with either a 'Return a Success Response' node or a 'Return an Error Response' node."
+      recommendation: "This PingOne-enabled flow is missing appropriate ending nodes. These flows should conclude with either a 'Return Success Response (Redirect Flows)' node or a 'Return Error Response (Redirect Flows)' node of the PingOne Authentication connector."
     });
   }
 
@@ -22,7 +22,7 @@ class PingOneFlowRule extends LintRule {
 
       // Incorrect ending nodes for PingOne flow
       if (targetFlow?.settings?.pingOneFlow) {
-        const endNodesCapability = ['createErrorResponse', 'createSuccessResponse'];
+        const endNodesCapability = ['returnSuccessResponseRedirect', 'returnErrorResponseRedirect'];        
         const endNodesData = targetFlow.graphData.elements.nodes?.filter(node => endNodesCapability.includes(node.data.capabilityName)) || [];
         const nodeIdMap = endNodesData.map(node => node.data.id);
         const nodeSourceMap = targetFlow.graphData.elements.edges?.map(edge => edge.data.source) || [];
