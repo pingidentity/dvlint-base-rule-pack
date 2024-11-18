@@ -2,7 +2,7 @@
   {
     "name": "@ping-identity/dvlint-base-rule-pack",
     "description": "Collection of base rules used to lint DaVinci flows.",
-    "version": "1.0.5",
+    "version": "1.0.6",
     "rules": [
       {
         "id": "dv-rule-annotations-001",
@@ -227,8 +227,8 @@
             "code": "dv-er-subflow-002"
           },
           "dv-er-subflow-003": {
-            "description": "Missing Input schema values.",
-            "message": "Input Schema values '%' for '%' subflow is not configured in main flow.",
+            "description": "Missing Input schema values",
+            "message": "Input Schema values for '%' subflow is not configured.",
             "type": "error",
             "recommendation": "The input schema values for the '%' subflow are not currently configured. Configure the schema in the subflow.",
             "code": "dv-er-subflow-003"
