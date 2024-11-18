@@ -15,9 +15,10 @@
                     "errors": [
                         {
                             "code": "dv-er-subflow-003",
-                            "message": "Input Schema values 'inputSchemaSubflow1' for 'subflow1' subflow is not configured in main flow.",
+                            "message": "Input Schema values for 'subflow1' subflow is not configured.",
                             "type": "error",
-                            "recommendation": "The input schema values for the 'subflow1' subflow are not currently configured. Configure the schema in the subflow."
+                            "recommendation": "The input schema values for the 'subflow1' subflow are not currently configured. Configure the schema in the subflow.",
+                            "nodeId": "rmlvzfp7qq"
                         }
                     ],
                     "rulesApplied": [
@@ -32,9 +33,10 @@
                             "errors": [
                                 {
                                     "code": "dv-er-subflow-003",
-                                    "message": "Input Schema values 'inputSchemaSubflow1' for 'subflow1' subflow is not configured in main flow.",
+                                    "message": "Input Schema values for 'subflow1' subflow is not configured.",
                                     "type": "error",
-                                    "recommendation": "The input schema values for the 'subflow1' subflow are not currently configured. Configure the schema in the subflow."
+                                    "recommendation": "The input schema values for the 'subflow1' subflow are not currently configured. Configure the schema in the subflow.",
+                                    "nodeId": "rmlvzfp7qq"
                                 }
                             ]
                         }

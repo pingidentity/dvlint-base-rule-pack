@@ -25,8 +25,8 @@ class DVRule extends LintRule {
         "In this subflow, '%' points back to '%', which can cause import and export errors. Configure the subflow to return to the parent flow.",
     });
     this.addCode("dv-er-subflow-003", {
-      description: "Missing Input schema values.",
-      message: "Input Schema values '%' for '%' subflow is not configured in main flow.",
+      description: "Missing Input schema values",
+      message: "Input Schema values for '%' subflow is not configured.",
       type: "error",
       recommendation: "The input schema values for the '%' subflow are not currently configured. Configure the schema in the subflow.",
     });
@@ -92,8 +92,9 @@ class DVRule extends LintRule {
               if (missingFields?.length > 0) {
                 const selectedSubflowName = node.data.properties.subFlowId.value.label;
                 this.addError("dv-er-subflow-003", {
-                  messageArgs: [missingFields.join(', '), selectedSubflowName],
+                  messageArgs: [selectedSubflowName],
                   recommendationArgs: [selectedSubflowName],
+                  nodeId: node.data.id,
                 });
               }
             }
