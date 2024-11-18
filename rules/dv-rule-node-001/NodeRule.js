@@ -24,7 +24,7 @@ class NodeRule extends LintRule {
       description: "All success/error JSON nodes should proper colors",
       message: "Incorrect node color [%] - %",
       type: "best-practice",
-      recommendation: "The [%] - % is not using the correct color. To ensure consistency, use the recommended color: [%].",
+      recommendation: "The <%> is not using the correct color. To ensure consistency, use the recommended color: [%].",
     });
     this.addCode("dv-bp-node-003", {
       description: "All nodes should have a description",
@@ -95,7 +95,7 @@ class NodeRule extends LintRule {
                   data.properties?.backgroundColor?.value.toLowerCase(),
                   `${data.name} (${data.id}) - ${data.capabilityName}`,
                 ],
-                recommendationArgs: [backgroundColor[connectorCapability], `${data.name} (${data.id}) - ${data.capabilityName}`],
+                recommendationArgs: [`${data.name} (${data.id}) - ${data.capabilityName}`, backgroundColor[connectorCapability]],
                 nodeId: data.id,
               });
             }

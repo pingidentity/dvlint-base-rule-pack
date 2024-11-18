@@ -2,7 +2,7 @@
   {
     "name": "@ping-identity/dvlint-base-rule-pack",
     "description": "Collection of base rules used to lint DaVinci flows.",
-    "version": "1.0.5",
+    "version": "1.0.6",
     "rules": [
       {
         "id": "dv-rule-annotations-001",
@@ -150,7 +150,7 @@
             "description": "All success/error JSON nodes should proper colors",
             "message": "Incorrect node color [%] - %",
             "type": "best-practice",
-            "recommendation": "The [%] - % is not using the correct color. To ensure consistency, use the recommended color: [%].",
+            "recommendation": "The <%> is not using the correct color. To ensure consistency, use the recommended color: [%].",
             "code": "dv-bp-node-002"
           },
           "dv-bp-node-003": {
@@ -201,7 +201,7 @@
             "description": "Incorrect ending nodes for PingOne flow.",
             "message": "Incorrect ending nodes for PingOne flow.",
             "type": "error",
-            "recommendation": "This PingOne-enabled flow is missing an appropriate ending node. These flows should conclude with either a 'Return a Success Response' node or a 'Return an Error Response' node.",
+            "recommendation": "This PingOne-enabled flow is missing appropriate ending nodes. These flows should conclude with either a 'Return Success Response (Redirect Flows)' node or a 'Return Error Response (Redirect Flows)' node of the PingOne Authentication connector.",
             "code": "dv-er-pingOneFlow-001"
           }
         },
@@ -227,8 +227,8 @@
             "code": "dv-er-subflow-002"
           },
           "dv-er-subflow-003": {
-            "description": "Missing Input schema values.",
-            "message": "Input Schema values '%' for '%' subflow is not configured in main flow.",
+            "description": "Missing Input schema values",
+            "message": "Input Schema values for '%' subflow is not configured.",
             "type": "error",
             "recommendation": "The input schema values for the '%' subflow are not currently configured. Configure the schema in the subflow.",
             "code": "dv-er-subflow-003"
