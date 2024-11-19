@@ -16,13 +16,13 @@
             {
               "code": "dv-er-variable-002",
               "message": "Variable '{{global.flow.variables.notFound}}' used, but never defined in a Variable connector",
-              "recommendation": "The '%' variable is not defined within a variable connector, which may lead to unexpected behavior. Define the variable appropriately.",
+              "recommendation": "The '{{global.flow.variables.notFound}}' variable is not defined within a variable connector, which may lead to unexpected behavior. Define the variable appropriately.",
               "type": "error"
             },
             {
               "code": "dv-er-variable-001",
               "message": "Variable '{{global.flow.variables.notUsed}}' found, but never used",
-              "recommendation": "The '%' variable has been found but is not utilized in the flow. Consider removing the unused variable.",
+              "recommendation": "The '{{global.flow.variables.notUsed}}' variable has been found but is not utilized in the flow. Consider removing the unused variable.",
               "type": "error"
             }
           ],
@@ -40,13 +40,13 @@
                   "code": "dv-er-variable-002",
                   "message": "Variable '{{global.flow.variables.notFound}}' used, but never defined in a Variable connector",
                   "type": "error",
-                  "recommendation": "The '%' variable is not defined within a variable connector, which may lead to unexpected behavior. Define the variable appropriately."
+                  "recommendation": "The '{{global.flow.variables.notFound}}' variable is not defined within a variable connector, which may lead to unexpected behavior. Define the variable appropriately."
                 },
                 {
                   "code": "dv-er-variable-001",
                   "message": "Variable '{{global.flow.variables.notUsed}}' found, but never used",
                   "type": "error",
-                  "recommendation": "The '%' variable has been found but is not utilized in the flow. Consider removing the unused variable."
+                  "recommendation": "The '{{global.flow.variables.notUsed}}' variable has been found but is not utilized in the flow. Consider removing the unused variable."
                 }
               ]
             }
