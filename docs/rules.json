@@ -2,7 +2,7 @@
   {
     "name": "@ping-identity/dvlint-base-rule-pack",
     "description": "Collection of base rules used to lint DaVinci flows.",
-    "version": "1.0.6",
+    "version": "1.0.7",
     "rules": [
       {
         "id": "dv-rule-annotations-001",
@@ -245,14 +245,14 @@
             "description": "Unused Teleport Found",
             "message": "Teleport '%' found, but never used",
             "type": "error",
-            "recommendation": "A '%' teleport start node has been found, but is not being used. Consider removing it from the flow.",
+            "recommendation": "<%> is not being used. Consider removing it from the flow.",
             "code": "dv-er-teleport-001"
           },
           "dv-er-teleport-002": {
             "description": "Teleport schema mismatch",
             "message": "Teleport schema mismatch.  Attribute '%' found, but not defined",
             "type": "error",
-            "recommendation": "Update the JSON to align with the Teleport node schema, ensuring that the '%' attribute is properly defined..",
+            "recommendation": "Update the JSON to align with the Teleport node schema, ensuring that the '%' attribute is properly defined.",
             "code": "dv-er-teleport-002"
           }
         },
