@@ -44,13 +44,13 @@ class DVRule extends LintRule {
 
       usedVarRefs?.forEach((m) => {
         if (!flowVarRefs.has(m)) {
-          this.addError("dv-er-variable-002", { messageArgs: [m] });
+          this.addError("dv-er-variable-002", { messageArgs: [m], recommendationArgs: [m] });
         }
       });
 
       flowVars?.forEach((v) => {
         if (!usedVarRefs.has(v.ref)) {
-          this.addError("dv-er-variable-001", { messageArgs: [v.ref] });
+          this.addError("dv-er-variable-001", { messageArgs: [v.ref], recommendationArgs: [v.ref] });
         }
       });
     } catch (err) {

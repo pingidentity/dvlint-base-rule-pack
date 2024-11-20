@@ -13,15 +13,14 @@ class TeleportRule extends LintRule {
       description: "Unused Teleport Found",
       message: "Teleport '%' found, but never used",
       type: "error",
-      recommendation:
-        "A '%' teleport start node has been found, but is not being used. Consider removing it from the flow.",
+      recommendation: "<%> is not being used. Consider removing it from the flow.",
     });
     this.addCode("dv-er-teleport-002", {
       description: "Teleport schema mismatch",
       message:
         "Teleport schema mismatch.  Attribute '%' found, but not defined",
       type: "error",
-      recommendation: "Update the JSON to align with the Teleport node schema, ensuring that the '%' attribute is properly defined..",
+      recommendation: "Update the JSON to align with the Teleport node schema, ensuring that the '%' attribute is properly defined.",
     });
   }
 
@@ -50,7 +49,8 @@ class TeleportRule extends LintRule {
       Object.entries(startNodes).forEach(([startNodeId, startNodeTitle]) => {
         if (!gotoNodes.includes(startNodeId)) {
           this.addError("dv-er-teleport-001", {
-            messageArgs: [`${startNodeTitle} (${startNodeId})`],
+            messageArgs: [`${startNodeTitle || ''} (${startNodeId})`],
+            recommendationArgs: [startNodeId],
             nodeId: startNodeId,
           });
         } else {
@@ -83,6 +83,7 @@ class TeleportRule extends LintRule {
               ) {
                 this.addError("dv-er-teleport-002", {
                   messageArgs: [attrName],
+                  recommendationArgs: [attrName],
                   nodeId: gotoNode.data.id,
                 });
 
