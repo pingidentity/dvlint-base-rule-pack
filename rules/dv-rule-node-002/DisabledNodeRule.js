@@ -12,14 +12,14 @@ class DisabledNodeRule extends LintRule {
     this.addCode("dv-er-node-001", {
       description: "Disabled Node Found",
       message: "Disabled node % found",
-      type: "best-practice",
+      type: "error",
       recommendation: "A disabled '%' node has been found. Consider removing it from the flow.",
     });
     this.addCode("dv-er-node-002", {
       description: "Connector Capability not configured",
       message: "Connector Capability not configured",
       type: "error",
-      recommendation: "Configure a capability in <%> connector to ensure proper operation.",
+      recommendation: "Configure a capability in '%' to ensure proper operation.",
     });
 
   }
@@ -39,8 +39,9 @@ class DisabledNodeRule extends LintRule {
           }
 
           if (data.status === 'unconfigured') {
+            const connectorInstanceName = data.name.toLowerCase().includes('connector') ? data.name : data.name + ' connector';
             this.addError("dv-er-node-002", {
-              recommendationArgs: [`${data.name}`],
+              recommendationArgs: [`${connectorInstanceName}`],
               nodeId: data.id,
             });
           }

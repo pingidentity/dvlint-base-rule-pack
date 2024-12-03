@@ -16,7 +16,7 @@
             {
               "code": "dv-er-node-001",
               "message": "Disabled node (v9172ugldd) found",
-              "type": "best-practice",
+              "type": "error",
               "recommendation": "A disabled '(v9172ugldd)' node has been found. Consider removing it from the flow.",
               "nodeId": "v9172ugldd"
             }
@@ -34,7 +34,7 @@
                 {
                   "code": "dv-er-node-001",
                   "message": "Disabled node (v9172ugldd) found",
-                  "type": "best-practice",
+                  "type": "error",
                   "recommendation": "A disabled '(v9172ugldd)' node has been found. Consider removing it from the flow.",
                   "nodeId": "v9172ugldd"
                 }
