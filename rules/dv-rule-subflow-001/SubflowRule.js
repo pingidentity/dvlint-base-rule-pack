@@ -53,10 +53,14 @@ class DVRule extends LintRule {
       let subflowIdInputSchemaMap = {};
       subflows?.forEach((subflow) => {
         if (!subflow.name) {
-          this.addError("dv-er-subflow-001", { messageArgs: [subflow.flowId] });
+          this.addError("dv-er-subflow-001", {
+            flowId: subflow.flowId,
+            messageArgs: [subflow.flowId]
+          });
         } else {
           if (subflow.name !== subflow.label) {
             this.addError("dv-er-subflow-001", {
+              flowId: subflow.flowId,
               messageArgs: [subflow.flowId],
               recommendationArgs: [subflow.flowId],
             });
@@ -69,6 +73,7 @@ class DVRule extends LintRule {
             )
           ) {
             this.addError("dv-er-subflow-002", {
+              flowId: subflow.flowId,
               messageArgs: [subflow.name, targetFlow.name],
               recommendationArgs: [subflow.name, targetFlow.name],
             });

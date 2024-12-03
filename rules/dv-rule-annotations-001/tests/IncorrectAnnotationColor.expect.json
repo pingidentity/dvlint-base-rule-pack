@@ -15,6 +15,7 @@
           "errors": [
             {
               "code": "dv-bp-annotation-001",
+              "flowId": "d493071599c7996c28591f29b3578f2e",
               "message": "Annotation color is not in palette [#3030aeff] (4pmrtt0pi7)",
               "type": "best-practice",
               "recommendation": "The annotation color is not part of the recommended palette. To ensure optimal results, use the suggested colors.",
@@ -22,6 +23,7 @@
             },
             {
               "code": "dv-bp-missing-title-annotation-001",
+              "flowId": "d493071599c7996c28591f29b3578f2e",
               "message": "Each flow should contain a title annotation node with a background color of #4462ed",
               "type": "best-practice",
               "recommendation": "This flow is missing a title annotation node with a proper description. To improve flow organization, add a title annotation node and set the background color to #4462ed."
@@ -38,6 +40,7 @@
               "errors": [
                 {
                   "code": "dv-bp-annotation-001",
+                  "flowId": "d493071599c7996c28591f29b3578f2e",
                   "message": "Annotation color is not in palette [#3030aeff] (4pmrtt0pi7)",
                   "type": "best-practice",
                   "recommendation": "The annotation color is not part of the recommended palette. To ensure optimal results, use the suggested colors.",
@@ -45,6 +48,7 @@
                 },
                 {
                   "code": "dv-bp-missing-title-annotation-001",
+                  "flowId": "d493071599c7996c28591f29b3578f2e",
                   "message": "Each flow should contain a title annotation node with a background color of #4462ed",
                   "type": "best-practice",
                   "recommendation": "This flow is missing a title annotation node with a proper description. To improve flow organization, add a title annotation node and set the background color to #4462ed."

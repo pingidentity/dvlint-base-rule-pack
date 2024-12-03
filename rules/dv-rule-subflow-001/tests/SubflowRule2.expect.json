@@ -15,6 +15,7 @@
           "errors": [
             {
               "code": "dv-er-subflow-002",
+              "flowId": "e33c447380e79c7f622953e0057080a8",
               "message": "Circular SubFlow Dependency Found - 'TLS Main' points back to 'TLS Subflow' via subflow",
               "type": "error",
               "recommendation": "In this subflow, 'TLS Main' points back to 'TLS Subflow', which can cause import and export errors. Configure the subflow to return to the parent flow."
@@ -32,6 +33,7 @@
               "errors": [
                 {
                   "code": "dv-er-subflow-002",
+                  "flowId": "e33c447380e79c7f622953e0057080a8",
                   "message": "Circular SubFlow Dependency Found - 'TLS Main' points back to 'TLS Subflow' via subflow",
                   "type": "error",
                   "recommendation": "In this subflow, 'TLS Main' points back to 'TLS Subflow', which can cause import and export errors. Configure the subflow to return to the parent flow."
