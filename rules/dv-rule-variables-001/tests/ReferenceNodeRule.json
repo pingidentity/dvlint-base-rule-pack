@@ -1,0 +1,265 @@
+{
+    "companyId": "6YWgejhFHGFyhZM57KfdhnYf7fmeMZKM",
+    "connectorIds": [
+      "httpConnector"
+    ],
+    "createdDate": 1733199706724,
+    "currentVersion": 5,
+    "customerId": "1576bd3c19c0fb0a828342b21d46a57e",
+    "description": "",
+    "flowStatus": "enabled",
+    "name": "flow2",
+    "flowId": "91997bdf98466fe24b155490397f65d8",
+    "versionId": 5,
+    "graphData": {
+      "elements": {
+        "nodes": [
+          {
+            "data": {
+              "id": "dxmfopwgnr",
+              "nodeType": "CONNECTION",
+              "connectionId": "481e952e6b11db8360587b8711620786",
+              "connectorId": "httpConnector",
+              "name": "HTTP",
+              "label": "HTTP",
+              "status": "configured",
+              "capabilityName": "customHtmlMessage",
+              "type": "trigger",
+              "properties": {
+                "message": {
+                  "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Hello\"\n      }\n    ]\n  }\n]"
+                },
+                "nodeTitle": {
+                  "value": "Title"
+                },
+                "nodeDescription": {
+                  "value": "desc"
+                }
+              }
+            },
+            "position": {
+              "x": 270,
+              "y": 240
+            },
+            "group": "nodes",
+            "removed": false,
+            "selected": false,
+            "selectable": true,
+            "locked": false,
+            "grabbable": true,
+            "pannable": false,
+            "classes": ""
+          },
+          {
+            "data": {
+              "id": "syfvif58s4",
+              "nodeType": "EVAL",
+              "label": "Evaluator"
+            },
+            "position": {
+              "x": 390,
+              "y": 240
+            },
+            "group": "nodes",
+            "removed": false,
+            "selected": false,
+            "selectable": true,
+            "locked": false,
+            "grabbable": true,
+            "pannable": false,
+            "classes": ""
+          },
+          {
+            "data": {
+              "id": "xg3vdjr344",
+              "nodeType": "CONNECTION",
+              "connectionId": "481e952e6b11db8360587b8711620786",
+              "connectorId": "httpConnector",
+              "name": "HTTP",
+              "label": "HTTP",
+              "status": "configured",
+              "capabilityName": "customHTMLTemplate",
+              "type": "trigger",
+              "properties": {
+                "customHTML": {
+                  "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"http.svg\",\n        \"url\": \"success\",\n        \"data\": \"{{local.dxmfopwgnr.payload.success}}\",\n        \"tooltip\": \"{{local.dxmfopwgnr.payload.success}}\",\n        \"children\": [\n          {\n            \"text\": \"success\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+                },
+                "nodeTitle": {
+                  "value": "title"
+                },
+                "nodeDescription": {
+                  "value": "desc"
+                }
+              }
+            },
+            "position": {
+              "x": 540,
+              "y": 240
+            },
+            "group": "nodes",
+            "removed": false,
+            "selected": false,
+            "selectable": true,
+            "locked": false,
+            "grabbable": true,
+            "pannable": false,
+            "classes": ""
+          },
+          {
+            "data": {
+              "id": "8ve6xiwmj8",
+              "nodeType": "CONNECTION",
+              "connectionId": "481e952e6b11db8360587b8711620786",
+              "connectorId": "httpConnector",
+              "name": "HTTP",
+              "label": "HTTP",
+              "status": "configured",
+              "capabilityName": "customHTMLTemplate",
+              "type": "trigger",
+              "properties": {
+                "customHTML": {
+                  "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"http.svg\",\n        \"url\": \"success\",\n        \"data\": \"{{local.k42obrw9lp.payload.success}}\",\n        \"tooltip\": \"{{local.k42obrw9lp.payload.success}}\",\n        \"children\": [\n          {\n            \"text\": \"success\"\n          }\n        ]\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+                },
+                "nodeTitle": {
+                  "value": "title"
+                },
+                "nodeDescription": {
+                  "value": "desc"
+                }
+              },
+              "idUnique": "ueq9m73x4c"
+            },
+            "position": {
+              "x": 840,
+              "y": 240
+            },
+            "group": "nodes",
+            "removed": false,
+            "selected": false,
+            "selectable": true,
+            "locked": false,
+            "grabbable": true,
+            "pannable": false,
+            "classes": ""
+          },
+          {
+            "data": {
+              "id": "9t1g1s4p9f",
+              "nodeType": "EVAL"
+            },
+            "position": {
+              "x": 689,
+              "y": 238
+            },
+            "group": "nodes",
+            "removed": false,
+            "selected": false,
+            "selectable": true,
+            "locked": false,
+            "grabbable": true,
+            "pannable": false,
+            "classes": ""
+          }
+        ],
+        "edges": [
+          {
+            "data": {
+              "id": "ztnwifysyc",
+              "source": "dxmfopwgnr",
+              "target": "syfvif58s4"
+            },
+            "position": {
+              "x": 0,
+              "y": 0
+            },
+            "group": "edges",
+            "removed": false,
+            "selected": false,
+            "selectable": true,
+            "locked": false,
+            "grabbable": true,
+            "pannable": true,
+            "classes": ""
+          },
+          {
+            "data": {
+              "id": "bi6v405tlv",
+              "source": "syfvif58s4",
+              "target": "xg3vdjr344"
+            },
+            "position": {
+              "x": 0,
+              "y": 0
+            },
+            "group": "edges",
+            "removed": false,
+            "selected": false,
+            "selectable": true,
+            "locked": false,
+            "grabbable": true,
+            "pannable": true,
+            "classes": ""
+          },
+          {
+            "data": {
+              "id": "g9g4q2d2o7",
+              "source": "xg3vdjr344",
+              "target": "9t1g1s4p9f"
+            },
+            "position": {
+              "x": 0,
+              "y": 0
+            },
+            "group": "edges",
+            "removed": false,
+            "selected": false,
+            "selectable": true,
+            "locked": false,
+            "grabbable": true,
+            "pannable": true,
+            "classes": ""
+          },
+          {
+            "data": {
+              "id": "a194cc87jf",
+              "source": "9t1g1s4p9f",
+              "target": "8ve6xiwmj8"
+            },
+            "position": {
+              "x": 0,
+              "y": 0
+            },
+            "group": "edges",
+            "removed": false,
+            "selected": false,
+            "selectable": true,
+            "locked": false,
+            "grabbable": true,
+            "pannable": true,
+            "classes": ""
+          }
+        ]
+      },
+      "data": {},
+      "zoomingEnabled": true,
+      "userZoomingEnabled": true,
+      "zoom": 1,
+      "minZoom": 1e-50,
+      "maxZoom": 1e+50,
+      "panningEnabled": true,
+      "userPanningEnabled": true,
+      "pan": {
+        "x": 0,
+        "y": 0
+      },
+      "boxSelectionEnabled": true,
+      "renderer": {
+        "name": "null"
+      }
+    },
+    "flowColor": "#AFD5FF",
+    "savedDate": 1733199706670,
+    "variables": [],
+    "connections": []
+  }
+  

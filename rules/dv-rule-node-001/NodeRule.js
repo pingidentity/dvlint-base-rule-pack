@@ -105,6 +105,7 @@ class NodeRule extends LintRule {
           if (
             data.nodeType === "CONNECTION" &&
             data.connectorId === "pingOneFormsConnector" &&
+            data.capabilityName === "customForm" &&
             !data.properties?.form?.value
           ) {
             this.addError("dv-er-node-004", {
