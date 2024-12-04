@@ -80,12 +80,14 @@ class LogoRule extends LintRule {
 
         if (!companyLogoFound) {
           this.addError("dv-bp-logo-003", {
+            flowId: flow.flowId,
             messageArgs: ["Flow Id", flow.flowId]
           });
         }
 
         if (!companyNameFound) {
           this.addError("dv-bp-logo-004", {
+            flowId: flow.flowId,
             messageArgs: ["Flow Id", flow.flowId]
           });
         }

@@ -14,10 +14,11 @@
           "errorCount": 1,
           "errors": [
             {
+              "flowId": "bc108596bc400cff38394b5fd9b33f46",
               "code": "dv-er-teleport-001",
               "message": "Teleport 'UNUSED (8ln2qk7de5)' found, but never used",
               "type": "error",
-               "recommendation": "<8ln2qk7de5> is not being used. Consider removing it from the flow."
+              "recommendation": "<8ln2qk7de5> is not being used. Consider removing it from the flow."
             }
           ],
           "rulesApplied": [
@@ -31,6 +32,7 @@
               "errorCount": 1,
               "errors": [
                 {
+                  "flowId": "bc108596bc400cff38394b5fd9b33f46",
                   "code": "dv-er-teleport-001",
                   "message": "Teleport 'UNUSED (8ln2qk7de5)' found, but never used",
                   "type": "error",

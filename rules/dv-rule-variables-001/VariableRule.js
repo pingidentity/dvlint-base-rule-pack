@@ -51,13 +51,19 @@ class DVRule extends LintRule {
 
       usedVarRefs?.forEach((m) => {
         if (!flowVarRefs.has(m)) {
-          this.addError("dv-er-variable-002", { messageArgs: [m], recommendationArgs: [m] });
+          this.addError("dv-er-variable-002", {
+            flowId: this.mainFlow.flowId,
+            messageArgs: [m], recommendationArgs: [m]
+          });
         }
       });
 
       flowVars?.forEach((v) => {
         if (!usedVarRefs.has(v.ref)) {
-          this.addError("dv-er-variable-001", { messageArgs: [v.ref], recommendationArgs: [v.ref] });
+          this.addError("dv-er-variable-001", {
+            flowId: this.mainFlow.flowId,
+            messageArgs: [v.ref], recommendationArgs: [v.ref]
+          });
         }
       });
 
@@ -98,6 +104,7 @@ class DVRule extends LintRule {
           );
 
           this.addError("dv-er-variable-003", {
+            flowId: this.mainFlow.flowId,
             recommendationArgs: [matchingFullStrings.join(', '), node.data.id],
             nodeId: node.data.id
           });

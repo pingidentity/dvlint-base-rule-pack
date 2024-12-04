@@ -47,6 +47,7 @@ class MultiStartRule extends LintRule {
         if (notTargets.length > 1) {
           notTargets.forEach((node) =>
             this.addError("dv-er-multi-start-001", {
+              flowId: flow.flowId,
               messageArgs: [`${node.nodeId} (${node.nodeType})`],
               recommendationArgs: [`${node.nodeId} (${node.nodeType})`],
             })

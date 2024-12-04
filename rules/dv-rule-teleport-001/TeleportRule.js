@@ -49,6 +49,7 @@ class TeleportRule extends LintRule {
       Object.entries(startNodes).forEach(([startNodeId, startNodeTitle]) => {
         if (!gotoNodes.includes(startNodeId)) {
           this.addError("dv-er-teleport-001", {
+            flowId: this.mainFlow.flowId,
             messageArgs: [`${startNodeTitle || ''} (${startNodeId})`],
             recommendationArgs: [startNodeId],
             nodeId: startNodeId,
@@ -82,6 +83,7 @@ class TeleportRule extends LintRule {
                 startNodeInputSchemaJSON.properties[attrName] === undefined
               ) {
                 this.addError("dv-er-teleport-002", {
+                  flowId: this.mainFlow.flowId,
                   messageArgs: [attrName],
                   recommendationArgs: [attrName],
                   nodeId: gotoNode.data.id,

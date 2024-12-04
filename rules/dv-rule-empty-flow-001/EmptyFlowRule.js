@@ -21,7 +21,8 @@ class EmptyFlow extends LintRule {
     try {
       for (const flow of this.allFlows) {
         if (Object.keys(flow.graphData.elements).length === 0) {
-          this.addError("dv-er-empty-flow-001");
+          this.addError("dv-er-empty-flow-001",
+            { flowId: flow.flowId });
         }
       }
     } catch (err) {
