@@ -22,7 +22,9 @@ class DebugOffRule extends LintRule {
       for (const flow of this.allFlows) {
         /* Checks the flow settings to determine if debug is on (loglevel === 3) or off (loglevel === 1 or 2) */
         if (flow.settings?.logLevel === 3) {
-          this.addError("dv-bp-debug-off-001");
+          this.addError("dv-bp-debug-off-001",
+            { flowId: flow.flowId }
+          );
         }
       }
     } catch (err) {

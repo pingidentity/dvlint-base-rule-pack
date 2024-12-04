@@ -56,6 +56,7 @@ class NodeRule extends LintRule {
             )
           ) {
             this.addError("dv-bp-node-001", {
+              flowId: flow.flowId,
               messageArgs: [data.id, data.name],
               recommendationArgs: [data.id, data.name],
               nodeId: data.id,
@@ -72,6 +73,7 @@ class NodeRule extends LintRule {
             )
           ) {
             this.addError("dv-bp-node-003", {
+              flowId: flow.flowId,
               messageArgs: [data.id, data.name],
               recommendationArgs: [data.id, data.name],
               nodeId: data.id,
@@ -91,6 +93,7 @@ class NodeRule extends LintRule {
                 .startsWith(backgroundColor[connectorCapability])
             ) {
               this.addError("dv-bp-node-002", {
+                flowId: flow.flowId,
                 messageArgs: [
                   data.properties?.backgroundColor?.value.toLowerCase(),
                   `${data.name} (${data.id}) - ${data.capabilityName}`,
@@ -109,6 +112,7 @@ class NodeRule extends LintRule {
             !data.properties?.form?.value
           ) {
             this.addError("dv-er-node-004", {
+              flowId: flow.flowId,
               recommendationArgs: [data.id],
               nodeId: data.id,
             });

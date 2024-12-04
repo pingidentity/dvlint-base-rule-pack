@@ -14,6 +14,7 @@
                     "errorCount": 1,
                     "errors": [
                         {
+                            "flowId": "91997bdf98466fe24b155490397f65d8",
                             "code": "dv-er-variable-003",
                             "message": "Referenced node in local variable doesn't exist",
                             "type": "error",
@@ -32,6 +33,7 @@
                             "errorCount": 1,
                             "errors": [
                                 {
+                                    "flowId": "91997bdf98466fe24b155490397f65d8",
                                     "code": "dv-er-variable-003",
                                     "message": "Referenced node in local variable doesn't exist",
                                     "type": "error",
