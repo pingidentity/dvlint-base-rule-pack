@@ -1,0 +1,50 @@
+{
+    "name": "PingOne DaVinci Linter",
+    "pass": false,
+    "errorCount": 1,
+    "rulePackResults": [
+        {
+            "pass": false,
+            "errorCount": 1,
+            "lintResults": [
+                {
+                    "flowName": "flow2",
+                    "flowId": "91997bdf98466fe24b155490397f65d8",
+                    "pass": false,
+                    "errorCount": 1,
+                    "errors": [
+                        {
+                            "code": "dv-er-variable-003",
+                            "message": "Referenced node in local variable doesn't exist",
+                            "type": "error",
+                            "recommendation": "The local variable(s) - 'local.k42obrw9lp.payload.success' contains a node id which doesn't exist within the flow",
+                            "nodeId": "8ve6xiwmj8"
+                        }
+                    ],
+                    "rulesApplied": [
+                        "dv-rule-variables-001"
+                    ],
+                    "ruleResults": [
+                        {
+                            "ruleId": "dv-rule-variables-001",
+                            "ruleDescription": "Ensure that flow variables are used in flow.  And check for flow variables referenced in nodes but not defined",
+                            "pass": false,
+                            "errorCount": 1,
+                            "errors": [
+                                {
+                                    "code": "dv-er-variable-003",
+                                    "message": "Referenced node in local variable doesn't exist",
+                                    "type": "error",
+                                    "recommendation": "The local variable(s) - 'local.k42obrw9lp.payload.success' contains a node id which doesn't exist within the flow",
+                                    "nodeId": "8ve6xiwmj8"
+                                }
+                            ]
+                        }
+                    ],
+                    "rulesIgnored": []
+                }
+            ],
+            "rulesIgnored": true
+        }
+    ]
+}

@@ -2,7 +2,7 @@
   {
     "name": "@ping-identity/dvlint-base-rule-pack",
     "description": "Collection of base rules used to lint DaVinci flows.",
-    "version": "1.0.7",
+    "version": "1.0.8",
     "rules": [
       {
         "id": "dv-rule-annotations-001",
@@ -178,7 +178,7 @@
           "dv-er-node-001": {
             "description": "Disabled Node Found",
             "message": "Disabled node % found",
-            "type": "best-practice",
+            "type": "error",
             "recommendation": "A disabled '%' node has been found. Consider removing it from the flow.",
             "code": "dv-er-node-001"
           },
@@ -186,7 +186,7 @@
             "description": "Connector Capability not configured",
             "message": "Connector Capability not configured",
             "type": "error",
-            "recommendation": "Configure a capability in <%> connector to ensure proper operation.",
+            "recommendation": "Configure a capability in '%' to ensure proper operation.",
             "code": "dv-er-node-002"
           }
         },
@@ -276,6 +276,13 @@
             "type": "error",
             "recommendation": "The '%' variable is not defined within a variable connector, which may lead to unexpected behavior. Define the variable appropriately.",
             "code": "dv-er-variable-002"
+          },
+          "dv-er-variable-003": {
+            "description": "Referenced node in variable doesn't exist",
+            "message": "Referenced node in local variable doesn't exist",
+            "type": "error",
+            "recommendation": "The local variable(s) - '%' contains a node id which doesn't exist within the flow",
+            "code": "dv-er-variable-003"
           }
         },
         "reference": "",

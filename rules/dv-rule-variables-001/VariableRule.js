@@ -25,6 +25,13 @@ class DVRule extends LintRule {
       recommendation:
         "The '%' variable is not defined within a variable connector, which may lead to unexpected behavior. Define the variable appropriately.",
     });
+
+    this.addCode("dv-er-variable-003", {
+      description: "Referenced node in variable doesn't exist",
+      message: "Referenced node in local variable doesn't exist",
+      type: "error",
+      recommendation: "The local variable(s) - '%' contains a node id which doesn't exist within the flow"
+    });
   }
 
   runRule() {
@@ -53,6 +60,51 @@ class DVRule extends LintRule {
           this.addError("dv-er-variable-001", { messageArgs: [v.ref], recommendationArgs: [v.ref] });
         }
       });
+
+
+      // Logic to check if local variable nodeId is from the same flow
+      const targetFlow = this.mainFlow;
+      const mainFlowNodeIdArr = targetFlow?.graphData.elements?.nodes?.map(node => node.data.id);
+
+      targetFlow?.graphData?.elements?.nodes?.forEach((node) => {
+        let stringVal = JSON.stringify(node.data.properties) || '';
+
+        const pattern = /\{\{(.*?)\}\}/g; // regex pattern to match all instances of {{...}}
+        const matches = [...stringVal.matchAll(pattern)];
+        const localVarArray = matches.map(match => match[1]);
+        const uniqueLocalVariables = [...new Set(localVarArray)];
+
+        const nodeIdPattern = /\b[a-z0-9]{10}\b/g; // regx to pick nodeIds
+        let localVarNodeIdArr = []
+        uniqueLocalVariables.forEach(v => {
+          if (v.includes('local.')) {
+            const matchesNodeId = [...v.matchAll(nodeIdPattern)];
+            let nodeIds = matchesNodeId.map(match => match[0])
+            localVarNodeIdArr = [...localVarNodeIdArr, ...nodeIds];
+          }
+        })
+        const uniqueNodeIds = [...new Set(localVarNodeIdArr)];
+
+        let errorIdToShow = []
+        uniqueNodeIds.forEach(nodeId => {
+          if (!mainFlowNodeIdArr.includes(nodeId)) {
+            errorIdToShow.push(nodeId);
+          }
+        });
+
+        if (errorIdToShow.length > 0) {
+          const matchingFullStrings = uniqueLocalVariables.filter(fullString =>
+            errorIdToShow.some(substring => fullString.includes(substring))
+          );
+
+          this.addError("dv-er-variable-003", {
+            recommendationArgs: [matchingFullStrings.join(', '), node.data.id],
+            nodeId: node.data.id
+          });
+        }
+
+      });
+
     } catch (err) {
       this.addError(undefined, { messageArgs: [`${err}`] });
     }
