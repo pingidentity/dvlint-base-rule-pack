@@ -50,10 +50,7 @@ class NodeRule extends LintRule {
           if (
             data.nodeType === "CONNECTION" &&
             !data.properties?.nodeTitle?.value &&
-            !(
-              (data.name === "Teleport" || data.name === "Node") &&
-              data.capabilityName === "goToNode"
-            )
+            !(data.capabilityName === 'goToNode' || data.capabilityName === 'returnBackToCallingNode')
           ) {
             this.addError("dv-bp-node-001", {
               flowId: flow.flowId,
@@ -67,10 +64,7 @@ class NodeRule extends LintRule {
           if (
             data.nodeType === "CONNECTION" &&
             !data.properties?.nodeDescription?.value &&
-            !(
-              (data.name === "Teleport" || data.name === "Node") &&
-              data.capabilityName === "goToNode"
-            )
+            !(data.capabilityName === 'goToNode' || data.capabilityName === 'returnBackToCallingNode')
           ) {
             this.addError("dv-bp-node-003", {
               flowId: flow.flowId,
@@ -95,7 +89,7 @@ class NodeRule extends LintRule {
               this.addError("dv-bp-node-002", {
                 flowId: flow.flowId,
                 messageArgs: [
-                  data.properties?.backgroundColor?.value.toLowerCase(),
+                  data.properties?.backgroundColor?.value.toLowerCase() || '',
                   `${data.name} (${data.id}) - ${data.capabilityName}`,
                 ],
                 recommendationArgs: [`${data.name} (${data.id}) - ${data.capabilityName}`, backgroundColor[connectorCapability]],

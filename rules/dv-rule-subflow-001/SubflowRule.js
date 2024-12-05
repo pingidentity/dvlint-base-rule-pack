@@ -97,6 +97,7 @@ class DVRule extends LintRule {
               if (missingFields?.length > 0) {
                 const selectedSubflowName = node.data.properties.subFlowId.value.label;
                 this.addError("dv-er-subflow-003", {
+                  flowId: targetFlow.flowId,
                   messageArgs: [selectedSubflowName],
                   recommendationArgs: [selectedSubflowName],
                   nodeId: node.data.id,
