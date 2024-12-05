@@ -50,7 +50,7 @@ class NodeRule extends LintRule {
           if (
             data.nodeType === "CONNECTION" &&
             !data.properties?.nodeTitle?.value &&
-             data.connectorId !== 'nodeConnector'
+            !( data.capabilityName === 'goToNode' || data.capabilityName === 'returnBackToCallingNode')
           ) {
             this.addError("dv-bp-node-001", {
               flowId: flow.flowId,
@@ -64,7 +64,7 @@ class NodeRule extends LintRule {
           if (
             data.nodeType === "CONNECTION" &&
             !data.properties?.nodeDescription?.value &&
-            data.connectorId !== 'nodeConnector'
+            !( data.capabilityName === 'goToNode' || data.capabilityName === 'returnBackToCallingNode')
           ) {
             this.addError("dv-bp-node-003", {
               flowId: flow.flowId,
