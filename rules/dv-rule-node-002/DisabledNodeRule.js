@@ -32,6 +32,7 @@ class DisabledNodeRule extends LintRule {
 
           if (data.isDisabled === true) {
             this.addError("dv-er-node-001", {
+              flowId: flow.flowId,
               messageArgs: [`(${data.id})`],
               recommendationArgs: [`(${data.id})`],
               nodeId: data.id,
@@ -42,6 +43,7 @@ class DisabledNodeRule extends LintRule {
           if (data.status === 'unconfigured') {
             const connectorInstanceName = data.name.toLowerCase().includes('connector') ? data.name : data.name + ' connector';
             this.addError("dv-er-node-002", {
+              flowId: flow.flowId,
               recommendationArgs: [`${connectorInstanceName}`],
               nodeId: data.id,
               flowId: flow.flowId,
