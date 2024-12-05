@@ -1,26 +1,18 @@
 {
   "name": "PingOne DaVinci Linter",
   "pass": false,
-  "errorCount": 3,
+  "errorCount": 2,
   "rulePackResults": [
     {
       "pass": false,
-      "errorCount": 3,
+      "errorCount": 2,
       "lintResults": [
         {
           "flowId": "47360733f8216ad35114e9a787ca83e0",
           "flowName": "Starter Flow",
           "pass": false,
-          "errorCount": 3,
+          "errorCount": 2,
           "errors": [
-            {
-              "flowId": "47360733f8216ad35114e9a787ca83e0",
-              "code": "dv-bp-node-003",
-              "message": "Missing Node Description on node (4zjizi23c6 - Node)",
-              "nodeId": "4zjizi23c6",
-              "recommendation": "The (4zjizi23c6 Node) node is missing a description. For optimal clarity, add a meaningful description.",
-              "type": "best-practice"
-            },
             {
               "flowId": "47360733f8216ad35114e9a787ca83e0",
               "code": "dv-bp-node-001",
@@ -46,16 +38,8 @@
               "ruleId": "dv-rule-node-001",
               "ruleDescription": "Ensure nodes have names/titles",
               "pass": false,
-              "errorCount": 3,
+              "errorCount": 2,
               "errors": [
-                {
-                  "flowId": "47360733f8216ad35114e9a787ca83e0",
-                  "code": "dv-bp-node-003",
-                  "message": "Missing Node Description on node (4zjizi23c6 - Node)",
-                  "nodeId": "4zjizi23c6",
-                  "recommendation": "The (4zjizi23c6 Node) node is missing a description. For optimal clarity, add a meaningful description.",
-                  "type": "best-practice"
-                },
                 {
                   "flowId": "47360733f8216ad35114e9a787ca83e0",
                   "code": "dv-bp-node-001",

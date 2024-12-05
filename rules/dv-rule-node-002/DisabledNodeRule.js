@@ -35,6 +35,7 @@ class DisabledNodeRule extends LintRule {
               messageArgs: [`(${data.id})`],
               recommendationArgs: [`(${data.id})`],
               nodeId: data.id,
+              flowId: flow.flowId,
             });
           }
 
@@ -43,6 +44,7 @@ class DisabledNodeRule extends LintRule {
             this.addError("dv-er-node-002", {
               recommendationArgs: [`${connectorInstanceName}`],
               nodeId: data.id,
+              flowId: flow.flowId,
             });
           }
         });

@@ -35,6 +35,7 @@ class PingOneFlowRule extends LintRule {
         if (!validEndNode) {
           this.addError("dv-er-pingOneFlow-001", {
             messageArgs: [targetFlow.name],
+            flowId: targetFlow.flowId,
           });
         }
       }

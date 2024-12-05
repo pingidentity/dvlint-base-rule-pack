@@ -100,6 +100,7 @@ class DVRule extends LintRule {
                   messageArgs: [selectedSubflowName],
                   recommendationArgs: [selectedSubflowName],
                   nodeId: node.data.id,
+                  flowId: targetFlow.flowId
                 });
               }
             }
