@@ -22,7 +22,7 @@ class PingOneFlowRule extends LintRule {
 
       // Incorrect ending nodes for PingOne flow
       if (targetFlow?.settings?.pingOneFlow) {
-        const endNodesCapability = ['returnSuccessResponseRedirect', 'returnErrorResponseRedirect'];        
+        const endNodesCapability = ['returnSuccessResponseRedirect', 'returnErrorResponseRedirect'];
         const endNodesData = targetFlow.graphData.elements.nodes?.filter(node => endNodesCapability.includes(node.data.capabilityName)) || [];
         const nodeIdMap = endNodesData.map(node => node.data.id);
         const nodeSourceMap = targetFlow.graphData.elements.edges?.map(edge => edge.data.source) || [];
@@ -34,6 +34,7 @@ class PingOneFlowRule extends LintRule {
         });
         if (!validEndNode) {
           this.addError("dv-er-pingOneFlow-001", {
+            flowId: targetFlow.flowId,
             messageArgs: [targetFlow.name],
           });
         }
