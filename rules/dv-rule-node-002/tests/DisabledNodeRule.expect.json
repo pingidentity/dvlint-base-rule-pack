@@ -15,9 +15,9 @@
           "errors": [
             {
               "code": "dv-er-node-001",
-              "message": "Disabled node (v9172ugldd) found",
+              "message": "Disabled node found",
               "type": "error",
-              "recommendation": "A disabled '(v9172ugldd)' node has been found. Consider removing it from the flow.",
+              "recommendation": "A disabled (v9172ugldd HTTP) node has been found. Consider removing it from the flow.",
               "nodeId": "v9172ugldd"
             }
           ],
@@ -33,9 +33,9 @@
               "errors": [
                 {
                   "code": "dv-er-node-001",
-                  "message": "Disabled node (v9172ugldd) found",
+                  "message": "Disabled node found",
                   "type": "error",
-                  "recommendation": "A disabled '(v9172ugldd)' node has been found. Consider removing it from the flow.",
+                  "recommendation": "A disabled (v9172ugldd HTTP) node has been found. Consider removing it from the flow.",
                   "nodeId": "v9172ugldd"
                 }
               ]
