@@ -2,7 +2,7 @@
   {
     "name": "@ping-identity/dvlint-base-rule-pack",
     "description": "Collection of base rules used to lint DaVinci flows.",
-    "version": "1.1.1",
+    "version": "1.1.2",
     "rules": [
       {
         "id": "dv-rule-annotations-001",
@@ -126,7 +126,7 @@
         "codes": {
           "dv-er-multi-start-001": {
             "description": "Multiple start points or floating node(s) found",
-            "message": "Node % could be one of multiple start points, or floating",
+            "message": "Flow has multiple start points or a floating node",
             "type": "error",
             "recommendation": "The '%' node is either disconnected or has multiple starting points. Ensure that the node is correctly connected and has only one starting point.",
             "code": "dv-er-multi-start-001"
@@ -141,21 +141,21 @@
         "codes": {
           "dv-bp-node-001": {
             "description": "All nodes should have a title",
-            "message": "Missing nodeTitle on node (% - %)",
+            "message": "Missing node title",
             "type": "best-practice",
             "recommendation": "The (% %) node is missing a title. For optimal clarity, add a descriptive title.",
             "code": "dv-bp-node-001"
           },
           "dv-bp-node-002": {
             "description": "All success/error JSON nodes should proper colors",
-            "message": "Incorrect node color [%] - %",
+            "message": "Incorrect node color",
             "type": "best-practice",
-            "recommendation": "The <%> is not using the correct color. To ensure consistency, use the recommended color: [%].",
+            "recommendation": "The (% %) is not using the correct color. To ensure consistency, use the recommended color: [%].",
             "code": "dv-bp-node-002"
           },
           "dv-bp-node-003": {
             "description": "All nodes should have a description",
-            "message": "Missing Node Description on node (% - %)",
+            "message": "Missing node description",
             "type": "best-practice",
             "recommendation": "The (% %) node is missing a description. For optimal clarity, add a meaningful description.",
             "code": "dv-bp-node-003"
@@ -177,9 +177,9 @@
         "codes": {
           "dv-er-node-001": {
             "description": "Disabled Node Found",
-            "message": "Disabled node % found",
+            "message": "Disabled node found",
             "type": "error",
-            "recommendation": "A disabled '%' node has been found. Consider removing it from the flow.",
+            "recommendation": "A disabled (% %) node has been found. Consider removing it from the flow.",
             "code": "dv-er-node-001"
           },
           "dv-er-node-002": {
@@ -214,21 +214,21 @@
         "codes": {
           "dv-er-subflow-001": {
             "description": "Subflow names mismatched",
-            "message": "Incorrect or Missing Subflow in (%)",
+            "message": "Incorrect or missing subflow",
             "type": "error",
             "recommendation": "There is an incorrect or missing subflow in the (%) flow. Ensure that the appropriate subflow is selected and that the names match within the configuration.",
             "code": "dv-er-subflow-001"
           },
           "dv-er-subflow-002": {
             "description": "Circular SubFlow Found",
-            "message": "Circular SubFlow Dependency Found - '%' points back to '%' via subflow",
+            "message": "Circular subflow dependency found",
             "type": "error",
             "recommendation": "In this subflow, '%' points back to '%', which can cause import and export errors. Configure the subflow to return to the parent flow.",
             "code": "dv-er-subflow-002"
           },
           "dv-er-subflow-003": {
             "description": "Missing Input schema values",
-            "message": "Input Schema values for '%' subflow is not configured.",
+            "message": "Subflow input schema missing",
             "type": "error",
             "recommendation": "The input schema values for the '%' subflow are not currently configured. Configure the schema in the subflow.",
             "code": "dv-er-subflow-003"
@@ -243,14 +243,14 @@
         "codes": {
           "dv-er-teleport-001": {
             "description": "Unused Teleport Found",
-            "message": "Teleport '%' found, but never used",
+            "message": "Unused teleport node found",
             "type": "error",
             "recommendation": "<%> is not being used. Consider removing it from the flow.",
             "code": "dv-er-teleport-001"
           },
           "dv-er-teleport-002": {
             "description": "Teleport schema mismatch",
-            "message": "Teleport schema mismatch.  Attribute '%' found, but not defined",
+            "message": "Teleport schema mismatch",
             "type": "error",
             "recommendation": "Update the JSON to align with the Teleport node schema, ensuring that the '%' attribute is properly defined.",
             "code": "dv-er-teleport-002"
@@ -265,14 +265,14 @@
         "codes": {
           "dv-er-variable-001": {
             "description": "Unused Variable Found",
-            "message": "Variable '%' found, but never used",
+            "message": "Unused Variable Found",
             "type": "error",
             "recommendation": "The '%' variable has been found but is not utilized in the flow. Consider removing the unused variable.",
             "code": "dv-er-variable-001"
           },
           "dv-er-variable-002": {
-            "description": "Variable '%' used, but never defined in a Variable connector",
-            "message": "Variable '%' used, but never defined in a Variable connector",
+            "description": "Undefined variable found",
+            "message": "Undefined variable found",
             "type": "error",
             "recommendation": "The '%' variable is not defined within a variable connector, which may lead to unexpected behavior. Define the variable appropriately.",
             "code": "dv-er-variable-002"
