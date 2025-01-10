@@ -11,9 +11,9 @@ class DisabledNodeRule extends LintRule {
 
     this.addCode("dv-er-node-001", {
       description: "Disabled Node Found",
-      message: "Disabled node % found",
+      message: "Disabled node found",
       type: "error",
-      recommendation: "A disabled '%' node has been found. Consider removing it from the flow.",
+      recommendation: "A disabled (% %) node has been found. Consider removing it from the flow.",
     });
     this.addCode("dv-er-node-002", {
       description: "Connector Capability not configured",
@@ -33,8 +33,7 @@ class DisabledNodeRule extends LintRule {
           if (data.isDisabled === true) {
             this.addError("dv-er-node-001", {
               flowId: flow.flowId,
-              messageArgs: [`(${data.id})`],
-              recommendationArgs: [`(${data.id})`],
+              recommendationArgs: [data.id, data.name],
               nodeId: data.id,
             });
           }

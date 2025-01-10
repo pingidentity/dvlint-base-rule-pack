@@ -12,15 +12,14 @@ class DVRule extends LintRule {
 
     this.addCode("dv-er-variable-001", {
       description: "Unused Variable Found",
-      message: "Variable '%' found, but never used",
+      message: "Unused Variable Found",
       type: "error",
       recommendation:
         "The '%' variable has been found but is not utilized in the flow. Consider removing the unused variable.",
     });
     this.addCode("dv-er-variable-002", {
-      description:
-        "Variable '%' used, but never defined in a Variable connector",
-      message: "Variable '%' used, but never defined in a Variable connector",
+      description:"Undefined variable found",
+      message: "Undefined variable found",
       type: "error",
       recommendation:
         "The '%' variable is not defined within a variable connector, which may lead to unexpected behavior. Define the variable appropriately.",
@@ -53,7 +52,7 @@ class DVRule extends LintRule {
         if (!flowVarRefs.has(m)) {
           this.addError("dv-er-variable-002", {
             flowId: this.mainFlow.flowId,
-            messageArgs: [m], recommendationArgs: [m]
+            recommendationArgs: [m]
           });
         }
       });
@@ -62,7 +61,7 @@ class DVRule extends LintRule {
         if (!usedVarRefs.has(v.ref)) {
           this.addError("dv-er-variable-001", {
             flowId: this.mainFlow.flowId,
-            messageArgs: [v.ref], recommendationArgs: [v.ref]
+            recommendationArgs: [v.ref]
           });
         }
       });

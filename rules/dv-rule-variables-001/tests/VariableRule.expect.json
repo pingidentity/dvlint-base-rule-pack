@@ -16,14 +16,14 @@
             {
               "flowId": "b40ccd54d88cb637ba4c635c6e788c6b",
               "code": "dv-er-variable-002",
-              "message": "Variable '{{global.flow.variables.notFound}}' used, but never defined in a Variable connector",
+              "message": "Undefined variable found",
               "recommendation": "The '{{global.flow.variables.notFound}}' variable is not defined within a variable connector, which may lead to unexpected behavior. Define the variable appropriately.",
               "type": "error"
             },
             {
               "flowId": "b40ccd54d88cb637ba4c635c6e788c6b",
               "code": "dv-er-variable-001",
-              "message": "Variable '{{global.flow.variables.notUsed}}' found, but never used",
+              "message": "Unused Variable Found",
               "recommendation": "The '{{global.flow.variables.notUsed}}' variable has been found but is not utilized in the flow. Consider removing the unused variable.",
               "type": "error"
             }
@@ -41,14 +41,14 @@
                 {
                   "flowId": "b40ccd54d88cb637ba4c635c6e788c6b",
                   "code": "dv-er-variable-002",
-                  "message": "Variable '{{global.flow.variables.notFound}}' used, but never defined in a Variable connector",
+                  "message": "Undefined variable found",
                   "type": "error",
                   "recommendation": "The '{{global.flow.variables.notFound}}' variable is not defined within a variable connector, which may lead to unexpected behavior. Define the variable appropriately."
                 },
                 {
                   "flowId": "b40ccd54d88cb637ba4c635c6e788c6b",
                   "code": "dv-er-variable-001",
-                  "message": "Variable '{{global.flow.variables.notUsed}}' found, but never used",
+                  "message": "Unused Variable Found",
                   "type": "error",
                   "recommendation": "The '{{global.flow.variables.notUsed}}' variable has been found but is not utilized in the flow. Consider removing the unused variable."
                 }

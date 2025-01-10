@@ -16,19 +16,19 @@ class NodeRule extends LintRule {
 
     this.addCode("dv-bp-node-001", {
       description: "All nodes should have a title",
-      message: "Missing nodeTitle on node (% - %)",
+      message: "Missing node title",
       type: "best-practice",
       recommendation: "The (% %) node is missing a title. For optimal clarity, add a descriptive title.",
     });
     this.addCode("dv-bp-node-002", {
       description: "All success/error JSON nodes should proper colors",
-      message: "Incorrect node color [%] - %",
+      message: "Incorrect node color",
       type: "best-practice",
-      recommendation: "The <%> is not using the correct color. To ensure consistency, use the recommended color: [%].",
+      recommendation: "The (% %) is not using the correct color. To ensure consistency, use the recommended color: [%].",
     });
     this.addCode("dv-bp-node-003", {
       description: "All nodes should have a description",
-      message: "Missing Node Description on node (% - %)",
+      message: "Missing node description",
       type: "best-practice",
       recommendation: "The (% %) node is missing a description. For optimal clarity, add a meaningful description.",
     });
@@ -42,6 +42,7 @@ class NodeRule extends LintRule {
 
   runRule() {
     try {
+      const ignoreNodeTypes = ["nodeConnector", "functionsConnector"];
       for (const flow of this.allFlows) {
         flow?.graphData?.elements?.nodes?.forEach((node) => {
           const { data } = node;
@@ -49,12 +50,11 @@ class NodeRule extends LintRule {
           // Check for node title
           if (
             data.nodeType === "CONNECTION" &&
-            !data.properties?.nodeTitle?.value &&
-            !(data.capabilityName === 'goToNode' || data.capabilityName === 'returnBackToCallingNode')
+            !(data.capabilityName === 'goToNode' || data.capabilityName === 'returnBackToCallingNode') &&
+            !data.properties?.nodeTitle?.value
           ) {
             this.addError("dv-bp-node-001", {
               flowId: flow.flowId,
-              messageArgs: [data.id, data.name],
               recommendationArgs: [data.id, data.name],
               nodeId: data.id,
             });
@@ -62,13 +62,12 @@ class NodeRule extends LintRule {
 
           // Check for node description
           if (
+            !ignoreNodeTypes.includes(data.connectorId) &&
             data.nodeType === "CONNECTION" &&
-            !data.properties?.nodeDescription?.value &&
-            !(data.capabilityName === 'goToNode' || data.capabilityName === 'returnBackToCallingNode')
+            !data.properties?.nodeDescription?.value
           ) {
             this.addError("dv-bp-node-003", {
               flowId: flow.flowId,
-              messageArgs: [data.id, data.name],
               recommendationArgs: [data.id, data.name],
               nodeId: data.id,
             });
@@ -88,11 +87,7 @@ class NodeRule extends LintRule {
             ) {
               this.addError("dv-bp-node-002", {
                 flowId: flow.flowId,
-                messageArgs: [
-                  data.properties?.backgroundColor?.value.toLowerCase() || '',
-                  `${data.name} (${data.id}) - ${data.capabilityName}`,
-                ],
-                recommendationArgs: [`${data.name} (${data.id}) - ${data.capabilityName}`, backgroundColor[connectorCapability]],
+                recommendationArgs: [data.id, data.name, backgroundColor[connectorCapability]],
                 nodeId: data.id,
               });
             }

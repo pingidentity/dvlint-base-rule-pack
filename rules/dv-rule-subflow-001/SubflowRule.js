@@ -11,22 +11,21 @@ class DVRule extends LintRule {
 
     this.addCode("dv-er-subflow-001", {
       description: "Subflow names mismatched",
-      message: "Incorrect or Missing Subflow in (%)",
+      message: "Incorrect or missing subflow",
       type: "error",
       recommendation:
         "There is an incorrect or missing subflow in the (%) flow. Ensure that the appropriate subflow is selected and that the names match within the configuration.",
     });
     this.addCode("dv-er-subflow-002", {
       description: "Circular SubFlow Found",
-      message:
-        "Circular SubFlow Dependency Found - '%' points back to '%' via subflow",
+      message:"Circular subflow dependency found",
       type: "error",
       recommendation:
         "In this subflow, '%' points back to '%', which can cause import and export errors. Configure the subflow to return to the parent flow.",
     });
     this.addCode("dv-er-subflow-003", {
       description: "Missing Input schema values",
-      message: "Input Schema values for '%' subflow is not configured.",
+      message: "Subflow input schema missing",
       type: "error",
       recommendation: "The input schema values for the '%' subflow are not currently configured. Configure the schema in the subflow.",
     });
@@ -49,19 +48,17 @@ class DVRule extends LintRule {
 
       // Create SubFlow Details
       const subflows = this.dvUtil.getSubFlows(targetFlow, supportingFlows);
-      let subflowNameAndFieldMap = {};
       let subflowIdInputSchemaMap = {};
       subflows?.forEach((subflow) => {
         if (!subflow.name) {
           this.addError("dv-er-subflow-001", {
             flowId: subflow.flowId,
-            messageArgs: [subflow.flowId]
+            recommendationArgs: [subflow.flowId]
           });
         } else {
           if (subflow.name !== subflow.label) {
             this.addError("dv-er-subflow-001", {
               flowId: subflow.flowId,
-              messageArgs: [subflow.flowId],
               recommendationArgs: [subflow.flowId],
             });
           }
@@ -74,7 +71,6 @@ class DVRule extends LintRule {
           ) {
             this.addError("dv-er-subflow-002", {
               flowId: subflow.flowId,
-              messageArgs: [subflow.name, targetFlow.name],
               recommendationArgs: [subflow.name, targetFlow.name],
             });
           }
@@ -91,14 +87,13 @@ class DVRule extends LintRule {
         targetFlow.graphData.elements.nodes.forEach(node => {
           if (node.data.nodeType === 'CONNECTION' && node.data.connectorId === 'flowConnector') {
             const propertyKeyArr = Object.keys(node.data.properties);
-            const selectedSubflowId = node.data.properties.subFlowId.value.value;
+            const selectedSubflowId = node.data.properties.subFlowId?.value?.value || '';
             if (propertyKeyArr.length > 0 && (selectedSubflowId in subflowIdInputSchemaMap)) {
               missingFields = subflowIdInputSchemaMap[selectedSubflowId]?.filter(field => !propertyKeyArr.includes(field));
               if (missingFields?.length > 0) {
-                const selectedSubflowName = node.data.properties.subFlowId.value.label;
+                const selectedSubflowName = node.data.properties?.subFlowId?.value?.label;
                 this.addError("dv-er-subflow-003", {
                   flowId: targetFlow.flowId,
-                  messageArgs: [selectedSubflowName],
                   recommendationArgs: [selectedSubflowName],
                   nodeId: node.data.id,
                 });

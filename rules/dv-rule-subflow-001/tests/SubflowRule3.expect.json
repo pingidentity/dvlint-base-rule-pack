@@ -15,7 +15,7 @@
                     "errors": [
                         {
                             "code": "dv-er-subflow-003",
-                            "message": "Input Schema values for 'subflow1' subflow is not configured.",
+                            "message": "Subflow input schema missing",
                             "type": "error",
                             "recommendation": "The input schema values for the 'subflow1' subflow are not currently configured. Configure the schema in the subflow.",
                             "nodeId": "rmlvzfp7qq"
@@ -34,7 +34,7 @@
                                 {
                                     "flowId": "536d2240bb70b78137416562a87f1f81",
                                     "code": "dv-er-subflow-003",
-                                    "message": "Input Schema values for 'subflow1' subflow is not configured.",
+                                    "message": "Subflow input schema missing",
                                     "type": "error",
                                     "recommendation": "The input schema values for the 'subflow1' subflow are not currently configured. Configure the schema in the subflow.",
                                     "nodeId": "rmlvzfp7qq"
