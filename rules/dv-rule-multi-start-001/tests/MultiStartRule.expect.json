@@ -18,21 +18,21 @@
               "code": "dv-er-multi-start-001",
               "message": "Flow has multiple start points or a floating node",
               "type": "error",
-              "recommendation": "The 'v9172ugldd (httpConnector)' node is either disconnected or has multiple starting points. Ensure that the node is correctly connected and has only one starting point."
+              "recommendation": "The 'v9172ugldd (httpConnector)' node is either disconnected or the flow has multiple starting points. Ensure that the node is correctly connected and the flow has only one starting point."
             },
             {
               "flowId": "3de5ba439a95765a5a08242546d963d8",
               "code": "dv-er-multi-start-001",
               "message": "Flow has multiple start points or a floating node",
               "type": "error",
-              "recommendation": "The '20n6fhhgqz (httpConnector)' node is either disconnected or has multiple starting points. Ensure that the node is correctly connected and has only one starting point."
+              "recommendation": "The '20n6fhhgqz (httpConnector)' node is either disconnected or the flow has multiple starting points. Ensure that the node is correctly connected and the flow has only one starting point."
             },
             {
               "flowId": "3de5ba439a95765a5a08242546d963d8",
               "code": "dv-er-multi-start-001",
               "message": "Flow has multiple start points or a floating node",
               "type": "error",
-              "recommendation": "The 'ilgr9525d6 (httpConnector)' node is either disconnected or has multiple starting points. Ensure that the node is correctly connected and has only one starting point."
+              "recommendation": "The 'ilgr9525d6 (httpConnector)' node is either disconnected or the flow has multiple starting points. Ensure that the node is correctly connected and the flow has only one starting point."
             }
           ],
           "rulesApplied": [
@@ -50,21 +50,21 @@
                   "code": "dv-er-multi-start-001",
                   "message": "Flow has multiple start points or a floating node",
                   "type": "error",
-                  "recommendation": "The 'v9172ugldd (httpConnector)' node is either disconnected or has multiple starting points. Ensure that the node is correctly connected and has only one starting point."
+                  "recommendation": "The 'v9172ugldd (httpConnector)' node is either disconnected or the flow has multiple starting points. Ensure that the node is correctly connected and the flow has only one starting point."
                 },
                 {
                   "flowId": "3de5ba439a95765a5a08242546d963d8",
                   "code": "dv-er-multi-start-001",
                   "message": "Flow has multiple start points or a floating node",
                   "type": "error",
-                  "recommendation": "The '20n6fhhgqz (httpConnector)' node is either disconnected or has multiple starting points. Ensure that the node is correctly connected and has only one starting point."
+                  "recommendation": "The '20n6fhhgqz (httpConnector)' node is either disconnected or the flow has multiple starting points. Ensure that the node is correctly connected and the flow has only one starting point."
                 },
                 {
                   "flowId": "3de5ba439a95765a5a08242546d963d8",
                   "code": "dv-er-multi-start-001",
                   "message": "Flow has multiple start points or a floating node",
                   "type": "error",
-                  "recommendation": "The 'ilgr9525d6 (httpConnector)' node is either disconnected or has multiple starting points. Ensure that the node is correctly connected and has only one starting point."
+                  "recommendation": "The 'ilgr9525d6 (httpConnector)' node is either disconnected or the flow has multiple starting points. Ensure that the node is correctly connected and the flow has only one starting point."
                 }
               ]
             }

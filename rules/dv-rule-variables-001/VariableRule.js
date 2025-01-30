@@ -29,7 +29,7 @@ class DVRule extends LintRule {
       description: "Referenced node in variable doesn't exist",
       message: "Referenced node in local variable doesn't exist",
       type: "error",
-      recommendation: "The local variable(s) - '%' contains a node id which doesn't exist within the flow"
+      recommendation: "The local variable(s) - '%' contains a node id which doesn't exist within the flow."
     });
   }
 
@@ -48,30 +48,17 @@ class DVRule extends LintRule {
       const regexToTest = /\{\{global\.flow\.variables\..[a-zA-Z0-9]*\}\}/g;
       const usedVarRefs = new Set(stringToTest.match(regexToTest));
 
-      usedVarRefs?.forEach((m) => {
-        if (!flowVarRefs.has(m)) {
-          this.addError("dv-er-variable-002", {
-            flowId: this.mainFlow.flowId,
-            recommendationArgs: [m]
-          });
-        }
-      });
-
-      flowVars?.forEach((v) => {
-        if (!usedVarRefs.has(v.ref)) {
-          this.addError("dv-er-variable-001", {
-            flowId: this.mainFlow.flowId,
-            recommendationArgs: [v.ref]
-          });
-        }
-      });
-
 
       // Logic to check if local variable nodeId is from the same flow
       const targetFlow = this.mainFlow;
       const mainFlowNodeIdArr = targetFlow?.graphData.elements?.nodes?.map(node => node.data.id);
 
       targetFlow?.graphData?.elements?.nodes?.forEach((node) => {
+
+        if (node?.data.connectorId === "pingOneSSOConnector" && node?.data?.properties && 'identifier' in node?.data?.properties) {
+          delete node.data.properties.identifier;
+        }
+
         let stringVal = JSON.stringify(node.data.properties) || '';
 
         const pattern = /\{\{(.*?)\}\}/g; // regex pattern to match all instances of {{...}}
@@ -80,10 +67,36 @@ class DVRule extends LintRule {
         const uniqueLocalVariables = [...new Set(localVarArray)];
 
         const nodeIdPattern = /\b[a-z0-9]{10}\b/g; // regx to pick nodeIds
-        let localVarNodeIdArr = []
+        let localVarNodeIdArr = [];
+
+        //unused variable check
+        const flowVariables = node.data.properties?.saveFlowVariables?.value;
+        if (node.data.connectorId === 'variablesConnector' && flowVariables?.length > 0) {
+          flowVariables?.forEach((flowVar) => {
+            if (!usedVarRefs.has(`{{global.flow.variables.${flowVar.name}}}`)) {
+              this.addError("dv-er-variable-001", {
+                flowId: this.mainFlow.flowId,
+                recommendationArgs: [`{{global.flow.variables.${flowVar.name}}}`],
+                nodeId: node.data.id
+              });
+            }
+          });
+        }
+
         uniqueLocalVariables.forEach(v => {
+          //check undefined variables
+          if (v.includes('global.flow.variables.')) {
+            if (!flowVarRefs.has(`{{${v}}}`)) {
+              this.addError("dv-er-variable-002", {
+                flowId: this.mainFlow.flowId,
+                recommendationArgs: [`{{${v}}}`],
+                nodeId: node.data.id
+              });
+            }
+          }
+          const localPlusNodeidStr = v.substring(0,16)
           if (v.includes('local.')) {
-            const matchesNodeId = [...v.matchAll(nodeIdPattern)];
+            const matchesNodeId = [...localPlusNodeidStr.matchAll(nodeIdPattern)];
             let nodeIds = matchesNodeId.map(match => match[0])
             localVarNodeIdArr = [...localVarNodeIdArr, ...nodeIds];
           }
