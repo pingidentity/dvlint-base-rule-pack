@@ -2,7 +2,7 @@
   {
     "name": "@ping-identity/dvlint-base-rule-pack",
     "description": "Collection of base rules used to lint DaVinci flows.",
-    "version": "1.1.2",
+    "version": "1.1.3",
     "rules": [
       {
         "id": "dv-rule-annotations-001",
@@ -128,7 +128,7 @@
             "description": "Multiple start points or floating node(s) found",
             "message": "Flow has multiple start points or a floating node",
             "type": "error",
-            "recommendation": "The '%' node is either disconnected or has multiple starting points. Ensure that the node is correctly connected and has only one starting point.",
+            "recommendation": "The '%' node is either disconnected or the flow has multiple starting points. Ensure that the node is correctly connected and the flow has only one starting point.",
             "code": "dv-er-multi-start-001"
           }
         },
@@ -281,7 +281,7 @@
             "description": "Referenced node in variable doesn't exist",
             "message": "Referenced node in local variable doesn't exist",
             "type": "error",
-            "recommendation": "The local variable(s) - '%' contains a node id which doesn't exist within the flow",
+            "recommendation": "The local variable(s) - '%' contains a node id which doesn't exist within the flow.",
             "code": "dv-er-variable-003"
           }
         },

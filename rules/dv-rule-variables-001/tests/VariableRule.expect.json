@@ -14,17 +14,19 @@
           "errorCount": 2,
           "errors": [
             {
+              "code": "dv-er-variable-001",
               "flowId": "b40ccd54d88cb637ba4c635c6e788c6b",
-              "code": "dv-er-variable-002",
-              "message": "Undefined variable found",
-              "recommendation": "The '{{global.flow.variables.notFound}}' variable is not defined within a variable connector, which may lead to unexpected behavior. Define the variable appropriately.",
+              "message": "Unused Variable Found",
+              "nodeId": "899qlenqr0",
+              "recommendation": "The '{{global.flow.variables.notUsed}}' variable has been found but is not utilized in the flow. Consider removing the unused variable.",
               "type": "error"
             },
             {
+              "code": "dv-er-variable-002",
               "flowId": "b40ccd54d88cb637ba4c635c6e788c6b",
-              "code": "dv-er-variable-001",
-              "message": "Unused Variable Found",
-              "recommendation": "The '{{global.flow.variables.notUsed}}' variable has been found but is not utilized in the flow. Consider removing the unused variable.",
+              "message": "Undefined variable found",
+              "nodeId": "hivjw30vly",
+              "recommendation": "The '{{global.flow.variables.notFound}}' variable is not defined within a variable connector, which may lead to unexpected behavior. Define the variable appropriately.",
               "type": "error"
             }
           ],
@@ -39,18 +41,20 @@
               "errorCount": 2,
               "errors": [
                 {
+                  "code": "dv-er-variable-001",
                   "flowId": "b40ccd54d88cb637ba4c635c6e788c6b",
-                  "code": "dv-er-variable-002",
-                  "message": "Undefined variable found",
-                  "type": "error",
-                  "recommendation": "The '{{global.flow.variables.notFound}}' variable is not defined within a variable connector, which may lead to unexpected behavior. Define the variable appropriately."
+                  "message": "Unused Variable Found",
+                  "nodeId": "899qlenqr0",
+                  "recommendation": "The '{{global.flow.variables.notUsed}}' variable has been found but is not utilized in the flow. Consider removing the unused variable.",
+                  "type": "error"
                 },
                 {
+                  "code": "dv-er-variable-002",
                   "flowId": "b40ccd54d88cb637ba4c635c6e788c6b",
-                  "code": "dv-er-variable-001",
-                  "message": "Unused Variable Found",
-                  "type": "error",
-                  "recommendation": "The '{{global.flow.variables.notUsed}}' variable has been found but is not utilized in the flow. Consider removing the unused variable."
+                  "message": "Undefined variable found",
+                  "nodeId": "hivjw30vly",
+                  "recommendation": "The '{{global.flow.variables.notFound}}' variable is not defined within a variable connector, which may lead to unexpected behavior. Define the variable appropriately.",
+                  "type": "error"
                 }
               ]
             }
