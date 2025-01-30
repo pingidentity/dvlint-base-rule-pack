@@ -15,7 +15,7 @@ class MultiStartRule extends LintRule {
       message: "Flow has multiple start points or a floating node",
       type: "error",
       recommendation:
-        "The '%' node is either disconnected or has multiple starting points. Ensure that the node is correctly connected and has only one starting point.",
+        "The '%' node is either disconnected or the flow has multiple starting points. Ensure that the node is correctly connected and the flow has only one starting point.",
     });
   }
 

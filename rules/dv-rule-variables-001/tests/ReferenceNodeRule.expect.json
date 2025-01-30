@@ -18,7 +18,7 @@
                             "code": "dv-er-variable-003",
                             "message": "Referenced node in local variable doesn't exist",
                             "type": "error",
-                            "recommendation": "The local variable(s) - 'local.k42obrw9lp.payload.success' contains a node id which doesn't exist within the flow",
+                            "recommendation": "The local variable(s) - 'local.k42obrw9lp.payload.success' contains a node id which doesn't exist within the flow.",
                             "nodeId": "8ve6xiwmj8"
                         }
                     ],
@@ -37,7 +37,7 @@
                                     "code": "dv-er-variable-003",
                                     "message": "Referenced node in local variable doesn't exist",
                                     "type": "error",
-                                    "recommendation": "The local variable(s) - 'local.k42obrw9lp.payload.success' contains a node id which doesn't exist within the flow",
+                                    "recommendation": "The local variable(s) - 'local.k42obrw9lp.payload.success' contains a node id which doesn't exist within the flow.",
                                     "nodeId": "8ve6xiwmj8"
                                 }
                             ]
