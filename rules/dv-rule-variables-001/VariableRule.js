@@ -13,7 +13,7 @@ class DVRule extends LintRule {
     this.addCode("dv-er-variable-001", {
       description: "Unused Variable Found",
       message: "Unused Variable Found",
-      type: "error",
+      type: "best-practice",
       recommendation:
         "The '%' variable has been found but is not utilized in the flow. Consider removing the unused variable.",
     });

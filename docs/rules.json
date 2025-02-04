@@ -2,7 +2,7 @@
   {
     "name": "@ping-identity/dvlint-base-rule-pack",
     "description": "Collection of base rules used to lint DaVinci flows.",
-    "version": "1.1.3",
+    "version": "1.1.4",
     "rules": [
       {
         "id": "dv-rule-annotations-001",
@@ -223,7 +223,7 @@
             "description": "Circular SubFlow Found",
             "message": "Circular subflow dependency found",
             "type": "error",
-            "recommendation": "In this subflow, '%' points back to '%', which can cause import and export errors. Configure the subflow to return to the parent flow.",
+            "recommendation": "The main flow and subflow  reference each other, creating a circular dependency loop. Modify the flow structure to ensure subflows do not point back to parent flows, preventing execution deadlocks.",
             "code": "dv-er-subflow-002"
           },
           "dv-er-subflow-003": {
@@ -266,7 +266,7 @@
           "dv-er-variable-001": {
             "description": "Unused Variable Found",
             "message": "Unused Variable Found",
-            "type": "error",
+            "type": "best-practice",
             "recommendation": "The '%' variable has been found but is not utilized in the flow. Consider removing the unused variable.",
             "code": "dv-er-variable-001"
           },

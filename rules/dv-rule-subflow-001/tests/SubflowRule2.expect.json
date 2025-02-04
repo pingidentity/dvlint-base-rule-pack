@@ -18,7 +18,7 @@
               "flowId": "e33c447380e79c7f622953e0057080a8",
               "message": "Circular subflow dependency found",
               "type": "error",
-              "recommendation": "In this subflow, 'TLS Main' points back to 'TLS Subflow', which can cause import and export errors. Configure the subflow to return to the parent flow."
+              "recommendation": "The main flow and subflow  reference each other, creating a circular dependency loop. Modify the flow structure to ensure subflows do not point back to parent flows, preventing execution deadlocks."
             }
           ],
           "rulesApplied": [
@@ -36,7 +36,7 @@
                   "flowId": "e33c447380e79c7f622953e0057080a8",
                   "message": "Circular subflow dependency found",
                   "type": "error",
-                  "recommendation": "In this subflow, 'TLS Main' points back to 'TLS Subflow', which can cause import and export errors. Configure the subflow to return to the parent flow."
+                  "recommendation": "The main flow and subflow  reference each other, creating a circular dependency loop. Modify the flow structure to ensure subflows do not point back to parent flows, preventing execution deadlocks."
                 }
               ]
             }
