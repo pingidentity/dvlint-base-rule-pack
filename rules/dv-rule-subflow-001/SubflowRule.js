@@ -21,7 +21,7 @@ class DVRule extends LintRule {
       message:"Circular subflow dependency found",
       type: "error",
       recommendation:
-        "In this subflow, '%' points back to '%', which can cause import and export errors. Configure the subflow to return to the parent flow.",
+        "The main flow and subflow  reference each other, creating a circular dependency loop. Modify the flow structure to ensure subflows do not point back to parent flows, preventing execution deadlocks.",
     });
     this.addCode("dv-er-subflow-003", {
       description: "Missing Input schema values",
@@ -69,9 +69,15 @@ class DVRule extends LintRule {
               targetFlow.flowId
             )
           ) {
-            this.addError("dv-er-subflow-002", {
-              flowId: subflow.flowId,
-              recommendationArgs: [subflow.name, targetFlow.name],
+            subflow?.detail?.graphData?.elements?.nodes?.forEach(node => {
+              if (node.data.nodeType === 'CONNECTION' && node.data.connectorId === 'flowConnector') {
+                if (node.data.properties.subFlowId?.value?.value === targetFlow.flowId) {
+                  this.addError("dv-er-subflow-002", {
+                    flowId: subflow.flowId,
+                    nodeId: node.data.id
+                  });
+                }
+              }
             });
           }
 

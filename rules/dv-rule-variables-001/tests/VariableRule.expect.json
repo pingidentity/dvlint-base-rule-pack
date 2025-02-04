@@ -19,7 +19,7 @@
               "message": "Unused Variable Found",
               "nodeId": "899qlenqr0",
               "recommendation": "The '{{global.flow.variables.notUsed}}' variable has been found but is not utilized in the flow. Consider removing the unused variable.",
-              "type": "error"
+              "type": "best-practice"
             },
             {
               "code": "dv-er-variable-002",
@@ -46,7 +46,7 @@
                   "message": "Unused Variable Found",
                   "nodeId": "899qlenqr0",
                   "recommendation": "The '{{global.flow.variables.notUsed}}' variable has been found but is not utilized in the flow. Consider removing the unused variable.",
-                  "type": "error"
+                  "type": "best-practice"
                 },
                 {
                   "code": "dv-er-variable-002",
