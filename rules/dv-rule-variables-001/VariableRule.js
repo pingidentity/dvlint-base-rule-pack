@@ -55,11 +55,14 @@ class DVRule extends LintRule {
 
       targetFlow?.graphData?.elements?.nodes?.forEach((node) => {
 
+        let properties = node?.data?.properties;
+        let propertiesContent = properties;
         if (node?.data.connectorId === "pingOneSSOConnector" && node?.data?.properties && 'identifier' in node?.data?.properties) {
-          delete node.data.properties.identifier;
+          let { identifier, ...rest } = properties;
+          propertiesContent = rest;
         }
 
-        let stringVal = JSON.stringify(node.data.properties) || '';
+        let stringVal = JSON.stringify(propertiesContent) || '';
 
         const pattern = /\{\{(.*?)\}\}/g; // regex pattern to match all instances of {{...}}
         const matches = [...stringVal.matchAll(pattern)];
