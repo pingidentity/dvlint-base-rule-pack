@@ -10,7 +10,7 @@ class DVRule extends LintRule {
       reference: "",
     });
 
-    this.addCode("dv-er-variable-001", {
+    this.addCode("dv-bp-variable-001", {
       description: "Unused Variable Found",
       message: "Unused Variable Found",
       type: "best-practice",
@@ -77,7 +77,7 @@ class DVRule extends LintRule {
         if (node.data.connectorId === 'variablesConnector' && flowVariables?.length > 0) {
           flowVariables?.forEach((flowVar) => {
             if (!usedVarRefs.has(`{{global.flow.variables.${flowVar.name}}}`)) {
-              this.addError("dv-er-variable-001", {
+              this.addError("dv-bp-variable-001", {
                 flowId: this.mainFlow.flowId,
                 recommendationArgs: [`{{global.flow.variables.${flowVar.name}}}`],
                 nodeId: node.data.id

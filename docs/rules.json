@@ -166,6 +166,76 @@
             "type": "error",
             "recommendation": "A form is not selected in the <%> connector. Select a form to complete the configuration.",
             "code": "dv-er-node-004"
+          },
+          "dv-er-node-005": {
+            "description": "'Expire Flow Instance Cache' enabled in an intermediate node",
+            "message": "'Expire Flow Instance Cache' enabled in an intermediate node",
+            "type": "error",
+            "recommendation": "This setting should only be used on flow-ending nodes. Disable it on intermediate node <nodeId> to prevent execution issues.",
+            "code": "dv-er-node-005"
+          },
+          "dv-er-node-006": {
+            "description": "Missing site key configuration for reCAPTCHA",
+            "message": "Missing site key configuration for reCAPTCHA",
+            "type": "error",
+            "recommendation": "Configure the required site key value to enable proper reCAPTCHA functionality.",
+            "code": "dv-er-node-006"
+          },
+          "dv-er-node-007": {
+            "description": "Incorrect 'Additional Fields in the Response' in Send Success JSON Response capability",
+            "message": "Incorrect 'Additional Fields in the Response' in Send Success JSON Response capability",
+            "type": "error",
+            "recommendation": "Ensure valid key/value pairs are configured under 'Additional Fields in the Response'.",
+            "code": "dv-er-node-007"
+          },
+          "dv-er-node-008": {
+            "description": "Incorrect 'Additional Fields in the Response' in Send Error JSON Response capability",
+            "message": "Incorrect 'Additional Fields in the Response' in Send Error JSON Response capability",
+            "type": "error",
+            "recommendation": "Ensure valid key/value pairs are configured under 'Additional Fields in the Response'.",
+            "code": "dv-er-node-008"
+          },
+          "dv-bp-node-009": {
+            "description": "Global variable usage in Custom HTML Template script",
+            "message": "Global variable usage in Custom HTML Template script",
+            "type": "best-practice",
+            "recommendation": "Use global variables '%' cautiously in custom code. Avoid storing or processing sensitive information within them.",
+            "code": "dv-er-node-009"
+          },
+          "dv-bp-node-010": {
+            "description": "Global variable usage in Custom Function code",
+            "message": "Global variable usage in Custom Function code",
+            "type": "best-practice",
+            "recommendation": "Use global variables cautiously in custom code. Avoid storing or processing sensitive information within them.",
+            "code": "dv-er-node-010"
+          },
+          "dv-er-node-011": {
+            "description": "Missing 'Property Name' for Output Fields in Custom HTML Template capability",
+            "message": "Missing 'Property Name' for Output Fields in Custom HTML Template capability",
+            "type": "error",
+            "recommendation": "Add proper value to these output fields '%'.",
+            "code": "dv-er-node-011"
+          },
+          "dv-er-node-012": {
+            "description": "Invalid configurations for 'A == B (Multiple Conditions)' capability",
+            "message": "Invalid configurations for 'A == B (Multiple Conditions)' capability",
+            "type": "error",
+            "recommendation": "Define at least one expected outcome values for the 'A == B (Multiple Conditions)' capability to ensure correct flow branching.",
+            "code": "dv-er-node-012"
+          },
+          "dv-bp-node-013": {
+            "description": "Invalid output mapping for 'A == B (Multiple Conditions)' capability",
+            "message": "Invalid output mapping for 'A == B (Multiple Conditions)' capability",
+            "type": "error",
+            "recommendation": "Map each specific outcome value from 'A == B (Multiple Conditions)' to the next node. Do not use generic node-level output.",
+            "code": "dv-bp-node-013"
+          },
+          "dv-er-node-014": {
+            "description": "Unmapped outcome(s) in 'A == B (Multiple Conditions)' capability",
+            "message": "Unmapped outcome(s) in 'A == B (Multiple Conditions)' capability",
+            "type": "error",
+            "recommendation": "Map the outcome ‘%’ to an appropriate next node in the ‘A == B (Multiple Conditions)’ capability.",
+            "code": "dv-er-node-014"
           }
         },
         "reference": "",
@@ -203,6 +273,13 @@
             "type": "error",
             "recommendation": "This PingOne-enabled flow is missing appropriate ending nodes. These flows should conclude with either a 'Return Success Response (Redirect Flows)' node or a 'Return Error Response (Redirect Flows)' node of the PingOne Authentication connector.",
             "code": "dv-er-pingOneFlow-001"
+          },
+          "dv-er-pingOneFlow-002": {
+            "description": "Missing PingOne flow in PingOne connector.",
+            "message": "Missing PingOne flow in PingOne connector.",
+            "type": "error",
+            "recommendation": "A PingOne flow is not selected in the PingOne connector. Select a valid flow to complete the configuration.",
+            "code": "dv-er-pingOneFlow-002"
           }
         },
         "reference": "",
@@ -232,6 +309,13 @@
             "type": "error",
             "recommendation": "The input schema values for the '%' subflow are not currently configured. Configure the schema in the subflow.",
             "code": "dv-er-subflow-003"
+          },
+          "dv-er-subflow-004": {
+            "description": "Invalid subflow configuration: PingOne flow selected as subflow",
+            "message": "Invalid subflow configuration: PingOne flow selected as subflow",
+            "type": "error",
+            "recommendation": "PingOne flows cannot be referenced as a subflow. Select a standard DaVinci flow as the subflow instead.",
+            "code": "dv-er-subflow-004"
           }
         },
         "reference": "",
@@ -254,6 +338,20 @@
             "type": "error",
             "recommendation": "Update the JSON to align with the Teleport node schema, ensuring that the '%' attribute is properly defined.",
             "code": "dv-er-teleport-002"
+          },
+          "dv-er-teleport-003": {
+            "description": "Unsupported false branch after teleport node",
+            "message": "Unsupported false branch after teleport node",
+            "type": "error",
+            "recommendation": "Teleport nodes should only be followed by a true path. Remove or reconfigure the false branch in node <%>.",
+            "code": "dv-er-teleport-003"
+          },
+          "dv-er-teleport-004": {
+            "description": "Missing target node in 'Go to Node' capability",
+            "message": "Missing target node in 'Go to Node' capability",
+            "type": "error",
+            "recommendation": "Configure the 'Node to teleport to' in the 'Go to Node' capability in the Teleport node '%' to ensure the flow transitions correctly to the next step.",
+            "code": "dv-er-teleport-004"
           }
         },
         "reference": "",
@@ -263,12 +361,12 @@
         "id": "dv-rule-variables-001",
         "description": "Ensure that flow variables are used in flow.  And check for flow variables referenced in nodes but not defined",
         "codes": {
-          "dv-er-variable-001": {
+          "dv-bp-variable-001": {
             "description": "Unused Variable Found",
             "message": "Unused Variable Found",
             "type": "best-practice",
             "recommendation": "The '%' variable has been found but is not utilized in the flow. Consider removing the unused variable.",
-            "code": "dv-er-variable-001"
+            "code": "dv-bp-variable-001"
           },
           "dv-er-variable-002": {
             "description": "Undefined variable found",

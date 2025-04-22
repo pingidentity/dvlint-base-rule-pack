@@ -29,6 +29,18 @@ class DVRule extends LintRule {
       type: "error",
       recommendation: "The input schema values for the '%' subflow are not currently configured. Configure the schema in the subflow.",
     });
+    this.addCode("dv-er-subflow-004", {
+      description: "Invalid subflow configuration: PingOne flow selected as subflow",
+      message: "Invalid subflow configuration: PingOne flow selected as subflow",
+      type: "error",
+      recommendation: "PingOne flows cannot be referenced as a subflow. Select a standard DaVinci flow as the subflow instead.",
+    });
+    this.addCode("dv-er-subflow-005", {
+      description: "'Invoke UI Subflow' capability used, but target subflow has no UI nodes.",
+      message: "'Invoke UI Subflow' capability used, but target subflow has no UI nodes.",
+      type: "error",
+      recommendation: "The 'Invoke UI Subflow' capability requires the subflow to contain UI screen nodes. Since the referenced subflow has none, replace this with 'Invoke Subflow' capability instead.",
+    });
   }
 
   // Check a child subflow to make sure it doesn't point back to this flow ID
@@ -94,6 +106,30 @@ class DVRule extends LintRule {
           if (node.data.nodeType === 'CONNECTION' && node.data.connectorId === 'flowConnector') {
             const propertyKeyArr = Object.keys(node.data.properties);
             const selectedSubflowId = node.data.properties.subFlowId?.value?.value || '';
+  
+            //check if subflow is pingOne flow
+            const subflowData = subflows.filter(subflow => subflow.flowId === selectedSubflowId)
+            if (subflowData.length === 1 && subflowData[0].detail?.settings?.pingOneFlow) {
+              this.addError("dv-er-subflow-004", {
+                flowId: targetFlow.flowId,
+                nodeId: node.data.id,
+              });
+            }
+
+            //check if subflow has UI node for startUiSubFlow capability
+            if (node.data.capabilityName === 'startUiSubFlow') {
+              const uiCapabilitiesArr = ['customHtmlMessage', 'customHTMLTemplate', 'customForm', 'customMessage', 'createViewCapability'];
+              const subflowData = subflows.filter(subflow => subflow.flowId === selectedSubflowId);
+              const capabilityNameArray = subflowData[0].detail.graphData.elements.nodes.filter(node => node.data.nodeType === 'CONNECTION').map(node => node.data.capabilityName);
+              if (capabilityNameArray.length > 0 && !uiCapabilitiesArr.some(uiCapability => capabilityNameArray.includes(uiCapability))) {
+                this.addError("dv-er-subflow-005", {
+                  flowId: targetFlow.flowId,
+                  nodeId: node.data.id,
+                });
+              }
+            }
+
+            //check if subflow input schema values are missing in mainFlow
             if (propertyKeyArr.length > 0 && (selectedSubflowId in subflowIdInputSchemaMap)) {
               missingFields = subflowIdInputSchemaMap[selectedSubflowId]?.filter(field => !propertyKeyArr.includes(field));
               if (missingFields?.length > 0) {
