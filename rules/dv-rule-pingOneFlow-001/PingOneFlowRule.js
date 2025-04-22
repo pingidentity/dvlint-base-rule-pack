@@ -30,16 +30,11 @@ class PingOneFlowRule extends LintRule {
       // Incorrect ending nodes for PingOne flow
       if (targetFlow?.settings?.pingOneFlow) {
         const endNodesCapability = ['returnSuccessResponseRedirect', 'returnErrorResponseRedirect'];
-        const endNodesData = nodes?.filter(node => endNodesCapability.includes(node.data.capabilityName)) || [];
-        const nodeIdMap = endNodesData.map(node => node.data.id);
-        const nodeSourceMap = targetFlow.graphData.elements.edges?.map(edge => edge.data.source) || [];
-        let validEndNode = true;
-        nodeIdMap.forEach(id => {
-          if (nodeSourceMap.includes(id)) {
-            validEndNode = false;
-          }
-        });
-        if (!validEndNode) {
+        let targetEdgeArr = edges.filter(d => d.data.target).map(m => m.data.target);
+        let sourceEdgeArr = edges.filter(d => d.data.source).map(m => m.data.source);
+        const onlyInTargetArr = targetEdgeArr.filter(item => !sourceEdgeArr.includes(item));
+        const cNameArr = nodes.filter(n => onlyInTargetArr.includes(n.data.id)).map(m => m.data.capabilityName);
+        if( !endNodesCapability.some(cap=>cNameArr.includes(cap)) ){
           this.addError("dv-er-pingOneFlow-001", {
             flowId: targetFlow.flowId,
             messageArgs: [targetFlow.name],
@@ -68,7 +63,6 @@ class PingOneFlowRule extends LintRule {
 
           const falseBranchCount = evalNodeArr.filter(d => d === 'allTriggersFalse' || d === "anyTriggersFalse").length;
           const trueBranchCount = evalNodeArr.filter(d => d === 'allTriggersTrue' || d === "anyTriggersTrue").length;
-          // const noFalseNode = evalNodeArr.indexOf('allTriggersFalse') === -1 || evalNodeArr.indexOf('anyTriggersFalse') === -1;
           if (
             (connectedNodes.length === 1 && falseBranchCount === 1) ||
             (connectedNodes.length === 1 && trueBranchCount === 1) ||
