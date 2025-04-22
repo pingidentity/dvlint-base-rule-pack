@@ -1,6 +1,6 @@
 {
   "name": "@ping-identity/dvlint-base-rule-pack",
-  "version": "1.1.6",
+  "version": "1.1.7",
   "description": "Collection of base rules used to lint DaVinci flows.",
   "main": "RulePack.js",
   "scripts": {
