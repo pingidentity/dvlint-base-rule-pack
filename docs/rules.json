@@ -168,8 +168,8 @@
             "code": "dv-er-node-004"
           },
           "dv-er-node-005": {
-            "description": "'Expire Flow Instance Cache' enabled in an intermediate node",
-            "message": "'Expire Flow Instance Cache' enabled in an intermediate node",
+            "description": "\"Expire Flow Instance Cache\" enabled in an intermediate node",
+            "message": "\"Expire Flow Instance Cache\" enabled in an intermediate node",
             "type": "error",
             "recommendation": "This setting should only be used on flow-ending nodes. Disable it on intermediate node <nodeId> to prevent execution issues.",
             "code": "dv-er-node-005"
@@ -200,20 +200,20 @@
             "message": "Global variable usage in Custom HTML Template script",
             "type": "best-practice",
             "recommendation": "Use global variables '%' cautiously in custom code. Avoid storing or processing sensitive information within them.",
-            "code": "dv-er-node-009"
+            "code": "dv-bp-node-009"
           },
           "dv-bp-node-010": {
             "description": "Global variable usage in Custom Function code",
             "message": "Global variable usage in Custom Function code",
             "type": "best-practice",
             "recommendation": "Use global variables cautiously in custom code. Avoid storing or processing sensitive information within them.",
-            "code": "dv-er-node-010"
+            "code": "dv-bp-node-010"
           },
           "dv-er-node-011": {
             "description": "Missing 'Property Name' for Output Fields in Custom HTML Template capability",
             "message": "Missing 'Property Name' for Output Fields in Custom HTML Template capability",
             "type": "error",
-            "recommendation": "Add proper value to these output fields '%'.",
+            "recommendation": "Add a 'Property Name' to define the purpose of the output field. This property can then be referenced by successive nodes in the flow.",
             "code": "dv-er-node-011"
           },
           "dv-er-node-012": {
@@ -226,7 +226,7 @@
           "dv-bp-node-013": {
             "description": "Invalid output mapping for 'A == B (Multiple Conditions)' capability",
             "message": "Invalid output mapping for 'A == B (Multiple Conditions)' capability",
-            "type": "error",
+            "type": "best-practice",
             "recommendation": "Map each specific outcome value from 'A == B (Multiple Conditions)' to the next node. Do not use generic node-level output.",
             "code": "dv-bp-node-013"
           },
@@ -275,10 +275,10 @@
             "code": "dv-er-pingOneFlow-001"
           },
           "dv-er-pingOneFlow-002": {
-            "description": "Missing PingOne flow in PingOne connector.",
-            "message": "Missing PingOne flow in PingOne connector.",
+            "description": "Missing false path in capability of PingOne connector.",
+            "message": "Missing false path in '%' capability of PingOne connector.",
             "type": "error",
-            "recommendation": "A PingOne flow is not selected in the PingOne connector. Select a valid flow to complete the configuration.",
+            "recommendation": "Define both true and false paths in '%' capability to handle all outcomes.",
             "code": "dv-er-pingOneFlow-002"
           }
         },
@@ -316,6 +316,13 @@
             "type": "error",
             "recommendation": "PingOne flows cannot be referenced as a subflow. Select a standard DaVinci flow as the subflow instead.",
             "code": "dv-er-subflow-004"
+          },
+          "dv-er-subflow-005": {
+            "description": "'Invoke UI Subflow' capability used, but target subflow has no UI nodes.",
+            "message": "'Invoke UI Subflow' capability used, but target subflow has no UI nodes.",
+            "type": "error",
+            "recommendation": "The 'Invoke UI Subflow' capability requires the subflow to contain UI screen nodes. Since the referenced subflow has none, replace this with 'Invoke Subflow' capability instead.",
+            "code": "dv-er-subflow-005"
           }
         },
         "reference": "",
@@ -329,7 +336,7 @@
             "description": "Unused Teleport Found",
             "message": "Unused teleport node found",
             "type": "error",
-            "recommendation": "<%> is not being used. Consider removing it from the flow.",
+            "recommendation": "'%' is not being used. Consider removing it from the flow.",
             "code": "dv-er-teleport-001"
           },
           "dv-er-teleport-002": {
@@ -343,7 +350,7 @@
             "description": "Unsupported false branch after teleport node",
             "message": "Unsupported false branch after teleport node",
             "type": "error",
-            "recommendation": "Teleport nodes should only be followed by a true path. Remove or reconfigure the false branch in node <%>.",
+            "recommendation": "Teleport nodes should only be followed by a true path. Remove or reconfigure the false branch in node '%'.",
             "code": "dv-er-teleport-003"
           },
           "dv-er-teleport-004": {
