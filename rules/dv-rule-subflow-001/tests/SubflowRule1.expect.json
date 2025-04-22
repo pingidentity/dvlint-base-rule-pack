@@ -1,17 +1,17 @@
 {
   "name": "PingOne DaVinci Linter",
   "pass": false,
-  "errorCount": 1,
+  "errorCount": 2,
   "rulePackResults": [
     {
       "pass": false,
-      "errorCount": 1,
+      "errorCount": 2,
       "lintResults": [
         {
           "flowId": "4822d6c2f9f61d1924909c50fa6959bc",
           "flowName": "Test - Main Flow",
           "pass": false,
-          "errorCount": 1,
+          "errorCount": 2,
           "errors": [
             {
               "flowId": "6cc59b44515ba46f388c87ef52a00ec9",
@@ -19,6 +19,14 @@
               "message": "Incorrect or missing subflow",
               "type": "error",
               "recommendation": "There is an incorrect or missing subflow in the (6cc59b44515ba46f388c87ef52a00ec9) flow. Ensure that the appropriate subflow is selected and that the names match within the configuration."
+            },
+            {
+              "code": "dv-er-subflow-005",
+              "flowId": "4822d6c2f9f61d1924909c50fa6959bc",
+              "message": "'Invoke UI Subflow' capability used, but target subflow has no UI nodes.",
+              "nodeId": "m7lhu8f6jg",
+              "recommendation": "The 'Invoke UI Subflow' capability requires the subflow to contain UI screen nodes. Since the referenced subflow has none, replace this with 'Invoke Subflow' capability instead.",
+              "type": "error"
             }
           ],
           "rulesApplied": [
@@ -29,7 +37,7 @@
               "ruleId": "dv-rule-subflow-001",
               "ruleDescription": "Checks for subflow name mismatches",
               "pass": false,
-              "errorCount": 1,
+              "errorCount": 2,
               "errors": [
                 {
                   "flowId": "6cc59b44515ba46f388c87ef52a00ec9",
@@ -37,6 +45,14 @@
                   "message": "Incorrect or missing subflow",
                   "type": "error",
                   "recommendation": "There is an incorrect or missing subflow in the (6cc59b44515ba46f388c87ef52a00ec9) flow. Ensure that the appropriate subflow is selected and that the names match within the configuration."
+                },
+                {
+                  "code": "dv-er-subflow-005",
+                  "flowId": "4822d6c2f9f61d1924909c50fa6959bc",
+                  "message": "'Invoke UI Subflow' capability used, but target subflow has no UI nodes.",
+                  "nodeId": "m7lhu8f6jg",
+                  "recommendation": "The 'Invoke UI Subflow' capability requires the subflow to contain UI screen nodes. Since the referenced subflow has none, replace this with 'Invoke Subflow' capability instead.",
+                  "type": "error"
                 }
               ]
             }

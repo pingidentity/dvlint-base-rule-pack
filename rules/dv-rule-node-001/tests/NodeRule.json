@@ -104,7 +104,7 @@
                   {
                     "preferredControlType": "textField",
                     "preferredDataType": "string",
-                    "propertyName": "buttonValue"
+                    "propertyName": ""
                   }
                 ]
               },
