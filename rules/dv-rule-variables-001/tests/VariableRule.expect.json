@@ -14,7 +14,7 @@
           "errorCount": 2,
           "errors": [
             {
-              "code": "dv-er-variable-001",
+              "code": "dv-bp-variable-001",
               "flowId": "b40ccd54d88cb637ba4c635c6e788c6b",
               "message": "Unused Variable Found",
               "nodeId": "899qlenqr0",
@@ -41,7 +41,7 @@
               "errorCount": 2,
               "errors": [
                 {
-                  "code": "dv-er-variable-001",
+                  "code": "dv-bp-variable-001",
                   "flowId": "b40ccd54d88cb637ba4c635c6e788c6b",
                   "message": "Unused Variable Found",
                   "nodeId": "899qlenqr0",

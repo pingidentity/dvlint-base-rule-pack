@@ -13,13 +13,25 @@ class TeleportRule extends LintRule {
       description: "Unused Teleport Found",
       message: "Unused teleport node found",
       type: "error",
-      recommendation: "<%> is not being used. Consider removing it from the flow.",
+      recommendation: "'%' is not being used. Consider removing it from the flow.",
     });
     this.addCode("dv-er-teleport-002", {
       description: "Teleport schema mismatch",
       message:"Teleport schema mismatch",
       type: "error",
       recommendation: "Update the JSON to align with the Teleport node schema, ensuring that the '%' attribute is properly defined.",
+    });
+    this.addCode("dv-er-teleport-003", {
+      description: "Unsupported false branch after teleport node",
+      message:"Unsupported false branch after teleport node",
+      type: "error",
+      recommendation: "Teleport nodes should only be followed by a true path. Remove or reconfigure the false branch in node '%'.",
+    });
+    this.addCode("dv-er-teleport-004", {
+      description: "Missing target node in 'Go to Node' capability",
+      message:"Missing target node in 'Go to Node' capability",
+      type: "error",
+      recommendation: "Configure the 'Node to teleport to' in the 'Go to Node' capability in the Teleport node '%' to ensure the flow transitions correctly to the next step."
     });
   }
 
@@ -28,8 +40,9 @@ class TeleportRule extends LintRule {
       const startNodes = {};
       const gotoNodes = [];
 
+      const {nodes, edges} = this.mainFlow?.graphData?.elements;
       // Get teleport start nodes and goto nodes
-      this.mainFlow?.graphData?.elements?.nodes?.forEach((node) => {
+      nodes?.forEach((node) => {
         if (
           node.data?.connectorId?.match("nodeConnector") &&
           node.data?.capabilityName?.match("startNode")
@@ -41,6 +54,35 @@ class TeleportRule extends LintRule {
           node.data?.capabilityName?.match("goToNode")
         ) {
           gotoNodes.push(node.data.properties?.nodeInstanceId?.value);
+          
+          //check if in  goToNode 'Node to teleport to' is not configured
+          if (!node.data.properties?.nodeInstanceId?.value) {
+            this.addError("dv-er-teleport-004", {
+              flowId: this.mainFlow.flowId,
+              recommendationArgs: [node.data.id],
+              nodeId: node.data.id,
+            });
+          }
+        }
+
+        // Check if the node is a teleport node and it has false branch
+        if (node.data.connectorId === 'nodeConnector') {
+          const evalNodes = edges.filter(edge => edge.data.source === node.data.id).map(d => d.data.target);
+          const connectedNodes = nodes.filter(n => evalNodes.includes(n.data.id));
+          if (evalNodes.length >= 1 && connectedNodes.length > 0) {
+            connectedNodes.map(cn => {
+              if (cn.data.properties) {
+                const propertiesStr = JSON.stringify(cn.data.properties);
+                if (propertiesStr && (propertiesStr.indexOf('anyTriggersFalse') > -1 || propertiesStr.indexOf('allTriggersFalse') > -1)) {
+                  this.addError("dv-er-teleport-003", {
+                    flowId: this.mainFlow.flowId,
+                    recommendationArgs: [node.data.id],
+                    nodeId: node.data.id,
+                  });
+                }
+              }
+            });
+          }
         }
       });
 
@@ -59,8 +101,11 @@ class TeleportRule extends LintRule {
 
           let startNodeInputSchemaJSON = {};
           if (startNodeInputSchema) {
-            startNodeInputSchemaJSON = JSON.parse(startNodeInputSchema);
+            startNodeInputSchemaJSON = JSON.parse(startNodeInputSchema || "{}");
           }
+          const startNodeInputSchemaArr = Object.entries(startNodeInputSchemaJSON.properties || {});
+          const startNodeInputSchemaManddatoryArr = startNodeInputSchemaArr.filter(([key, val]) => val.required === true);
+          const startNodeMandatoryInpuSchemaKeys = startNodeInputSchemaManddatoryArr.map(([key, val]) => key);
 
           // Get all gotoNodes with the instanceId of the goto node
           const gotoNodes = this.mainFlow?.graphData?.elements?.nodes?.filter(
@@ -75,26 +120,16 @@ class TeleportRule extends LintRule {
               (props) => props !== "nodeInstanceId" && props !== "nodeTitle"
             );
 
-            gotoSchema.forEach((attrName) => {
-              if (
-                startNodeInputSchemaJSON.properties &&
-                startNodeInputSchemaJSON.properties[attrName] === undefined
-              ) {
-                this.addError("dv-er-teleport-002", {
-                  flowId: this.mainFlow.flowId,
-                  recommendationArgs: [attrName],
-                  nodeId: gotoNode.data.id,
-                });
-
-                if (this.cleanFlow) {
-                  const { data } = gotoNode;
-                  delete data.properties[attrName];
-                  this.addCleanResult(
-                    `Removed teleport goto node attribute ${attrName}`
-                  );
-                }
+            startNodeMandatoryInpuSchemaKeys.forEach((attrName) => {
+              if (!gotoSchema.includes(attrName)) {
+                    this.addError("dv-er-teleport-002", {
+                      flowId: this.mainFlow.flowId,
+                      recommendationArgs: [attrName],
+                      nodeId: gotoNode.data.id,
+                    });
               }
             });
+            
           });
         }
       });

@@ -18,7 +18,7 @@
               "code": "dv-er-teleport-002",
               "message": "Teleport schema mismatch",
               "nodeId": "2shaj7vbbu",
-              "recommendation": "Update the JSON to align with the Teleport node schema, ensuring that the 'userid' attribute is properly defined.",
+              "recommendation": "Update the JSON to align with the Teleport node schema, ensuring that the 'message' attribute is properly defined.",
               "type": "error"
             }
           ],
@@ -37,7 +37,7 @@
                   "code": "dv-er-teleport-002",
                   "message": "Teleport schema mismatch",
                   "type": "error",
-                  "recommendation": "Update the JSON to align with the Teleport node schema, ensuring that the 'userid' attribute is properly defined."
+                  "recommendation": "Update the JSON to align with the Teleport node schema, ensuring that the 'message' attribute is properly defined."
                 }
               ]
             }
