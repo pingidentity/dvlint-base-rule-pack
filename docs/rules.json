@@ -2,7 +2,7 @@
   {
     "name": "@ping-identity/dvlint-base-rule-pack",
     "description": "Collection of base rules used to lint DaVinci flows.",
-    "version": "1.1.7",
+    "version": "1.1.8",
     "rules": [
       {
         "id": "dv-rule-AEqualsBMultipleCondition-001",
