@@ -1,0 +1,182 @@
+{
+    "companyId": "6YWgejhFHGFyhZM57KfdhnYf7fmeMZKM",
+    "authTokenExpireIds": [],
+    "connectorIds": [
+      "httpConnector",
+      "functionsConnector"
+    ],
+    "createdDate": 1745477047789,
+    "currentVersion": 3,
+    "customerId": "1576bd3c19c0fb0a828342b21d46a57e",
+    "deployedDate": 1745477050284,
+    "description": "",
+    "flowStatus": "enabled",
+    "isOutputSchemaSaved": false,
+    "name": "Global Variable Usage",
+    "publishedVersion": 3,
+    "settings": {
+      "logLevel": 4
+    },
+    "timeouts": "null",
+    "updatedDate": 1745477050313,
+    "flowId": "802ebc99a1d5dabfc16d636c200ce864",
+    "versionId": 3,
+    "graphData": {
+      "elements": {
+        "nodes": [
+          {
+            "data": {
+              "id": "oigqz0o0o8",
+              "nodeType": "CONNECTION",
+              "connectionId": "481e952e6b11db8360587b8711620786",
+              "connectorId": "httpConnector",
+              "name": "HTTP",
+              "label": "HTTP",
+              "status": "configured",
+              "capabilityName": "customHTMLTemplate",
+              "type": "trigger",
+              "properties": {
+                "customScript": {
+                  "value": "{{global.varnew}}"
+                },
+                "nodeTitle": {
+                  "value": "title"
+                },
+                "nodeDescription": {
+                  "value": "desc"
+                }
+              }
+            },
+            "position": {
+              "x": 400,
+              "y": 400
+            },
+            "group": "nodes",
+            "removed": false,
+            "selected": false,
+            "selectable": true,
+            "locked": false,
+            "grabbable": true,
+            "pannable": false,
+            "classes": ""
+          },
+          {
+            "data": {
+              "id": "23f7x90pjm",
+              "nodeType": "EVAL",
+              "label": "Evaluator"
+            },
+            "position": {
+              "x": 535.9999652691773,
+              "y": 404.70523775231123
+            },
+            "group": "nodes",
+            "removed": false,
+            "selected": false,
+            "selectable": true,
+            "locked": false,
+            "grabbable": true,
+            "pannable": false,
+            "classes": ""
+          },
+          {
+            "data": {
+              "id": "3sh6tqdagd",
+              "nodeType": "CONNECTION",
+              "connectionId": "de650ca45593b82c49064ead10b9fe17",
+              "connectorId": "functionsConnector",
+              "name": "Functions",
+              "label": "Functions",
+              "status": "configured",
+              "capabilityName": "customFunction",
+              "type": "trigger",
+              "properties": {
+                "code": {
+                  "value": "// Write your code here\n// Supported language: Javascript \nmodule.exports = a = async ({params}) => {\n\tconsole.log('params: ', params)\n\treturn {'testVariable': params.testVariable}\n\t{{global.testvar}}\n}"
+                },
+                "nodeTitle": {
+                  "value": "test title"
+                },
+                "nodeDescription": {
+                  "value": "desc"
+                }
+              }
+            },
+            "position": {
+              "x": 671.9999305383546,
+              "y": 409.41047550462247
+            },
+            "group": "nodes",
+            "removed": false,
+            "selected": false,
+            "selectable": true,
+            "locked": false,
+            "grabbable": true,
+            "pannable": false,
+            "classes": ""
+          }
+        ],
+        "edges": [
+          {
+            "data": {
+              "id": "dfezvuvvnm",
+              "source": "oigqz0o0o8",
+              "target": "23f7x90pjm"
+            },
+            "position": {
+              "x": 0,
+              "y": 0
+            },
+            "group": "edges",
+            "removed": false,
+            "selected": false,
+            "selectable": true,
+            "locked": false,
+            "grabbable": true,
+            "pannable": true,
+            "classes": ""
+          },
+          {
+            "data": {
+              "id": "bpede0k8n",
+              "source": "23f7x90pjm",
+              "target": "3sh6tqdagd"
+            },
+            "position": {
+              "x": 0,
+              "y": 0
+            },
+            "group": "edges",
+            "removed": false,
+            "selected": false,
+            "selectable": true,
+            "locked": false,
+            "grabbable": true,
+            "pannable": true,
+            "classes": ""
+          }
+        ]
+      },
+      "data": {},
+      "zoomingEnabled": true,
+      "userZoomingEnabled": true,
+      "zoom": 1,
+      "minZoom": 1e-50,
+      "maxZoom": 1e+50,
+      "panningEnabled": true,
+      "userPanningEnabled": true,
+      "pan": {
+        "x": 0,
+        "y": 0
+      },
+      "boxSelectionEnabled": true,
+      "renderer": {
+        "name": "null"
+      }
+    },
+    "flowColor": "#AFD5FF",
+    "savedDate": 1745477047737,
+    "variables": [],
+    "connections": []
+  }
+  

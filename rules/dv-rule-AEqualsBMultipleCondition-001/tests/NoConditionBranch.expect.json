@@ -1,0 +1,67 @@
+{
+    "name": "PingOne DaVinci Linter",
+    "pass": false,
+    "errorCount": 2,
+    "rulePackResults": [
+        {
+            "pass": false,
+            "errorCount": 2,
+            "lintResults": [
+                {
+                    "flowId": "7c1c682400d49a511dfba8a5264931b9",
+                    "flowName": "test",
+                    "pass": false,
+                    "errorCount": 2,
+                    "errors": [
+                        {
+                            "code": "dv-er-AEqualsBMultipleCondition-003",
+                            "message": "Unmapped outcome(s) in 'A == B (Multiple Conditions)' capability",
+                            "type": "error",
+                            "recommendation": "Map the outcome ‘val1,val2’ to an appropriate next node in the ‘A == B (Multiple Conditions)’ capability.",
+                            "flowId": "7c1c682400d49a511dfba8a5264931b9",
+                            "nodeId": "cjc6qawp4i"
+                        },
+                        {
+                            "code": "dv-bp-AEqualsBMultipleCondition-002",
+                            "message": "Invalid output mapping for 'A == B (Multiple Conditions)' capability",
+                            "type": "best-practice",
+                            "recommendation": "Map each specific outcome value from 'A == B (Multiple Conditions)' to the next node. Do not use generic node-level output.",
+                            "flowId": "7c1c682400d49a511dfba8a5264931b9",
+                            "nodeId": "cre0g28935"
+                        }
+                    ],
+                    "rulesApplied": [
+                        "dv-rule-AEqualsBMultipleCondition-001"
+                    ],
+                    "ruleResults": [
+                        {
+                            "ruleId": "dv-rule-AEqualsBMultipleCondition-001",
+                            "pass": false,
+                            "errorCount": 2,
+                            "errors": [
+                                {
+                                    "code": "dv-er-AEqualsBMultipleCondition-003",
+                                    "message": "Unmapped outcome(s) in 'A == B (Multiple Conditions)' capability",
+                                    "type": "error",
+                                    "recommendation": "Map the outcome ‘val1,val2’ to an appropriate next node in the ‘A == B (Multiple Conditions)’ capability.",
+                                    "flowId": "7c1c682400d49a511dfba8a5264931b9",
+                                    "nodeId": "cjc6qawp4i"
+                                },
+                                {
+                                    "code": "dv-bp-AEqualsBMultipleCondition-002",
+                                    "message": "Invalid output mapping for 'A == B (Multiple Conditions)' capability",
+                                    "type": "best-practice",
+                                    "recommendation": "Map each specific outcome value from 'A == B (Multiple Conditions)' to the next node. Do not use generic node-level output.",
+                                    "flowId": "7c1c682400d49a511dfba8a5264931b9",
+                                    "nodeId": "cre0g28935"
+                                }
+                            ]
+                        }
+                    ],
+                    "rulesIgnored": []
+                }
+            ],
+            "rulesIgnored": true
+        }
+    ]
+}
