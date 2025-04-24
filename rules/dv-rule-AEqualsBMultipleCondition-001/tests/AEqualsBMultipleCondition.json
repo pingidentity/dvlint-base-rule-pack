@@ -1,0 +1,284 @@
+{
+    "companyId": "6YWgejhFHGFyhZM57KfdhnYf7fmeMZKM",
+    "authTokenExpireIds": [],
+    "connectorIds": [
+      "functionsConnector",
+      "httpConnector"
+    ],
+    "createdDate": 1745472702493,
+    "currentVersion": 28,
+    "customerId": "1576bd3c19c0fb0a828342b21d46a57e",
+    "description": "",
+    "flowStatus": "enabled",
+    "isOutputSchemaSaved": false,
+    "name": "test",
+    "publishedVersion": 14,
+    "settings": {
+      "csp": "worker-src 'self' blob:; script-src 'self' https://cdn.jsdelivr.net https://code.jquery.com https://devsdk.singularkey.com http://cdnjs.cloudflare.com 'unsafe-inline' 'unsafe-eval';",
+      "intermediateLoadingScreenCSS": "",
+      "intermediateLoadingScreenHTML": "",
+      "logLevel": 3,
+      "validateOnSave": false
+    },
+    "timeouts": "null",
+    "flowId": "7c1c682400d49a511dfba8a5264931b9",
+    "versionId": 28,
+    "graphData": {
+      "elements": {
+        "nodes": [
+          {
+            "data": {
+              "id": "cjc6qawp4i",
+              "nodeType": "CONNECTION",
+              "connectionId": "de650ca45593b82c49064ead10b9fe17",
+              "connectorId": "functionsConnector",
+              "name": "Functions",
+              "label": "Functions",
+              "status": "configured",
+              "capabilityName": "AEqualsMultipleB",
+              "type": "trigger",
+              "properties": {
+                "leftValueA": {
+                  "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Manish\"\n      }\n    ]\n  }\n]"
+                },
+                "rightValueMultiple": {
+                  "value": [
+                    {
+                      "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"asd\"\n      }\n    ]\n  }\n]",
+                      "id": "cb3hmuxppr"
+                    },
+                    {
+                      "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"asd\"\n      }\n    ]\n  }\n]",
+                      "id": "vsq15wzcac"
+                    }
+                  ]
+                }
+              }
+            },
+            "position": {
+              "x": 277,
+              "y": 314.5899859313205
+            },
+            "group": "nodes",
+            "removed": false,
+            "selected": false,
+            "selectable": true,
+            "locked": false,
+            "grabbable": true,
+            "pannable": false,
+            "classes": ""
+          },
+          {
+            "data": {
+              "id": "lupsmi0xwx",
+              "nodeType": "EVAL",
+              "label": "Evaluator"
+            },
+            "position": {
+              "x": 417.5005718785916,
+              "y": 389.0002846762068
+            },
+            "group": "nodes",
+            "removed": false,
+            "selected": false,
+            "selectable": true,
+            "locked": false,
+            "grabbable": true,
+            "pannable": false,
+            "classes": ""
+          },
+          {
+            "data": {
+              "id": "zwinkvq0ew",
+              "nodeType": "CONNECTION",
+              "connectionId": "481e952e6b11db8360587b8711620786",
+              "connectorId": "httpConnector",
+              "name": "HTTP",
+              "label": "HTTP",
+              "status": "configured",
+              "capabilityName": "customHtmlMessage",
+              "type": "trigger",
+              "properties": {
+                "message": {
+                  "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"asd\"\n      }\n    ]\n  }\n]"
+                },
+                "nodeTitle": {
+                  "value": "title"
+                },
+                "nodeDescription": {
+                  "value": "desc"
+                }
+              }
+            },
+            "position": {
+              "x": 558.0011437571832,
+              "y": 389.0002846762068
+            },
+            "group": "nodes",
+            "removed": false,
+            "selected": false,
+            "selectable": true,
+            "locked": false,
+            "grabbable": true,
+            "pannable": false,
+            "classes": ""
+          },
+          {
+            "data": {
+              "id": "5v3ccrfpfv",
+              "nodeType": "EVAL",
+              "label": "Evaluator"
+            },
+            "position": {
+              "x": 477.5006782103346,
+              "y": 275.2949929656602
+            },
+            "group": "nodes",
+            "removed": false,
+            "selected": false,
+            "selectable": true,
+            "locked": false,
+            "grabbable": true,
+            "pannable": false,
+            "classes": ""
+          },
+          {
+            "data": {
+              "id": "cre0g28935",
+              "nodeType": "CONNECTION",
+              "connectionId": "481e952e6b11db8360587b8711620786",
+              "connectorId": "httpConnector",
+              "name": "HTTP",
+              "label": "HTTP",
+              "status": "configured",
+              "capabilityName": "customHtmlMessage",
+              "type": "trigger",
+              "properties": {
+                "message": {
+                  "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"sdfdsf\"\n      }\n    ]\n  }\n]"
+                },
+                "nodeTitle": {
+                  "value": "title"
+                },
+                "nodeDescription": {
+                  "value": "desc"
+                }
+              }
+            },
+            "position": {
+              "x": 678.0013564206693,
+              "y": 236
+            },
+            "group": "nodes",
+            "removed": false,
+            "selected": false,
+            "selectable": true,
+            "locked": false,
+            "grabbable": true,
+            "pannable": false,
+            "classes": ""
+          }
+        ],
+        "edges": [
+          {
+            "data": {
+              "id": "h5woff16fg",
+              "source": "5v3ccrfpfv",
+              "target": "cre0g28935"
+            },
+            "position": {
+              "x": 0,
+              "y": 0
+            },
+            "group": "edges",
+            "removed": false,
+            "selected": false,
+            "selectable": true,
+            "locked": false,
+            "grabbable": true,
+            "pannable": true,
+            "classes": ""
+          },
+          {
+            "data": {
+              "id": "92ur0g0b69",
+              "source": "cjc6qawp4i",
+              "target": "5v3ccrfpfv"
+            },
+            "position": {
+              "x": 0,
+              "y": 0
+            },
+            "group": "edges",
+            "removed": false,
+            "selected": false,
+            "selectable": true,
+            "locked": false,
+            "grabbable": true,
+            "pannable": true,
+            "classes": ""
+          },
+          {
+            "data": {
+              "id": "xmjwlwft9a",
+              "source": "cjc6qawp4i",
+              "target": "lupsmi0xwx",
+              "multiValueSourceId": "cb3hmuxppr"
+            },
+            "position": {
+              "x": 64,
+              "y": 52
+            },
+            "group": "edges",
+            "removed": false,
+            "selected": false,
+            "selectable": true,
+            "locked": false,
+            "grabbable": true,
+            "pannable": true,
+            "classes": ""
+          },
+          {
+            "data": {
+              "id": "nxrbtxixpk",
+              "source": "lupsmi0xwx",
+              "target": "zwinkvq0ew"
+            },
+            "position": {
+              "x": 0,
+              "y": 0
+            },
+            "group": "edges",
+            "removed": false,
+            "selected": false,
+            "selectable": true,
+            "locked": false,
+            "grabbable": true,
+            "pannable": true,
+            "classes": ""
+          }
+        ]
+      },
+      "data": {},
+      "zoomingEnabled": true,
+      "userZoomingEnabled": true,
+      "zoom": 1,
+      "minZoom": 1e-50,
+      "maxZoom": 1e+50,
+      "panningEnabled": true,
+      "userPanningEnabled": true,
+      "pan": {
+        "x": 0,
+        "y": 0
+      },
+      "boxSelectionEnabled": true,
+      "renderer": {
+        "name": "null"
+      }
+    },
+    "flowColor": "#E3F0FF",
+    "savedDate": 1745472702225,
+    "variables": [],
+    "connections": []
+  }
+  
