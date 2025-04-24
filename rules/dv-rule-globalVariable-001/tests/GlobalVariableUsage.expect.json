@@ -1,0 +1,67 @@
+{
+    "name": "PingOne DaVinci Linter",
+    "pass": false,
+    "errorCount": 2,
+    "rulePackResults": [
+        {
+            "pass": false,
+            "errorCount": 2,
+            "lintResults": [
+                {
+                    "flowId": "802ebc99a1d5dabfc16d636c200ce864",
+                    "flowName": "Global Variable Usage",
+                    "pass": false,
+                    "errorCount": 2,
+                    "errors": [
+                        {
+                            "code": "dv-bp-globalVariable-001",
+                            "message": "Global variable usage in Custom HTML Template script",
+                            "type": "best-practice",
+                            "recommendation": "Use global variables '{{global.varnew}}' cautiously in custom code. Avoid storing or processing sensitive information within them.",
+                            "flowId": "802ebc99a1d5dabfc16d636c200ce864",
+                            "nodeId": "oigqz0o0o8"
+                          },
+                          {
+                            "code": "dv-bp-globalVariable-002",
+                            "message": "Global variable usage in Custom Function code",
+                            "type": "best-practice",
+                            "recommendation": "Use global variables cautiously in custom code. Avoid storing or processing sensitive information within them.",
+                            "flowId": "802ebc99a1d5dabfc16d636c200ce864",
+                            "nodeId": "3sh6tqdagd"
+                          }
+                    ],
+                    "rulesApplied": [
+                        "dv-rule-globalVariable-001"
+                    ],
+                    "ruleResults": [
+                        {
+                            "ruleId": "dv-rule-globalVariable-001",
+                            "pass": false,
+                            "errorCount": 2,
+                            "errors": [
+                                {
+                                    "code": "dv-bp-globalVariable-001",
+                                    "message": "Global variable usage in Custom HTML Template script",
+                                    "type": "best-practice",
+                                    "recommendation": "Use global variables '{{global.varnew}}' cautiously in custom code. Avoid storing or processing sensitive information within them.",
+                                    "flowId": "802ebc99a1d5dabfc16d636c200ce864",
+                                    "nodeId": "oigqz0o0o8"
+                                  },
+                                  {
+                                    "code": "dv-bp-globalVariable-002",
+                                    "message": "Global variable usage in Custom Function code",
+                                    "type": "best-practice",
+                                    "recommendation": "Use global variables cautiously in custom code. Avoid storing or processing sensitive information within them.",
+                                    "flowId": "802ebc99a1d5dabfc16d636c200ce864",
+                                    "nodeId": "3sh6tqdagd"
+                                  }
+                            ]
+                        }
+                    ],
+                    "rulesIgnored": []
+                }
+            ],
+            "rulesIgnored": true
+        }
+    ]
+}

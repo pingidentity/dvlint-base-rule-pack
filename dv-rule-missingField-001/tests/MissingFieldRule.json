@@ -1,0 +1,290 @@
+{
+  "companyId": "6YWgejhFHGFyhZM57KfdhnYf7fmeMZKM",
+  "authTokenExpireIds": [],
+  "connectorIds": [
+    "httpConnector"
+  ],
+  "createdDate": 1745485783941,
+  "currentVersion": 37,
+  "customerId": "1576bd3c19c0fb0a828342b21d46a57e",
+  "deployedDate": 1745485793951,
+  "description": "",
+  "flowStatus": "enabled",
+  "isOutputSchemaSaved": false,
+  "name": "test",
+  "publishedVersion": 37,
+  "settings": {
+    "logLevel": 4
+  },
+  "timeouts": "null",
+  "updatedDate": 1745485793979,
+  "flowId": "1e6254f9afffba533cf8e2f1efff06a3",
+  "versionId": 37,
+  "graphData": {
+    "elements": {
+      "nodes": [
+        {
+          "data": {
+            "id": "qi1be5se81",
+            "nodeType": "CONNECTION",
+            "connectionId": "481e952e6b11db8360587b8711620786",
+            "connectorId": "httpConnector",
+            "name": "HTTP",
+            "label": "HTTP",
+            "status": "configured",
+            "capabilityName": "customHtmlMessage",
+            "type": "trigger",
+            "properties": {
+              "showContinueButton": {
+                "value": true
+              },
+              "nodeTitle": {
+                "value": "test"
+              },
+              "nodeDescription": {
+                "value": "test"
+              }
+            }
+          },
+          "position": {
+            "x": 277,
+            "y": 236
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "dyqzqmweod",
+            "nodeType": "EVAL",
+            "label": "Evaluator"
+          },
+          "position": {
+            "x": 417.49996485923975,
+            "y": 238.20523310073924
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "6ux9r8ys3o",
+            "nodeType": "CONNECTION",
+            "connectionId": "481e952e6b11db8360587b8711620786",
+            "connectorId": "httpConnector",
+            "name": "HTTP",
+            "label": "HTTP",
+            "status": "configured",
+            "capabilityName": "customHTMLTemplate",
+            "type": "trigger",
+            "properties": {
+              "customHTML": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      },\n      {\n        \"text\": \"\"\n      },\n      {\n        \"type\": \"link\",\n        \"src\": \"auth.svg\",\n        \"url\": \"skrecaptcha\",\n        \"data\": \"[[[skcomponent###c2tjb21wb25lbnQgInNrcmVjYXB0Y2hhIiAgY2xhc3M9InNvbWVDbGFzcyIgaWQ9InJlY2FwdGNoYVZhbHVlIiBzaXRlS2V5PSIi###eyJuYW1lIjoic2tyZWNhcHRjaGEiLCJvcHRpb25zIjp7ImNsYXNzIjoic29tZUNsYXNzIiwiaWQiOiJyZWNhcHRjaGFWYWx1ZSIsInNpdGVLZXkiOiIifSwiY29tcG9uZW50UHJvcHMiOnsiY2xhc3MiOnsibmFtZSI6ImNsYXNzIiwiZGlzcGxheU5hbWUiOiJDbGFzcyIsInZhbHVlIjoiIn0sImlkIjp7Im5hbWUiOiJpZCIsImRpc3BsYXlOYW1lIjoiSUQgb2YgY29tcG9uZW50IHRoYXQgd2lsbCBiZSBhc3NvY2lhdGVkIHdpdGggdGhlIHJlY2FwdGNoYSB2YWx1ZSIsInZhbHVlIjoicmVjYXB0Y2hhVmFsdWUiLCJkaXNhYmxlZCI6dHJ1ZX0sInNpdGVLZXkiOnsibmFtZSI6InNpdGVLZXkiLCJkaXNwbGF5TmFtZSI6IlJlY2FwdGNoYSBTaXRlIEtleSIsInZhbHVlIjoiIn19fQ==]]]\",\n        \"tooltip\": \"{{component.skrecaptcha}}\",\n        \"children\": [\n          {\n            \"text\": \"skrecaptcha\"\n          }\n        ],\n        \"component\": \"skrecaptcha\",\n        \"options\": {\n          \"class\": \"someClass\",\n          \"id\": \"recaptchaValue\",\n          \"siteKey\": \"\"\n        },\n        \"componentProps\": {\n          \"class\": {\n            \"name\": \"class\",\n            \"displayName\": \"Class\",\n            \"value\": \"\"\n          },\n          \"id\": {\n            \"name\": \"id\",\n            \"displayName\": \"ID of component that will be associated with the recaptcha value\",\n            \"value\": \"recaptchaValue\",\n            \"disabled\": true\n          },\n          \"siteKey\": {\n            \"name\": \"siteKey\",\n            \"displayName\": \"Recaptcha Site Key\",\n            \"value\": \"\"\n          }\n        }\n      },\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]"
+              },
+              "nodeTitle": {
+                "value": "test"
+              },
+              "nodeDescription": {
+                "value": "test"
+              }
+            }
+          },
+          "position": {
+            "x": 557.9999297184794,
+            "y": 240.41046620147847
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "kbh9x9e7ef",
+            "nodeType": "EVAL",
+            "label": "Evaluator"
+          },
+          "position": {
+            "x": 704.9999163271851,
+            "y": 238.91046341053527
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "ru1iq6nna5",
+            "nodeType": "CONNECTION",
+            "connectionId": "481e952e6b11db8360587b8711620786",
+            "connectorId": "httpConnector",
+            "name": "HTTP",
+            "label": "HTTP",
+            "status": "configured",
+            "capabilityName": "createSuccessResponse",
+            "type": "action",
+            "properties": {
+              "claimsNameValuePairs": {
+                "value": [
+                  {
+                    "name": null,
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"value\"\n      }\n    ]\n  }\n]",
+                    "key": 0.8804912080831605,
+                    "label": null,
+                    "type": "string"
+                  },
+                  {
+                    "name": null,
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"\"\n      }\n    ]\n  }\n]",
+                    "key": 0.055899159962362055,
+                    "type": "string"
+                  }
+                ]
+              },
+              "nodeTitle": {
+                "value": "test"
+              },
+              "nodeDescription": {
+                "value": "test"
+              },
+              "backgroundColor": {
+                "value": "#9dc967ff"
+              }
+            }
+          },
+          "position": {
+            "x": 851.9999029358909,
+            "y": 237.41046061959207
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        }
+      ],
+      "edges": [
+        {
+          "data": {
+            "id": "83ny7uxu9e",
+            "source": "qi1be5se81",
+            "target": "dyqzqmweod"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "n00540r63x",
+            "source": "dyqzqmweod",
+            "target": "6ux9r8ys3o"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "kl6r65xdrb",
+            "source": "6ux9r8ys3o",
+            "target": "kbh9x9e7ef"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "rna6sdz4ma",
+            "source": "kbh9x9e7ef",
+            "target": "ru1iq6nna5"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        }
+      ]
+    },
+    "data": {},
+    "zoomingEnabled": true,
+    "userZoomingEnabled": true,
+    "zoom": 1,
+    "minZoom": 1e-50,
+    "maxZoom": 1e+50,
+    "panningEnabled": true,
+    "userPanningEnabled": true,
+    "pan": {
+      "x": 0,
+      "y": 0
+    },
+    "boxSelectionEnabled": true,
+    "renderer": {
+      "name": "null"
+    }
+  },
+  "flowColor": "#AFD5FF",
+  "savedDate": 1745485783845,
+  "variables": [],
+  "connections": []
+}

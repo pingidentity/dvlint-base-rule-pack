@@ -1,0 +1,85 @@
+{
+    "name": "PingOne DaVinci Linter",
+    "pass": false,
+    "errorCount": 3,
+    "rulePackResults": [
+      {
+        "pass": false,
+        "errorCount": 3,
+        "lintResults": [
+          {
+            "flowId": "1e6254f9afffba533cf8e2f1efff06a3",
+            "flowName": "test",
+            "pass": false,
+            "errorCount": 3,
+            "errors": [
+              {
+                "code": "dv-er-validFields-001",
+                "message": "Missing site key configuration for reCAPTCHA",
+                "type": "error",
+                "recommendation": "Configure the required site key value to enable proper reCAPTCHA functionality.",
+                "flowId": "1e6254f9afffba533cf8e2f1efff06a3",
+                "nodeId": "6ux9r8ys3o"
+              },
+              {
+                "code": "dv-er-validFields-004",
+                "flowId": "1e6254f9afffba533cf8e2f1efff06a3",
+                "message": "Missing 'Property Name' for Output Fields in Custom HTML Template capability",
+                "nodeId": "6ux9r8ys3o",
+                "recommendation": "Add a 'Property Name' to define the purpose of the output field. This property can then be referenced by successive nodes in the flow.",
+                "type": "error"
+              },
+              {
+                "code": "dv-er-validFields-002",
+                "message": "Incorrect 'Additional Fields in the Response' in Send Success JSON Response capability",
+                "type": "error",
+                "recommendation": "Ensure valid key/value pairs are configured under 'Additional Fields in the Response'.",
+                "flowId": "1e6254f9afffba533cf8e2f1efff06a3",
+                "nodeId": "ru1iq6nna5"
+              }
+            ],
+            "rulesApplied": [
+              "dv-rule-validFields-001"
+            ],
+            "ruleResults": [
+              {
+                "ruleId": "dv-rule-validFields-001",
+                "ruleDescription": "Missing or Incorrect fields in nodes",
+                "pass": false,
+                "errorCount": 3,
+                "errors": [
+                  {
+                    "code": "dv-er-validFields-001",
+                    "message": "Missing site key configuration for reCAPTCHA",
+                    "type": "error",
+                    "recommendation": "Configure the required site key value to enable proper reCAPTCHA functionality.",
+                    "flowId": "1e6254f9afffba533cf8e2f1efff06a3",
+                    "nodeId": "6ux9r8ys3o"
+                  },
+                  {
+                    "code": "dv-er-validFields-004",
+                    "flowId": "1e6254f9afffba533cf8e2f1efff06a3",
+                    "message": "Missing 'Property Name' for Output Fields in Custom HTML Template capability",
+                    "nodeId": "6ux9r8ys3o",
+                    "recommendation": "Add a 'Property Name' to define the purpose of the output field. This property can then be referenced by successive nodes in the flow.",
+                    "type": "error"
+                  },
+                  {
+                    "code": "dv-er-validFields-002",
+                    "message": "Incorrect 'Additional Fields in the Response' in Send Success JSON Response capability",
+                    "type": "error",
+                    "recommendation": "Ensure valid key/value pairs are configured under 'Additional Fields in the Response'.",
+                    "flowId": "1e6254f9afffba533cf8e2f1efff06a3",
+                    "nodeId": "ru1iq6nna5"
+                  }
+                ]
+              }
+            ],
+            "rulesIgnored": []
+          }
+        ],
+        "rulesIgnored": true
+      }
+    ]
+  }
+  

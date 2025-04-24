@@ -2,8 +2,37 @@
   {
     "name": "@ping-identity/dvlint-base-rule-pack",
     "description": "Collection of base rules used to lint DaVinci flows.",
-    "version": "1.1.6",
+    "version": "1.1.7",
     "rules": [
+      {
+        "id": "dv-rule-AEqualsBMultipleCondition-001",
+        "description": "Invalid configurations for 'A == B (Multiple Conditions)' capability",
+        "codes": {
+          "dv-er-AEqualsBMultipleCondition-001": {
+            "description": "Invalid configurations for 'A == B (Multiple Conditions)' capability",
+            "message": "Invalid configurations for 'A == B (Multiple Conditions)' capability",
+            "type": "error",
+            "recommendation": "Define at least one expected outcome values for the 'A == B (Multiple Conditions)' capability to ensure correct flow branching.",
+            "code": "dv-er-AEqualsBMultipleCondition-001"
+          },
+          "dv-bp-AEqualsBMultipleCondition-002": {
+            "description": "Invalid output mapping for 'A == B (Multiple Conditions)' capability",
+            "message": "Invalid output mapping for 'A == B (Multiple Conditions)' capability",
+            "type": "best-practice",
+            "recommendation": "Map each specific outcome value from 'A == B (Multiple Conditions)' to the next node. Do not use generic node-level output.",
+            "code": "dv-bp-AEqualsBMultipleCondition-002"
+          },
+          "dv-er-AEqualsBMultipleCondition-003": {
+            "description": "Unmapped outcome(s) in 'A == B (Multiple Conditions)' capability",
+            "message": "Unmapped outcome(s) in 'A == B (Multiple Conditions)' capability",
+            "type": "error",
+            "recommendation": "Map the outcome ‘%’ to an appropriate next node in the ‘A == B (Multiple Conditions)’ capability.",
+            "code": "dv-er-AEqualsBMultipleCondition-003"
+          }
+        },
+        "reference": "",
+        "cleans": false
+      },
       {
         "id": "dv-rule-annotations-001",
         "description": "Verify several best practices for annotations nodes include checks on color, font and positions on the canvas",
@@ -83,6 +112,28 @@
         "codes": {},
         "reference": "",
         "cleans": true
+      },
+      {
+        "id": "dv-rule-globalVariable-001",
+        "description": "Global variable usage in script",
+        "codes": {
+          "dv-bp-globalVariable-001": {
+            "description": "Global variable usage in Custom HTML Template script",
+            "message": "Global variable usage in Custom HTML Template script",
+            "type": "best-practice",
+            "recommendation": "Use global variables '%' cautiously in custom code. Avoid storing or processing sensitive information within them.",
+            "code": "dv-bp-globalVariable-001"
+          },
+          "dv-bp-globalVariable-002": {
+            "description": "Global variable usage in Custom Function code",
+            "message": "Global variable usage in Custom Function code",
+            "type": "best-practice",
+            "recommendation": "Use global variables cautiously in custom code. Avoid storing or processing sensitive information within them.",
+            "code": "dv-bp-globalVariable-002"
+          }
+        },
+        "reference": "",
+        "cleans": false
       },
       {
         "id": "dv-rule-logo-001",
@@ -168,74 +219,11 @@
             "code": "dv-er-node-004"
           },
           "dv-er-node-005": {
-            "description": "\"Expire Flow Instance Cache\" enabled in an intermediate node",
-            "message": "\"Expire Flow Instance Cache\" enabled in an intermediate node",
+            "description": "'Expire Flow Instance Cache' enabled in an intermediate node",
+            "message": "'Expire Flow Instance Cache' enabled in an intermediate node",
             "type": "error",
             "recommendation": "This setting should only be used on flow-ending nodes. Disable it on intermediate node <nodeId> to prevent execution issues.",
             "code": "dv-er-node-005"
-          },
-          "dv-er-node-006": {
-            "description": "Missing site key configuration for reCAPTCHA",
-            "message": "Missing site key configuration for reCAPTCHA",
-            "type": "error",
-            "recommendation": "Configure the required site key value to enable proper reCAPTCHA functionality.",
-            "code": "dv-er-node-006"
-          },
-          "dv-er-node-007": {
-            "description": "Incorrect 'Additional Fields in the Response' in Send Success JSON Response capability",
-            "message": "Incorrect 'Additional Fields in the Response' in Send Success JSON Response capability",
-            "type": "error",
-            "recommendation": "Ensure valid key/value pairs are configured under 'Additional Fields in the Response'.",
-            "code": "dv-er-node-007"
-          },
-          "dv-er-node-008": {
-            "description": "Incorrect 'Additional Fields in the Response' in Send Error JSON Response capability",
-            "message": "Incorrect 'Additional Fields in the Response' in Send Error JSON Response capability",
-            "type": "error",
-            "recommendation": "Ensure valid key/value pairs are configured under 'Additional Fields in the Response'.",
-            "code": "dv-er-node-008"
-          },
-          "dv-bp-node-009": {
-            "description": "Global variable usage in Custom HTML Template script",
-            "message": "Global variable usage in Custom HTML Template script",
-            "type": "best-practice",
-            "recommendation": "Use global variables '%' cautiously in custom code. Avoid storing or processing sensitive information within them.",
-            "code": "dv-bp-node-009"
-          },
-          "dv-bp-node-010": {
-            "description": "Global variable usage in Custom Function code",
-            "message": "Global variable usage in Custom Function code",
-            "type": "best-practice",
-            "recommendation": "Use global variables cautiously in custom code. Avoid storing or processing sensitive information within them.",
-            "code": "dv-bp-node-010"
-          },
-          "dv-er-node-011": {
-            "description": "Missing 'Property Name' for Output Fields in Custom HTML Template capability",
-            "message": "Missing 'Property Name' for Output Fields in Custom HTML Template capability",
-            "type": "error",
-            "recommendation": "Add a 'Property Name' to define the purpose of the output field. This property can then be referenced by successive nodes in the flow.",
-            "code": "dv-er-node-011"
-          },
-          "dv-er-node-012": {
-            "description": "Invalid configurations for 'A == B (Multiple Conditions)' capability",
-            "message": "Invalid configurations for 'A == B (Multiple Conditions)' capability",
-            "type": "error",
-            "recommendation": "Define at least one expected outcome values for the 'A == B (Multiple Conditions)' capability to ensure correct flow branching.",
-            "code": "dv-er-node-012"
-          },
-          "dv-bp-node-013": {
-            "description": "Invalid output mapping for 'A == B (Multiple Conditions)' capability",
-            "message": "Invalid output mapping for 'A == B (Multiple Conditions)' capability",
-            "type": "best-practice",
-            "recommendation": "Map each specific outcome value from 'A == B (Multiple Conditions)' to the next node. Do not use generic node-level output.",
-            "code": "dv-bp-node-013"
-          },
-          "dv-er-node-014": {
-            "description": "Unmapped outcome(s) in 'A == B (Multiple Conditions)' capability",
-            "message": "Unmapped outcome(s) in 'A == B (Multiple Conditions)' capability",
-            "type": "error",
-            "recommendation": "Map the outcome ‘%’ to an appropriate next node in the ‘A == B (Multiple Conditions)’ capability.",
-            "code": "dv-er-node-014"
           }
         },
         "reference": "",
@@ -363,6 +351,42 @@
         },
         "reference": "",
         "cleans": true
+      },
+      {
+        "id": "dv-rule-validFields-001",
+        "description": "Missing or Incorrect fields in nodes",
+        "codes": {
+          "dv-er-validFields-001": {
+            "description": "Missing site key configuration for reCAPTCHA",
+            "message": "Missing site key configuration for reCAPTCHA",
+            "type": "error",
+            "recommendation": "Configure the required site key value to enable proper reCAPTCHA functionality.",
+            "code": "dv-er-validFields-001"
+          },
+          "dv-er-validFields-002": {
+            "description": "Incorrect 'Additional Fields in the Response' in Send Success JSON Response capability",
+            "message": "Incorrect 'Additional Fields in the Response' in Send Success JSON Response capability",
+            "type": "error",
+            "recommendation": "Ensure valid key/value pairs are configured under 'Additional Fields in the Response'.",
+            "code": "dv-er-validFields-002"
+          },
+          "dv-er-validFields-003": {
+            "description": "Incorrect 'Additional Fields in the Response' in Send Error JSON Response capability",
+            "message": "Incorrect 'Additional Fields in the Response' in Send Error JSON Response capability",
+            "type": "error",
+            "recommendation": "Ensure valid key/value pairs are configured under 'Additional Fields in the Response'.",
+            "code": "dv-er-validFields-003"
+          },
+          "dv-er-validFields-004": {
+            "description": "Missing 'Property Name' for Output Fields in Custom HTML Template capability",
+            "message": "Missing 'Property Name' for Output Fields in Custom HTML Template capability",
+            "type": "error",
+            "recommendation": "Add a 'Property Name' to define the purpose of the output field. This property can then be referenced by successive nodes in the flow.",
+            "code": "dv-er-validFields-004"
+          }
+        },
+        "reference": "",
+        "cleans": false
       },
       {
         "id": "dv-rule-variables-001",

@@ -95,6 +95,12 @@
       "publishedVersion": 3,
       "updatedDate": 1676696911140,
       "flowId": "6cc59b44515ba46f388c87ef52a00ec9",
+      "settings": {
+        "csp": "worker-src 'self' blob:; script-src 'self' https://cdn.jsdelivr.net https://code.jquery.com https://devsdk.singularkey.com http://cdnjs.cloudflare.com 'unsafe-inline' 'unsafe-eval';",
+        "intermediateLoadingScreenCSS": "",
+        "intermediateLoadingScreenHTML": "",
+        "pingOneFlow": true
+      },
       "versionId": 3,
       "graphData": {
         "elements": {
