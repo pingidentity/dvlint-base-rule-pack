@@ -67,8 +67,8 @@ class TeleportRule extends LintRule {
 
         // Check if the node is a teleport node and it has false branch
         if (node.data.connectorId === 'nodeConnector') {
-          const evalNodes = edges.filter(edge => edge.data.source === node.data.id).map(d => d.data.target);
-          const connectedNodes = nodes.filter(n => evalNodes.includes(n.data.id));
+          const evalNodes = edges?.filter(edge => edge.data.source === node.data.id).map(d => d.data.target) ||[];
+          const connectedNodes = nodes?.filter(n => evalNodes?.includes(n.data.id)) || [];
           if (evalNodes.length >= 1 && connectedNodes.length > 0) {
             connectedNodes.map(cn => {
               if (cn.data.properties) {
@@ -104,8 +104,8 @@ class TeleportRule extends LintRule {
             startNodeInputSchemaJSON = JSON.parse(startNodeInputSchema || "{}");
           }
           const startNodeInputSchemaArr = Object.entries(startNodeInputSchemaJSON.properties || {});
-          const startNodeInputSchemaManddatoryArr = startNodeInputSchemaArr.filter(([key, val]) => val.required === true);
-          const startNodeMandatoryInpuSchemaKeys = startNodeInputSchemaManddatoryArr.map(([key, val]) => key);
+          const startNodeInputSchemaManddatoryArr = startNodeInputSchemaArr?.filter(([key, val]) => val.required === true);
+          const startNodeMandatoryInpuSchemaKeys = startNodeInputSchemaManddatoryArr?.map(([key, val]) => key);
 
           // Get all gotoNodes with the instanceId of the goto node
           const gotoNodes = this.mainFlow?.graphData?.elements?.nodes?.filter(
@@ -121,7 +121,7 @@ class TeleportRule extends LintRule {
             );
 
             startNodeMandatoryInpuSchemaKeys.forEach((attrName) => {
-              if (!gotoSchema.includes(attrName)) {
+              if (!gotoSchema?.includes(attrName)) {
                     this.addError("dv-er-teleport-002", {
                       flowId: this.mainFlow.flowId,
                       recommendationArgs: [attrName],
