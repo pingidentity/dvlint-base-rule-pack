@@ -17,7 +17,7 @@
                             "code": "dv-bp-globalVariable-001",
                             "message": "Global variable usage in Custom HTML Template script",
                             "type": "best-practice",
-                            "recommendation": "Use global variables '{{global.varnew}}' cautiously in custom code. Avoid storing or processing sensitive information within them.",
+                            "recommendation": "Use global variables cautiously in custom code. Avoid storing or processing sensitive information within them.",
                             "flowId": "802ebc99a1d5dabfc16d636c200ce864",
                             "nodeId": "oigqz0o0o8"
                           },
@@ -43,7 +43,7 @@
                                     "code": "dv-bp-globalVariable-001",
                                     "message": "Global variable usage in Custom HTML Template script",
                                     "type": "best-practice",
-                                    "recommendation": "Use global variables '{{global.varnew}}' cautiously in custom code. Avoid storing or processing sensitive information within them.",
+                                    "recommendation": "Use global variables cautiously in custom code. Avoid storing or processing sensitive information within them.",
                                     "flowId": "802ebc99a1d5dabfc16d636c200ce864",
                                     "nodeId": "oigqz0o0o8"
                                   },

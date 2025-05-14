@@ -13,7 +13,7 @@ class GlobalVariableRule extends LintRule {
             description: "Global variable usage in Custom HTML Template script",
             message: "Global variable usage in Custom HTML Template script",
             type: "best-practice",
-            recommendation: "Use global variables '%' cautiously in custom code. Avoid storing or processing sensitive information within them.",
+            recommendation: "Use global variables cautiously in custom code. Avoid storing or processing sensitive information within them.",
         });
         this.addCode("dv-bp-globalVariable-002", {
             description: "Global variable usage in Custom Function code",
@@ -28,7 +28,6 @@ class GlobalVariableRule extends LintRule {
         try {
             for (const flow of this.allFlows) {
                 const { nodes, edges } = flow?.graphData?.elements
-                const multiValueSourceId = edges?.filter(edge => edge.data.multiValueSourceId).map(ed => ed.data.multiValueSourceId) || [];
 
                 nodes?.forEach((node) => {
                     const { data } = node;
@@ -41,17 +40,17 @@ class GlobalVariableRule extends LintRule {
                         const matches = [...strVal.matchAll(pattern)];
                         const localVarArray = matches.map(match => match[1]);
                         const uniqueGlobalVariables = [...new Set(localVarArray)];
-
+                        const globalVarArr = []
                         uniqueGlobalVariables?.forEach(v => {
-                            //check undefined variables
+                            // Check if the variable is a global variable
                             if (v.includes('global.')) {
-                                let ruleNo = data.capabilityName === "customFunction" ? "dv-bp-globalVariable-002" : "dv-bp-globalVariable-001";
-                                this.addError(ruleNo, {
-                                    flowId: this.mainFlow.flowId,
-                                    recommendationArgs: [`{{${v}}}`], //make it comma separated variable
-                                    nodeId: node.data.id
-                                });
+                                globalVarArr.push(`{{${v}}}`)
                             }
+                        });
+                        let ruleNo = data.capabilityName === "customFunction" ? "dv-bp-globalVariable-002" : "dv-bp-globalVariable-001";
+                        this.addError(ruleNo, {
+                            flowId: this.mainFlow.flowId,
+                            nodeId: node.data.id
                         });
                     }
 
