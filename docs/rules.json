@@ -2,7 +2,7 @@
   {
     "name": "@ping-identity/dvlint-base-rule-pack",
     "description": "Collection of base rules used to lint DaVinci flows.",
-    "version": "1.1.8",
+    "version": "1.1.9",
     "rules": [
       {
         "id": "dv-rule-AEqualsBMultipleCondition-001",
@@ -222,7 +222,7 @@
             "description": "'Expire Flow Instance Cache' enabled in an intermediate node",
             "message": "'Expire Flow Instance Cache' enabled in an intermediate node",
             "type": "error",
-            "recommendation": "This setting should only be used on flow-ending nodes. Disable it on intermediate node <nodeId> to prevent execution issues.",
+            "recommendation": "This setting should only be used on flow-ending nodes. Disable it on intermediate node '%' to prevent execution issues.",
             "code": "dv-er-node-005"
           }
         },

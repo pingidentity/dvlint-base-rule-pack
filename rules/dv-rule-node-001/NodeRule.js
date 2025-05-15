@@ -42,7 +42,7 @@ class NodeRule extends LintRule {
       description: "'Expire Flow Instance Cache' enabled in an intermediate node",
       message: "'Expire Flow Instance Cache' enabled in an intermediate node",
       type: "error",
-      recommendation: "This setting should only be used on flow-ending nodes. Disable it on intermediate node <nodeId> to prevent execution issues.",
+      recommendation: "This setting should only be used on flow-ending nodes. Disable it on intermediate node '%' to prevent execution issues.",
     });
     
   }
