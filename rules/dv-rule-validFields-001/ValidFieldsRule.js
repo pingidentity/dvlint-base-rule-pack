@@ -84,9 +84,27 @@ class ValidFields extends LintRule {
                     //check if claimsNameValuePairs in  createErrorResponse or createSuccessResponse is properly configured
                     if (data.nodeType === "CONNECTION" && (data.capabilityName === "createErrorResponse" || data.capabilityName === "createSuccessResponse")) {
                         let value = data.properties?.claimsNameValuePairs?.value || [];
-                        const noValFlag = value?.filter(v => !v.value || !JSON.parse(v.value)[0].children[0].text).length > 0;
+
+                        let errorArr = []
+
+                        value?.map(v => {
+                            if (!v.value) {
+                                errorArr.push(v);
+                            }
+                            let valInChild = JSON.parse(v.value)[0].children;
+                            let isValAvailable
+                            if (valInChild.length > 1) {
+                                isValAvailable = valInChild.filter(val => val.data);
+                            } else {
+                                isValAvailable = valInChild[0].text
+                            }
+                            if (!isValAvailable) {
+                                errorArr.push(v);
+                            }
+                        });
+
                         const errorCode = data.capabilityName === "createErrorResponse" ? "dv-er-validFields-003" : "dv-er-validFields-002";
-                        if (!value || noValFlag) {
+                        if (!value || errorArr.length > 0) {
                             this.addError(errorCode, {
                                 flowId: flow.flowId,
                                 nodeId: data.id,

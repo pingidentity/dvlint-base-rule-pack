@@ -47,28 +47,32 @@ class PingOneFlowRule extends LintRule {
       nodes.forEach((node) => {
         if (node.data.connectorId === 'pingOneSSOConnector') {
           //target nodes of the current node
-          const evalNodes = edges.filter(edge => edge.data.source === node.data.id).map(d => d.data.target) || [];
+          const evalNodes = edges?.filter(edge => edge.data.source === node.data.id).map(d => d.data.target) || [];
           //case where one evalnode is connected to multiple nodes
           let targetFromEvalNodes = [];
           if (evalNodes.length === 1) {
-            targetFromEvalNodes = edges.filter(edge => edge.data.source === evalNodes[0]).map(d => d.data.target) || [];
+            targetFromEvalNodes = edges?.filter(edge => edge.data.source === evalNodes[0]).map(d => d.data.target) || [];
           }
-
           //connected nodes of the current node
-          const connectedNodes = nodes.filter(n => evalNodes.includes(n.data.id)) || [];
+          const connectedNodes = nodes?.filter(n => evalNodes.includes(n.data.id)) || [];
           let evalNodeArr = [];
           connectedNodes.map(cn => {
             const propertiesStr = cn.data.properties;
+
+            //connectedNodes from current evalNode
+            const evalNodeTarget = edges?.filter(edge => edge.data.source === cn.data.id).map(d => d.data.target) || [];
             if (propertiesStr) {
-              for (let i in propertiesStr) {
-                const value = propertiesStr[i].value;
-                evalNodeArr.push(value);
+              for (let key in propertiesStr) {
+                if (evalNodeTarget.includes(key)) {
+                  const value = propertiesStr[key].value;
+                  evalNodeArr.push(value);
+                }
               }
             }
           });
 
-          const falseBranchCount = evalNodeArr.filter(d => d === 'allTriggersFalse' || d === "anyTriggersFalse").length;
-          const trueBranchCount = evalNodeArr.filter(d => d === 'allTriggersTrue' || d === "anyTriggersTrue").length;
+          const falseBranchCount = evalNodeArr?.filter(d => d === 'allTriggersFalse' || d === "anyTriggersFalse").length;
+          const trueBranchCount = evalNodeArr?.filter(d => d === 'allTriggersTrue' || d === "anyTriggersTrue").length;
 
           if (
             ((targetFromEvalNodes.length >= 2 || connectedNodes.length >= 2) && (!trueBranchCount || trueBranchCount !== 1) && falseBranchCount !== 1) ||   // in case of singleEval has multiple branches

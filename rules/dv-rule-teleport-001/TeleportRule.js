@@ -71,9 +71,19 @@ class TeleportRule extends LintRule {
           const connectedNodes = nodes?.filter(n => evalNodes?.includes(n.data.id)) || [];
           if (evalNodes.length >= 1 && connectedNodes.length > 0) {
             connectedNodes.map(cn => {
-              if (cn.data.properties) {
-                const propertiesStr = JSON.stringify(cn.data.properties);
-                if (propertiesStr && (propertiesStr.indexOf('anyTriggersFalse') > -1 || propertiesStr.indexOf('allTriggersFalse') > -1)) {
+              let properties = cn.data.properties;
+              if (properties && Object.entries(properties).length >= 1) {
+                const evalNodeTarget = edges.filter(edge => edge.data.source === cn.data.id).map(d => d.data.target) || [];
+                let isFalseNode = false;
+                for (const key in properties) {
+                  if (evalNodeTarget.includes(key)) {
+                    const propertiesStr = JSON.stringify(properties[key]);
+                    if (propertiesStr && (propertiesStr.indexOf('anyTriggersFalse') > -1 || propertiesStr.indexOf('allTriggersFalse') > -1)) {
+                      isFalseNode = true;
+                    }
+                  }
+                }
+                if (isFalseNode) {
                   this.addError("dv-er-teleport-003", {
                     flowId: this.mainFlow.flowId,
                     recommendationArgs: [node.data.id],
