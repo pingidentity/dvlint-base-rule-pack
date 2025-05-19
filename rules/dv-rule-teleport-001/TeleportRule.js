@@ -16,10 +16,10 @@ class TeleportRule extends LintRule {
       recommendation: "'%' is not being used. Consider removing it from the flow.",
     });
     this.addCode("dv-er-teleport-002", {
-      description: "Teleport schema mismatch",
-      message:"Teleport schema mismatch",
+      description: "Input schema missing for teleport node",
+      message:"Input schema missing for teleport node",
       type: "error",
-      recommendation: "Update the JSON to align with the Teleport node schema, ensuring that the '%' attribute is properly defined.",
+      recommendation: "Configure required input schema values in the 'Go to Node' capability to pass data into teleport start node '%'.",
     });
     this.addCode("dv-er-teleport-003", {
       description: "Unsupported false branch after teleport node",
@@ -134,7 +134,7 @@ class TeleportRule extends LintRule {
               if (!gotoSchema?.includes(attrName)) {
                     this.addError("dv-er-teleport-002", {
                       flowId: this.mainFlow.flowId,
-                      recommendationArgs: [attrName],
+                      recommendationArgs: [gotoNode.data.id],
                       nodeId: gotoNode.data.id,
                     });
               }
