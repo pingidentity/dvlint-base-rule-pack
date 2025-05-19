@@ -16,9 +16,9 @@
             {
               "flowId": "b8f27c7f0ff6794a831c57b43ad9bcce",
               "code": "dv-er-teleport-002",
-              "message": "Teleport schema mismatch",
+              "message": "Input schema missing for teleport node",
               "nodeId": "2shaj7vbbu",
-              "recommendation": "Update the JSON to align with the Teleport node schema, ensuring that the 'message' attribute is properly defined.",
+              "recommendation": "Configure required input schema values in the 'Go to Node' capability to pass data into teleport start node '2shaj7vbbu'.",
               "type": "error"
             }
           ],
@@ -35,9 +35,10 @@
                 {
                   "flowId": "b8f27c7f0ff6794a831c57b43ad9bcce",
                   "code": "dv-er-teleport-002",
-                  "message": "Teleport schema mismatch",
+                  "message": "Input schema missing for teleport node",
                   "type": "error",
-                  "recommendation": "Update the JSON to align with the Teleport node schema, ensuring that the 'message' attribute is properly defined."
+                  "nodeId": "2shaj7vbbu",
+                  "recommendation": "Configure required input schema values in the 'Go to Node' capability to pass data into teleport start node '2shaj7vbbu'."
                 }
               ]
             }

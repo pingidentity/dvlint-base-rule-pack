@@ -1,0 +1,284 @@
+{
+  "companyId": "6YWgejhFHGFyhZM57KfdhnYf7fmeMZKM",
+  "connectorIds": [
+    "mfaContainerConnector",
+    "userPolicyConnector",
+    "httpConnector"
+  ],
+  "createdDate": 1747648576394,
+  "currentVersion": 5,
+  "customerId": "1576bd3c19c0fb0a828342b21d46a57e",
+  "description": "",
+  "flowStatus": "enabled",
+  "name": "globalVariableRUle",
+  "settings": {
+    "logLevel": 4
+  },
+  "flowId": "fbd66989acdaafb310c525639257a4c6",
+  "versionId": 5,
+  "graphData": {
+    "elements": {
+      "nodes": [
+        {
+          "data": {
+            "id": "tyyf7m9e7a",
+            "nodeType": "CONNECTION",
+            "connectionId": "037736218c3434ae3f5f43a76cd93f2b",
+            "connectorId": "mfaContainerConnector",
+            "name": "MFA Container",
+            "label": "MFA Container",
+            "status": "configured",
+            "capabilityName": "login",
+            "type": "trigger",
+            "properties": {
+              "customScript": {
+                "value": "{{global.testmanish}}"
+              },
+              "nodeTitle": {
+                "value": "asd"
+              },
+              "nodeDescription": {
+                "value": "asd"
+              }
+            }
+          },
+          "position": {
+            "x": 277,
+            "y": 236
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "ckz7azwsha",
+            "nodeType": "CONNECTION",
+            "connectionId": "4cb5e3465d718a84087ec9b6a6251e52",
+            "connectorId": "userPolicyConnector",
+            "name": "User Policy",
+            "label": "User Policy",
+            "status": "configured",
+            "capabilityName": "authenticateUser",
+            "type": "action",
+            "properties": {
+              "formFieldsList": {
+                "value": [
+                  {
+                    "propertyName": "buttonValue",
+                    "preferredDataType": "boolean"
+                  },
+                  {
+                    "propertyName": "email",
+                    "preferredDataType": "string"
+                  }
+                ]
+              },
+              "htmlConfig_htmlLogin1": {
+                "properties": {
+                  "customScript": {
+                    "value": "{{global.testvar}}"
+                  }
+                }
+              },
+              "nodeTitle": {
+                "value": "ads"
+              },
+              "nodeDescription": {
+                "value": "sad"
+              }
+            }
+          },
+          "position": {
+            "x": 660,
+            "y": 240
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "g1kxm3s3r8",
+            "nodeType": "EVAL"
+          },
+          "position": {
+            "x": 468.5,
+            "y": 238
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "5i2kbix4y2",
+            "nodeType": "EVAL",
+            "label": "Evaluator"
+          },
+          "position": {
+            "x": 832.4999501014868,
+            "y": 239.7053315234662
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "2ddqdqz53x",
+            "nodeType": "CONNECTION",
+            "connectionId": "481e952e6b11db8360587b8711620786",
+            "connectorId": "httpConnector",
+            "name": "HTTP",
+            "label": "HTTP",
+            "status": "configured",
+            "capabilityName": "customHTMLTemplate",
+            "type": "trigger",
+            "properties": {
+              "customScript": {
+                "value": "{{global.testmanish}}"
+              },
+              "nodeTitle": {
+                "value": "asd"
+              },
+              "nodeDescription": {
+                "value": "asd"
+              }
+            }
+          },
+          "position": {
+            "x": 1004.9999002029737,
+            "y": 239.4106630469324
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        }
+      ],
+      "edges": [
+        {
+          "data": {
+            "id": "hhhbwj8f09",
+            "source": "tyyf7m9e7a",
+            "target": "g1kxm3s3r8"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "a1e4iiyhz6",
+            "source": "g1kxm3s3r8",
+            "target": "ckz7azwsha"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "p67cq80gj3",
+            "source": "ckz7azwsha",
+            "target": "5i2kbix4y2"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "ulc6pv4tgz",
+            "source": "5i2kbix4y2",
+            "target": "2ddqdqz53x"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        }
+      ]
+    },
+    "data": {},
+    "zoomingEnabled": true,
+    "userZoomingEnabled": true,
+    "zoom": 1,
+    "minZoom": 1e-50,
+    "maxZoom": 1e+50,
+    "panningEnabled": true,
+    "userPanningEnabled": true,
+    "pan": {
+      "x": 0,
+      "y": 0
+    },
+    "boxSelectionEnabled": true,
+    "renderer": {
+      "name": "null"
+    }
+  },
+  "flowColor": "#e2e2e2",
+  "savedDate": 1747648576314,
+  "variables": [],
+  "connections": []
+}
