@@ -130,6 +130,13 @@
             "type": "best-practice",
             "recommendation": "Use global variables cautiously in custom code. Avoid storing or processing sensitive information within them.",
             "code": "dv-bp-globalVariable-002"
+          },
+          "dv-bp-globalVariable-003": {
+            "description": "Custom JavaScript usage in flow",
+            "message": "Custom JavaScript usage in flow",
+            "type": "best-practice",
+            "recommendation": "Review the script in the '%' capability to ensure it does not introduce security vulnerabilities.",
+            "code": "dv-bp-globalVariable-003"
           }
         },
         "reference": "",
