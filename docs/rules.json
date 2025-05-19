@@ -2,7 +2,7 @@
   {
     "name": "@ping-identity/dvlint-base-rule-pack",
     "description": "Collection of base rules used to lint DaVinci flows.",
-    "version": "1.1.9",
+    "version": "1.2.0",
     "rules": [
       {
         "id": "dv-rule-AEqualsBMultipleCondition-001",
@@ -130,6 +130,13 @@
             "type": "best-practice",
             "recommendation": "Use global variables cautiously in custom code. Avoid storing or processing sensitive information within them.",
             "code": "dv-bp-globalVariable-002"
+          },
+          "dv-bp-globalVariable-003": {
+            "description": "Custom JavaScript usage in flow",
+            "message": "Custom JavaScript usage in flow",
+            "type": "best-practice",
+            "recommendation": "Review the script in the '%' capability to ensure it does not introduce security vulnerabilities.",
+            "code": "dv-bp-globalVariable-003"
           }
         },
         "reference": "",
@@ -328,10 +335,10 @@
             "code": "dv-er-teleport-001"
           },
           "dv-er-teleport-002": {
-            "description": "Teleport schema mismatch",
-            "message": "Teleport schema mismatch",
+            "description": "Input schema missing for teleport node",
+            "message": "Input schema missing for teleport node",
             "type": "error",
-            "recommendation": "Update the JSON to align with the Teleport node schema, ensuring that the '%' attribute is properly defined.",
+            "recommendation": "Configure required input schema values in the 'Go to Node' capability to pass data into teleport start node '%'.",
             "code": "dv-er-teleport-002"
           },
           "dv-er-teleport-003": {
