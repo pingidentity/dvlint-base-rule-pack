@@ -85,7 +85,7 @@ class GlobalVariableRule extends LintRule {
                     auth: 'htmlConfig0_select'
                 },
                 securIdConnector: {
-                    verifyRSA: 'htmlConfig0_selectScreen'
+                    verifyRSA: ['htmlConfig0_selectScreen', 'htmlConfig1_authenticateTokenCode', 'htmlConfig2_emergencyTokenCode']
                 },
                 lexisnexisV2Connector: {
                     initialize: 'htmlConfig_initializeScreen',
