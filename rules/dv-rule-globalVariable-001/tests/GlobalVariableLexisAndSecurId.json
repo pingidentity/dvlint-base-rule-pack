@@ -1,0 +1,370 @@
+{
+  "companyId": "2a2d8f2b-0802-4111-815b-72eea2865dfd",
+  "authTokenExpireIds": [],
+  "connectorIds": [
+    "securIdConnector",
+    "lexisnexisV2Connector"
+  ],
+  "createdDate": 1747821608150,
+  "currentVersion": 8,
+  "customerId": "aa71686ea426ffce6d9c5661f36734ec",
+  "deployedDate": 1747821621538,
+  "description": "",
+  "flowStatus": "enabled",
+  "isOutputSchemaSaved": false,
+  "name": "SecurIdAndLexisNexis",
+  "publishedVersion": 8,
+  "timeouts": "null",
+  "updatedDate": 1747821621545,
+  "flowId": "d3a8d4dd071aac3bc51e0f8fb37e9df7",
+  "versionId": 8,
+  "graphData": {
+    "elements": {
+      "nodes": [
+        {
+          "data": {
+            "id": "6ge2g03srg",
+            "nodeType": "CONNECTION",
+            "connectionId": "9449f23a761a2309b61e14f134fb3fab",
+            "connectorId": "securIdConnector",
+            "name": "SecurID1",
+            "label": "SecurID1",
+            "status": "configured",
+            "idUnique": "0vyxgh5h36",
+            "capabilityName": "verifyRSA",
+            "type": "trigger",
+            "properties": {
+              "htmlConfig0_selectScreen": {
+                "properties": {
+                  "customScript": {
+                    "value": "document.getElementById('elink').addEventListener('click', function (e) {\n    document.getElementById('eb').click();\n});\n{{global.testvar}}\ndocument.getElementById('TOKEN').addEventListener('click', function (e) {\n    document.getElementById('TOKEN_trigger').click();\n});\ndocument.getElementById('APPROVE').addEventListener('click', function (e) {\n    document.getElementById('APPROVE_trigger').click();\n});\ndocument.getElementById('FINGERPRINT').addEventListener('click', function (e) {\n    document.getElementById('FINGERPRINT_trigger').click();\n});\nconst setupButton = (val, btn) => {\n    switch (val) {\n        case \"FINGERPRINT\":\n            document.getElementById(\"FINGERPRINT\").setAttribute(\"style\", \"display: none !important\");\n            break;\n        case \"APPROVE\":\n            document.getElementById(\"APPROVE\").setAttribute(\"style\", \"display: none !important\");\n            break;\n        case \"TOKEN\":\n            document.getElementById(\"TOKEN\").setAttribute(\"style\", \"display: none !important\");\n            break;\n        case \"EMERGENCY_TOKENCODE\":\n            document.getElementById(\"EMERGENCY_TOKENCODE\").setAttribute(\"style\", \"display: none\");\n            break;\n        default:\n    }\n};\nconst supported = [\"FINGERPRINT\", \"APPROVE\", \"TOKEN\", \"EMERGENCY_TOKENCODE\"];\nconst valueText = '{{availableChallenges}}';\nconst values = valueText.split(',');\nconsole.log(values);\nfor (const val of supported) {\n    if (!values.includes(val)) {\n        setupButton(val);\n    }\n}\nif (values.length === 1) {\n    let card = document.getElementsByClassName(\"card\")[0];\n    let alert = document.createElement(\"div\");\n    alert.innerHTML = \"no challenge methods available, no registered device found.\";\n    alert.setAttribute(\"class\", \"mt-5 alert alert-danger\");\n    alert.setAttribute(\"role\", \"alert\");\n    card.appendChild(alert);\n}\n//# sourceMappingURL=selectScreen.js.map"
+                  }
+                }
+              }
+            }
+          },
+          "position": {
+            "x": 277,
+            "y": 236
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "n9hid0qw8m",
+            "nodeType": "CONNECTION",
+            "connectionId": "19e3184f0f62e612cd0d936e58c59ff7",
+            "connectorId": "lexisnexisV2Connector",
+            "name": "LexisNexis",
+            "label": "LexisNexis",
+            "status": "configured",
+            "capabilityName": "iidqa",
+            "type": "trigger",
+            "properties": {
+              "htmlConfig_initializeScreen": {
+                "properties": {
+                  "customScript": {
+                    "value": "{{global.testvar}}"
+                  }
+                }
+              },
+              "htmlConfig_OTPscreen": {
+                "properties": {
+                  "customScript": {
+                    "value": "asdasd"
+                  }
+                }
+              },
+              "htmlConfig_questionsScreen2": {
+                "properties": {
+                  "customScript": {
+                    "value": "{{global.testQA}}"
+                  }
+                }
+              }
+            }
+          },
+          "position": {
+            "x": 600,
+            "y": 240
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "1r2b8lgcjs",
+            "nodeType": "EVAL"
+          },
+          "position": {
+            "x": 438.5,
+            "y": 238
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "klvlfroe9j",
+            "nodeType": "EVAL",
+            "label": "Evaluator"
+          },
+          "position": {
+            "x": 738.9999558861616,
+            "y": 240.20509272631892
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "wwbk853v9n",
+            "nodeType": "CONNECTION",
+            "connectionId": "19e3184f0f62e612cd0d936e58c59ff7",
+            "connectorId": "lexisnexisV2Connector",
+            "name": "LexisNexis",
+            "label": "LexisNexis",
+            "status": "configured",
+            "capabilityName": "initialize",
+            "type": "action",
+            "properties": {
+              "htmlConfig_initializeScreen": {
+                "properties": {
+                  "customScript": {
+                    "value": "{{global.testGDP}}"
+                  }
+                }
+              }
+            }
+          },
+          "position": {
+            "x": 877.9999117723232,
+            "y": 240.41018545263788
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "6ungzh52i0",
+            "nodeType": "EVAL",
+            "label": "Evaluator"
+          },
+          "position": {
+            "x": 1011.4998996108417,
+            "y": 237.4101795663426
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "hdivzx9fav",
+            "nodeType": "CONNECTION",
+            "connectionId": "19e3184f0f62e612cd0d936e58c59ff7",
+            "connectorId": "lexisnexisV2Connector",
+            "name": "LexisNexis",
+            "label": "LexisNexis",
+            "status": "configured",
+            "capabilityName": "otp",
+            "type": "trigger",
+            "properties": {
+              "htmlConfig_OTPscreen": {
+                "properties": {
+                  "customScript": {
+                    "value": "{{global.testOTP}}"
+                  }
+                }
+              }
+            }
+          },
+          "position": {
+            "x": 1144.9998874493601,
+            "y": 234.41017368004734
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        }
+      ],
+      "edges": [
+        {
+          "data": {
+            "id": "pbal1i14xo",
+            "source": "6ge2g03srg",
+            "target": "1r2b8lgcjs"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "s26pinf3q3",
+            "source": "1r2b8lgcjs",
+            "target": "n9hid0qw8m"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "pu2p2rnony",
+            "source": "n9hid0qw8m",
+            "target": "klvlfroe9j"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "yqf6xxw76m",
+            "source": "klvlfroe9j",
+            "target": "wwbk853v9n"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "t64ep3kqzl",
+            "source": "wwbk853v9n",
+            "target": "6ungzh52i0"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "e10fwuwjru",
+            "source": "6ungzh52i0",
+            "target": "hdivzx9fav"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        }
+      ]
+    },
+    "data": {},
+    "zoomingEnabled": true,
+    "userZoomingEnabled": true,
+    "zoom": 1,
+    "minZoom": 1e-50,
+    "maxZoom": 1e+50,
+    "panningEnabled": true,
+    "userPanningEnabled": true,
+    "pan": {
+      "x": 0,
+      "y": 0
+    },
+    "boxSelectionEnabled": true,
+    "renderer": {
+      "name": "null"
+    }
+  },
+  "flowColor": "#01B9E3",
+  "savedDate": 1747821608083,
+  "variables": [],
+  "connections": []
+}

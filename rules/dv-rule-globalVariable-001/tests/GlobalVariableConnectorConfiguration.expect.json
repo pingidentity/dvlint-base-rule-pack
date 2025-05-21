@@ -1,0 +1,49 @@
+{
+    "name": "PingOne DaVinci Linter",
+    "pass": false,
+    "errorCount": 1,
+    "rulePackResults": [
+        {
+            "pass": false,
+            "errorCount": 1,
+            "lintResults": [
+                {
+                    "flowId": "d3a8d4dd071aac3bc51e0f8fb37e9df7",
+                    "flowName": "test123",
+                    "pass": false,
+                    "errorCount": 1,
+                    "errors": [
+                        {
+                            "code": "dv-bp-globalVariable-003",
+                            "flowId": "d3a8d4dd071aac3bc51e0f8fb37e9df7",
+                            "message": "Custom JavaScript usage in flow",
+                            "recommendation": "Review the script in the 'codeSnippetConnector' connector to ensure it does not introduce security vulnerabilities.This connector is used in the following node(s): 6ge2g03srg.",
+                            "type": "best-practice"
+                        }
+                    ],
+                    "rulesApplied": [
+                        "dv-rule-globalVariable-001"
+                    ],
+                    "ruleResults": [
+                        {
+                            "ruleId": "dv-rule-globalVariable-001",
+                            "pass": false,
+                            "errorCount": 1,
+                            "errors": [
+                                {
+                                    "code": "dv-bp-globalVariable-003",
+                                    "flowId": "d3a8d4dd071aac3bc51e0f8fb37e9df7",
+                                    "message": "Custom JavaScript usage in flow",
+                                    "recommendation": "Review the script in the 'codeSnippetConnector' connector to ensure it does not introduce security vulnerabilities.This connector is used in the following node(s): 6ge2g03srg.",
+                                    "type": "best-practice"
+                                }
+                            ]
+                        }
+                    ],
+                    "rulesIgnored": []
+                }
+            ],
+            "rulesIgnored": true
+        }
+    ]
+}

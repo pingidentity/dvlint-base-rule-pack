@@ -135,7 +135,7 @@
             "description": "Custom JavaScript usage in flow",
             "message": "Custom JavaScript usage in flow",
             "type": "best-practice",
-            "recommendation": "Review the script in the '%' capability to ensure it does not introduce security vulnerabilities.",
+            "recommendation": "Review the script in the % to ensure it does not introduce security vulnerabilities.%",
             "code": "dv-bp-globalVariable-003"
           }
         },
