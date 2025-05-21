@@ -1,0 +1,111 @@
+{
+  "companyId": "2a2d8f2b-0802-4111-815b-72eea2865dfd",
+  "connectorIds": [
+    "codeSnippetConnector"
+  ],
+  "createdDate": 1747802879169,
+  "currentVersion": 0,
+  "customerId": "aa71686ea426ffce6d9c5661f36734ec",
+  "description": "",
+  "flowStatus": "enabled",
+  "name": "test123",
+  "flowId": "d3a8d4dd071aac3bc51e0f8fb37e9df7",
+  "versionId": 0,
+  "graphData": {
+    "elements": {
+      "nodes": [
+        {
+          "data": {
+            "id": "6ge2g03srg",
+            "nodeType": "CONNECTION",
+            "connectionId": "522068e23fbacfcb6960f2f46b034e7d",
+            "connectorId": "codeSnippetConnector",
+            "name": "Code Snippet",
+            "label": "Code Snippet",
+            "status": "unconfigured"
+          },
+          "position": {
+            "x": 400,
+            "y": 400
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        }
+      ]
+    },
+    "data": {},
+    "zoomingEnabled": true,
+    "userZoomingEnabled": true,
+    "zoom": 1,
+    "minZoom": 1e-50,
+    "maxZoom": 1e+50,
+    "panningEnabled": true,
+    "userPanningEnabled": true,
+    "pan": {
+      "x": 0,
+      "y": 0
+    },
+    "boxSelectionEnabled": true,
+    "renderer": {
+      "name": "null"
+    }
+  },
+  "flowColor": "#E3F0FF",
+  "savedDate": 1747802879157,
+  "variables": [],
+  "connections": [
+    {
+      "connectorId": "codeSnippetConnector",
+      "createdDate": 1747641577289,
+      "customerId": "aa71686ea426ffce6d9c5661f36734ec",
+      "name": "Code Snippet",
+      "properties": {
+        "code": {
+          "type": "string",
+          "displayName": "Code Snippet",
+          "createdDate": 1694489654260,
+          "customerId": "ecb9bf8a2fab854e65045d02cb6bab50",
+          "companyId": "singularkey",
+          "preferredControlType": "codeEditor",
+          "value": "// Write your code here\n// Supported language: Javascript \nmodule.exports = a = async ({params}) => {\n\tconsole.log('params: ', params)\n\t{{global.testvar}}\n\treturn {'testVariable': params.testVariable}\n}",
+          "language": "javascript",
+          "info": "Follow example for code. Caution: Custom code is for advanced users only. Before using custom code, review the security risks in the DaVinci documentation by searching for \"Using custom code safely\".",
+          "maximizeToggle": true
+        },
+        "inputSchema": {
+          "type": "string",
+          "displayName": "Input Schema",
+          "createdDate": 1694489654260,
+          "customerId": "ecb9bf8a2fab854e65045d02cb6bab50",
+          "companyId": "singularkey",
+          "preferredControlType": "codeEditor",
+          "value": "{\n\t\"input\": {\n\t\t\"type\": \"object\",\n\t\t\"properties\": {\n\t\t\t\"testVariable\": {\n\t\t\t\t\"type\": \"string\"\n\t\t\t}\n\t\t}\n\t}\n}",
+          "language": "json",
+          "info": "Follow example for JSON schema.",
+          "maximizeToggle": true
+        },
+        "outputSchema": {
+          "type": "string",
+          "displayName": "Output Schema",
+          "createdDate": 1694489647960,
+          "customerId": "ecb9bf8a2fab854e65045d02cb6bab50",
+          "companyId": "singularkey",
+          "preferredControlType": "codeEditor",
+          "value": "{\n\t\"output\": {\n\t\t\"type\": \"object\",\n\t\t\"properties\": {\n\t\t\t\"testVariable\": {\n\t\t\t\t\"type\": \"string\"\n\t\t\t}\n\t\t}\n\t}\n}",
+          "language": "json",
+          "info": "Follow example for JSON schema.",
+          "maximizeToggle": true
+        }
+      },
+      "updatedDate": 1747802817057,
+      "connectionId": "522068e23fbacfcb6960f2f46b034e7d",
+      "companyId": "2a2d8f2b-0802-4111-815b-72eea2865dfd"
+    }
+  ]
+}

@@ -1,0 +1,99 @@
+{
+    "name": "PingOne DaVinci Linter",
+    "pass": false,
+    "errorCount": 4,
+    "rulePackResults": [
+        {
+            "pass": false,
+            "errorCount": 4,
+            "lintResults": [
+                {
+                    "flowId": "d3a8d4dd071aac3bc51e0f8fb37e9df7",
+                    "flowName": "SecurIdAndLexisNexis",
+                    "pass": false,
+                    "errorCount": 4,
+                    "errors": [
+                        {
+                            "code": "dv-bp-globalVariable-003",
+                            "flowId": "d3a8d4dd071aac3bc51e0f8fb37e9df7",
+                            "message": "Custom JavaScript usage in flow",
+                            "nodeId": "6ge2g03srg",
+                            "recommendation": "Review the script in the 'verifyRSA' capability to ensure it does not introduce security vulnerabilities.",
+                            "type": "best-practice"
+                        },
+                        {
+                            "code": "dv-bp-globalVariable-003",
+                            "flowId": "d3a8d4dd071aac3bc51e0f8fb37e9df7",
+                            "message": "Custom JavaScript usage in flow",
+                            "nodeId": "n9hid0qw8m",
+                            "recommendation": "Review the script in the 'iidqa' capability to ensure it does not introduce security vulnerabilities.",
+                            "type": "best-practice"
+                        },
+                        {
+                            "code": "dv-bp-globalVariable-003",
+                            "flowId": "d3a8d4dd071aac3bc51e0f8fb37e9df7",
+                            "message": "Custom JavaScript usage in flow",
+                            "nodeId": "wwbk853v9n",
+                            "recommendation": "Review the script in the 'initialize' capability to ensure it does not introduce security vulnerabilities.",
+                            "type": "best-practice"
+                        },
+                        {
+                            "code": "dv-bp-globalVariable-003",
+                            "flowId": "d3a8d4dd071aac3bc51e0f8fb37e9df7",
+                            "message": "Custom JavaScript usage in flow",
+                            "nodeId": "hdivzx9fav",
+                            "recommendation": "Review the script in the 'otp' capability to ensure it does not introduce security vulnerabilities.",
+                            "type": "best-practice"
+                        }
+                    ],
+                    "rulesApplied": [
+                        "dv-rule-globalVariable-001"
+                    ],
+                    "ruleResults": [
+                        {
+                            "ruleId": "dv-rule-globalVariable-001",
+                            "pass": false,
+                            "errorCount": 4,
+                            "errors": [
+                                {
+                                    "code": "dv-bp-globalVariable-003",
+                                    "flowId": "d3a8d4dd071aac3bc51e0f8fb37e9df7",
+                                    "message": "Custom JavaScript usage in flow",
+                                    "nodeId": "6ge2g03srg",
+                                    "recommendation": "Review the script in the 'verifyRSA' capability to ensure it does not introduce security vulnerabilities.",
+                                    "type": "best-practice"
+                                },
+                                {
+                                    "code": "dv-bp-globalVariable-003",
+                                    "flowId": "d3a8d4dd071aac3bc51e0f8fb37e9df7",
+                                    "message": "Custom JavaScript usage in flow",
+                                    "nodeId": "n9hid0qw8m",
+                                    "recommendation": "Review the script in the 'iidqa' capability to ensure it does not introduce security vulnerabilities.",
+                                    "type": "best-practice"
+                                },
+                                {
+                                    "code": "dv-bp-globalVariable-003",
+                                    "flowId": "d3a8d4dd071aac3bc51e0f8fb37e9df7",
+                                    "message": "Custom JavaScript usage in flow",
+                                    "nodeId": "wwbk853v9n",
+                                    "recommendation": "Review the script in the 'initialize' capability to ensure it does not introduce security vulnerabilities.",
+                                    "type": "best-practice"
+                                },
+                                {
+                                    "code": "dv-bp-globalVariable-003",
+                                    "flowId": "d3a8d4dd071aac3bc51e0f8fb37e9df7",
+                                    "message": "Custom JavaScript usage in flow",
+                                    "nodeId": "hdivzx9fav",
+                                    "recommendation": "Review the script in the 'otp' capability to ensure it does not introduce security vulnerabilities.",
+                                    "type": "best-practice"
+                                }
+                            ]
+                        }
+                    ],
+                    "rulesIgnored": []
+                }
+            ],
+            "rulesIgnored": true
+        }
+    ]
+}
