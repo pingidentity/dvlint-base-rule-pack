@@ -42,10 +42,13 @@ class GlobalVariableRule extends LintRule {
         try {
             const connectorIdsForGlobalVariableCheck = {
                 transunionConnector: {
-                    otpAuthentication: 'htmlConfig_questionsScreen',
+                    otpAuthentication: 'htmlConfig_htmlLogin1',
                     kba: 'htmlConfig_questionsScreen',
-                    otpVerification: 'htmlConfig_questionsScreen',
-                    documentVerification: 'htmlConfig_docVerificationConsentScreen'
+                    otpVerification: 'htmlConfig_htmlLogin1',
+                    documentVerification: [
+                        'htmlConfig_docVerificationConsentScreen', 'htmlConfig_documentTypeScreen',
+                        'htmlConfig_photosScreen', 'htmlConfig_thankyouScreen'
+                    ]
                 },
                 userPolicyConnector: {
                     authenticateUser: ['htmlConfig_htmlLogin1', 'htmlConfig_htmlLogin2']
@@ -65,7 +68,7 @@ class GlobalVariableRule extends LintRule {
                 },
                 jumioConnector: {
                     register: ['htmlConfig_documentVerify3', 'htmlConfig_documentVerify2'],
-                    documentVerify: 'htmlConfig_documentVerify3',
+                    documentVerify: ['htmlConfig_documentVerify2','htmlConfig_documentVerify3'],
                     login: 'htmlConfig_login2',
                     loginFirstFactor: ['htmlConfig_loginFirstFactor1', 'htmlConfig_loginFirstFactor2']
                 },
@@ -82,7 +85,7 @@ class GlobalVariableRule extends LintRule {
                     register: ''
                 },
                 entrustConnector: {
-                    auth: 'htmlConfig0_select'
+                    auth: ['htmlConfig0_select', 'htmlConfig1_otp','htmlConfig2_token']
                 },
                 securIdConnector: {
                     verifyRSA: ['htmlConfig0_selectScreen', 'htmlConfig1_authenticateTokenCode', 'htmlConfig2_emergencyTokenCode']
