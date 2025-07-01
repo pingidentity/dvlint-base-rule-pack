@@ -1,0 +1,814 @@
+{
+    "flows": [
+        {
+            "companyId": "6YWgejhFHGFyhZM57KfdhnYf7fmeMZKM",
+            "connectorIds": [
+                "httpConnector",
+                "flowConnector",
+                "flowCanvasToolsConnector"
+            ],
+            "createdDate": 1751263460856,
+            "currentVersion": 6,
+            "customerId": "1576bd3c19c0fb0a828342b21d46a57e",
+            "description": "",
+            "flowStatus": "enabled",
+            "name": "ScheduledFlow",
+            "settings": {
+                "csp": "worker-src 'self' blob:; script-src 'self' https://cdn.jsdelivr.net https://code.jquery.com https://devsdk.singularkey.com http://cdnjs.cloudflare.com 'unsafe-inline' 'unsafe-eval';",
+                "intermediateLoadingScreenCSS": "",
+                "intermediateLoadingScreenHTML": "",
+                "flowHttpTimeoutInSeconds": 120,
+                "flowTimeoutInSeconds": 120,
+                "logLevel": 3
+            },
+            "trigger": {
+                "type": "SCHEDULE"
+            },
+            "flowId": "a876730b76356af1161bcde9295bdbdf",
+            "versionId": 6,
+            "graphData": {
+                "elements": {
+                    "nodes": [
+                        {
+                            "data": {
+                                "id": "4251twbmsc",
+                                "nodeType": "START",
+                                "name": "Start Node",
+                                "label": "Start Node",
+                                "status": "configured",
+                                "type": "action"
+                            },
+                            "position": {
+                                "x": 214,
+                                "y": 234.58986359982276
+                            },
+                            "group": "nodes",
+                            "removed": false,
+                            "selected": false,
+                            "selectable": false,
+                            "locked": true,
+                            "grabbable": false,
+                            "pannable": false,
+                            "classes": ""
+                        },
+                        {
+                            "data": {
+                                "id": "0ydjuhs1yz",
+                                "nodeType": "EVAL",
+                                "label": "Evaluator"
+                            },
+                            "position": {
+                                "x": 340.49997269360233,
+                                "y": 235.29493179991138
+                            },
+                            "group": "nodes",
+                            "removed": false,
+                            "selected": false,
+                            "selectable": true,
+                            "locked": false,
+                            "grabbable": true,
+                            "pannable": false,
+                            "classes": ""
+                        },
+                        {
+                            "data": {
+                                "id": "sbmiix4fiy",
+                                "nodeType": "CONNECTION",
+                                "connectionId": "481e952e6b11db8360587b8711620786",
+                                "connectorId": "httpConnector",
+                                "name": "HTTP",
+                                "label": "HTTP",
+                                "status": "configured",
+                                "capabilityName": "customHtmlMessage",
+                                "type": "trigger",
+                                "respondToUser": true,
+                                "properties": {
+                                    "message": {
+                                        "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"UI Node 1\"\n      }\n    ]\n  }\n]"
+                                    },
+                                    "nodeDescription": {
+                                        "value": "d"
+                                    },
+                                    "nodeTitle": {
+                                        "value": "t"
+                                    },
+                                    "showContinueButton": {
+                                        "value": true
+                                    }
+                                }
+                            },
+                            "position": {
+                                "x": 508.9999453872047,
+                                "y": 236
+                            },
+                            "group": "nodes",
+                            "removed": false,
+                            "selected": false,
+                            "selectable": true,
+                            "locked": false,
+                            "grabbable": true,
+                            "pannable": false,
+                            "classes": ""
+                        },
+                        {
+                            "data": {
+                                "id": "bqipj17zej",
+                                "nodeType": "EVAL",
+                                "label": "Evaluator"
+                            },
+                            "position": {
+                                "x": 313.49997515322787,
+                                "y": 305.29506914680115
+                            },
+                            "group": "nodes",
+                            "removed": false,
+                            "selected": false,
+                            "selectable": true,
+                            "locked": false,
+                            "grabbable": true,
+                            "pannable": false,
+                            "classes": ""
+                        },
+                        {
+                            "data": {
+                                "id": "yit1hkofpw",
+                                "nodeType": "CONNECTION",
+                                "connectionId": "481e952e6b11db8360587b8711620786",
+                                "connectorId": "httpConnector",
+                                "name": "HTTP",
+                                "label": "HTTP",
+                                "status": "configured",
+                                "capabilityName": "customHtmlMessage",
+                                "respondToUser": true,
+                                "type": "trigger",
+                                "properties": {
+                                    "message": {
+                                        "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Node 2 from startNode\"\n      }\n    ]\n  }\n]"
+                                    },
+                                    "nodeDescription": {
+                                        "value": "d"
+                                    },
+                                    "nodeTitle": {
+                                        "value": "t"
+                                    }
+                                }
+                            },
+                            "position": {
+                                "x": 454.9999503064557,
+                                "y": 376.0002746937795
+                            },
+                            "group": "nodes",
+                            "removed": false,
+                            "selected": false,
+                            "selectable": true,
+                            "locked": false,
+                            "grabbable": true,
+                            "pannable": false,
+                            "classes": ""
+                        },
+                        {
+                            "data": {
+                                "id": "ic4sklss24",
+                                "nodeType": "EVAL",
+                                "label": "Evaluator"
+                            },
+                            "position": {
+                                "x": 649.4999325880425,
+                                "y": 236.50000098104923
+                            },
+                            "group": "nodes",
+                            "removed": false,
+                            "selected": false,
+                            "selectable": true,
+                            "locked": false,
+                            "grabbable": true,
+                            "pannable": false,
+                            "classes": ""
+                        },
+                        {
+                            "data": {
+                                "id": "6hh2k8l6fu",
+                                "nodeType": "CONNECTION",
+                                "connectionId": "33329a264e268ab31fb19637debf1ea3",
+                                "connectorId": "flowConnector",
+                                "name": "Flow Conductor",
+                                "label": "Flow Conductor",
+                                "status": "configured",
+                                "capabilityName": "startUiSubFlow",
+                                "respondToUser": true,
+                                "type": "trigger",
+                                "properties": {
+                                    "nodeDescription": {
+                                        "value": "d"
+                                    },
+                                    "nodeTitle": {
+                                        "value": "t"
+                                    },
+                                    "subFlowId": {
+                                        "value": {
+                                            "label": "testFlow",
+                                            "value": "905f358571a3cd96bcc6ad1f2e3111fb"
+                                        }
+                                    },
+                                    "subFlowVersionId": {
+                                        "value": -1
+                                    }
+                                }
+                            },
+                            "position": {
+                                "x": 789.9999197888803,
+                                "y": 237.00000196209845
+                            },
+                            "group": "nodes",
+                            "removed": false,
+                            "selected": false,
+                            "selectable": true,
+                            "locked": false,
+                            "grabbable": true,
+                            "pannable": false,
+                            "classes": ""
+                        },
+                        {
+                            "data": {
+                                "id": "orgpnqnmhn",
+                                "nodeType": "EVAL",
+                                "label": "Evaluator"
+                            },
+                            "position": {
+                                "x": 929.4999070808153,
+                                "y": 240.50000882944295
+                            },
+                            "group": "nodes",
+                            "removed": false,
+                            "selected": false,
+                            "selectable": true,
+                            "locked": false,
+                            "grabbable": true,
+                            "pannable": false,
+                            "classes": ""
+                        },
+                        {
+                            "data": {
+                                "id": "fuylkiv77h",
+                                "nodeType": "CONNECTION",
+                                "connectionId": "481e952e6b11db8360587b8711620786",
+                                "connectorId": "httpConnector",
+                                "name": "HTTP",
+                                "label": "HTTP",
+                                "status": "configured",
+                                "capabilityName": "customHtmlMessage",
+                                "type": "trigger",
+                                "respondToUser": true,
+                                "properties": {
+                                    "message": {
+                                        "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"intermediate UI Node\"\n      }\n    ]\n  }\n]"
+                                    },
+                                    "showContinueButton": {
+                                        "value": true
+                                    },
+                                    "nodeDescription": {
+                                        "value": "d"
+                                    },
+                                    "nodeTitle": {
+                                        "value": "t"
+                                    }
+                                }
+                            },
+                            "position": {
+                                "x": 1068.9998943727503,
+                                "y": 244.00001569678741
+                            },
+                            "group": "nodes",
+                            "removed": false,
+                            "selected": false,
+                            "selectable": true,
+                            "locked": false,
+                            "grabbable": true,
+                            "pannable": false,
+                            "classes": ""
+                        },
+                        {
+                            "data": {
+                                "id": "5a7will3b0",
+                                "nodeType": "EVAL",
+                                "label": "Evaluator"
+                            },
+                            "position": {
+                                "x": 1208.4998816646853,
+                                "y": 244.50001667783664
+                            },
+                            "group": "nodes",
+                            "removed": false,
+                            "selected": false,
+                            "selectable": true,
+                            "locked": false,
+                            "grabbable": true,
+                            "pannable": false,
+                            "classes": ""
+                        },
+                        {
+                            "data": {
+                                "id": "j02u9cpdbu",
+                                "nodeType": "CONNECTION",
+                                "connectionId": "f576602770a3d518c08814b59820fd25",
+                                "connectorId": "flowCanvasToolsConnector",
+                                "name": "Flow Canvas Tools",
+                                "label": "Flow Canvas Tools",
+                                "status": "configured",
+                                "capabilityName": "endFlowSuccess",
+                                "respondToUser": true,
+                                "type": "action",
+                                "properties": {
+                                    "nodeDescription": {
+                                        "value": "d"
+                                    },
+                                    "nodeTitle": {
+                                        "value": "t"
+                                    }
+                                }
+                            },
+                            "position": {
+                                "x": 1347.9998689566205,
+                                "y": 245.00001765888584
+                            },
+                            "group": "nodes",
+                            "removed": false,
+                            "selected": false,
+                            "selectable": true,
+                            "locked": false,
+                            "grabbable": true,
+                            "pannable": false,
+                            "classes": ""
+                        },
+                        {
+                            "data": {
+                                "id": "baskrrlp0n",
+                                "nodeType": "EVAL",
+                                "label": "Evaluator"
+                            },
+                            "position": {
+                                "x": 913.4999085383712,
+                                "y": 317.00015892997243
+                            },
+                            "group": "nodes",
+                            "removed": false,
+                            "selected": false,
+                            "selectable": true,
+                            "locked": false,
+                            "grabbable": true,
+                            "pannable": false,
+                            "classes": ""
+                        },
+                        {
+                            "data": {
+                                "id": "ra8ht6vbp7",
+                                "nodeType": "CONNECTION",
+                                "connectionId": "481e952e6b11db8360587b8711620786",
+                                "connectorId": "httpConnector",
+                                "name": "HTTP",
+                                "label": "HTTP",
+                                "status": "configured",
+                                "capabilityName": "customHtmlMessage",
+                                "respondToUser": true,
+                                "type": "trigger",
+                                "properties": {
+                                    "nodeDescription": {
+                                        "value": "d"
+                                    },
+                                    "nodeTitle": {
+                                        "value": "t"
+                                    },
+                                    "message": {
+                                        "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"UI leaf node\"\n      }\n    ]\n  }\n]"
+                                    }
+                                }
+                            },
+                            "position": {
+                                "x": 1080,
+                                "y": 440.58986359982276
+                            },
+                            "group": "nodes",
+                            "removed": false,
+                            "selected": false,
+                            "selectable": true,
+                            "locked": false,
+                            "grabbable": true,
+                            "pannable": false,
+                            "classes": ""
+                        }
+                    ],
+                    "edges": [
+                        {
+                            "data": {
+                                "id": "fcezequbt4",
+                                "source": "4251twbmsc",
+                                "target": "0ydjuhs1yz"
+                            },
+                            "position": {
+                                "x": 0,
+                                "y": 0
+                            },
+                            "group": "edges",
+                            "removed": false,
+                            "selected": false,
+                            "selectable": true,
+                            "locked": false,
+                            "grabbable": true,
+                            "pannable": true,
+                            "classes": ""
+                        },
+                        {
+                            "data": {
+                                "id": "dt2t78cg58",
+                                "source": "0ydjuhs1yz",
+                                "target": "sbmiix4fiy"
+                            },
+                            "position": {
+                                "x": 0,
+                                "y": 0
+                            },
+                            "group": "edges",
+                            "removed": false,
+                            "selected": false,
+                            "selectable": true,
+                            "locked": false,
+                            "grabbable": true,
+                            "pannable": true,
+                            "classes": ""
+                        },
+                        {
+                            "data": {
+                                "id": "e6iil2v2lm",
+                                "source": "4251twbmsc",
+                                "target": "bqipj17zej"
+                            },
+                            "position": {
+                                "x": 0,
+                                "y": 0
+                            },
+                            "group": "edges",
+                            "removed": false,
+                            "selected": false,
+                            "selectable": true,
+                            "locked": false,
+                            "grabbable": true,
+                            "pannable": true,
+                            "classes": ""
+                        },
+                        {
+                            "data": {
+                                "id": "h40qbcouy0",
+                                "source": "bqipj17zej",
+                                "target": "yit1hkofpw"
+                            },
+                            "position": {
+                                "x": 0,
+                                "y": 0
+                            },
+                            "group": "edges",
+                            "removed": false,
+                            "selected": false,
+                            "selectable": true,
+                            "locked": false,
+                            "grabbable": true,
+                            "pannable": true,
+                            "classes": ""
+                        },
+                        {
+                            "data": {
+                                "id": "aouq4k5oh1",
+                                "source": "sbmiix4fiy",
+                                "target": "ic4sklss24"
+                            },
+                            "position": {
+                                "x": 0,
+                                "y": 0
+                            },
+                            "group": "edges",
+                            "removed": false,
+                            "selected": false,
+                            "selectable": true,
+                            "locked": false,
+                            "grabbable": true,
+                            "pannable": true,
+                            "classes": ""
+                        },
+                        {
+                            "data": {
+                                "id": "jsdyrpsei6",
+                                "source": "ic4sklss24",
+                                "target": "6hh2k8l6fu"
+                            },
+                            "position": {
+                                "x": 0,
+                                "y": 0
+                            },
+                            "group": "edges",
+                            "removed": false,
+                            "selected": false,
+                            "selectable": true,
+                            "locked": false,
+                            "grabbable": true,
+                            "pannable": true,
+                            "classes": ""
+                        },
+                        {
+                            "data": {
+                                "id": "ps6a15tpf3",
+                                "source": "6hh2k8l6fu",
+                                "target": "orgpnqnmhn"
+                            },
+                            "position": {
+                                "x": 0,
+                                "y": 0
+                            },
+                            "group": "edges",
+                            "removed": false,
+                            "selected": false,
+                            "selectable": true,
+                            "locked": false,
+                            "grabbable": true,
+                            "pannable": true,
+                            "classes": ""
+                        },
+                        {
+                            "data": {
+                                "id": "5e6uvnzpam",
+                                "source": "orgpnqnmhn",
+                                "target": "fuylkiv77h"
+                            },
+                            "position": {
+                                "x": 0,
+                                "y": 0
+                            },
+                            "group": "edges",
+                            "removed": false,
+                            "selected": false,
+                            "selectable": true,
+                            "locked": false,
+                            "grabbable": true,
+                            "pannable": true,
+                            "classes": ""
+                        },
+                        {
+                            "data": {
+                                "id": "of4hnire5c",
+                                "source": "fuylkiv77h",
+                                "target": "5a7will3b0"
+                            },
+                            "position": {
+                                "x": 0,
+                                "y": 0
+                            },
+                            "group": "edges",
+                            "removed": false,
+                            "selected": false,
+                            "selectable": true,
+                            "locked": false,
+                            "grabbable": true,
+                            "pannable": true,
+                            "classes": ""
+                        },
+                        {
+                            "data": {
+                                "id": "qqg8on35c4",
+                                "source": "5a7will3b0",
+                                "target": "j02u9cpdbu"
+                            },
+                            "position": {
+                                "x": 0,
+                                "y": 0
+                            },
+                            "group": "edges",
+                            "removed": false,
+                            "selected": false,
+                            "selectable": true,
+                            "locked": false,
+                            "grabbable": true,
+                            "pannable": true,
+                            "classes": ""
+                        },
+                        {
+                            "data": {
+                                "id": "crtnw7800x",
+                                "source": "6hh2k8l6fu",
+                                "target": "baskrrlp0n"
+                            },
+                            "position": {
+                                "x": 0,
+                                "y": 0
+                            },
+                            "group": "edges",
+                            "removed": false,
+                            "selected": false,
+                            "selectable": true,
+                            "locked": false,
+                            "grabbable": true,
+                            "pannable": true,
+                            "classes": ""
+                        },
+                        {
+                            "data": {
+                                "id": "5lxmt3va0d",
+                                "source": "baskrrlp0n",
+                                "target": "ra8ht6vbp7"
+                            },
+                            "position": {
+                                "x": 0,
+                                "y": 0
+                            },
+                            "group": "edges",
+                            "removed": false,
+                            "selected": false,
+                            "selectable": true,
+                            "locked": false,
+                            "grabbable": true,
+                            "pannable": true,
+                            "classes": ""
+                        }
+                    ]
+                },
+                "data": {},
+                "zoomingEnabled": true,
+                "userZoomingEnabled": true,
+                "zoom": 1,
+                "minZoom": 1e-50,
+                "maxZoom": 1e+50,
+                "panningEnabled": true,
+                "userPanningEnabled": true,
+                "pan": {
+                    "x": 0,
+                    "y": 0
+                },
+                "boxSelectionEnabled": true,
+                "renderer": {
+                    "name": "null"
+                }
+            },
+            "savedDate": 1751263460776,
+            "variables": [],
+            "connections": [],
+            "parentFlowId": "a876730b76356af1161bcde9295bdbdf"
+        },
+        {
+            "companyId": "6YWgejhFHGFyhZM57KfdhnYf7fmeMZKM",
+            "authTokenExpireIds": [],
+            "connectorIds": [
+                "httpConnector"
+            ],
+            "createdDate": 1750665861808,
+            "currentVersion": 2,
+            "customerId": "1576bd3c19c0fb0a828342b21d46a57e",
+            "description": "",
+            "flowStatus": "enabled",
+            "isOutputSchemaSaved": false,
+            "name": "nonScheduleFlow",
+            "publishedVersion": 2,
+            "settings": {
+                "logLevel": 4
+            },
+            "timeouts": "null",
+            "updatedDate": 1750672937024,
+            "flowId": "905f358571a3cd96bcc6ad1f2e3111fb",
+            "versionId": 2,
+            "graphData": {
+                "elements": {
+                    "nodes": [
+                        {
+                            "data": {
+                                "id": "pji17ewqc1",
+                                "nodeType": "CONNECTION",
+                                "connectionId": "481e952e6b11db8360587b8711620786",
+                                "connectorId": "httpConnector",
+                                "name": "HTTP",
+                                "label": "HTTP",
+                                "status": "configured",
+                                "capabilityName": "customHtmlMessage",
+                                "type": "trigger",
+                                "properties": {}
+                            },
+                            "position": {
+                                "x": 400,
+                                "y": 400
+                            },
+                            "group": "nodes",
+                            "removed": false,
+                            "selected": false,
+                            "selectable": true,
+                            "locked": false,
+                            "grabbable": true,
+                            "pannable": false,
+                            "classes": ""
+                        },
+                        {
+                            "data": {
+                                "id": "pccf4ialwq",
+                                "nodeType": "EVAL",
+                                "label": "Evaluator"
+                            },
+                            "position": {
+                                "x": 552.4999637660728,
+                                "y": 399.70524871314376
+                            },
+                            "group": "nodes",
+                            "removed": false,
+                            "selected": false,
+                            "selectable": true,
+                            "locked": false,
+                            "grabbable": true,
+                            "pannable": false,
+                            "classes": ""
+                        },
+                        {
+                            "data": {
+                                "id": "42w8u0sju2",
+                                "nodeType": "CONNECTION",
+                                "connectionId": "481e952e6b11db8360587b8711620786",
+                                "connectorId": "httpConnector",
+                                "name": "HTTP",
+                                "label": "HTTP",
+                                "status": "configured",
+                                "capabilityName": "customHtmlMessage",
+                                "type": "trigger",
+                                "properties": {}
+                            },
+                            "position": {
+                                "x": 704.9999275321456,
+                                "y": 399.41049742628746
+                            },
+                            "group": "nodes",
+                            "removed": false,
+                            "selected": false,
+                            "selectable": true,
+                            "locked": false,
+                            "grabbable": true,
+                            "pannable": false,
+                            "classes": ""
+                        }
+                    ],
+                    "edges": [
+                        {
+                            "data": {
+                                "id": "pu2vy59p5k",
+                                "source": "pji17ewqc1",
+                                "target": "pccf4ialwq"
+                            },
+                            "position": {
+                                "x": 0,
+                                "y": 0
+                            },
+                            "group": "edges",
+                            "removed": false,
+                            "selected": false,
+                            "selectable": true,
+                            "locked": false,
+                            "grabbable": true,
+                            "pannable": true,
+                            "classes": ""
+                        },
+                        {
+                            "data": {
+                                "id": "volxu6ioc4",
+                                "source": "pccf4ialwq",
+                                "target": "42w8u0sju2"
+                            },
+                            "position": {
+                                "x": 0,
+                                "y": 0
+                            },
+                            "group": "edges",
+                            "removed": false,
+                            "selected": false,
+                            "selectable": true,
+                            "locked": false,
+                            "grabbable": true,
+                            "pannable": true,
+                            "classes": ""
+                        }
+                    ]
+                },
+                "data": {},
+                "zoomingEnabled": true,
+                "userZoomingEnabled": true,
+                "zoom": 1,
+                "minZoom": 1e-50,
+                "maxZoom": 1e+50,
+                "panningEnabled": true,
+                "userPanningEnabled": true,
+                "pan": {
+                    "x": 0,
+                    "y": 0
+                },
+                "boxSelectionEnabled": true,
+                "renderer": {
+                    "name": "null"
+                }
+            },
+            "flowColor": "#AFD5FF",
+            "savedDate": 1750665861757,
+            "variables": []
+        }
+    ],
+    "companyId": "6YWgejhFHGFyhZM57KfdhnYf7fmeMZKM",
+    "customerId": "1576bd3c19c0fb0a828342b21d46a57e"
+}

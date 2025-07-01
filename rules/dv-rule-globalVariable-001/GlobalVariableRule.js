@@ -155,7 +155,7 @@ class GlobalVariableRule extends LintRule {
                                     this.addError("dv-bp-globalVariable-003", {
                                         flowId: this.mainFlow.flowId,
                                         nodeId: node.data.id,
-                                        recommendationArgs: [`'${data.capabilityName}' capability`, '']
+                                        recommendationArgs: [`'${data.title || data.capabilityName}' capability`, '']
                                     });
                                 }
                             } else {
@@ -177,7 +177,7 @@ class GlobalVariableRule extends LintRule {
                             this.addError("dv-bp-globalVariable-003", {
                                 flowId: this.mainFlow.flowId,
                                 nodeId: node.data.id,
-                                recommendationArgs: [`'${data.capabilityName}' capability`, '']
+                                recommendationArgs: [`'${data.title || data.capabilityName}' capability`, '']
                             });
                         }
                     }

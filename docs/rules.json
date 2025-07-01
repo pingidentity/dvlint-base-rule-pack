@@ -2,7 +2,7 @@
   {
     "name": "@ping-identity/dvlint-base-rule-pack",
     "description": "Collection of base rules used to lint DaVinci flows.",
-    "version": "1.2.3",
+    "version": "1.2.4",
     "rules": [
       {
         "id": "dv-rule-AEqualsBMultipleCondition-001",
@@ -275,6 +275,49 @@
             "type": "error",
             "recommendation": "Define both true and false paths in '%' capability to handle all outcomes.",
             "code": "dv-er-pingOneFlow-002"
+          }
+        },
+        "reference": "",
+        "cleans": false
+      },
+      {
+        "id": "dv-rule-scheduleFlow-001",
+        "description": "Schedule flow rules",
+        "codes": {
+          "dv-er-scheduleFlow-001": {
+            "description": "Invalid start node configuration in scheduled flow",
+            "message": "Invalid start node configuration in scheduled flow",
+            "type": "error",
+            "recommendation": "Ensure the flow begins with Start Node and has exactly one outgoing edge.",
+            "code": "dv-er-scheduleFlow-001"
+          },
+          "dv-er-scheduleFlow-002": {
+            "description": "All leaf nodes must be end nodes",
+            "message": "Invalid flow termination configuration in scheduled flow",
+            "type": "error",
+            "recommendation": "Ensure every path in the scheduled flow ends with an appropriate end capability: 'End Flow Success', 'End Flow Failure', or both.",
+            "code": "dv-er-scheduleFlow-002"
+          },
+          "dv-er-scheduleFlow-003": {
+            "description": "Flow connectors are not supported in scheduled flow",
+            "message": "Flow connectors are not supported in scheduled flow",
+            "type": "error",
+            "recommendation": "Remove all flow connector nodes from this scheduled flow to ensure proper execution.",
+            "code": "dv-er-scheduleFlow-003"
+          },
+          "dv-er-scheduleFlow-004": {
+            "description": "Unsupported node configuration in flow",
+            "message": "Unsupported node configuration in flow",
+            "type": "error",
+            "recommendation": "Remove 'End Flow Success' and 'End Flow Failure' capability nodes from this non-scheduled flow. These are specific to scheduled flow behavior and should not be used otherwise.",
+            "code": "dv-er-scheduleFlow-004"
+          },
+          "dv-er-scheduleFlow-005": {
+            "description": "UI capabilities are not allowed in scheduled flow",
+            "message": "UI capabilities are not allowed in scheduled flow",
+            "type": "error",
+            "recommendation": "Remove all UI capabilities from the flow. The only UI capabilities allowed are: 'End Flow Success' and 'End Flow Failure', and they must appear only as end nodes.",
+            "code": "dv-er-scheduleFlow-005"
           }
         },
         "reference": "",
