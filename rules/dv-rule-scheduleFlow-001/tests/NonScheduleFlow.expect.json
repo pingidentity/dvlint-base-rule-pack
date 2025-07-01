@@ -1,0 +1,48 @@
+{
+    "name": "PingOne DaVinci Linter",
+    "pass": false,
+    "errorCount": 1,
+    "rulePackResults": [
+        {
+            "pass": false,
+            "errorCount": 1,
+            "lintResults": [
+                {
+                    "flowId": "905f358571a3cd96bcc6ad1f2e3111fb",
+                    "flowName": "nonScheduleFlow",
+                    "pass": false,
+                    "errorCount": 1,
+                    "errors": [
+                        {
+                            "code": "dv-er-scheduleFlow-004",
+                            "type": "error",
+                            "message": "Invalid flow termination configuration in scheduled flow.",
+                            "recommendation": "Remove end nodes from this non-scheduled flow. End nodes are specific to scheduled flow behaviour and should not be used otherwise."
+                        }
+                    ],
+                    "rulesApplied": [
+                        "dv-rule-scheduleFlow-001"
+                    ],
+                    "ruleResults": [
+                        {
+                            "ruleDescription": "Schedule flow rules",
+                            "ruleId": "dv-rule-scheduleFlow-001",
+                            "pass": false,
+                            "errorCount": 1,
+                            "errors": [
+                                {
+                                    "code": "dv-er-scheduleFlow-004",
+                                    "type": "error",
+                                    "message": "Invalid flow termination configuration in scheduled flow.",
+                                    "recommendation": "Remove end nodes from this non-scheduled flow. End nodes are specific to scheduled flow behaviour and should not be used otherwise."
+                                }
+                            ]
+                        }
+                    ],
+                    "rulesIgnored": []
+                }
+            ],
+            "rulesIgnored": true
+        }
+    ]
+}
