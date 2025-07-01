@@ -1,0 +1,176 @@
+{
+    "name": "PingOne DaVinci Linter",
+    "pass": false,
+    "errorCount": 9,
+    "rulePackResults": [
+        {
+            "pass": false,
+            "errorCount": 9,
+            "lintResults": [
+                {
+                    "flowId": "a876730b76356af1161bcde9295bdbdf",
+                    "flowName": "ScheduledFlow",
+                    "pass": false,
+                    "errorCount": 9,
+                    "errors": [
+                        {
+                            "code": "dv-er-scheduleFlow-001",
+                            "flowId": "a876730b76356af1161bcde9295bdbdf",
+                            "message": "Invalid start node configuration in scheduled flow",
+                            "recommendation": "Ensure the flow begins with Start Node and has exactly one outgoing edge.",
+                            "type": "error"
+                        },
+                        {
+                            "code": "dv-er-scheduleFlow-005",
+                            "flowId": "a876730b76356af1161bcde9295bdbdf",
+                            "message": "UI capabilities are not allowed in scheduled flow",
+                            "nodeId": "sbmiix4fiy",
+                            "recommendation": "Remove all UI capabilities from the flow. The only UI capabilities allowed are: 'End Flow Success' and 'End Flow Failure', and they must appear only as end nodes.",
+                            "type": "error"
+                        },
+                        {
+                            "code": "dv-er-scheduleFlow-005",
+                            "flowId": "a876730b76356af1161bcde9295bdbdf",
+                            "message": "UI capabilities are not allowed in scheduled flow",
+                            "nodeId": "yit1hkofpw",
+                            "recommendation": "Remove all UI capabilities from the flow. The only UI capabilities allowed are: 'End Flow Success' and 'End Flow Failure', and they must appear only as end nodes.",
+                            "type": "error"
+                        },
+                        {
+                            "code": "dv-er-scheduleFlow-002",
+                            "flowId": "a876730b76356af1161bcde9295bdbdf",
+                            "message": "Invalid flow termination configuration in scheduled flow",
+                            "nodeId": "yit1hkofpw",
+                            "recommendation": "Ensure every path in the scheduled flow ends with an appropriate end capability: 'End Flow Success', 'End Flow Failure', or both.",
+                            "type": "error"
+                        },
+                        {
+                            "code": "dv-er-scheduleFlow-005",
+                            "flowId": "a876730b76356af1161bcde9295bdbdf",
+                            "message": "UI capabilities are not allowed in scheduled flow",
+                            "nodeId": "6hh2k8l6fu",
+                            "recommendation": "Remove all UI capabilities from the flow. The only UI capabilities allowed are: 'End Flow Success' and 'End Flow Failure', and they must appear only as end nodes.",
+                            "type": "error"
+                        },
+                        {
+                            "code": "dv-er-scheduleFlow-003",
+                            "flowId": "a876730b76356af1161bcde9295bdbdf",
+                            "message": "Flow connectors are not supported in scheduled flow",
+                            "nodeId": "6hh2k8l6fu",
+                            "recommendation": "Remove all flow connector nodes from this scheduled flow to ensure proper execution.",
+                            "type": "error"
+                        },
+                        {
+                            "code": "dv-er-scheduleFlow-005",
+                            "flowId": "a876730b76356af1161bcde9295bdbdf",
+                            "message": "UI capabilities are not allowed in scheduled flow",
+                            "nodeId": "fuylkiv77h",
+                            "recommendation": "Remove all UI capabilities from the flow. The only UI capabilities allowed are: 'End Flow Success' and 'End Flow Failure', and they must appear only as end nodes.",
+                            "type": "error"
+                        },
+                        {
+                            "code": "dv-er-scheduleFlow-005",
+                            "flowId": "a876730b76356af1161bcde9295bdbdf",
+                            "message": "UI capabilities are not allowed in scheduled flow",
+                            "nodeId": "ra8ht6vbp7",
+                            "recommendation": "Remove all UI capabilities from the flow. The only UI capabilities allowed are: 'End Flow Success' and 'End Flow Failure', and they must appear only as end nodes.",
+                            "type": "error"
+                        },
+                        {
+                            "code": "dv-er-scheduleFlow-002",
+                            "flowId": "a876730b76356af1161bcde9295bdbdf",
+                            "message": "Invalid flow termination configuration in scheduled flow",
+                            "nodeId": "ra8ht6vbp7",
+                            "recommendation": "Ensure every path in the scheduled flow ends with an appropriate end capability: 'End Flow Success', 'End Flow Failure', or both."
+                        }
+                    ],
+                    "rulesApplied": [
+                        "dv-rule-scheduleFlow-001"
+                    ],
+                    "ruleResults": [
+                        {
+                            "ruleDescription": "Schedule flow rules",
+                            "ruleId": "dv-rule-scheduleFlow-001",
+                            "pass": false,
+                            "errorCount": 9,
+                            "errors": [
+                                {
+                                    "code": "dv-er-scheduleFlow-001",
+                                    "flowId": "a876730b76356af1161bcde9295bdbdf",
+                                    "message": "Invalid start node configuration in scheduled flow",
+                                    "recommendation": "Ensure the flow begins with Start Node and has exactly one outgoing edge.",
+                                    "type": "error"
+                                },
+                                {
+                                    "code": "dv-er-scheduleFlow-005",
+                                    "flowId": "a876730b76356af1161bcde9295bdbdf",
+                                    "message": "UI capabilities are not allowed in scheduled flow",
+                                    "nodeId": "sbmiix4fiy",
+                                    "recommendation": "Remove all UI capabilities from the flow. The only UI capabilities allowed are: 'End Flow Success' and 'End Flow Failure', and they must appear only as end nodes.",
+                                    "type": "error"
+                                },
+                                {
+                                    "code": "dv-er-scheduleFlow-005",
+                                    "flowId": "a876730b76356af1161bcde9295bdbdf",
+                                    "message": "UI capabilities are not allowed in scheduled flow",
+                                    "nodeId": "yit1hkofpw",
+                                    "recommendation": "Remove all UI capabilities from the flow. The only UI capabilities allowed are: 'End Flow Success' and 'End Flow Failure', and they must appear only as end nodes.",
+                                    "type": "error"
+                                },
+                                {
+                                    "code": "dv-er-scheduleFlow-002",
+                                    "flowId": "a876730b76356af1161bcde9295bdbdf",
+                                    "message": "Invalid flow termination configuration in scheduled flow",
+                                    "nodeId": "yit1hkofpw",
+                                    "recommendation": "Ensure every path in the scheduled flow ends with an appropriate end capability: 'End Flow Success', 'End Flow Failure', or both.",
+                                    "type": "error"
+                                },
+                                {
+                                    "code": "dv-er-scheduleFlow-005",
+                                    "flowId": "a876730b76356af1161bcde9295bdbdf",
+                                    "message": "UI capabilities are not allowed in scheduled flow",
+                                    "nodeId": "6hh2k8l6fu",
+                                    "recommendation": "Remove all UI capabilities from the flow. The only UI capabilities allowed are: 'End Flow Success' and 'End Flow Failure', and they must appear only as end nodes.",
+                                    "type": "error"
+                                },
+                                {
+                                    "code": "dv-er-scheduleFlow-003",
+                                    "flowId": "a876730b76356af1161bcde9295bdbdf",
+                                    "message": "Flow connectors are not supported in scheduled flow",
+                                    "nodeId": "6hh2k8l6fu",
+                                    "recommendation": "Remove all flow connector nodes from this scheduled flow to ensure proper execution.",
+                                    "type": "error"
+                                },
+                                {
+                                    "code": "dv-er-scheduleFlow-005",
+                                    "flowId": "a876730b76356af1161bcde9295bdbdf",
+                                    "message": "UI capabilities are not allowed in scheduled flow",
+                                    "nodeId": "fuylkiv77h",
+                                    "recommendation": "Remove all UI capabilities from the flow. The only UI capabilities allowed are: 'End Flow Success' and 'End Flow Failure', and they must appear only as end nodes.",
+                                    "type": "error"
+                                },
+                                {
+                                    "code": "dv-er-scheduleFlow-005",
+                                    "flowId": "a876730b76356af1161bcde9295bdbdf",
+                                    "message": "UI capabilities are not allowed in scheduled flow",
+                                    "nodeId": "ra8ht6vbp7",
+                                    "recommendation": "Remove all UI capabilities from the flow. The only UI capabilities allowed are: 'End Flow Success' and 'End Flow Failure', and they must appear only as end nodes.",
+                                    "type": "error"
+                                },
+                                {
+                                    "code": "dv-er-scheduleFlow-002",
+                                    "flowId": "a876730b76356af1161bcde9295bdbdf",
+                                    "message": "Invalid flow termination configuration in scheduled flow",
+                                    "nodeId": "ra8ht6vbp7",
+                                    "recommendation": "Ensure every path in the scheduled flow ends with an appropriate end capability: 'End Flow Success', 'End Flow Failure', or both."
+                                }
+                            ]
+                        }
+                    ],
+                    "rulesIgnored": []
+                }
+            ],
+            "rulesIgnored": true
+        }
+    ]
+}

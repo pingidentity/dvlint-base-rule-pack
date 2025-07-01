@@ -85,8 +85,8 @@ class PingOneFlowRule extends LintRule {
             ) {
               this.addError("dv-er-pingOneFlow-002", {
                 flowId: this.mainFlow.flowId,
-                recommendationArgs: [node.data.capabilityName],
-                messageArgs: [node.data.capabilityName],
+                recommendationArgs: [node.data.title || node.data.capabilityName],
+                messageArgs: [node.data.title || node.data.capabilityName],
                 nodeId: node.data.id,
               });
             }
