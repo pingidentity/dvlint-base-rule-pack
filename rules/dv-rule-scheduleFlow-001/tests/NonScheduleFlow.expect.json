@@ -16,8 +16,8 @@
                         {
                             "code": "dv-er-scheduleFlow-004",
                             "type": "error",
-                            "message": "Invalid flow termination configuration in scheduled flow.",
-                            "recommendation": "Remove end nodes from this non-scheduled flow. End nodes are specific to scheduled flow behaviour and should not be used otherwise."
+                            "message": "Unsupported node configuration in flow",
+                            "recommendation": "Remove 'End Flow Success' and 'End Flow Failure' capability nodes from this non-scheduled flow. These are specific to scheduled flow behavior and should not be used otherwise."
                         }
                     ],
                     "rulesApplied": [
@@ -33,8 +33,8 @@
                                 {
                                     "code": "dv-er-scheduleFlow-004",
                                     "type": "error",
-                                    "message": "Invalid flow termination configuration in scheduled flow.",
-                                    "recommendation": "Remove end nodes from this non-scheduled flow. End nodes are specific to scheduled flow behaviour and should not be used otherwise."
+                                    "message": "Unsupported node configuration in flow",
+                                    "recommendation": "Remove 'End Flow Success' and 'End Flow Failure' capability nodes from this non-scheduled flow. These are specific to scheduled flow behavior and should not be used otherwise."
                                 }
                             ]
                         }

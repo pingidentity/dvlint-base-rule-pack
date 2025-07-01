@@ -28,10 +28,10 @@ class ScheduleFlowRule extends LintRule {
             recommendation: "Remove all flow connector nodes from this scheduled flow to ensure proper execution.",
         });
         this.addCode("dv-er-scheduleFlow-004", {
-            description: "Invalid flow termination configuration in scheduled flow.",
-            message: "Invalid flow termination configuration in scheduled flow.",
+            description: "Unsupported node configuration in flow",
+            message: "Unsupported node configuration in flow",
             type: "error",
-            recommendation: "Remove end nodes from this non-scheduled flow. End nodes are specific to scheduled flow behaviour and should not be used otherwise.",
+            recommendation: "Remove 'End Flow Success' and 'End Flow Failure' capability nodes from this non-scheduled flow. These are specific to scheduled flow behavior and should not be used otherwise.",
         });
         this.addCode("dv-er-scheduleFlow-005", {
             description: "UI capabilities are not allowed in scheduled flow",
