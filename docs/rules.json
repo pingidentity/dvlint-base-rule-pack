@@ -279,7 +279,7 @@
         },
         "reference": "",
         "cleans": false
-      },     
+      },
       {
         "id": "dv-rule-scheduleFlow-001",
         "description": "Schedule flow rules",
@@ -309,7 +309,7 @@
             "description": "Invalid flow termination configuration in scheduled flow.",
             "message": "Invalid flow termination configuration in scheduled flow.",
             "type": "error",
-            "recommendation": "Remove end nodes from this non-scheduled flow. End nodes are specific to scheduled flow behavior and should not be used otherwise.",
+            "recommendation": "Remove end nodes from this non-scheduled flow. End nodes are specific to scheduled flow behaviour and should not be used otherwise.",
             "code": "dv-er-scheduleFlow-004"
           },
           "dv-er-scheduleFlow-005": {
