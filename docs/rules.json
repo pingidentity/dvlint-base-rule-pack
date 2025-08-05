@@ -135,7 +135,7 @@
             "description": "Custom JavaScript usage in flow",
             "message": "Custom JavaScript usage in flow",
             "type": "best-practice",
-            "recommendation": "Review the script in the % to ensure it does not introduce security vulnerabilities.%",
+            "recommendation": "Review the script in the node(s): % to ensure it does not introduce security vulnerabilities.",
             "code": "dv-bp-globalVariable-003"
           }
         },
@@ -281,7 +281,7 @@
             "message": "Consecutive 'Authenticate via Kerberos' capabilities are not supported",
             "type": "error",
             "recommendation": "Avoid placing multiple 'Authenticate via Kerberos' nodes back-to-back in the flow. This capability uses a one-time-use token that will fail if reused. Separate these nodes with non-authentication logic or remove the redundant instance.",
-             "code": "dv-er-pingOneFlow-003"
+            "code": "dv-er-pingOneFlow-003"
           }
         },
         "reference": "",
