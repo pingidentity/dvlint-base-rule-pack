@@ -13,7 +13,7 @@ class TeleportRule extends LintRule {
       description: "Unused Teleport Found",
       message: "Unused teleport node found",
       type: "error",
-      recommendation: "'%' is not being used. Consider removing it from the flow.",
+      recommendation: "This section of the flow is not referenced in any execution path. Remove it if unnecessary or connect it using an appropriate teleport entry point.",
     });
     this.addCode("dv-er-teleport-002", {
       description: "Input schema missing for teleport node",

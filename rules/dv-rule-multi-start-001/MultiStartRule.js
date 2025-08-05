@@ -29,7 +29,7 @@ class MultiStartRule extends LintRule {
 
         flow?.graphData?.elements?.nodes?.forEach((node) => {
           const nodeId = node.data?.id;
-          const nodeType = node.data?.connectorId;
+          const nodeType = node.data?.connectorId || node.data?.nodeType;
           // If this type of node is not in the ignore list, check the edges to see if it is listed as a target
           if (
             !ignoreNodeTypes.includes(nodeType) &&
@@ -49,7 +49,7 @@ class MultiStartRule extends LintRule {
             this.addError("dv-er-multi-start-001", {
               flowId: flow.flowId,
               recommendationArgs: [`${node.nodeId} (${node.nodeType})`],
-              nodeId: node.nodeId,
+              ...(node.nodeType !== 'START' && { nodeId: node.nodeId }),
             })
           );
         }

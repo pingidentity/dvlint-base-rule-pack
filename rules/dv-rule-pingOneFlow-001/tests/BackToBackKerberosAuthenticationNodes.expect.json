@@ -1,0 +1,48 @@
+{
+    "name": "PingOne DaVinci Linter",
+    "pass": false,
+    "errorCount": 1,
+    "rulePackResults": [
+        {
+            "pass": false,
+            "errorCount": 1,
+            "lintResults": [
+                {
+                    "flowId": "1b83c65e0b318bba78bf309f408be886",
+                    "flowName":  "Kerberos authentication test",
+                    "pass": false,
+                    "errorCount": 1,
+                    "errors": [
+                        {
+                            "code": "dv-er-pingOneFlow-003",
+                            "message": "Consecutive 'Authenticate via Kerberos' capabilities are not supported",
+                            "recommendation": "Avoid placing multiple 'Authenticate via Kerberos' nodes back-to-back in the flow. This capability uses a one-time-use token that will fail if reused. Separate these nodes with non-authentication logic or remove the redundant instance.",
+                            "type": "error"
+                        }
+                    ],
+                    "rulesApplied": [
+                        "dv-rule-pingOneFlow-001"
+                    ],
+                    "ruleResults": [
+                        {
+                            "ruleId": "dv-rule-pingOneFlow-001",
+                            "ruleDescription": "Checks for PingOne Flow configurations",
+                            "pass": false,
+                            "errorCount": 1,
+                            "errors": [
+                                {
+                                    "code": "dv-er-pingOneFlow-003",
+                                    "message": "Consecutive 'Authenticate via Kerberos' capabilities are not supported",
+                                    "recommendation": "Avoid placing multiple 'Authenticate via Kerberos' nodes back-to-back in the flow. This capability uses a one-time-use token that will fail if reused. Separate these nodes with non-authentication logic or remove the redundant instance.",
+                                    "type": "error"
+                                }
+                            ]
+                        }
+                    ],
+                    "rulesIgnored": []
+                }
+            ],
+            "rulesIgnored": true
+        }
+    ]
+}

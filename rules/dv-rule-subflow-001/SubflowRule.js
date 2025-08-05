@@ -49,6 +49,28 @@ class DVRule extends LintRule {
     return flowDetail !== undefined;
   }
 
+  findFirstNodes(elements) {
+    const nodes = elements.nodes || [];
+    const edges = elements.edges || [];
+
+    // Create a Set to store all node IDs that are targets of an edge.
+    // This helps in efficient lookup (O(1) on average).
+    const targetNodeIds = new Set();
+    edges.forEach(edge => {
+      targetNodeIds.add(edge.data.target);
+    });
+
+    // Filter the nodes to find those whose IDs are NOT in the targetNodeIds set.
+    // These are the nodes with no incoming edges.
+    const firstNodes = nodes.filter(node => {
+      return !targetNodeIds.has(node.data.id);
+    });
+
+    // If you expect only one "first" node, you can return the first element of the array.
+    // Otherwise, return the entire array if multiple starting points are possible.
+    return firstNodes;
+  }
+
   runRule() {
     try {
       const targetFlow = this.mainFlow;
@@ -118,10 +140,20 @@ class DVRule extends LintRule {
 
             //check if subflow has UI node for startUiSubFlow capability
             if (node.data.capabilityName === 'startUiSubFlow') {
-              const uiCapabilitiesArr = ['customHtmlMessage', 'customHTMLTemplate', 'customForm', 'customMessage', 'createViewCapability'];
+              // const uiCapabilitiesArr = ['customHtmlMessage', 'customHTMLTemplate', 'customForm', 'customMessage', 'createViewCapability'];
+              // const subflowData = subflows.filter(subflow => subflow.flowId === selectedSubflowId);
+              // const capabilityNameArray = subflowData[0].detail.graphData.elements.nodes.filter(node => node.data.nodeType === 'CONNECTION').map(node => node.data.capabilityName);
+              // if (capabilityNameArray.length > 0 && !uiCapabilitiesArr.some(uiCapability => capabilityNameArray.includes(uiCapability))) {
+              //   this.addError("dv-er-subflow-005", {
+              //     flowId: targetFlow.flowId,
+              //     nodeId: node.data.id,
+              //   });
+              // }
+
+              // check if first node is Ui Node 
               const subflowData = subflows.filter(subflow => subflow.flowId === selectedSubflowId);
-              const capabilityNameArray = subflowData[0].detail.graphData.elements.nodes.filter(node => node.data.nodeType === 'CONNECTION').map(node => node.data.capabilityName);
-              if (capabilityNameArray.length > 0 && !uiCapabilitiesArr.some(uiCapability => capabilityNameArray.includes(uiCapability))) {
+              const firstNode = this.findFirstNodes(subflowData[0].detail.graphData.elements);
+              if (!firstNode[0].data.respondToUser) {
                 this.addError("dv-er-subflow-005", {
                   flowId: targetFlow.flowId,
                   nodeId: node.data.id,

@@ -18,7 +18,7 @@
               "code": "dv-bp-node-001",
               "message": "Missing node title",
               "type": "best-practice",
-              "recommendation": "The (13xqy80afe Http) node is missing a title. For optimal clarity, add a descriptive title.",
+              "recommendation": "The node '13xqy80afe' is missing a title. For optimal clarity, add a descriptive title.",
               "nodeId": "13xqy80afe"
             },
             {
@@ -26,7 +26,7 @@
               "code": "dv-bp-node-003",
               "message": "Missing node description",
               "nodeId": "13xqy80afe",
-              "recommendation": "The (13xqy80afe Http) node is missing a description. For optimal clarity, add a meaningful description.",
+              "recommendation": "The node '13xqy80afe' is missing a description. For optimal clarity, add a meaningful description.",
               "type": "best-practice"
             }
           ],
@@ -45,7 +45,7 @@
                   "code": "dv-bp-node-001",
                   "message": "Missing node title",
                   "type": "best-practice",
-                  "recommendation": "The (13xqy80afe Http) node is missing a title. For optimal clarity, add a descriptive title.",
+                  "recommendation": "The node '13xqy80afe' is missing a title. For optimal clarity, add a descriptive title.",
                   "nodeId": "13xqy80afe"
                 },
                 {
@@ -53,7 +53,7 @@
                   "code": "dv-bp-node-003",
                   "message": "Missing node description",
                   "nodeId": "13xqy80afe",
-                  "recommendation": "The (13xqy80afe Http) node is missing a description. For optimal clarity, add a meaningful description.",
+                  "recommendation": "The node '13xqy80afe' is missing a description. For optimal clarity, add a meaningful description.",
                   "type": "best-practice"
                 }
               ]
