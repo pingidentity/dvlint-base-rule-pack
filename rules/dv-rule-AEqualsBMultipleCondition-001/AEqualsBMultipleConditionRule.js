@@ -21,11 +21,11 @@ class AEqualsBMultipleConditionRule extends LintRule {
             type: "best-practice",
             recommendation: "Map each specific outcome value from 'A == B (Multiple Conditions)' to the next node. Do not use generic node-level output.",
         });
-        this.addCode("dv-er-AEqualsBMultipleCondition-003", {
+        this.addCode("dv-bp-AEqualsBMultipleCondition-003", {
             description: "Unmapped outcome(s) in 'A == B (Multiple Conditions)' capability",
             message: "Unmapped outcome(s) in 'A == B (Multiple Conditions)' capability",
-            type: "error",
-            recommendation: "Map the outcome ‘%’ to an appropriate next node in the ‘A == B (Multiple Conditions)’ capability.",
+            type: "best-practice",
+            recommendation: "Map the % % to an appropriate next node in the 'A == B (Multiple Conditions)' capability.",
         });
 
     }
@@ -58,10 +58,12 @@ class AEqualsBMultipleConditionRule extends LintRule {
                             }
                         })
                         if (missingConditionNames.length > 0) {
-                            this.addError("dv-er-AEqualsBMultipleCondition-003", {
+                            const outCompleSingularOrPlural = missingConditionNames.length === 1 ? 'outcome' : 'outcomes'
+                            const stringWithQuotesCommaSeparated = missingConditionNames.map(str => `'${str}'`).join(', ');
+                            this.addError("dv-bp-AEqualsBMultipleCondition-003", {
                                 flowId: flow.flowId,
                                 nodeId: data.id,
-                                recommendationArgs: [missingConditionNames.join(',')]
+                                recommendationArgs: [outCompleSingularOrPlural, stringWithQuotesCommaSeparated]
                             });
                         }
 

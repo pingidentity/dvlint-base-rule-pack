@@ -1,17 +1,17 @@
 {
     "name": "PingOne DaVinci Linter",
     "pass": false,
-    "errorCount": 2,
+    "errorCount": 1,
     "rulePackResults": [
         {
             "pass": false,
-            "errorCount": 2,
+            "errorCount": 1,
             "lintResults": [
                 {
                     "flowId": "802ebc99a1d5dabfc16d636c200ce864",
                     "flowName": "Global Variable Usage",
                     "pass": false,
-                    "errorCount": 2,
+                    "errorCount": 1,
                     "errors": [
                         {
                             "code": "dv-bp-globalVariable-001",
@@ -20,14 +20,6 @@
                             "recommendation": "Use global variables cautiously in custom code. Avoid storing or processing sensitive information within them.",
                             "flowId": "802ebc99a1d5dabfc16d636c200ce864",
                             "nodeId": "oigqz0o0o8"
-                          },
-                          {
-                            "code": "dv-bp-globalVariable-002",
-                            "message": "Global variable usage in Custom Function code",
-                            "type": "best-practice",
-                            "recommendation": "Use global variables cautiously in custom code. Avoid storing or processing sensitive information within them.",
-                            "flowId": "802ebc99a1d5dabfc16d636c200ce864",
-                            "nodeId": "3sh6tqdagd"
                           }
                     ],
                     "rulesApplied": [
@@ -37,7 +29,7 @@
                         {
                             "ruleId": "dv-rule-globalVariable-001",
                             "pass": false,
-                            "errorCount": 2,
+                            "errorCount": 1,
                             "errors": [
                                 {
                                     "code": "dv-bp-globalVariable-001",
@@ -46,14 +38,6 @@
                                     "recommendation": "Use global variables cautiously in custom code. Avoid storing or processing sensitive information within them.",
                                     "flowId": "802ebc99a1d5dabfc16d636c200ce864",
                                     "nodeId": "oigqz0o0o8"
-                                  },
-                                  {
-                                    "code": "dv-bp-globalVariable-002",
-                                    "message": "Global variable usage in Custom Function code",
-                                    "type": "best-practice",
-                                    "recommendation": "Use global variables cautiously in custom code. Avoid storing or processing sensitive information within them.",
-                                    "flowId": "802ebc99a1d5dabfc16d636c200ce864",
-                                    "nodeId": "3sh6tqdagd"
                                   }
                             ]
                         }

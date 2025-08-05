@@ -1,34 +1,18 @@
 {
     "name": "PingOne DaVinci Linter",
     "pass": false,
-    "errorCount": 3,
+    "errorCount": 2,
     "rulePackResults": [
         {
             "pass": false,
-            "errorCount": 3,
+            "errorCount": 2,
             "lintResults": [
                 {
                     "flowId": "fbd66989acdaafb310c525639257a4c6",
                     "flowName": "globalVariableRUle",
                     "pass": false,
-                    "errorCount": 3,
+                    "errorCount": 2,
                     "errors": [
-                        {
-                            "code": "dv-bp-globalVariable-003",
-                            "message": "Custom JavaScript usage in flow",
-                            "type": "best-practice",
-                            "recommendation": "Review the script in the 'login' capability to ensure it does not introduce security vulnerabilities.",
-                            "flowId": "fbd66989acdaafb310c525639257a4c6",
-                            "nodeId": "tyyf7m9e7a"
-                        },
-                        {
-                            "code": "dv-bp-globalVariable-003",
-                            "message": "Custom JavaScript usage in flow",
-                            "type": "best-practice",
-                            "recommendation": "Review the script in the 'authenticateUser' capability to ensure it does not introduce security vulnerabilities.",
-                            "flowId": "fbd66989acdaafb310c525639257a4c6",
-                            "nodeId": "ckz7azwsha"
-                        },
                         {
                             "code": "dv-bp-globalVariable-001",
                             "type": "best-practice",
@@ -36,6 +20,13 @@
                             "message": "Global variable usage in Custom HTML Template script",
                             "nodeId": "2ddqdqz53x",
                             "recommendation": "Use global variables cautiously in custom code. Avoid storing or processing sensitive information within them."
+                        },
+                        {
+                            "code": "dv-bp-globalVariable-003",
+                            "message": "Custom JavaScript usage in flow",
+                            "type": "best-practice",
+                            "recommendation": "Review the script in the node(s): 'tyyf7m9e7a', 'ckz7azwsha' to ensure it does not introduce security vulnerabilities.",
+                            "flowId": "fbd66989acdaafb310c525639257a4c6"
                         }
                     ],
                     "rulesApplied": [
@@ -45,24 +36,8 @@
                         {
                             "ruleId": "dv-rule-globalVariable-001",
                             "pass": false,
-                            "errorCount": 3,
+                            "errorCount": 2,
                             "errors": [
-                                {
-                                    "code": "dv-bp-globalVariable-003",
-                                    "message": "Custom JavaScript usage in flow",
-                                    "type": "best-practice",
-                                    "recommendation": "Review the script in the 'login' capability to ensure it does not introduce security vulnerabilities.",
-                                    "flowId": "fbd66989acdaafb310c525639257a4c6",
-                                    "nodeId": "tyyf7m9e7a"
-                                },
-                                {
-                                    "code": "dv-bp-globalVariable-003",
-                                    "message": "Custom JavaScript usage in flow",
-                                    "type": "best-practice",
-                                    "recommendation": "Review the script in the 'authenticateUser' capability to ensure it does not introduce security vulnerabilities.",
-                                    "flowId": "fbd66989acdaafb310c525639257a4c6",
-                                    "nodeId": "ckz7azwsha"
-                                },
                                 {
                                     "code": "dv-bp-globalVariable-001",
                                     "type": "best-practice",
@@ -70,6 +45,13 @@
                                     "message": "Global variable usage in Custom HTML Template script",
                                     "nodeId": "2ddqdqz53x",
                                     "recommendation": "Use global variables cautiously in custom code. Avoid storing or processing sensitive information within them."
+                                },
+                                {
+                                    "code": "dv-bp-globalVariable-003",
+                                    "message": "Custom JavaScript usage in flow",
+                                    "type": "best-practice",
+                                    "recommendation": "Review the script in the node(s): 'tyyf7m9e7a', 'ckz7azwsha' to ensure it does not introduce security vulnerabilities.",
+                                    "flowId": "fbd66989acdaafb310c525639257a4c6"
                                 }
                             ]
                         }
