@@ -20,6 +20,12 @@ class PingOneFlowRule extends LintRule {
       type: "error",
       recommendation: "Define both true and false paths in '%' capability to handle all outcomes."
     });
+    this.addCode("dv-er-pingOneFlow-003", {
+      description: "Consecutive 'Authenticate via Kerberos' capabilities are not supported",
+      message: "Consecutive 'Authenticate via Kerberos' capabilities are not supported",
+      type: "error",
+      recommendation: "Avoid placing multiple 'Authenticate via Kerberos' nodes back-to-back in the flow. This capability uses a one-time-use token that will fail if reused. Separate these nodes with non-authentication logic or remove the redundant instance.",
+    });
   }
 
   runRule() {
@@ -27,6 +33,7 @@ class PingOneFlowRule extends LintRule {
       const targetFlow = this.mainFlow;
 
       const { nodes, edges } = targetFlow?.graphData?.elements;
+      const sameCapabilityNodeId =  nodes?.filter(n=>n.data.capabilityName === 'kerberosAuthentication').map(d=>d.data.id)
       // Incorrect ending nodes for PingOne flow
       if (targetFlow?.settings?.pingOneFlow) {
         const endNodesCapability = ['returnSuccessResponseRedirect', 'returnErrorResponseRedirect'];
@@ -44,7 +51,7 @@ class PingOneFlowRule extends LintRule {
 
 
       // Check for missing false path in capability of pingOneSSOConnector connector
-      nodes.forEach((node) => {
+      nodes?.forEach((node) => {
         if (node.data.connectorId === 'pingOneSSOConnector') {
           //target nodes of the current node
           const evalNodes = edges?.filter(edge => edge.data.source === node.data.id).map(d => d.data.target) || [];
@@ -90,6 +97,22 @@ class PingOneFlowRule extends LintRule {
                 nodeId: node.data.id,
               });
             }
+          }
+
+
+
+
+          // Same back to back node kerberos authentication
+          if (node.data.capabilityName === 'kerberosAuthentication') {
+            const sourceNode = edges?.filter(e => e.data.source === node.data.id);
+            edges?.map(e => {
+              if (sourceNode.length && sourceNode[0].data.target === e.data.source && sameCapabilityNodeId.includes(e.data.target)) {
+                this.addError("dv-er-pingOneFlow-003", {
+                  flowId: this.mainFlow.flowId,
+                  nodeId: e.data.target,
+                });
+              }
+            })
           }
 
         }

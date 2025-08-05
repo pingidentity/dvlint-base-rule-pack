@@ -18,7 +18,7 @@ class NodeRule extends LintRule {
       description: "All nodes should have a title",
       message: "Missing node title",
       type: "best-practice",
-      recommendation: "The (% %) node is missing a title. For optimal clarity, add a descriptive title.",
+      recommendation: "The node '%' is missing a title. For optimal clarity, add a descriptive title.",
     });
     this.addCode("dv-bp-node-002", {
       description: "All success/error JSON nodes should proper colors",
@@ -30,7 +30,7 @@ class NodeRule extends LintRule {
       description: "All nodes should have a description",
       message: "Missing node description",
       type: "best-practice",
-      recommendation: "The (% %) node is missing a description. For optimal clarity, add a meaningful description.",
+      recommendation: "The node '%' is missing a description. For optimal clarity, add a meaningful description.",
     });
     this.addCode("dv-er-node-004", {
       description: "Form not selected",
@@ -66,7 +66,7 @@ class NodeRule extends LintRule {
           ) {
             this.addError("dv-bp-node-001", {
               flowId: flow.flowId,
-              recommendationArgs: [data.id, data.name],
+              recommendationArgs: [data.id],
               nodeId: data.id,
             });
           }
@@ -79,7 +79,7 @@ class NodeRule extends LintRule {
           ) {
             this.addError("dv-bp-node-003", {
               flowId: flow.flowId,
-              recommendationArgs: [data.id, data.name],
+              recommendationArgs: [data.id],
               nodeId: data.id,
             });
           }
@@ -119,7 +119,7 @@ class NodeRule extends LintRule {
           }
 
           //check if Expire Flow Instance Cache enabled in an intermediate node
-          if (data.nodeType === "CONNECTION" && data.properties?.oeInteractionCacheExpire?.value && nodeSourceMap.includes(data.id)) {
+          if (data.nodeType === "CONNECTION" && data.properties?.oeInteractionCacheExpire?.value && (nodeSourceMap.includes(data.id) || node.data.connectorId === 'nodeConnector')) {
             this.addError("dv-er-node-005", {
               flowId: flow.flowId,
               recommendationArgs: [data.id],

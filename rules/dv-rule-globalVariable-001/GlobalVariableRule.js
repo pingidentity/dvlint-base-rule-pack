@@ -16,16 +16,16 @@ class GlobalVariableRule extends LintRule {
             recommendation: "Use global variables cautiously in custom code. Avoid storing or processing sensitive information within them.",
         });
         this.addCode("dv-bp-globalVariable-002", {
-            description: "Global variable usage in Custom Function code",
-            message: "Global variable usage in Custom Function code",
+            description: "Global variable usage in Custom Function",
+            message: "Global variable usage in Custom Function",
             type: "best-practice",
-            recommendation: "Use global variables cautiously in custom code. Avoid storing or processing sensitive information within them.",
+            recommendation: "Use global company variables cautiously in the 'Variable Input List' of Custom Function. Avoid storing or processing sensitive information within them.",
         });
         this.addCode("dv-bp-globalVariable-003", {
             description: "Custom JavaScript usage in flow",
             message: "Custom JavaScript usage in flow",
             type: "best-practice",
-            recommendation: "Review the script in the % to ensure it does not introduce security vulnerabilities.%",
+            recommendation: "Review the script in the node(s): % to ensure it does not introduce security vulnerabilities.",
         });
 
     }
@@ -107,11 +107,12 @@ class GlobalVariableRule extends LintRule {
             const connectorIdWithoutKeyBeforeCustomScript = ['pingFederateConnectorV2', 'mfaContainerConnector'];
             const pattern = /\{\{(.*?)\}\}/g; // regex pattern to match all instances of {{...}}
             for (const flow of this.allFlows) {
-                const { nodes, edges } = flow?.graphData?.elements
+                const { nodes, edges } = flow?.graphData?.elements;
+                const globalVarNodeIdArr = []
                 nodes?.forEach((node) => {
                     const { data } = node;
                     if (data.nodeType === "CONNECTION" && data.capabilityName === "customHTMLTemplate" || data.capabilityName === "customFunction") {
-                        let property = data.capabilityName === "customFunction" ? "code" : "customScript";
+                        let property = data.capabilityName === "customFunction" ? "variableInputList" : "customScript";
                         let value = data.properties[property]?.value;
                         const uniqueGlobalVariables = this.getPropertiesValue(value, pattern);
                         const globalVarArr = []
@@ -152,11 +153,7 @@ class GlobalVariableRule extends LintRule {
                                     }
                                 });
                                 if (globalVarArr.length > 0) {
-                                    this.addError("dv-bp-globalVariable-003", {
-                                        flowId: this.mainFlow.flowId,
-                                        nodeId: node.data.id,
-                                        recommendationArgs: [`'${data.title || data.capabilityName}' capability`, '']
-                                    });
+                                    globalVarNodeIdArr.push(node.data.id);
                                 }
                             } else {
                                 value = data.properties[key]?.properties?.customScript?.value;
@@ -174,14 +171,18 @@ class GlobalVariableRule extends LintRule {
                             }
                         });
                         if (globalVarArr.length > 0) {
-                            this.addError("dv-bp-globalVariable-003", {
-                                flowId: this.mainFlow.flowId,
-                                nodeId: node.data.id,
-                                recommendationArgs: [`'${data.title || data.capabilityName}' capability`, '']
-                            });
+                            globalVarNodeIdArr.push(node.data.id)
                         }
                     }
                 });
+
+                if( globalVarNodeIdArr.length > 0 ){
+                    const stringWithQuotesCommaSeparated = globalVarNodeIdArr.map(str => `'${str}'`).join(', ');
+                    this.addError("dv-bp-globalVariable-003", {
+                        flowId: this.mainFlow.flowId,
+                        recommendationArgs: [stringWithQuotesCommaSeparated]
+                    });
+                }
 
 
                 // configuration code check
@@ -202,7 +203,7 @@ class GlobalVariableRule extends LintRule {
                             if (globalVarArr.length > 0) {
                                 this.addError("dv-bp-globalVariable-003", {
                                     flowId: this.mainFlow.flowId,
-                                    recommendationArgs: [`'${connectorId}' connector`, `This connector is used in the following node(s): ${codeSnippetConnectorNodeids.join(',')}.`],
+                                    recommendationArgs: [codeSnippetConnectorNodeids.map(str => `'${str}'`).join(', ')],
                                 });
                             }
                         }

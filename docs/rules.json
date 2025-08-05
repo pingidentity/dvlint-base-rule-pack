@@ -2,7 +2,7 @@
   {
     "name": "@ping-identity/dvlint-base-rule-pack",
     "description": "Collection of base rules used to lint DaVinci flows.",
-    "version": "1.2.4",
+    "version": "1.2.5",
     "rules": [
       {
         "id": "dv-rule-AEqualsBMultipleCondition-001",
@@ -22,12 +22,12 @@
             "recommendation": "Map each specific outcome value from 'A == B (Multiple Conditions)' to the next node. Do not use generic node-level output.",
             "code": "dv-bp-AEqualsBMultipleCondition-002"
           },
-          "dv-er-AEqualsBMultipleCondition-003": {
+          "dv-bp-AEqualsBMultipleCondition-003": {
             "description": "Unmapped outcome(s) in 'A == B (Multiple Conditions)' capability",
             "message": "Unmapped outcome(s) in 'A == B (Multiple Conditions)' capability",
-            "type": "error",
-            "recommendation": "Map the outcome ‘%’ to an appropriate next node in the ‘A == B (Multiple Conditions)’ capability.",
-            "code": "dv-er-AEqualsBMultipleCondition-003"
+            "type": "best-practice",
+            "recommendation": "Map the % % to an appropriate next node in the 'A == B (Multiple Conditions)' capability.",
+            "code": "dv-bp-AEqualsBMultipleCondition-003"
           }
         },
         "reference": "",
@@ -125,17 +125,17 @@
             "code": "dv-bp-globalVariable-001"
           },
           "dv-bp-globalVariable-002": {
-            "description": "Global variable usage in Custom Function code",
-            "message": "Global variable usage in Custom Function code",
+            "description": "Global variable usage in Custom Function",
+            "message": "Global variable usage in Custom Function",
             "type": "best-practice",
-            "recommendation": "Use global variables cautiously in custom code. Avoid storing or processing sensitive information within them.",
+            "recommendation": "Use global company variables cautiously in the 'Variable Input List' of Custom Function. Avoid storing or processing sensitive information within them.",
             "code": "dv-bp-globalVariable-002"
           },
           "dv-bp-globalVariable-003": {
             "description": "Custom JavaScript usage in flow",
             "message": "Custom JavaScript usage in flow",
             "type": "best-practice",
-            "recommendation": "Review the script in the % to ensure it does not introduce security vulnerabilities.%",
+            "recommendation": "Review the script in the node(s): % to ensure it does not introduce security vulnerabilities.",
             "code": "dv-bp-globalVariable-003"
           }
         },
@@ -201,7 +201,7 @@
             "description": "All nodes should have a title",
             "message": "Missing node title",
             "type": "best-practice",
-            "recommendation": "The (% %) node is missing a title. For optimal clarity, add a descriptive title.",
+            "recommendation": "The node '%' is missing a title. For optimal clarity, add a descriptive title.",
             "code": "dv-bp-node-001"
           },
           "dv-bp-node-002": {
@@ -215,7 +215,7 @@
             "description": "All nodes should have a description",
             "message": "Missing node description",
             "type": "best-practice",
-            "recommendation": "The (% %) node is missing a description. For optimal clarity, add a meaningful description.",
+            "recommendation": "The node '%' is missing a description. For optimal clarity, add a meaningful description.",
             "code": "dv-bp-node-003"
           },
           "dv-er-node-004": {
@@ -275,6 +275,13 @@
             "type": "error",
             "recommendation": "Define both true and false paths in '%' capability to handle all outcomes.",
             "code": "dv-er-pingOneFlow-002"
+          },
+          "dv-er-pingOneFlow-003": {
+            "description": "Consecutive 'Authenticate via Kerberos' capabilities are not supported",
+            "message": "Consecutive 'Authenticate via Kerberos' capabilities are not supported",
+            "type": "error",
+            "recommendation": "Avoid placing multiple 'Authenticate via Kerberos' nodes back-to-back in the flow. This capability uses a one-time-use token that will fail if reused. Separate these nodes with non-authentication logic or remove the redundant instance.",
+            "code": "dv-er-pingOneFlow-003"
           }
         },
         "reference": "",
@@ -374,7 +381,7 @@
             "description": "Unused Teleport Found",
             "message": "Unused teleport node found",
             "type": "error",
-            "recommendation": "'%' is not being used. Consider removing it from the flow.",
+            "recommendation": "This section of the flow is not referenced in any execution path. Remove it if unnecessary or connect it using an appropriate teleport entry point.",
             "code": "dv-er-teleport-001"
           },
           "dv-er-teleport-002": {

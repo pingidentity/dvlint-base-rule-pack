@@ -14,10 +14,10 @@
                     "errorCount": 2,
                     "errors": [
                         {
-                            "code": "dv-er-AEqualsBMultipleCondition-003",
+                            "code": "dv-bp-AEqualsBMultipleCondition-003",
                             "message": "Unmapped outcome(s) in 'A == B (Multiple Conditions)' capability",
-                            "type": "error",
-                            "recommendation": "Map the outcome ‘val1,val2’ to an appropriate next node in the ‘A == B (Multiple Conditions)’ capability.",
+                            "type": "best-practice",
+                            "recommendation": "Map the outcomes 'val1','val2' to an appropriate next node in the 'A == B (Multiple Conditions)' capability.",
                             "flowId": "7c1c682400d49a511dfba8a5264931b9",
                             "nodeId": "cjc6qawp4i"
                         },
@@ -40,10 +40,10 @@
                             "errorCount": 2,
                             "errors": [
                                 {
-                                    "code": "dv-er-AEqualsBMultipleCondition-003",
+                                    "code": "dv-bp-AEqualsBMultipleCondition-003",
                                     "message": "Unmapped outcome(s) in 'A == B (Multiple Conditions)' capability",
-                                    "type": "error",
-                                    "recommendation": "Map the outcome ‘val1,val2’ to an appropriate next node in the ‘A == B (Multiple Conditions)’ capability.",
+                                    "type": "best-practice",
+                                    "recommendation": "Map the outcomes 'val1','val2' to an appropriate next node in the 'A == B (Multiple Conditions)' capability.",
                                     "flowId": "7c1c682400d49a511dfba8a5264931b9",
                                     "nodeId": "cjc6qawp4i"
                                 },

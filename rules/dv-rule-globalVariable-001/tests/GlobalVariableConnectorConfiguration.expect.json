@@ -17,7 +17,7 @@
                             "code": "dv-bp-globalVariable-003",
                             "flowId": "d3a8d4dd071aac3bc51e0f8fb37e9df7",
                             "message": "Custom JavaScript usage in flow",
-                            "recommendation": "Review the script in the 'codeSnippetConnector' connector to ensure it does not introduce security vulnerabilities.This connector is used in the following node(s): 6ge2g03srg.",
+                            "recommendation": "Review the script in the node(s): '6ge2g03srg' to ensure it does not introduce security vulnerabilities.",
                             "type": "best-practice"
                         }
                     ],
@@ -34,7 +34,7 @@
                                     "code": "dv-bp-globalVariable-003",
                                     "flowId": "d3a8d4dd071aac3bc51e0f8fb37e9df7",
                                     "message": "Custom JavaScript usage in flow",
-                                    "recommendation": "Review the script in the 'codeSnippetConnector' connector to ensure it does not introduce security vulnerabilities.This connector is used in the following node(s): 6ge2g03srg.",
+                                    "recommendation": "Review the script in the node(s): '6ge2g03srg' to ensure it does not introduce security vulnerabilities.",
                                     "type": "best-practice"
                                 }
                             ]

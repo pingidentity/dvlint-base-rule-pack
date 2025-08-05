@@ -28,7 +28,7 @@
                   "code": "dv-bp-node-003",
                   "message": "Missing node description",
                   "nodeId": "osyiff3qqw",
-                  "recommendation": "The (osyiff3qqw Variables) node is missing a description. For optimal clarity, add a meaningful description.",
+                  "recommendation": "The node 'osyiff3qqw' is missing a description. For optimal clarity, add a meaningful description.",
                   "type": "best-practice"
                 },
                 {
@@ -36,7 +36,7 @@
                   "code": "dv-bp-node-001",
                   "message": "Missing node title",
                   "nodeId": "61te8qo77t",
-                  "recommendation": "The (61te8qo77t HTTP) node is missing a title. For optimal clarity, add a descriptive title.",
+                  "recommendation": "The node '61te8qo77t' is missing a title. For optimal clarity, add a descriptive title.",
                   "type": "best-practice"
                 },
                 {
@@ -44,7 +44,7 @@
                   "code": "dv-bp-node-003",
                   "message": "Missing node description",
                   "nodeId": "61te8qo77t",
-                  "recommendation": "The (61te8qo77t HTTP) node is missing a description. For optimal clarity, add a meaningful description.",
+                  "recommendation": "The node '61te8qo77t' is missing a description. For optimal clarity, add a meaningful description.",
                   "type": "best-practice"
                 }
               ],

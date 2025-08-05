@@ -27,7 +27,8 @@ class DisabledNodeRule extends LintRule {
   runRule() {
     try {
       for (const flow of this.allFlows) {
-        flow?.graphData?.elements?.nodes?.forEach((node) => {
+        const { nodes, edges } = flow?.graphData?.elements;
+        nodes?.forEach((node) => {
           const { data } = node;
 
           if (data.isDisabled === true) {
