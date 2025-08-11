@@ -1,0 +1,68 @@
+{
+    "name": "PingOne DaVinci Linter",
+    "pass": false,
+    "errorCount": 2,
+    "rulePackResults": [
+        {
+            "pass": false,
+            "errorCount": 2,
+            "lintResults": [
+                {
+                    "flowId": "193147c131603254a54095299baec141",
+                    "flowName": "requiredRule",
+                    "pass": false,
+                    "errorCount": 2,
+                    "errors": [
+                        {
+                            "code": "dv-er-requiredFields-001",
+                            "flowId": "193147c131603254a54095299baec141",
+                            "message": "Missing required value",
+                            "nodeId": "myblkjl6jn",
+                            "recommendation": "Configure a value for 'Group ID', 'Group Name' field in the Update Group capability in PingOne connector",
+                            "type": "error"
+                        },
+                        {
+                            "code": "dv-er-requiredFields-001",
+                            "flowId": "193147c131603254a54095299baec141",
+                            "message": "Missing required value",
+                            "nodeId": "79sjga7o6m",
+                            "type": "error",
+                            "recommendation": "Configure a value for 'Identifier', 'Password' field in the Check Password capability in PingOne connector"
+                        }
+                    ],
+                    "rulesApplied": [
+                        "dv-rule-requiredFields-001"
+                    ],
+                    "ruleResults": [
+                        {
+                            "ruleDescription": "Missing required value",
+                            "ruleId": "dv-rule-requiredFields-001",
+                            "pass": false,
+                            "errorCount": 2,
+                            "errors": [
+                                {
+                                    "code": "dv-er-requiredFields-001",
+                                    "flowId": "193147c131603254a54095299baec141",
+                                    "message": "Missing required value",
+                                    "nodeId": "myblkjl6jn",
+                                    "recommendation": "Configure a value for 'Group ID', 'Group Name' field in the Update Group capability in PingOne connector",
+                                    "type": "error"
+                                },
+                                {
+                                    "code": "dv-er-requiredFields-001",
+                                    "flowId": "193147c131603254a54095299baec141",
+                                    "message": "Missing required value",
+                                    "nodeId": "79sjga7o6m",
+                                    "type": "error",
+                                    "recommendation": "Configure a value for 'Identifier', 'Password' field in the Check Password capability in PingOne connector"
+                                }
+                            ]
+                        }
+                    ],
+                    "rulesIgnored": []
+                }
+            ],
+            "rulesIgnored": true
+        }
+    ]
+}

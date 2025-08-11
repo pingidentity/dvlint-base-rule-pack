@@ -2,7 +2,7 @@
   {
     "name": "@ping-identity/dvlint-base-rule-pack",
     "description": "Collection of base rules used to lint DaVinci flows.",
-    "version": "1.2.5",
+    "version": "1.2.6",
     "rules": [
       {
         "id": "dv-rule-AEqualsBMultipleCondition-001",
@@ -282,6 +282,21 @@
             "type": "error",
             "recommendation": "Avoid placing multiple 'Authenticate via Kerberos' nodes back-to-back in the flow. This capability uses a one-time-use token that will fail if reused. Separate these nodes with non-authentication logic or remove the redundant instance.",
             "code": "dv-er-pingOneFlow-003"
+          }
+        },
+        "reference": "",
+        "cleans": false
+      },
+      {
+        "id": "dv-rule-requiredFields-001",
+        "description": "Missing required value",
+        "codes": {
+          "dv-er-requiredFields-001": {
+            "description": "Missing required value",
+            "message": "Missing required value",
+            "type": "error",
+            "recommendation": "Configure a value for % field in the % capability in % connector",
+            "code": "dv-er-requiredFields-001"
           }
         },
         "reference": "",
