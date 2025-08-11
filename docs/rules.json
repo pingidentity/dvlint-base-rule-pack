@@ -288,6 +288,21 @@
         "cleans": false
       },
       {
+        "id": "dv-rule-requiredFields-001",
+        "description": "Missing required value",
+        "codes": {
+          "dv-er-requiredFields-001": {
+            "description": "Missing required value",
+            "message": "Missing required value",
+            "type": "error",
+            "recommendation": "Configure a value for % field in the % capability in % connector",
+            "code": "dv-er-requiredFields-001"
+          }
+        },
+        "reference": "",
+        "cleans": false
+      },
+      {
         "id": "dv-rule-scheduleFlow-001",
         "description": "Schedule flow rules",
         "codes": {
