@@ -1,0 +1,267 @@
+{
+    "companyId": "6YWgejhFHGFyhZM57KfdhnYf7fmeMZKM",
+    "authTokenExpireIds": [],
+    "connectorIds": [
+        "pingOneSSOConnector",
+        "httpConnector"
+    ],
+    "createdDate": 1754905674452,
+    "currentVersion": 44,
+    "customerId": "1576bd3c19c0fb0a828342b21d46a57e",
+    "deployedDate": 1754905727910,
+    "description": "",
+    "flowStatus": "enabled",
+    "isOutputSchemaSaved": false,
+    "name": "requiredRule",
+    "publishedVersion": 44,
+    "settings": {
+        "csp": "worker-src 'self' blob:; script-src 'self' https://cdn.jsdelivr.net https://code.jquery.com https://devsdk.singularkey.com http://cdnjs.cloudflare.com 'unsafe-inline' 'unsafe-eval';",
+        "intermediateLoadingScreenCSS": "",
+        "intermediateLoadingScreenHTML": "",
+        "logLevel": 4,
+        "validateOnSave": true
+    },
+    "timeouts": "null",
+    "updatedDate": 1754905727929,
+    "flowId": "193147c131603254a54095299baec141",
+    "versionId": 44,
+    "graphData": {
+        "elements": {
+            "nodes": [
+                {
+                    "data": {
+                        "id": "myblkjl6jn",
+                        "nodeType": "CONNECTION",
+                        "connectionId": "8ab46bf82f318af9720d57c02d98fa28",
+                        "connectorId": "pingOneSSOConnector",
+                        "name": "PingOne-new",
+                        "label": "PingOne-new",
+                        "status": "configured",
+                        "capabilityName": "updateGroup",
+                        "type": "action",
+                        "properties": {
+                            "matchAttribute": {
+                                "value": "username"
+                            },
+                            "nodeTitle": {
+                                "value": "dfg"
+                            },
+                            "nodeDescription": {
+                                "value": "dfg"
+                            }
+                        },
+                        "idUnique": "ulgy7jrx16",
+                        "title": "Update Group",
+                        "connectorName": "PingOne",
+                        "capabilityConfigRequiredProperties": [
+                            {
+                                "requiredField": "groupId",
+                                "requiredFieldTitle": "Group ID"
+                            },
+                            {
+                                "requiredField": "groupName",
+                                "requiredFieldTitle": "Group Name"
+                            }
+                        ]
+                    },
+                    "position": {
+                        "x": 277,
+                        "y": 236
+                    },
+                    "group": "nodes",
+                    "removed": false,
+                    "selected": false,
+                    "selectable": true,
+                    "locked": false,
+                    "grabbable": true,
+                    "pannable": false,
+                    "classes": ""
+                },
+                {
+                    "data": {
+                        "id": "yzuk8v0mv7",
+                        "nodeType": "EVAL",
+                        "label": "Evaluator",
+                        "properties": {
+                            "qqzl4jwkl1": {
+                                "value": "anyTriggersFalse"
+                            }
+                        }
+                    },
+                    "position": {
+                        "x": 476.625,
+                        "y": 239.1337890625
+                    },
+                    "group": "nodes",
+                    "removed": false,
+                    "selected": false,
+                    "selectable": true,
+                    "locked": false,
+                    "grabbable": true,
+                    "pannable": false,
+                    "classes": ""
+                },
+                {
+                    "data": {
+                        "id": "79sjga7o6m",
+                        "nodeType": "CONNECTION",
+                        "connectionId": "8ab46bf82f318af9720d57c02d98fa28",
+                        "connectorId": "pingOneSSOConnector",
+                        "name": "PingOne-new",
+                        "label": "PingOne-new",
+                        "status": "configured",
+                        "capabilityName": "checkPassword",
+                        "type": "action",
+                        "properties": {
+                            "nodeTitle": {
+                                "value": "dfg"
+                            },
+                            "nodeDescription": {
+                                "value": "dfg"
+                            }
+                        },
+                        "title": "Check Password",
+                        "connectorName": "PingOne",
+                        "capabilityConfigRequiredProperties": [
+                            {
+                                "requiredField": "identifier",
+                                "requiredFieldTitle": "Identifier"
+                            },
+                            {
+                                "requiredField": "password",
+                                "requiredFieldTitle": "Password"
+                            }
+                        ]
+                    },
+                    "position": {
+                        "x": 676.25,
+                        "y": 242.267578125
+                    },
+                    "group": "nodes",
+                    "removed": false,
+                    "selected": false,
+                    "selectable": true,
+                    "locked": false,
+                    "grabbable": true,
+                    "pannable": false,
+                    "classes": ""
+                },
+                {
+                    "data": {
+                        "id": "qqzl4jwkl1",
+                        "nodeType": "CONNECTION",
+                        "connectionId": "1529cbbe40c0c051ca1d6a829708764f",
+                        "connectorId": "httpConnector",
+                        "name": "HTTP",
+                        "label": "HTTP",
+                        "status": "configured",
+                        "capabilityName": "customHtmlMessage",
+                        "type": "trigger",
+                        "properties": {
+                            "nodeTitle": {
+                                "value": "dfg"
+                            },
+                            "nodeDescription": {
+                                "value": "fdg"
+                            }
+                        },
+                        "title": "Custom HTML Message",
+                        "connectorName": "HTTP",
+                        "capabilityConfigRequiredProperties": []
+                    },
+                    "position": {
+                        "x": 690,
+                        "y": 390
+                    },
+                    "group": "nodes",
+                    "removed": false,
+                    "selected": false,
+                    "selectable": true,
+                    "locked": false,
+                    "grabbable": true,
+                    "pannable": false,
+                    "classes": ""
+                }
+            ],
+            "edges": [
+                {
+                    "data": {
+                        "id": "cktmf1yoqk",
+                        "source": "myblkjl6jn",
+                        "target": "yzuk8v0mv7"
+                    },
+                    "position": {
+                        "x": 0,
+                        "y": 0
+                    },
+                    "group": "edges",
+                    "removed": false,
+                    "selected": false,
+                    "selectable": true,
+                    "locked": false,
+                    "grabbable": true,
+                    "pannable": true,
+                    "classes": ""
+                },
+                {
+                    "data": {
+                        "id": "joi2o56q0w",
+                        "source": "yzuk8v0mv7",
+                        "target": "79sjga7o6m"
+                    },
+                    "position": {
+                        "x": 0,
+                        "y": 0
+                    },
+                    "group": "edges",
+                    "removed": false,
+                    "selected": false,
+                    "selectable": true,
+                    "locked": false,
+                    "grabbable": true,
+                    "pannable": true,
+                    "classes": ""
+                },
+                {
+                    "data": {
+                        "id": "p8i4p8rrxx",
+                        "source": "yzuk8v0mv7",
+                        "target": "qqzl4jwkl1"
+                    },
+                    "position": {
+                        "x": 0,
+                        "y": 0
+                    },
+                    "group": "edges",
+                    "removed": false,
+                    "selected": false,
+                    "selectable": true,
+                    "locked": false,
+                    "grabbable": true,
+                    "pannable": true,
+                    "classes": ""
+                }
+            ]
+        },
+        "data": {},
+        "zoomingEnabled": true,
+        "userZoomingEnabled": true,
+        "zoom": 1,
+        "minZoom": 1e-50,
+        "maxZoom": 1e+50,
+        "panningEnabled": true,
+        "userPanningEnabled": true,
+        "pan": {
+            "x": 0,
+            "y": 0
+        },
+        "boxSelectionEnabled": true,
+        "renderer": {
+            "name": "null"
+        }
+    },
+    "flowColor": "#CACED3",
+    "savedDate": 1754905674369,
+    "variables": [],
+    "connections": []
+}
