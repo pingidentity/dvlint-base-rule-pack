@@ -18,7 +18,7 @@
               "code": "dv-er-subflow-001",
               "message": "Incorrect or missing subflow",
               "type": "error",
-              "recommendation": "There is an incorrect or missing subflow in the (6cc59b44515ba46f388c87ef52a00ec9) flow. Ensure that the appropriate subflow is selected and that the names match within the configuration."
+              "recommendation": "There is an incorrect or missing subflow. Ensure that the appropriate subflow is selected."
             },
             {
               "code": "dv-er-subflow-004",
@@ -51,7 +51,7 @@
                   "code": "dv-er-subflow-001",
                   "message": "Incorrect or missing subflow",
                   "type": "error",
-                  "recommendation": "There is an incorrect or missing subflow in the (6cc59b44515ba46f388c87ef52a00ec9) flow. Ensure that the appropriate subflow is selected and that the names match within the configuration."
+                  "recommendation": "There is an incorrect or missing subflow. Ensure that the appropriate subflow is selected."
                 },
                 {
                   "code": "dv-er-subflow-004",

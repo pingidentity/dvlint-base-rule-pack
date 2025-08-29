@@ -24,7 +24,7 @@ class PingOneFlowRule extends LintRule {
       description: "Consecutive 'Authenticate via Kerberos' capabilities are not supported",
       message: "Consecutive 'Authenticate via Kerberos' capabilities are not supported",
       type: "error",
-      recommendation: "Avoid placing multiple 'Authenticate via Kerberos' nodes back-to-back in the flow. This capability uses a one-time-use token that will fail if reused. Separate these nodes with non-authentication logic or remove the redundant instance.",
+      recommendation: "If you want the flow to validate Kerberos credentials against multiple user types, add the applicable user types in the 'Authenticate User via Kerberos' node. Do not place the 'Authenticate User via Kerberos' node back-to-back because Kerberos tokens are one-time-use tokens; chaining one after another will result in failure.",
     });
   }
 
