@@ -124,10 +124,6 @@
                         "connectorName": "PingOne",
                         "capabilityConfigRequiredProperties": [
                             {
-                                "requiredField": "identifier",
-                                "requiredFieldTitle": "Identifier"
-                            },
-                            {
                                 "requiredField": "password",
                                 "requiredFieldTitle": "Password"
                             }
