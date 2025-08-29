@@ -12,7 +12,7 @@ class RequiredFieldsRule extends LintRule {
             description: "Missing required value",
             message: "Missing required value",
             type: "error",
-            recommendation: "Configure a value for % field in the % capability in % connector"
+            recommendation: "Configure a value for % in the % capability in % connector"
         });
     }
 
@@ -35,10 +35,12 @@ class RequiredFieldsRule extends LintRule {
                     if (noFieldsValueArr.length > 0) {
                         const connectorName = node.data.connectorName || node.data.connectorId;
                         const connectorTitle = node.data.title || node.data.capabilityName;
+                        const fieldStr = noFieldsValueArr.map(str => `'${str}'`).join(', ');
+                        const fieldNameText = noFieldsValueArr.length > 1 ? `${fieldStr} fields` : `${fieldStr} field`
                         this.addError("dv-er-requiredFields-001", {
                             flowId: this.mainFlow.flowId,
                             nodeId: node.data.id,
-                            recommendationArgs: [noFieldsValueArr.map(str => `'${str}'`).join(', '), connectorTitle, connectorName],
+                            recommendationArgs: [fieldNameText, connectorTitle, connectorName],
                         });
                     }
                 }

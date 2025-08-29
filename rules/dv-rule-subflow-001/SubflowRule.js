@@ -13,12 +13,11 @@ class DVRule extends LintRule {
       description: "Subflow names mismatched",
       message: "Incorrect or missing subflow",
       type: "error",
-      recommendation:
-        "There is an incorrect or missing subflow in the (%) flow. Ensure that the appropriate subflow is selected and that the names match within the configuration.",
+      recommendation: "There is an incorrect or missing subflow. Ensure that the appropriate subflow is selected."
     });
     this.addCode("dv-er-subflow-002", {
       description: "Circular SubFlow Found",
-      message:"Circular subflow dependency found",
+      message: "Circular subflow dependency found",
       type: "error",
       recommendation:
         "The main flow and subflow  reference each other, creating a circular dependency loop. Modify the flow structure to ensure subflows do not point back to parent flows, preventing execution deadlocks.",
@@ -83,13 +82,22 @@ class DVRule extends LintRule {
       // Create SubFlow Details
       const subflows = this.dvUtil.getSubFlows(targetFlow, supportingFlows);
       let subflowIdInputSchemaMap = {};
+
+      targetFlow.graphData.elements.nodes.forEach(node => {
+        if (node.data.nodeType === 'CONNECTION' && node.data.connectorId === 'flowConnector') {
+          const selectedSubflowId = node.data.properties.subFlowId?.value?.value || '';
+          if (!selectedSubflowId) {
+            this.addError("dv-er-subflow-001", {
+              flowId: targetFlow.flowId,
+              recommendationArgs: [targetFlow.flowId],
+              nodeId: node.data.id
+            });
+          }
+        }
+      });
+
       subflows?.forEach((subflow) => {
-        if (!subflow.name) {
-          this.addError("dv-er-subflow-001", {
-            flowId: subflow.flowId,
-            recommendationArgs: [subflow.flowId]
-          });
-        } else {
+        if (Object.keys(subflow).length > 0) {
           if (subflow.name !== subflow.label) {
             this.addError("dv-er-subflow-001", {
               flowId: subflow.flowId,
@@ -128,7 +136,7 @@ class DVRule extends LintRule {
           if (node.data.nodeType === 'CONNECTION' && node.data.connectorId === 'flowConnector') {
             const propertyKeyArr = Object.keys(node.data.properties);
             const selectedSubflowId = node.data.properties.subFlowId?.value?.value || '';
-  
+
             //check if subflow is pingOne flow
             const subflowData = subflows.filter(subflow => subflow.flowId === selectedSubflowId)
             if (subflowData.length === 1 && subflowData[0].detail?.settings?.pingOneFlow) {

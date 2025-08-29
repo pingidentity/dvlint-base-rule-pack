@@ -2,7 +2,7 @@
   {
     "name": "@ping-identity/dvlint-base-rule-pack",
     "description": "Collection of base rules used to lint DaVinci flows.",
-    "version": "1.2.6",
+    "version": "1.2.7",
     "rules": [
       {
         "id": "dv-rule-AEqualsBMultipleCondition-001",
@@ -280,7 +280,7 @@
             "description": "Consecutive 'Authenticate via Kerberos' capabilities are not supported",
             "message": "Consecutive 'Authenticate via Kerberos' capabilities are not supported",
             "type": "error",
-            "recommendation": "Avoid placing multiple 'Authenticate via Kerberos' nodes back-to-back in the flow. This capability uses a one-time-use token that will fail if reused. Separate these nodes with non-authentication logic or remove the redundant instance.",
+            "recommendation": "If you want the flow to validate Kerberos credentials against multiple user types, add the applicable user types in the 'Authenticate User via Kerberos' node. Do not place the 'Authenticate User via Kerberos' node back-to-back because Kerberos tokens are one-time-use tokens; chaining one after another will result in failure.",
             "code": "dv-er-pingOneFlow-003"
           }
         },
@@ -295,7 +295,7 @@
             "description": "Missing required value",
             "message": "Missing required value",
             "type": "error",
-            "recommendation": "Configure a value for % field in the % capability in % connector",
+            "recommendation": "Configure a value for % in the % capability in % connector",
             "code": "dv-er-requiredFields-001"
           }
         },
@@ -353,7 +353,7 @@
             "description": "Subflow names mismatched",
             "message": "Incorrect or missing subflow",
             "type": "error",
-            "recommendation": "There is an incorrect or missing subflow in the (%) flow. Ensure that the appropriate subflow is selected and that the names match within the configuration.",
+            "recommendation": "There is an incorrect or missing subflow. Ensure that the appropriate subflow is selected.",
             "code": "dv-er-subflow-001"
           },
           "dv-er-subflow-002": {
