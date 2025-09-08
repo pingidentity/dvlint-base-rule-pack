@@ -295,7 +295,7 @@
             "description": "Missing required value",
             "message": "Missing required value",
             "type": "error",
-            "recommendation": "Configure a value for % in the % capability in % connector",
+            "recommendation": "Configure a value for % in the '%' capability in '%' connector",
             "code": "dv-er-requiredFields-001"
           }
         },

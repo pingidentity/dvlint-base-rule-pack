@@ -18,7 +18,7 @@
                             "flowId": "193147c131603254a54095299baec141",
                             "message": "Missing required value",
                             "nodeId": "myblkjl6jn",
-                            "recommendation": "Configure a value for 'Group ID', 'Group Name' fields in the Update Group capability in PingOne connector",
+                            "recommendation": "Configure a value for 'Group ID', 'Group Name' fields in the 'Update Group' capability in 'PingOne' connector",
                             "type": "error"
                         },
                         {
@@ -27,7 +27,7 @@
                             "message": "Missing required value",
                             "nodeId": "79sjga7o6m",
                             "type": "error",
-                            "recommendation": "Configure a value for 'Password' field in the Check Password capability in PingOne connector"
+                            "recommendation": "Configure a value for 'Password' field in the 'Check Password' capability in 'PingOne' connector"
                         }
                     ],
                     "rulesApplied": [
@@ -45,7 +45,7 @@
                                     "flowId": "193147c131603254a54095299baec141",
                                     "message": "Missing required value",
                                     "nodeId": "myblkjl6jn",
-                                    "recommendation": "Configure a value for 'Group ID', 'Group Name' fields in the Update Group capability in PingOne connector",
+                                    "recommendation": "Configure a value for 'Group ID', 'Group Name' fields in the 'Update Group' capability in 'PingOne' connector",
                                     "type": "error"
                                 },
                                 {
@@ -54,7 +54,7 @@
                                     "message": "Missing required value",
                                     "nodeId": "79sjga7o6m",
                                     "type": "error",
-                                    "recommendation": "Configure a value for 'Password' field in the Check Password capability in PingOne connector"
+                                    "recommendation": "Configure a value for 'Password' field in the 'Check Password' capability in 'PingOne' connector"
                                 }
                             ]
                         }
