@@ -55,7 +55,7 @@ class DVRule extends LintRule {
     // Create a Set to store all node IDs that are targets of an edge.
     // This helps in efficient lookup (O(1) on average).
     const targetNodeIds = new Set();
-    edges.forEach(edge => {
+    edges?.forEach(edge => {
       targetNodeIds.add(edge.data.target);
     });
 
@@ -83,7 +83,7 @@ class DVRule extends LintRule {
       const subflows = this.dvUtil.getSubFlows(targetFlow, supportingFlows);
       let subflowIdInputSchemaMap = {};
 
-      targetFlow.graphData.elements.nodes.forEach(node => {
+      targetFlow.graphData.elements.nodes?.forEach(node => {
         if (node.data.nodeType === 'CONNECTION' && node.data.connectorId === 'flowConnector') {
           const selectedSubflowId = node.data.properties.subFlowId?.value?.value || '';
           if (!selectedSubflowId) {
@@ -132,7 +132,7 @@ class DVRule extends LintRule {
       // Check for missing inputSchema values of subFlow in main flow
       let missingFields = [];
       if (Object.keys(subflowIdInputSchemaMap).length > 0) {
-        targetFlow.graphData.elements.nodes.forEach(node => {
+        targetFlow.graphData.elements.nodes?.forEach(node => {
           if (node.data.nodeType === 'CONNECTION' && node.data.connectorId === 'flowConnector') {
             const propertyKeyArr = Object.keys(node.data.properties);
             const selectedSubflowId = node.data.properties.subFlowId?.value?.value || '';

@@ -12,7 +12,7 @@ class RequiredFieldsRule extends LintRule {
             description: "Missing required value",
             message: "Missing required value",
             type: "error",
-            recommendation: "Configure a value for % in the % capability in % connector"
+            recommendation: "Configure a value for % in the '%' capability in '%' connector"
         });
     }
 
@@ -28,7 +28,7 @@ class RequiredFieldsRule extends LintRule {
                 if (node.data.nodeType === 'CONNECTION' && capabilityConfigRequiredProperties?.length) {
                     for (const property of capabilityConfigRequiredProperties) {
                         if (!(property in properties) || !properties[property]?.value) {
-                            const fieldName = requiredFieldArr?.filter(field => field.requiredField === property)[0].requiredFieldTitle
+                            const fieldName = requiredFieldArr?.filter(field => field.requiredField === property)[0]?.requiredFieldTitle || ''
                             noFieldsValueArr.push(fieldName);
                         }
                     }

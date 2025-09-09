@@ -2,7 +2,7 @@
   {
     "name": "@ping-identity/dvlint-base-rule-pack",
     "description": "Collection of base rules used to lint DaVinci flows.",
-    "version": "1.2.7",
+    "version": "1.2.8",
     "rules": [
       {
         "id": "dv-rule-AEqualsBMultipleCondition-001",
@@ -295,7 +295,7 @@
             "description": "Missing required value",
             "message": "Missing required value",
             "type": "error",
-            "recommendation": "Configure a value for % in the % capability in % connector",
+            "recommendation": "Configure a value for % in the '%' capability in '%' connector",
             "code": "dv-er-requiredFields-001"
           }
         },
