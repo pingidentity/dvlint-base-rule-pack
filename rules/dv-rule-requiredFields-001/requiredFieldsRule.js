@@ -18,7 +18,7 @@ class RequiredFieldsRule extends LintRule {
 
     runRule() {
         const allowedConnectorIdsArr = [
-            'functionsConnector','httpConnector','nodeConnector','pingOneSSOConnector','variablesConnector','variablesConnector',
+            'functionsConnector','httpConnector','nodeConnector','pingOneSSOConnector','variablesConnector',
             'flowConnector','pingOneAuthenticationConnector','pingOneRiskConnector','pingOneMfaConnector','codeSnippetConnector','userPolicyConnector',
             'skOpenIdConnector','cookieConnector','errorConnector','challengeConnector','stringsConnector','splunkConnector','devicePolicyConnector',
             'notificationsConnector','pingOneIntegrationsConnector','appleConnector','pingIdConnector','samlIdpConnector',
