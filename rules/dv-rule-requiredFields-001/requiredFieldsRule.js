@@ -17,31 +17,40 @@ class RequiredFieldsRule extends LintRule {
     }
 
     runRule() {
+        const allowedConnectorIdsArr = [
+            'functionsConnector','httpConnector','nodeConnector','pingOneSSOConnector','variablesConnector',
+            'flowConnector','pingOneAuthenticationConnector','pingOneRiskConnector','pingOneMfaConnector','codeSnippetConnector','userPolicyConnector',
+            'skOpenIdConnector','cookieConnector','errorConnector','challengeConnector','stringsConnector','splunkConnector','devicePolicyConnector',
+            'notificationsConnector','pingOneIntegrationsConnector','appleConnector','pingIdConnector','samlIdpConnector',
+            'pingOneLDAPConnector','pingOneFormsConnector'
+        ];
         try {
             const targetFlow = this.mainFlow;
             const { nodes } = targetFlow?.graphData?.elements;
             nodes?.forEach((node) => {
-                const properties = node.data.properties || {};
-                const requiredFieldArr = node.data.capabilityConfigRequiredProperties || [];
-                const capabilityConfigRequiredProperties = requiredFieldArr?.map(field => field.requiredField);
-                const noFieldsValueArr = []
-                if (node.data.nodeType === 'CONNECTION' && capabilityConfigRequiredProperties?.length) {
-                    for (const property of capabilityConfigRequiredProperties) {
-                        if (!(property in properties) || !properties[property]?.value) {
-                            const fieldName = requiredFieldArr?.filter(field => field.requiredField === property)[0]?.requiredFieldTitle || ''
-                            noFieldsValueArr.push(fieldName);
+                if (allowedConnectorIdsArr.includes(node.data.connectorId)) {
+                    const properties = node.data.properties || {};
+                    const requiredFieldArr = node.data.capabilityConfigRequiredProperties || [];
+                    const capabilityConfigRequiredProperties = requiredFieldArr?.map(field => field.requiredField);
+                    const noFieldsValueArr = []
+                    if (node.data.nodeType === 'CONNECTION' && capabilityConfigRequiredProperties?.length) {
+                        for (const property of capabilityConfigRequiredProperties) {
+                            if (!(property in properties) || !properties[property]?.value) {
+                                const fieldName = requiredFieldArr?.filter(field => field.requiredField === property)[0]?.requiredFieldTitle || ''
+                                noFieldsValueArr.push(fieldName);
+                            }
                         }
-                    }
-                    if (noFieldsValueArr.length > 0) {
-                        const connectorName = node.data.connectorName || node.data.connectorId;
-                        const connectorTitle = node.data.title || node.data.capabilityName;
-                        const fieldStr = noFieldsValueArr.map(str => `'${str}'`).join(', ');
-                        const fieldNameText = noFieldsValueArr.length > 1 ? `${fieldStr} fields` : `${fieldStr} field`
-                        this.addError("dv-er-requiredFields-001", {
-                            flowId: this.mainFlow.flowId,
-                            nodeId: node.data.id,
-                            recommendationArgs: [fieldNameText, connectorTitle, connectorName],
-                        });
+                        if (noFieldsValueArr.length > 0) {
+                            const connectorName = node.data.connectorName || node.data.connectorId;
+                            const connectorTitle = node.data.title || node.data.capabilityName;
+                            const fieldStr = noFieldsValueArr.map(str => `'${str}'`).join(', ');
+                            const fieldNameText = noFieldsValueArr.length > 1 ? `${fieldStr} fields` : `${fieldStr} field`
+                            this.addError("dv-er-requiredFields-001", {
+                                flowId: this.mainFlow.flowId,
+                                nodeId: node.data.id,
+                                recommendationArgs: [fieldNameText, connectorTitle, connectorName],
+                            });
+                        }
                     }
                 }
             })
