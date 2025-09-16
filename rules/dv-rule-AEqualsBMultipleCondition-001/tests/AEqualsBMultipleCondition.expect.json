@@ -27,7 +27,7 @@
                             "type": "best-practice",
                             "recommendation": "Map each specific outcome value from 'A == B (Multiple Conditions)' to the next node. Do not use generic node-level output.",
                             "flowId": "7c1c682400d49a511dfba8a5264931b9",
-                            "nodeId": "cre0g28935"
+                            "nodeId": "cjc6qawp4i"
                         }
                     ],
                     "rulesApplied": [
@@ -53,7 +53,7 @@
                                     "type": "best-practice",
                                     "recommendation": "Map each specific outcome value from 'A == B (Multiple Conditions)' to the next node. Do not use generic node-level output.",
                                     "flowId": "7c1c682400d49a511dfba8a5264931b9",
-                                    "nodeId": "cre0g28935"
+                                    "nodeId": "cjc6qawp4i"
                                 }
                             ]
                         }

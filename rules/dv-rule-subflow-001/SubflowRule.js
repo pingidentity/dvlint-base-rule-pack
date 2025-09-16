@@ -38,7 +38,7 @@ class DVRule extends LintRule {
       description: "'Invoke UI Subflow' capability used, but target subflow has no UI nodes.",
       message: "'Invoke UI Subflow' capability used, but target subflow has no UI nodes.",
       type: "error",
-      recommendation: "The 'Invoke UI Subflow' capability requires the subflow to contain UI screen nodes. Since the referenced subflow has none, replace this with 'Invoke Subflow' capability instead.",
+      recommendation: "The 'Invoke UI Subflow' capability requires the subflow execution path to contain UI screen nodes. Since the referenced subflow doesn’t start with a UI screen node, replace this with 'Invoke Subflow' capability instead.",
     });
   }
 
@@ -148,16 +148,6 @@ class DVRule extends LintRule {
 
             //check if subflow has UI node for startUiSubFlow capability
             if (node.data.capabilityName === 'startUiSubFlow') {
-              // const uiCapabilitiesArr = ['customHtmlMessage', 'customHTMLTemplate', 'customForm', 'customMessage', 'createViewCapability'];
-              // const subflowData = subflows.filter(subflow => subflow.flowId === selectedSubflowId);
-              // const capabilityNameArray = subflowData[0].detail.graphData.elements.nodes.filter(node => node.data.nodeType === 'CONNECTION').map(node => node.data.capabilityName);
-              // if (capabilityNameArray.length > 0 && !uiCapabilitiesArr.some(uiCapability => capabilityNameArray.includes(uiCapability))) {
-              //   this.addError("dv-er-subflow-005", {
-              //     flowId: targetFlow.flowId,
-              //     nodeId: node.data.id,
-              //   });
-              // }
-
               // check if first node is Ui Node 
               const subflowData = subflows.filter(subflow => subflow.flowId === selectedSubflowId);
               const firstNode = this.findFirstNodes(subflowData[0].detail.graphData.elements);

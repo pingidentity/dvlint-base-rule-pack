@@ -22,7 +22,7 @@ class RequiredFieldsRule extends LintRule {
             'flowConnector','pingOneAuthenticationConnector','pingOneRiskConnector','pingOneMfaConnector','codeSnippetConnector','userPolicyConnector',
             'skOpenIdConnector','cookieConnector','errorConnector','challengeConnector','stringsConnector','splunkConnector','devicePolicyConnector',
             'notificationsConnector','pingOneIntegrationsConnector','appleConnector','pingIdConnector','samlIdpConnector',
-            'pingOneLDAPConnector','pingOneFormsConnector'
+            'pingOneLDAPConnector','pingOneFormsConnector','pingOneRadiusGatewayConnector'
         ];
         try {
             const targetFlow = this.mainFlow;

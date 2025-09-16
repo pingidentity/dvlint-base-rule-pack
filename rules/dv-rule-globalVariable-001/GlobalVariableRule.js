@@ -68,7 +68,7 @@ class GlobalVariableRule extends LintRule {
                 },
                 jumioConnector: {
                     register: ['htmlConfig_documentVerify3', 'htmlConfig_documentVerify2'],
-                    documentVerify: ['htmlConfig_documentVerify2','htmlConfig_documentVerify3'],
+                    documentVerify: ['htmlConfig_documentVerify2', 'htmlConfig_documentVerify3'],
                     login: 'htmlConfig_login2',
                     loginFirstFactor: ['htmlConfig_loginFirstFactor1', 'htmlConfig_loginFirstFactor2']
                 },
@@ -85,7 +85,7 @@ class GlobalVariableRule extends LintRule {
                     register: ''
                 },
                 entrustConnector: {
-                    auth: ['htmlConfig0_select', 'htmlConfig1_otp','htmlConfig2_token']
+                    auth: ['htmlConfig0_select', 'htmlConfig1_otp', 'htmlConfig2_token']
                 },
                 securIdConnector: {
                     verifyRSA: ['htmlConfig0_selectScreen', 'htmlConfig1_authenticateTokenCode', 'htmlConfig2_emergencyTokenCode']
@@ -140,21 +140,23 @@ class GlobalVariableRule extends LintRule {
                             const key = connectorIdsForGlobalVariableCheck[data.connectorId][data.capabilityName];
                             // this case is for capabilities where multiple code snippet sections are available in custom screens
                             if (Array.isArray(key) && key.length > 0) {
-                                const globalVarArr = []
+                                const counterArr = []
                                 key.forEach(k => {
                                     const propValue = data.properties[k]?.properties?.customScript?.value;
-                                    if (propValue) {
-                                        const uniqueGlobalVariables = this.getPropertiesValue(propValue, pattern)
-                                        uniqueGlobalVariables?.forEach(v => {
-                                            if (v.includes('global.')) {
-                                                globalVarArr.push(`{{${v}}}`)
-                                            }
-                                        });
+                                    if (propValue && counterArr.length === 0) {
+                                        globalVarNodeIdArr.push(node.data.id);
+                                        // const uniqueGlobalVariables = this.getPropertiesValue(propValue, pattern)
+                                        // uniqueGlobalVariables?.forEach(v => {
+                                        //     if (v.includes('global.')) {
+                                        counterArr.push(node.data.id)
+                                        //     }
+                                        // });
+                                    
                                     }
                                 });
-                                if (globalVarArr.length > 0) {
-                                    globalVarNodeIdArr.push(node.data.id);
-                                }
+                                // if (globalVarArr.length > 0) {
+                                //     globalVarNodeIdArr.push(node.data.id);
+                                // }
                             } else {
                                 value = data.properties[key]?.properties?.customScript?.value;
                             }
@@ -163,20 +165,21 @@ class GlobalVariableRule extends LintRule {
                             value = data.properties?.customScript?.value;
                         }
 
-                        const uniqueGlobalVariables = this.getPropertiesValue(value, pattern)
-                        const globalVarArr = []
-                        uniqueGlobalVariables?.forEach(v => {
-                            if (v.includes('global.')) {
-                                globalVarArr.push(`{{${v}}}`)
-                            }
-                        });
-                        if (globalVarArr.length > 0) {
+                        const strVal = JSON.stringify(value) || '';
+                        // const uniqueGlobalVariables = this.getPropertiesValue(value, pattern)
+                        // const globalVarArr = []
+                        // uniqueGlobalVariables?.forEach(v => {
+                        //     if (v.includes('global.')) {
+                        //         globalVarArr.push(`{{${v}}}`)
+                        //     }
+                        // });
+                        if (strVal.length > 0) {
                             globalVarNodeIdArr.push(node.data.id)
                         }
                     }
                 });
 
-                if( globalVarNodeIdArr.length > 0 ){
+                if (globalVarNodeIdArr.length > 0) {
                     const stringWithQuotesCommaSeparated = globalVarNodeIdArr.map(str => `'${str}'`).join(', ');
                     this.addError("dv-bp-globalVariable-003", {
                         flowId: this.mainFlow.flowId,
@@ -192,15 +195,16 @@ class GlobalVariableRule extends LintRule {
                     flow.connections?.forEach((connection) => {
                         if (connection?.connectorId === connectorId) {
                             const value = connection?.properties?.code?.value;
-                            const uniqueGlobalVariables = this.getPropertiesValue(value, pattern);
-                            const globalVarArr = []
-                            uniqueGlobalVariables?.forEach(v => {
-                                // Check if the configurations code section has global variable
-                                if (v.includes('global.')) {
-                                    globalVarArr.push(`{{${v}}}`)
-                                }
-                            });
-                            if (globalVarArr.length > 0) {
+                            const strVal = JSON.stringify(value) || '';
+                            // const uniqueGlobalVariables = this.getPropertiesValue(value, pattern);
+                            // const globalVarArr = []
+                            // uniqueGlobalVariables?.forEach(v => {
+                            //     // Check if the configurations code section has global variable
+                            //     if (v.includes('global.')) {
+                            //         globalVarArr.push(`{{${v}}}`)
+                            //     }
+                            // });
+                            if (strVal.length > 0) {
                                 this.addError("dv-bp-globalVariable-003", {
                                     flowId: this.mainFlow.flowId,
                                     recommendationArgs: [codeSnippetConnectorNodeids.map(str => `'${str}'`).join(', ')],
