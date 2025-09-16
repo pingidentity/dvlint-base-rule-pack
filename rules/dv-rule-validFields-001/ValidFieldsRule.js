@@ -88,15 +88,15 @@ class ValidFields extends LintRule {
                         let errorArr = []
 
                         value?.map(v => {
-                            if (!v.value) {
+                            if (!v.value || !v.name) {
                                 errorArr.push(v);
                             }
-                            let valInChild = JSON.parse(v.value)[0].children;
+                            let valInChild = v.value ? JSON.parse(v.value)[0].children : [];
                             let isValAvailable
                             if (valInChild.length > 1) {
                                 isValAvailable = valInChild.filter(val => val.data);
                             } else {
-                                isValAvailable = valInChild[0].text
+                                isValAvailable = valInChild[0]?.text
                             }
                             if (!isValAvailable) {
                                 errorArr.push(v);

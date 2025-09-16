@@ -32,7 +32,7 @@
               "flowId": "4822d6c2f9f61d1924909c50fa6959bc",
               "message": "'Invoke UI Subflow' capability used, but target subflow has no UI nodes.",
               "nodeId": "m7lhu8f6jg",
-              "recommendation": "The 'Invoke UI Subflow' capability requires the subflow to contain UI screen nodes. Since the referenced subflow has none, replace this with 'Invoke Subflow' capability instead.",
+              "recommendation": "The 'Invoke UI Subflow' capability requires the subflow execution path to contain UI screen nodes. Since the referenced subflow doesn’t start with a UI screen node, replace this with 'Invoke Subflow' capability instead.",
               "type": "error"
             }
           ],
@@ -65,7 +65,7 @@
                   "flowId": "4822d6c2f9f61d1924909c50fa6959bc",
                   "message": "'Invoke UI Subflow' capability used, but target subflow has no UI nodes.",
                   "nodeId": "m7lhu8f6jg",
-                  "recommendation": "The 'Invoke UI Subflow' capability requires the subflow to contain UI screen nodes. Since the referenced subflow has none, replace this with 'Invoke Subflow' capability instead.",
+                  "recommendation": "The 'Invoke UI Subflow' capability requires the subflow execution path to contain UI screen nodes. Since the referenced subflow doesn’t start with a UI screen node, replace this with 'Invoke Subflow' capability instead.",
                   "type": "error"
                 }
               ]
