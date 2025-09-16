@@ -70,12 +70,12 @@ class AEqualsBMultipleConditionRule extends LintRule {
                         //check 'A == B (Multiple Conditions)' capability(Functions) node has any node connected to main node, other than the conditon nodes
                         let nonConditionEvalNodeArr = edges?.filter(edge => edge.data.source === data.id && !edge?.data.multiValueSourceId);
                         if (nonConditionEvalNodeArr?.length > 0) {
-                            let nonConditionEvalNode = nonConditionEvalNodeArr[0].data.target;
-                            let nonConditonConnectorNodeId = edges?.filter(edge => edge.data.source === nonConditionEvalNode)[0].data.target;
-                            const connectorNode = nodes?.filter(node => node.data.id === nonConditonConnectorNodeId);
+                            // let nonConditionEvalNode = nonConditionEvalNodeArr[0].data.target;
+                            // let nonConditonConnectorNodeId = edges?.filter(edge => edge.data.source === nonConditionEvalNode)[0].data.target;
+                            // const connectorNode = nodes?.filter(node => node.data.id === nonConditonConnectorNodeId);
                             this.addError("dv-bp-AEqualsBMultipleCondition-002", {
                                 flowId: flow.flowId,
-                                nodeId: connectorNode[0].data.id,
+                                nodeId: node.data.id,
                             });
                         }
                     }
