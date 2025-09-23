@@ -78,18 +78,18 @@ class PingOneFlowRule extends LintRule {
             }
           });
 
-          const falseBranchCount = evalNodeArr?.filter(d => d === 'allTriggersFalse' || d === "anyTriggersFalse").length;
-          const trueBranchCount = evalNodeArr?.filter(d => d === 'allTriggersTrue' || d === "anyTriggersTrue").length;
+          const trueTriggers = ['allTriggersTrue', 'anyTriggersTrue'];
+          const falseTriggers = ['allTriggersFalse', 'anyTriggersFalse'];
+
+          const hasFalseBranch = evalNodeArr?.some(d => falseTriggers?.includes(d));
+          const falseBranchCount = evalNodeArr?.filter(d => falseTriggers?.includes(d))?.length;
+
+          const hastrueBranch = evalNodeArr?.some(d => trueTriggers?.includes(d)) || targetFromEvalNodes?.length > falseBranchCount || connectedNodes?.length > falseBranchCount;
+
           const noCompleteTriggerBranch = evalNodeArr?.filter(d => d === 'allTriggersComplete' || d === 'always').length === 0;
           if (noCompleteTriggerBranch) {
-            if (
-              ((targetFromEvalNodes.length >= 2 || connectedNodes.length >= 2) && (!trueBranchCount || trueBranchCount !== 1) && falseBranchCount !== 1) ||   // in case of singleEval has multiple branches
-              ((connectedNodes.length === 1 && targetFromEvalNodes.length === 1) && falseBranchCount === 1) ||                                                // if only one false branch
-              ((connectedNodes.length === 1 && targetFromEvalNodes.length === 1) && (trueBranchCount === 1 || trueBranchCount === 0)) ||                      // if only one true branch
-              (connectedNodes.length >= 2 && !(trueBranchCount >= 1) && !(falseBranchCount >= 1)) ||                                                          // if not at least one false branch and one true branch
-              (connectedNodes.length >= 2 && trueBranchCount >= 1 && falseBranchCount !== 1) ||                                                               // if all true branches
-              (connectedNodes.length >= 2 && falseBranchCount >= 1 && (trueBranchCount && trueBranchCount !== 1))                                             // if all false branches
-            ) {
+            if ((targetFromEvalNodes.length >= 1 || connectedNodes.length >= 1) && (hastrueBranch && !hasFalseBranch) || (hasFalseBranch && !hastrueBranch)) {
+
               this.addError("dv-er-pingOneFlow-002", {
                 flowId: this.mainFlow.flowId,
                 recommendationArgs: [node.data.title || node.data.capabilityName],
