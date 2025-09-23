@@ -1,0 +1,100 @@
+{
+    "name": "PingOne DaVinci Linter",
+    "pass": false,
+    "errorCount": 4,
+    "rulePackResults": [
+        {
+            "pass": false,
+            "errorCount": 4,
+            "lintResults": [
+                {
+                    "flowId": "1b83c65e0b318bba78bf309f408be886",
+                    "flowName": "pingoneFalseNode",
+                    "pass": false,
+                    "errorCount": 4,
+                    "errors": [
+                        {
+                            "code": "dv-er-pingOneFlow-002",
+                            "flowId": "1b83c65e0b318bba78bf309f408be886",
+                            "message": "Missing false path in 'Find User' capability of PingOne connector.",
+                            "nodeId": "qna2baqrz4",
+                            "recommendation": "Define both true and false paths in 'Find User' capability to handle all outcomes.",
+                            "type": "error"
+                        },
+                        {
+                            "code": "dv-er-pingOneFlow-002",
+                            "flowId": "1b83c65e0b318bba78bf309f408be886",
+                            "message": "Missing false path in 'Check Password' capability of PingOne connector.",
+                            "nodeId": "vnyozrfufo",
+                            "recommendation": "Define both true and false paths in 'Check Password' capability to handle all outcomes.",
+                            "type": "error"
+                        },
+                        {
+                            "code": "dv-er-pingOneFlow-002",
+                            "flowId": "1b83c65e0b318bba78bf309f408be886",
+                            "message": "Missing false path in 'Create User' capability of PingOne connector.",
+                            "nodeId": "c6php7i5vg",
+                            "recommendation": "Define both true and false paths in 'Create User' capability to handle all outcomes.",
+                            "type": "error"
+                        },
+                        {
+                            "code": "dv-er-pingOneFlow-002",
+                            "flowId": "1b83c65e0b318bba78bf309f408be886",
+                            "message": "Missing false path in 'Read User' capability of PingOne connector.",
+                            "nodeId": "1sx9er84ys",
+                            "recommendation": "Define both true and false paths in 'Read User' capability to handle all outcomes.",
+                            "type": "error"
+                        }
+                    ],
+                    "rulesApplied": [
+                        "dv-rule-pingOneFlow-001"
+                    ],
+                    "ruleResults": [
+                        {
+                            "ruleId": "dv-rule-pingOneFlow-001",
+                            "ruleDescription": "Checks for PingOne Flow configurations",
+                            "pass": false,
+                            "errorCount": 4,
+                            "errors": [
+                                {
+                                    "code": "dv-er-pingOneFlow-002",
+                                    "flowId": "1b83c65e0b318bba78bf309f408be886",
+                                    "message": "Missing false path in 'Find User' capability of PingOne connector.",
+                                    "nodeId": "qna2baqrz4",
+                                    "recommendation": "Define both true and false paths in 'Find User' capability to handle all outcomes.",
+                                    "type": "error"
+                                },
+                                {
+                                    "code": "dv-er-pingOneFlow-002",
+                                    "flowId": "1b83c65e0b318bba78bf309f408be886",
+                                    "message": "Missing false path in 'Check Password' capability of PingOne connector.",
+                                    "nodeId": "vnyozrfufo",
+                                    "recommendation": "Define both true and false paths in 'Check Password' capability to handle all outcomes.",
+                                    "type": "error"
+                                },
+                                {
+                                    "code": "dv-er-pingOneFlow-002",
+                                    "flowId": "1b83c65e0b318bba78bf309f408be886",
+                                    "message": "Missing false path in 'Create User' capability of PingOne connector.",
+                                    "nodeId": "c6php7i5vg",
+                                    "recommendation": "Define both true and false paths in 'Create User' capability to handle all outcomes.",
+                                    "type": "error"
+                                },
+                                {
+                                    "code": "dv-er-pingOneFlow-002",
+                                    "flowId": "1b83c65e0b318bba78bf309f408be886",
+                                    "message": "Missing false path in 'Read User' capability of PingOne connector.",
+                                    "nodeId": "1sx9er84ys",
+                                    "recommendation": "Define both true and false paths in 'Read User' capability to handle all outcomes.",
+                                    "type": "error"
+                                }
+                            ]
+                        }
+                    ],
+                    "rulesIgnored": []
+                }
+            ],
+            "rulesIgnored": true
+        }
+    ]
+}
