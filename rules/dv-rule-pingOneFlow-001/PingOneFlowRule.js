@@ -16,7 +16,7 @@ class PingOneFlowRule extends LintRule {
     });
     this.addCode("dv-er-pingOneFlow-002", {
       description: "Missing false path in capability of PingOne connector.",
-      message: "Missing false path in '%' capability of PingOne connector.",
+      message: "Missing '%' path in '%' capability of PingOne connector.",
       type: "error",
       recommendation: "Define both true and false paths in '%' capability to handle all outcomes."
     });
@@ -89,11 +89,11 @@ class PingOneFlowRule extends LintRule {
           const noCompleteTriggerBranch = evalNodeArr?.filter(d => d === 'allTriggersComplete' || d === 'always').length === 0;
           if (noCompleteTriggerBranch) {
             if ((targetFromEvalNodes.length >= 1 || connectedNodes.length >= 1) && (hastrueBranch && !hasFalseBranch) || (hasFalseBranch && !hastrueBranch)) {
-
+              const trueOrFalseText = hasFalseBranch && !hastrueBranch ? 'true' : 'false';
               this.addError("dv-er-pingOneFlow-002", {
                 flowId: this.mainFlow.flowId,
                 recommendationArgs: [node.data.title || node.data.capabilityName],
-                messageArgs: [node.data.title || node.data.capabilityName],
+                messageArgs: [trueOrFalseText, node.data.title || node.data.capabilityName],
                 nodeId: node.data.id,
               });
             }
