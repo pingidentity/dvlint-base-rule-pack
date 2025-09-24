@@ -75,6 +75,8 @@ class DVRule extends LintRule {
       const targetFlow = this.mainFlow;
       const supportingFlows = this.allFlows;
 
+      const subflowCapabilities = ['startSubFlow', 'startUiSubFlow']
+
       if (!supportingFlows) {
         return;
       }
@@ -84,7 +86,7 @@ class DVRule extends LintRule {
       let subflowIdInputSchemaMap = {};
 
       targetFlow.graphData.elements.nodes?.forEach(node => {
-        if (node.data.nodeType === 'CONNECTION' && node.data.connectorId === 'flowConnector') {
+        if (node.data.nodeType === 'CONNECTION' && node.data.connectorId === 'flowConnector' && subflowCapabilities.includes(node.data.capabilityName)) {
           const selectedSubflowId = node.data.properties.subFlowId?.value?.value || '';
           if (!selectedSubflowId) {
             this.addError("dv-er-subflow-001", {
@@ -133,7 +135,7 @@ class DVRule extends LintRule {
       let missingFields = [];
       if (Object.keys(subflowIdInputSchemaMap).length > 0) {
         targetFlow.graphData.elements.nodes?.forEach(node => {
-          if (node.data.nodeType === 'CONNECTION' && node.data.connectorId === 'flowConnector') {
+          if (node.data.nodeType === 'CONNECTION' && node.data.connectorId === 'flowConnector'  && subflowCapabilities.includes(node.data.capabilityName)) {
             const propertyKeyArr = Object.keys(node.data.properties);
             const selectedSubflowId = node.data.properties.subFlowId?.value?.value || '';
 

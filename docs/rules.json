@@ -2,7 +2,7 @@
   {
     "name": "@ping-identity/dvlint-base-rule-pack",
     "description": "Collection of base rules used to lint DaVinci flows.",
-    "version": "1.3.1",
+    "version": "1.3.2",
     "rules": [
       {
         "id": "dv-rule-AEqualsBMultipleCondition-001",
@@ -271,7 +271,7 @@
           },
           "dv-er-pingOneFlow-002": {
             "description": "Missing false path in capability of PingOne connector.",
-            "message": "Missing false path in '%' capability of PingOne connector.",
+            "message": "Missing '%' path in '%' capability of PingOne connector.",
             "type": "error",
             "recommendation": "Define both true and false paths in '%' capability to handle all outcomes.",
             "code": "dv-er-pingOneFlow-002"
