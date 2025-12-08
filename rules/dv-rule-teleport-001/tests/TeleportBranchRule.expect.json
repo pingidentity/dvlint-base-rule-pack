@@ -1,0 +1,212 @@
+{
+    "name": "PingOne DaVinci Linter",
+    "pass": false,
+    "errorCount": 11,
+    "rulePackResults": [
+        {
+            "pass": false,
+            "errorCount": 11,
+            "lintResults": [
+                {
+                    "flowId": "2dcc133307a86d43b04c9b52365db563",
+                    "flowName": "teleport",
+                    "pass": false,
+                    "errorCount": 11,
+                    "errors": [
+                        {
+                            "code": "dv-er-teleport-003",
+                            "flowId": "2dcc133307a86d43b04c9b52365db563",
+                            "message": "Unsupported branch after teleport node",
+                            "nodeId": "4gnxq2f25w",
+                            "recommendation": "Teleport nodes should only be followed by an 'All Triggers True' path.",
+                            "type": "error"
+                        },
+                        {
+                            "code": "dv-er-teleport-003",
+                            "flowId": "2dcc133307a86d43b04c9b52365db563",
+                            "message": "Unsupported branch after teleport node",
+                            "nodeId": "8ic7y0kfsq",
+                            "recommendation": "Teleport nodes should only be followed by an 'All Triggers True' path.",
+                            "type": "error"
+                        },
+                        {
+                            "code": "dv-er-teleport-003",
+                            "flowId": "2dcc133307a86d43b04c9b52365db563",
+                            "message": "Unsupported branch after teleport node",
+                            "nodeId": "bfwgvfxcik",
+                            "recommendation": "Teleport nodes should only be followed by an 'All Triggers True' path.",
+                            "type": "error"
+                        },
+                        {
+                            "code": "dv-er-teleport-003",
+                            "flowId": "2dcc133307a86d43b04c9b52365db563",
+                            "message": "Unsupported branch after teleport node",
+                            "nodeId": "s01ht730rf",
+                            "recommendation": "Teleport nodes should only be followed by an 'All Triggers True' path.",
+                            "type": "error"
+                        },
+                        {
+                            "code": "dv-er-teleport-003",
+                            "flowId": "2dcc133307a86d43b04c9b52365db563",
+                            "message": "Unsupported branch after teleport node",
+                            "nodeId": "zcogp9yeth",
+                            "recommendation": "Teleport nodes should only be followed by an 'All Triggers True' path.",
+                            "type": "error"
+                        },
+                        {
+                            "code": "dv-er-teleport-001",
+                            "flowId": "2dcc133307a86d43b04c9b52365db563",
+                            "message": "Unused teleport node found",
+                            "nodeId": "4gnxq2f25w",
+                            "recommendation": "This section of the flow is not referenced in any execution path. Remove it if unnecessary or connect it using an appropriate teleport entry point.",
+                            "type": "error"
+                        },
+                        {
+                            "code": "dv-er-teleport-001",
+                            "flowId": "2dcc133307a86d43b04c9b52365db563",
+                            "message": "Unused teleport node found",
+                            "nodeId": "8ic7y0kfsq",
+                            "recommendation": "This section of the flow is not referenced in any execution path. Remove it if unnecessary or connect it using an appropriate teleport entry point.",
+                            "type": "error"
+                        },
+                        {
+                            "code": "dv-er-teleport-001",
+                            "flowId": "2dcc133307a86d43b04c9b52365db563",
+                            "message": "Unused teleport node found",
+                            "nodeId": "bfwgvfxcik",
+                            "recommendation": "This section of the flow is not referenced in any execution path. Remove it if unnecessary or connect it using an appropriate teleport entry point.",
+                            "type": "error"
+                        },
+                        {
+                            "code": "dv-er-teleport-001",
+                            "flowId": "2dcc133307a86d43b04c9b52365db563",
+                            "message": "Unused teleport node found",
+                            "nodeId": "s01ht730rf",
+                            "recommendation": "This section of the flow is not referenced in any execution path. Remove it if unnecessary or connect it using an appropriate teleport entry point.",
+                            "type": "error"
+                        },
+                        {
+                            "code": "dv-er-teleport-001",
+                            "flowId": "2dcc133307a86d43b04c9b52365db563",
+                            "message": "Unused teleport node found",
+                            "nodeId": "zcogp9yeth",
+                            "recommendation": "This section of the flow is not referenced in any execution path. Remove it if unnecessary or connect it using an appropriate teleport entry point.",
+                            "type": "error"
+                        },
+                        {
+                            "code": "dv-er-teleport-001",
+                            "flowId": "2dcc133307a86d43b04c9b52365db563",
+                            "message": "Unused teleport node found",
+                            "nodeId": "td4gkm74mz",
+                            "recommendation": "This section of the flow is not referenced in any execution path. Remove it if unnecessary or connect it using an appropriate teleport entry point.",
+                            "type": "error"
+                        }
+                    ],
+                    "rulesApplied": [
+                        "dv-rule-teleport-001"
+                    ],
+                    "ruleResults": [
+                        {
+                            "ruleId": "dv-rule-teleport-001",
+                            "ruleDescription": "Check for unused teleport nodes",
+                            "pass": false,
+                            "errorCount": 11,
+                            "errors": [
+                                {
+                                    "code": "dv-er-teleport-003",
+                                    "flowId": "2dcc133307a86d43b04c9b52365db563",
+                                    "message": "Unsupported branch after teleport node",
+                                    "nodeId": "4gnxq2f25w",
+                                    "recommendation": "Teleport nodes should only be followed by an 'All Triggers True' path.",
+                                    "type": "error"
+                                },
+                                {
+                                    "code": "dv-er-teleport-003",
+                                    "flowId": "2dcc133307a86d43b04c9b52365db563",
+                                    "message": "Unsupported branch after teleport node",
+                                    "nodeId": "8ic7y0kfsq",
+                                    "recommendation": "Teleport nodes should only be followed by an 'All Triggers True' path.",
+                                    "type": "error"
+                                },
+                                {
+                                    "code": "dv-er-teleport-003",
+                                    "flowId": "2dcc133307a86d43b04c9b52365db563",
+                                    "message": "Unsupported branch after teleport node",
+                                    "nodeId": "bfwgvfxcik",
+                                    "recommendation": "Teleport nodes should only be followed by an 'All Triggers True' path.",
+                                    "type": "error"
+                                },
+                                {
+                                    "code": "dv-er-teleport-003",
+                                    "flowId": "2dcc133307a86d43b04c9b52365db563",
+                                    "message": "Unsupported branch after teleport node",
+                                    "nodeId": "s01ht730rf",
+                                    "recommendation": "Teleport nodes should only be followed by an 'All Triggers True' path.",
+                                    "type": "error"
+                                },
+                                {
+                                    "code": "dv-er-teleport-003",
+                                    "flowId": "2dcc133307a86d43b04c9b52365db563",
+                                    "message": "Unsupported branch after teleport node",
+                                    "nodeId": "zcogp9yeth",
+                                    "recommendation": "Teleport nodes should only be followed by an 'All Triggers True' path.",
+                                    "type": "error"
+                                },
+                                {
+                                    "code": "dv-er-teleport-001",
+                                    "flowId": "2dcc133307a86d43b04c9b52365db563",
+                                    "message": "Unused teleport node found",
+                                    "nodeId": "4gnxq2f25w",
+                                    "recommendation": "This section of the flow is not referenced in any execution path. Remove it if unnecessary or connect it using an appropriate teleport entry point.",
+                                    "type": "error"
+                                },
+                                {
+                                    "code": "dv-er-teleport-001",
+                                    "flowId": "2dcc133307a86d43b04c9b52365db563",
+                                    "message": "Unused teleport node found",
+                                    "nodeId": "8ic7y0kfsq",
+                                    "recommendation": "This section of the flow is not referenced in any execution path. Remove it if unnecessary or connect it using an appropriate teleport entry point.",
+                                    "type": "error"
+                                },
+                                {
+                                    "code": "dv-er-teleport-001",
+                                    "flowId": "2dcc133307a86d43b04c9b52365db563",
+                                    "message": "Unused teleport node found",
+                                    "nodeId": "bfwgvfxcik",
+                                    "recommendation": "This section of the flow is not referenced in any execution path. Remove it if unnecessary or connect it using an appropriate teleport entry point.",
+                                    "type": "error"
+                                },
+                                {
+                                    "code": "dv-er-teleport-001",
+                                    "flowId": "2dcc133307a86d43b04c9b52365db563",
+                                    "message": "Unused teleport node found",
+                                    "nodeId": "s01ht730rf",
+                                    "recommendation": "This section of the flow is not referenced in any execution path. Remove it if unnecessary or connect it using an appropriate teleport entry point.",
+                                    "type": "error"
+                                },
+                                {
+                                    "code": "dv-er-teleport-001",
+                                    "flowId": "2dcc133307a86d43b04c9b52365db563",
+                                    "message": "Unused teleport node found",
+                                    "nodeId": "zcogp9yeth",
+                                    "recommendation": "This section of the flow is not referenced in any execution path. Remove it if unnecessary or connect it using an appropriate teleport entry point.",
+                                    "type": "error"
+                                },
+                                {
+                                    "code": "dv-er-teleport-001",
+                                    "flowId": "2dcc133307a86d43b04c9b52365db563",
+                                    "message": "Unused teleport node found",
+                                    "nodeId": "td4gkm74mz",
+                                    "recommendation": "This section of the flow is not referenced in any execution path. Remove it if unnecessary or connect it using an appropriate teleport entry point.",
+                                    "type": "error"
+                                }
+                            ]
+                        }
+                    ],
+                    "rulesIgnored": []
+                }
+            ],
+            "rulesIgnored": true
+        }
+    ]
+}

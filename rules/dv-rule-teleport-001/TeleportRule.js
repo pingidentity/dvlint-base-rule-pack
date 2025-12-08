@@ -22,10 +22,10 @@ class TeleportRule extends LintRule {
       recommendation: "Configure required input schema values in the 'Go to Node' capability to pass data into teleport start node '%'.",
     });
     this.addCode("dv-er-teleport-003", {
-      description: "Unsupported false branch after teleport node",
-      message:"Unsupported false branch after teleport node",
+      description: "Unsupported branch after teleport node",
+      message:"Unsupported branch after teleport node",
       type: "error",
-      recommendation: "Teleport nodes should only be followed by a true path. Remove or reconfigure the false branch in node '%'.",
+      recommendation: "Teleport nodes should only be followed by an 'All Triggers True' path.",
     });
     this.addCode("dv-er-teleport-004", {
       description: "Missing target node in 'Go to Node' capability",
@@ -66,7 +66,9 @@ class TeleportRule extends LintRule {
         }
 
         // Check if the node is a teleport node and it has false branch
-        if (node.data.connectorId === 'nodeConnector') {
+        
+        if (node.data.connectorId === 'nodeConnector' && node.data?.capabilityName === "startNode") {
+          const triggersArr = ['anyTriggersTrue', 'anyTriggersFalse', 'allTriggersFalse', 'allTriggersComplete', 'always'];
           const evalNodes = edges?.filter(edge => edge.data.source === node.data.id).map(d => d.data.target) ||[];
           const connectedNodes = nodes?.filter(n => evalNodes?.includes(n.data.id)) || [];
           if (evalNodes.length >= 1 && connectedNodes.length > 0) {
@@ -78,7 +80,7 @@ class TeleportRule extends LintRule {
                 for (const key in properties) {
                   if (evalNodeTarget.includes(key)) {
                     const propertiesStr = JSON.stringify(properties[key]);
-                    if (propertiesStr && (propertiesStr.indexOf('anyTriggersFalse') > -1 || propertiesStr.indexOf('allTriggersFalse') > -1)) {
+                    if (propertiesStr && triggersArr.some(val => propertiesStr.includes(val))) {
                       isFalseNode = true;
                     }
                   }
