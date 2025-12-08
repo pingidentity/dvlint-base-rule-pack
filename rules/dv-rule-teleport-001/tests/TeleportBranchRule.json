@@ -1,0 +1,762 @@
+{
+  "companyId": "6YWgejhFHGFyhZM57KfdhnYf7fmeMZKM",
+  "connectorIds": [
+    "nodeConnector",
+    "httpConnector"
+  ],
+  "createdDate": 1764666681600,
+  "currentVersion": 25,
+  "customerId": "1576bd3c19c0fb0a828342b21d46a57e",
+  "description": "",
+  "flowStatus": "enabled",
+  "name": "teleport",
+  "settings": {
+    "csp": "worker-src 'self' blob:; script-src 'self' https://cdn.jsdelivr.net https://code.jquery.com https://devsdk.singularkey.com http://cdnjs.cloudflare.com 'unsafe-inline' 'unsafe-eval';",
+    "intermediateLoadingScreenCSS": "",
+    "intermediateLoadingScreenHTML": "",
+    "logLevel": 4,
+    "validateOnSave": true
+  },
+  "flowId": "2dcc133307a86d43b04c9b52365db563",
+  "versionId": 25,
+  "graphData": {
+    "elements": {
+      "nodes": [
+        {
+          "data": {
+            "id": "4gnxq2f25w",
+            "nodeType": "CONNECTION",
+            "connectionId": "2cedf94866ed834bfe3a9707ec9d96c8",
+            "connectorId": "nodeConnector",
+            "name": "Teleport",
+            "label": "Teleport",
+            "status": "configured",
+            "capabilityName": "startNode",
+            "type": "trigger",
+            "properties": {
+              "nodeTitle": {
+                "value": "Any Trigger true"
+              }
+            }
+          },
+          "position": {
+            "x": 270,
+            "y": 330
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "4a7a8domtn",
+            "nodeType": "EVAL",
+            "label": "Evaluator",
+            "properties": {
+              "jcwkbeiftf": {
+                "value": "anyTriggersTrue"
+              }
+            }
+          },
+          "position": {
+            "x": 412.49997059836585,
+            "y": 330.20518102074806
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "jcwkbeiftf",
+            "nodeType": "CONNECTION",
+            "connectionId": "481e952e6b11db8360587b8711620786",
+            "connectorId": "httpConnector",
+            "name": "HTTP",
+            "label": "HTTP",
+            "status": "configured",
+            "capabilityName": "createSuccessResponse",
+            "type": "action",
+            "properties": {}
+          },
+          "position": {
+            "x": 720,
+            "y": 330
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "8ic7y0kfsq",
+            "nodeType": "CONNECTION",
+            "connectionId": "2cedf94866ed834bfe3a9707ec9d96c8",
+            "connectorId": "nodeConnector",
+            "name": "Teleport",
+            "label": "Teleport",
+            "status": "configured",
+            "capabilityName": "startNode",
+            "type": "trigger",
+            "properties": {
+              "nodeTitle": {
+                "value": "All Triggers False"
+              }
+            }
+          },
+          "position": {
+            "x": 270,
+            "y": 420
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "bfwgvfxcik",
+            "nodeType": "CONNECTION",
+            "connectionId": "2cedf94866ed834bfe3a9707ec9d96c8",
+            "connectorId": "nodeConnector",
+            "name": "Teleport",
+            "label": "Teleport",
+            "status": "configured",
+            "capabilityName": "startNode",
+            "type": "trigger",
+            "properties": {
+              "nodeTitle": {
+                "value": "Any Triggers False"
+              }
+            }
+          },
+          "position": {
+            "x": 270,
+            "y": 540
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "s01ht730rf",
+            "nodeType": "CONNECTION",
+            "connectionId": "2cedf94866ed834bfe3a9707ec9d96c8",
+            "connectorId": "nodeConnector",
+            "name": "Teleport",
+            "label": "Teleport",
+            "status": "configured",
+            "capabilityName": "startNode",
+            "type": "trigger",
+            "properties": {
+              "nodeTitle": {
+                "value": "All Triggers Complete"
+              }
+            }
+          },
+          "position": {
+            "x": 270,
+            "y": 630
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "zcogp9yeth",
+            "nodeType": "CONNECTION",
+            "connectionId": "2cedf94866ed834bfe3a9707ec9d96c8",
+            "connectorId": "nodeConnector",
+            "name": "Teleport",
+            "label": "Teleport",
+            "status": "configured",
+            "capabilityName": "startNode",
+            "type": "trigger",
+            "properties": {
+              "nodeTitle": {
+                "value": "Any Triggers COmplete"
+              }
+            }
+          },
+          "position": {
+            "x": 270,
+            "y": 750
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "zitkaqgz8w",
+            "nodeType": "EVAL",
+            "label": "Evaluator",
+            "properties": {
+              "reimzww6h0": {
+                "value": "allTriggersFalse"
+              }
+            }
+          },
+          "position": {
+            "x": 390,
+            "y": 420
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "reimzww6h0",
+            "nodeType": "CONNECTION",
+            "connectionId": "481e952e6b11db8360587b8711620786",
+            "connectorId": "httpConnector",
+            "name": "HTTP",
+            "label": "HTTP",
+            "status": "configured",
+            "capabilityName": "customHtmlMessage",
+            "type": "trigger",
+            "properties": {}
+          },
+          "position": {
+            "x": 720,
+            "y": 420
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "20mu1dqxny",
+            "nodeType": "EVAL",
+            "label": "Evaluator",
+            "properties": {
+              "upazo9m4r6": {
+                "value": "anyTriggersFalse"
+              }
+            }
+          },
+          "position": {
+            "x": 397.0006037496205,
+            "y": 540.2612368938536
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "upazo9m4r6",
+            "nodeType": "CONNECTION",
+            "connectionId": "481e952e6b11db8360587b8711620786",
+            "connectorId": "httpConnector",
+            "name": "HTTP",
+            "label": "HTTP",
+            "status": "configured",
+            "capabilityName": "customHtmlMessage",
+            "type": "trigger",
+            "properties": {}
+          },
+          "position": {
+            "x": 720,
+            "y": 540
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "x6f5andjaq",
+            "nodeType": "EVAL",
+            "label": "Evaluator",
+            "properties": {
+              "jqhin38pyr": {
+                "value": "allTriggersComplete"
+              }
+            }
+          },
+          "position": {
+            "x": 400.0006119560505,
+            "y": 630.7613750911734
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "jqhin38pyr",
+            "nodeType": "CONNECTION",
+            "connectionId": "481e952e6b11db8360587b8711620786",
+            "connectorId": "httpConnector",
+            "name": "HTTP",
+            "label": "HTTP",
+            "status": "configured",
+            "capabilityName": "customHtmlMessage",
+            "type": "trigger",
+            "properties": {}
+          },
+          "position": {
+            "x": 720,
+            "y": 630
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "kzgotwt2j8",
+            "nodeType": "EVAL",
+            "label": "Evaluator",
+            "properties": {
+              "7zi6z25qbj": {
+                "value": "always"
+              }
+            }
+          },
+          "position": {
+            "x": 390,
+            "y": 750
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "7zi6z25qbj",
+            "nodeType": "CONNECTION",
+            "connectionId": "481e952e6b11db8360587b8711620786",
+            "connectorId": "httpConnector",
+            "name": "HTTP",
+            "label": "HTTP",
+            "status": "configured",
+            "capabilityName": "customHtmlMessage",
+            "type": "trigger",
+            "properties": {}
+          },
+          "position": {
+            "x": 720,
+            "y": 750
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "td4gkm74mz",
+            "nodeType": "CONNECTION",
+            "connectionId": "2cedf94866ed834bfe3a9707ec9d96c8",
+            "connectorId": "nodeConnector",
+            "name": "Teleport",
+            "label": "Teleport",
+            "status": "configured",
+            "capabilityName": "startNode",
+            "type": "trigger",
+            "properties": {
+              "nodeTitle": {
+                "value": "Any Triggers COmplete"
+              }
+            }
+          },
+          "position": {
+            "x": 270,
+            "y": 870
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "qe3s0e85je",
+            "nodeType": "EVAL",
+            "label": "Evaluator",
+            "properties": {
+              "3liczxqxc8": {
+                "value": "allTriggersTrue"
+              }
+            }
+          },
+          "position": {
+            "x": 390,
+            "y": 870
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "3liczxqxc8",
+            "nodeType": "CONNECTION",
+            "connectionId": "481e952e6b11db8360587b8711620786",
+            "connectorId": "httpConnector",
+            "name": "HTTP",
+            "label": "HTTP",
+            "status": "configured",
+            "capabilityName": "customHtmlMessage",
+            "type": "trigger",
+            "properties": {
+              "nodeTitle": {
+                "value": "All Triggers True"
+              }
+            }
+          },
+          "position": {
+            "x": 720,
+            "y": 870
+          },
+          "group": "nodes",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": false,
+          "classes": ""
+        }
+      ],
+      "edges": [
+        {
+          "data": {
+            "id": "qwsaxmf0fx",
+            "source": "4gnxq2f25w",
+            "target": "4a7a8domtn"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "01g7n9bxfm",
+            "source": "4a7a8domtn",
+            "target": "jcwkbeiftf"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "s8d98w0i4w",
+            "source": "8ic7y0kfsq",
+            "target": "zitkaqgz8w"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "o0c7jwzb01",
+            "source": "zitkaqgz8w",
+            "target": "reimzww6h0"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "u0ognssfcy",
+            "source": "bfwgvfxcik",
+            "target": "20mu1dqxny"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "ptgjpafl2c",
+            "source": "20mu1dqxny",
+            "target": "upazo9m4r6"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "gsly1ptl4v",
+            "source": "s01ht730rf",
+            "target": "x6f5andjaq"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "qj7ragtulf",
+            "source": "x6f5andjaq",
+            "target": "jqhin38pyr"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "jsi23yehqk",
+            "source": "zcogp9yeth",
+            "target": "kzgotwt2j8"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "lw7ig5k4q7",
+            "source": "kzgotwt2j8",
+            "target": "7zi6z25qbj"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "cjzpaa4j8t",
+            "source": "td4gkm74mz",
+            "target": "qe3s0e85je"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        },
+        {
+          "data": {
+            "id": "ucb5s13lxl",
+            "source": "qe3s0e85je",
+            "target": "3liczxqxc8"
+          },
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "group": "edges",
+          "removed": false,
+          "selected": false,
+          "selectable": true,
+          "locked": false,
+          "grabbable": true,
+          "pannable": true,
+          "classes": ""
+        }
+      ]
+    },
+    "data": {},
+    "zoomingEnabled": true,
+    "userZoomingEnabled": true,
+    "zoom": 1,
+    "minZoom": 1e-50,
+    "maxZoom": 1e+50,
+    "panningEnabled": true,
+    "userPanningEnabled": true,
+    "pan": {
+      "x": 0,
+      "y": 0
+    },
+    "boxSelectionEnabled": true,
+    "renderer": {
+      "name": "null"
+    }
+  },
+  "flowColor": "#CACED3",
+  "savedDate": 1764666681509,
+  "variables": [],
+  "connections": []
+}
