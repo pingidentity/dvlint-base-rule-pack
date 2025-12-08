@@ -2,7 +2,7 @@
   {
     "name": "@ping-identity/dvlint-base-rule-pack",
     "description": "Collection of base rules used to lint DaVinci flows.",
-    "version": "1.3.2",
+    "version": "1.3.3",
     "rules": [
       {
         "id": "dv-rule-AEqualsBMultipleCondition-001",
@@ -407,10 +407,10 @@
             "code": "dv-er-teleport-002"
           },
           "dv-er-teleport-003": {
-            "description": "Unsupported false branch after teleport node",
-            "message": "Unsupported false branch after teleport node",
+            "description": "Unsupported branch after teleport node",
+            "message": "Unsupported branch after teleport node",
             "type": "error",
-            "recommendation": "Teleport nodes should only be followed by a true path. Remove or reconfigure the false branch in node '%'.",
+            "recommendation": "Teleport nodes should only be followed by an 'All Triggers True' path.",
             "code": "dv-er-teleport-003"
           },
           "dv-er-teleport-004": {
