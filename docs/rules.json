@@ -2,7 +2,7 @@
   {
     "name": "@ping-identity/dvlint-base-rule-pack",
     "description": "Collection of base rules used to lint DaVinci flows.",
-    "version": "1.3.3",
+    "version": "1.3.4",
     "rules": [
       {
         "id": "dv-rule-AEqualsBMultipleCondition-001",
@@ -377,12 +377,12 @@
             "recommendation": "PingOne flows cannot be referenced as a subflow. Select a standard DaVinci flow as the subflow instead.",
             "code": "dv-er-subflow-004"
           },
-          "dv-er-subflow-005": {
+          "dv-bp-subflow-005": {
             "description": "'Invoke UI Subflow' capability used, but target subflow has no UI nodes.",
             "message": "'Invoke UI Subflow' capability used, but target subflow has no UI nodes.",
-            "type": "error",
+            "type": "best-practice",
             "recommendation": "The 'Invoke UI Subflow' capability requires the subflow execution path to contain UI screen nodes. Since the referenced subflow doesn’t start with a UI screen node, replace this with 'Invoke Subflow' capability instead.",
-            "code": "dv-er-subflow-005"
+            "code": "dv-bp-subflow-005"
           }
         },
         "reference": "",

@@ -28,12 +28,12 @@
               "recommendation": "PingOne flows cannot be referenced as a subflow. Select a standard DaVinci flow as the subflow instead."
             },
             {
-              "code": "dv-er-subflow-005",
+              "code": "dv-bp-subflow-005",
               "flowId": "4822d6c2f9f61d1924909c50fa6959bc",
               "message": "'Invoke UI Subflow' capability used, but target subflow has no UI nodes.",
               "nodeId": "m7lhu8f6jg",
               "recommendation": "The 'Invoke UI Subflow' capability requires the subflow execution path to contain UI screen nodes. Since the referenced subflow doesn’t start with a UI screen node, replace this with 'Invoke Subflow' capability instead.",
-              "type": "error"
+              "type": "best-practice"
             }
           ],
           "rulesApplied": [
@@ -61,12 +61,12 @@
                   "recommendation": "PingOne flows cannot be referenced as a subflow. Select a standard DaVinci flow as the subflow instead."
                 },
                 {
-                  "code": "dv-er-subflow-005",
+                  "code": "dv-bp-subflow-005",
                   "flowId": "4822d6c2f9f61d1924909c50fa6959bc",
                   "message": "'Invoke UI Subflow' capability used, but target subflow has no UI nodes.",
                   "nodeId": "m7lhu8f6jg",
                   "recommendation": "The 'Invoke UI Subflow' capability requires the subflow execution path to contain UI screen nodes. Since the referenced subflow doesn’t start with a UI screen node, replace this with 'Invoke Subflow' capability instead.",
-                  "type": "error"
+                  "type": "best-practice"
                 }
               ]
             }

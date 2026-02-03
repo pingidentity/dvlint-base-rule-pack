@@ -34,10 +34,10 @@ class DVRule extends LintRule {
       type: "error",
       recommendation: "PingOne flows cannot be referenced as a subflow. Select a standard DaVinci flow as the subflow instead.",
     });
-    this.addCode("dv-er-subflow-005", {
+    this.addCode("dv-bp-subflow-005", {
       description: "'Invoke UI Subflow' capability used, but target subflow has no UI nodes.",
       message: "'Invoke UI Subflow' capability used, but target subflow has no UI nodes.",
-      type: "error",
+      type: "best-practice",
       recommendation: "The 'Invoke UI Subflow' capability requires the subflow execution path to contain UI screen nodes. Since the referenced subflow doesn’t start with a UI screen node, replace this with 'Invoke Subflow' capability instead.",
     });
   }
@@ -154,7 +154,7 @@ class DVRule extends LintRule {
               const subflowData = subflows.filter(subflow => subflow.flowId === selectedSubflowId);
               const firstNode = this.findFirstNodes(subflowData[0].detail.graphData.elements);
               if (!firstNode[0].data.respondToUser) {
-                this.addError("dv-er-subflow-005", {
+                this.addError("dv-bp-subflow-005", {
                   flowId: targetFlow.flowId,
                   nodeId: node.data.id,
                 });
