@@ -14,12 +14,12 @@
                     "errorCount": 2,
                     "errors": [
                         {
-                            "code": "dv-er-subflow-005",
+                            "code": "dv-bp-subflow-005",
                             "flowId": "536d2240bb70b78137416562a87f1f81",
                             "message": "'Invoke UI Subflow' capability used, but target subflow has no UI nodes.",
                             "nodeId": "rmlvzfp7qq",
                             "recommendation": "The 'Invoke UI Subflow' capability requires the subflow execution path to contain UI screen nodes. Since the referenced subflow doesn’t start with a UI screen node, replace this with 'Invoke Subflow' capability instead.",
-                            "type": "error"
+                            "type": "best-practice"
                         },
                         {
                             "code": "dv-er-subflow-003",
@@ -40,12 +40,12 @@
                             "errorCount": 2,
                             "errors": [
                                 {
-                                    "code": "dv-er-subflow-005",
+                                    "code": "dv-bp-subflow-005",
                                     "flowId": "536d2240bb70b78137416562a87f1f81",
                                     "message": "'Invoke UI Subflow' capability used, but target subflow has no UI nodes.",
                                     "nodeId": "rmlvzfp7qq",
                                     "recommendation": "The 'Invoke UI Subflow' capability requires the subflow execution path to contain UI screen nodes. Since the referenced subflow doesn’t start with a UI screen node, replace this with 'Invoke Subflow' capability instead.",
-                                    "type": "error"
+                                    "type": "best-practice"
                                 },
                                 {
                                     "flowId": "536d2240bb70b78137416562a87f1f81",
