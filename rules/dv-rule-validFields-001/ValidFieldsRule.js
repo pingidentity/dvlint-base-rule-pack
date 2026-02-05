@@ -41,8 +41,8 @@ class ValidFields extends LintRule {
 
     runRule() {
         try {
-            for (const flow of this.allFlows) {
-                const { nodes, edges } = flow?.graphData?.elements
+                const flow = this.mainFlow;
+                const {nodes, edges} = flow?.graphData?.elements;
                 nodes?.forEach((node) => {
                     const { data } = node;
 
@@ -73,7 +73,7 @@ class ValidFields extends LintRule {
 
                             if (emptyProperty.length > 0) {
                                 this.addError("dv-er-validFields-004", {
-                                    flowId: this.mainFlow.flowId,
+                                    flowId: flow.flowId,
                                     recommendationArgs: [emptyProperty.join(',')],
                                     nodeId: data.id,
                                 });
@@ -111,10 +111,7 @@ class ValidFields extends LintRule {
                             });
                         }
                     }
-
-
                 });
-            }
         } catch (err) {
             this.addError(undefined, { messageArgs: [`${err}`] });
         }
