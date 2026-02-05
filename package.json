@@ -1,6 +1,6 @@
 {
   "name": "@ping-identity/dvlint-base-rule-pack",
-  "version": "1.3.4",
+  "version": "1.3.5",
   "description": "Collection of base rules used to lint DaVinci flows.",
   "main": "RulePack.js",
   "scripts": {
@@ -24,8 +24,8 @@
   },
   "homepage": "https://library.pingidentity.com/page/dvlint-base-rule-pack",
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.30.6",
-    "@typescript-eslint/parser": "^5.30.6",
+    "@typescript-eslint/eslint-plugin": "^8.54.0",
+    "@typescript-eslint/parser": "^8.54.0",
     "eslint": "^8.19.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^8.5.0",
