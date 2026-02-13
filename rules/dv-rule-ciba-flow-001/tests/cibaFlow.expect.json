@@ -1,0 +1,64 @@
+{
+  "name": "PingOne DaVinci Linter",
+  "pass": false,
+  "errorCount": 2,
+  "rulePackResults": [
+    {
+      "pass": false,
+      "errorCount": 2,
+      "lintResults": [
+        {
+          "flowId": "d2a28b9686eef3fc467217d101f5de4e",
+          "flowName": "CIBA123",
+          "pass": false,
+          "errorCount": 2,
+        "errors": [
+            {
+                "code": "dv-er-ciba-flow-001",
+                "flowId": "d2a28b9686eef3fc467217d101f5de4e",
+                "message": "Required response nodes missing from CIBA flow.",
+                "recommendation": "Add at least one 'Return CIBA Success' and one 'Return CIBA Failure' capability from the PingOne Authentication connector. Both are required to return appropriate responses from a CIBA flow.",
+                "type": "error"
+            },
+            {
+                "code": "dv-er-ciba-flow-002",
+                "flowId": "d2a28b9686eef3fc467217d101f5de4e",
+                "message": "Required execution nodes missing from CIBA flow.",
+                "recommendation": "Add at least one 'Out-of-Band Start' and one 'Continue' capability from the Flow Conductor connector. Both are required for proper execution of a CIBA flow.",
+                "type": "error"
+            }
+        ],
+          "rulesApplied": [
+            "dv-rule-ciba-flow-001"
+          ],
+        "ruleResults": [
+            {
+                "ruleId": "dv-rule-ciba-flow-001",
+                "ruleDescription": "Ensure flow is have Ciba capabilities nodes",
+                "pass": false,
+                "errorCount": 2,
+                "errors": [
+                    {
+                        "code": "dv-er-ciba-flow-001",
+                        "flowId": "d2a28b9686eef3fc467217d101f5de4e",
+                        "message": "Required response nodes missing from CIBA flow.",
+                        "recommendation": "Add at least one 'Return CIBA Success' and one 'Return CIBA Failure' capability from the PingOne Authentication connector. Both are required to return appropriate responses from a CIBA flow.",
+                        "type": "error"
+                    },
+                    {
+                        "code": "dv-er-ciba-flow-002",
+                        "flowId": "d2a28b9686eef3fc467217d101f5de4e",
+                        "message": "Required execution nodes missing from CIBA flow.",
+                        "recommendation": "Add at least one 'Out-of-Band Start' and one 'Continue' capability from the Flow Conductor connector. Both are required for proper execution of a CIBA flow.",
+                        "type": "error"
+                    }
+                ]
+            }
+          ],
+          "rulesIgnored": []
+        }
+      ],
+      "rulesIgnored": true
+    }
+  ]
+}
