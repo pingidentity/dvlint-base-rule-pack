@@ -77,6 +77,29 @@
         "cleans": false
       },
       {
+        "id": "dv-rule-ciba-flow-001",
+        "description": "Ensure flow is have Ciba capabilities nodes",
+        "codes": {
+          "dv-er-ciba-flow-001":{
+            "description" : "Required response nodes missing from CIBA flow.",
+            "message": "Required response nodes missing from CIBA flow.",
+            "type": "error",
+            "recommendation": "Add at least one 'Return CIBA Success' and one 'Return CIBA Failure' capability from the PingOne Authentication connector. Both are required to return appropriate responses from a CIBA flow.",
+            "code": "dv-er-ciba-flow-001"
+          },
+          "dv-er-ciba-flow-002": {
+            "description": "Required execution nodes missing from CIBA flow.",
+            "message": "Required execution nodes missing from CIBA flow.",
+            "type": "error",
+            "recommendation": "Add at least one 'Out-of-Band Start' and one 'Continue' capability from the Flow Conductor connector. Both are required for proper execution of a CIBA flow.",
+            "code": "dv-er-ciba-flow-002"
+          }
+
+        },
+        "reference": "",
+        "cleans": false
+      },
+      {
         "id": "dv-rule-debug-off-001",
         "description": "Ensure the flow has debug mode turned off",
         "codes": {
