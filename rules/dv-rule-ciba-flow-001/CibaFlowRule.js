@@ -25,54 +25,40 @@ class CibaFlowRule extends LintRule {
     }
 
     runRule() {
+       try {
+            const targetFlow = this.mainFlow;
+            const isP1CibaFlow = targetFlow?.settings?.pingOneFlow && targetFlow?.settings?.cibaFlow ;
+            //These rules apply only for Pingone CIBA Flows
+            if(isP1CibaFlow){
+                for (const flow of this.allFlows) {        
+                    const { nodes } = flow?.graphData?.elements;
+                    // Rule logic for pingOneAuthenticationConnector capabilities
+                    const p1AuthNodes = nodes?.filter(n => n.data.connectorId === 'pingOneAuthenticationConnector' && n.data?.isDisabled !== true);
 
-        try {
-
-        const targetFlow = this.mainFlow;
-        const isP1CibaFlow = targetFlow?.settings?.pingOneFlow && targetFlow?.settings?.cibaFlow ;
-        let responseNodeErrorAdded = false;
-        let executionNodeErrorAdded = false;
-        
-        //These rules apply only for Pingone CIBA Flows
-        if(isP1CibaFlow){
-            for (const flow of this.allFlows) {
-                
-                const { nodes } = flow?.graphData?.elements;
-
-                // Rule logic for pingOneAuthenticationConnector capabilities
-                const p1AuthNodes = nodes?.filter(n => n.data.connectorId === 'pingOneAuthenticationConnector' && n.data?.isDisabled !== true);
-
-                const cibaErrorCapabilityExist = p1AuthNodes?.some(n => n.data.capabilityName === 'returnCibaError');
-                const cibaSuccessCapabilityExist = p1AuthNodes?.some(n => n.data.capabilityName === 'returnCibaSuccess');
-                //Both returnCibaError and returnCibaSuccess are required for CIBA flow response, if any of them is missing then throw error.
-                if ((!cibaErrorCapabilityExist || !cibaSuccessCapabilityExist) && !responseNodeErrorAdded) {
-                    responseNodeErrorAdded = true; // Dont add this error twice
-                    this.addError("dv-er-ciba-flow-001", {
-                        flowId: flow.flowId,
-                    });
+                    const cibaErrorCapabilityExist = p1AuthNodes?.some(n => n.data.capabilityName === 'returnCibaError');
+                    const cibaSuccessCapabilityExist = p1AuthNodes?.some(n => n.data.capabilityName === 'returnCibaSuccess');
+                    //Both returnCibaError and returnCibaSuccess are required for CIBA flow response, if any of them is missing then throw error.
+                    if ((!cibaErrorCapabilityExist || !cibaSuccessCapabilityExist)) {
+                        this.addError("dv-er-ciba-flow-001", {
+                            flowId: flow.flowId,
+                        });
+                    }
+                    // Rule logic for flowConductorConnector capabilities
+                    const flowNodes = nodes?.filter(n => n.data.connectorId === 'flowConnector' && n.data?.isDisabled !== true);
+                    const oobStartCapabilityExist = flowNodes?.some(n => n.data.capabilityName === 'oobStart');
+                    const oobContinueCapabilityExist = flowNodes?.some(n => n.data.capabilityName === 'oobContinue');
+                    //Both oobStart and oobContinue are required for CIBA flow execution, if any of them is missing then throw error.
+                    if ((!oobStartCapabilityExist || !oobContinueCapabilityExist)) {
+                        this.addError("dv-er-ciba-flow-002", {
+                            flowId: flow.flowId,
+                        });
+                    }
                 }
-
-                // Rule logic for flowConductorConnector capabilities
-                const flowNodes = nodes?.filter(n => n.data.connectorId === 'flowConnector' && n.data?.isDisabled !== true);
-
-                const oobStartCapabilityExist = flowNodes?.some(n => n.data.capabilityName === 'oobStart');
-                const oobContinueCapabilityExist = flowNodes?.some(n => n.data.capabilityName === 'oobContinue');
-                //Both oobStart and oobContinue are required for CIBA flow execution, if any of them is missing then throw error.
-                if ((!oobStartCapabilityExist || !oobContinueCapabilityExist) && !executionNodeErrorAdded) {
-                    executionNodeErrorAdded = true; // Dont add this error twice
-                    this.addError("dv-er-ciba-flow-002", {
-                        flowId: flow.flowId,
-                    });
-                }
-                
             }
-        }
-
         } catch(err) {
             this.addError(undefined, { messageArgs: [`${err}`] });
         }
     }
-
 }
 
 module.exports = CibaFlowRule;
