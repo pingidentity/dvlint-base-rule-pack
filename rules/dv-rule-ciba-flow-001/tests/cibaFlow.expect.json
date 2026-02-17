@@ -1,17 +1,17 @@
 {
     "name": "PingOne DaVinci Linter",
     "pass": false,
-    "errorCount": 7,
+    "errorCount": 6,
     "rulePackResults": [
         {
             "pass": false,
-            "errorCount": 7,
+            "errorCount": 6,
             "lintResults": [
                 {
                     "flowId": "3357a9e37b248216de20d7b6a86b7ee2",
                     "flowName": "213",
                     "pass": false,
-                    "errorCount": 7,
+                    "errorCount": 6,
                     "errors": [
                         {
                             "code": "dv-er-ciba-flow-001",
@@ -42,14 +42,6 @@
                             "type": "error"
                         },
                         {
-                            "code": "dv-er-ciba-flow-003",
-                            "flowId": "3357a9e37b248216de20d7b6a86b7ee2",
-                            "message": "CIBA response nodes are not allowed in subflows.",
-                            "nodeId": "ijytwzocql",
-                            "recommendation": "Remove the 'Return CIBA Success' and 'Return CIBA Failure' capabilities from subflow - 'ggg'. These nodes must be present only in the main CIBA flow to ensure proper response handling.",
-                            "type": "error"
-                        },
-                        {
                             "code": "dv-er-ciba-flow-001",
                             "flowId": "84434bd15ee747c53a65b9060fb1ad4d",
                             "message": "Required response nodes missing from CIBA flow.",
@@ -72,7 +64,7 @@
                             "ruleId": "dv-rule-ciba-flow-001",
                             "ruleDescription": "Ensure flow is have Ciba capabilities nodes",
                             "pass": false,
-                            "errorCount": 7,
+                            "errorCount": 6,
                             "errors": [
                                 {
                                     "code": "dv-er-ciba-flow-001",
@@ -100,14 +92,6 @@
                                     "flowId": "ad14a27b358d0c935a846e4525a4672f",
                                     "message": "Required execution nodes missing from CIBA flow.",
                                     "recommendation": "Add at least one 'Out-of-Band Start' and one 'Continue' capability from the Flow Conductor connector. Both are required for proper execution of a CIBA flow.",
-                                    "type": "error"
-                                },
-                                {
-                                    "code": "dv-er-ciba-flow-003",
-                                    "flowId": "3357a9e37b248216de20d7b6a86b7ee2",
-                                    "message": "CIBA response nodes are not allowed in subflows.",
-                                    "nodeId": "ijytwzocql",
-                                    "recommendation": "Remove the 'Return CIBA Success' and 'Return CIBA Failure' capabilities from subflow - 'ggg'. These nodes must be present only in the main CIBA flow to ensure proper response handling.",
                                     "type": "error"
                                 },
                                 {

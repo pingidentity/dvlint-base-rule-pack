@@ -69,7 +69,7 @@ class CibaFlowRule extends LintRule {
                     // Third Rule:  logic for validating that CIBA response nodes are not present in subflows
                     if(flow.flowId !== targetFlow.flowId){
                         //Both returnCibaError and returnCibaSuccess  should not be present in Subflows
-                        if ((oobStartCapabilityExist || oobContinueCapabilityExist)) {
+                        if ((cibaErrorCapabilityExist || cibaSuccessCapabilityExist)) {
                             const flowConnectorNode= mainFlowNodes.filter(n=>n?.data?.properties?.subFlowId?.value?.value === flow.flowId)
                             this.addError("dv-er-ciba-flow-003", {
                                 flowId: targetFlow.flowId,
