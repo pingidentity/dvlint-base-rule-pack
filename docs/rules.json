@@ -93,8 +93,14 @@
             "type": "error",
             "recommendation": "Add at least one 'Out-of-Band Start' and one 'Continue' capability from the Flow Conductor connector. Both are required for proper execution of a CIBA flow.",
             "code": "dv-er-ciba-flow-002"
+          },
+          "dv-er-ciba-flow-003": {
+            "description": "CIBA response nodes are not allowed in subflows.",
+            "message": "CIBA response nodes are not allowed in subflows.",
+            "type": "error",
+            "recommendation":"Remove the 'Return CIBA Success' and 'Return CIBA Failure' capabilities from subflow - '%'. These nodes must be present only in the main CIBA flow to ensure proper response handling.",
+            "code": "dv-er-ciba-flow-003"
           }
-
         },
         "reference": "",
         "cleans": false
