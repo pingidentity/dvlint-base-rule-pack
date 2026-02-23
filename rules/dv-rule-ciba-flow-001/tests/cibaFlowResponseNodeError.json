@@ -1,0 +1,576 @@
+{
+  "flows": [
+    {
+      "companyId": "8c7850dc-0a2f-4b57-a92a-17afe24a217d",
+      "authTokenExpireIds": [],
+      "connectorIds": [
+        "flowConnector",
+        "pingOneAuthenticationConnector",
+        "httpConnector"
+      ],
+      "createdDate": 1771844778747,
+      "currentVersion": 10,
+      "customerId": "db042ec72642cc981c3c09b3b9dd5942",
+      "description": "Main Flow for CIBA- 123",
+      "flowStatus": "enabled",
+      "isOutputSchemaSaved": false,
+      "name": "Main Flow for CIBA -123",
+      "publishedVersion": 10,
+      "settings": {
+        "csp": "worker-src 'self' blob:; script-src 'self' https://cdn.jsdelivr.net https://code.jquery.com https://devsdk.singularkey.com http://cdnjs.cloudflare.com 'unsafe-inline' 'unsafe-eval';",
+        "intermediateLoadingScreenCSS": "",
+        "intermediateLoadingScreenHTML": "",
+        "customTimeoutErrorScreenMessage": "",
+        "customTimeoutErrorScreenHTML": "",
+        "customTimeoutErrorScreenCSS": "",
+        "logLevel": 4,
+        "pingOneFlow": true,
+        "cibaFlow": true,
+        "validateOnSave": false
+      },
+      "timeouts": "null",
+      "trigger": {
+        "type": "AUTHENTICATION",
+        "subtype": "CIBA"
+      },
+      "updatedDate": 1771844781702,
+      "flowId": "4deef5f633a9fd627222cc9afe2f790f",
+      "versionId": 10,
+      "graphData": {
+        "elements": {
+          "edges": [
+            {
+              "data": {
+                "id": "ip8rt3ncil",
+                "source": "ycpie16n81",
+                "target": "j8cv5z2u1c"
+              },
+              "position": {
+                "x": 0,
+                "y": 0
+              },
+              "group": "edges",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": true,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "lxvydkyxik",
+                "source": "0iz03krvnh",
+                "target": "qs0ibc731a"
+              },
+              "position": {
+                "x": 0,
+                "y": 0
+              },
+              "group": "edges",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": true,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "0egjehgtmw",
+                "source": "qs0ibc731a",
+                "target": "5ba8n59pgu"
+              },
+              "position": {
+                "x": 0,
+                "y": 0
+              },
+              "group": "edges",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": true,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "gw04fkpany",
+                "source": "j8cv5z2u1c",
+                "target": "0iz03krvnh"
+              },
+              "position": {
+                "x": 0,
+                "y": 0
+              },
+              "group": "edges",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": true,
+              "classes": ""
+            }
+          ],
+          "nodes": [
+            {
+              "data": {
+                "id": "0iz03krvnh",
+                "nodeType": "CONNECTION",
+                "connectionId": "2581eb287bb1d9bd29ae9886d675f89f",
+                "connectorId": "flowConnector",
+                "name": "Flow Connector",
+                "label": "Flow Connector",
+                "status": "configured",
+                "capabilityName": "startSubFlow",
+                "type": "action",
+                "properties": {
+                  "subFlowId": {
+                    "value": {
+                      "label": "Sub Flow for CIBA-123",
+                      "value": "f1643b2754eae27063268900b2d5ba0c"
+                    }
+                  },
+                  "subFlowVersionId": {
+                    "value": -1
+                  },
+                  "nodeTitle": {
+                    "value": "vf"
+                  },
+                  "nodeDescription": {
+                    "value": "r"
+                  }
+                }
+              },
+              "position": {
+                "x": 570,
+                "y": 240
+              },
+              "group": "nodes",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": false,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "5ba8n59pgu",
+                "nodeType": "CONNECTION",
+                "connectionId": "c3e6a164bde107954e93f5c09f0c8bce",
+                "connectorId": "pingOneAuthenticationConnector",
+                "name": "PingOne Authentication",
+                "label": "PingOne Authentication",
+                "status": "configured",
+                "capabilityName": "returnCibaError",
+                "type": "action",
+                "properties": {
+                  "nodeTitle": {
+                    "value": "fg"
+                  },
+                  "nodeDescription": {
+                    "value": "rgv"
+                  },
+                  "userId": {
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"123\"\n      }\n    ]\n  }\n]"
+                  }
+                }
+              },
+              "position": {
+                "x": 1020,
+                "y": 450
+              },
+              "group": "nodes",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": false,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "qs0ibc731a",
+                "nodeType": "EVAL",
+                "properties": {
+                  "lbContext": {
+                    "value": "global"
+                  },
+                  "ejfg1vb53u": {
+                    "value": "allTriggersTrue"
+                  },
+                  "5ba8n59pgu": {
+                    "value": "allTriggersFalse"
+                  }
+                }
+              },
+              "position": {
+                "x": 780,
+                "y": 330
+              },
+              "group": "nodes",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": false,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "ycpie16n81",
+                "nodeType": "CONNECTION",
+                "connectionId": "867ed4363b2bc21c860085ad2baa817d",
+                "connectorId": "httpConnector",
+                "name": "Http",
+                "label": "Http",
+                "status": "configured",
+                "capabilityName": "customHtmlMessage",
+                "type": "trigger",
+                "properties": {
+                  "message": {
+                    "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"Start Flow\"\n      }\n    ]\n  }\n]"
+                  },
+                  "showContinueButton": {
+                    "value": true
+                  }
+                }
+              },
+              "position": {
+                "x": 180,
+                "y": 240
+              },
+              "group": "nodes",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": false,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "j8cv5z2u1c",
+                "nodeType": "EVAL"
+              },
+              "position": {
+                "x": 375,
+                "y": 240
+              },
+              "group": "nodes",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": false,
+              "classes": ""
+            }
+          ]
+        },
+        "data": {},
+        "zoomingEnabled": true,
+        "userZoomingEnabled": true,
+        "zoom": 1,
+        "minZoom": 1e-50,
+        "maxZoom": 1e+50,
+        "panningEnabled": true,
+        "userPanningEnabled": true,
+        "pan": {
+          "x": 0,
+          "y": 0
+        },
+        "boxSelectionEnabled": true,
+        "renderer": {
+          "name": "null"
+        }
+      },
+      "flowColor": "#AFD5FF",
+      "savedDate": 1771844778696,
+      "variables": [],
+      "connections": [],
+      "parentFlowId": "4deef5f633a9fd627222cc9afe2f790f"
+    },
+    {
+      "companyId": "8c7850dc-0a2f-4b57-a92a-17afe24a217d",
+      "authTokenExpireIds": [],
+      "connectorIds": [
+        "flowConnector",
+        "pingOneAuthenticationConnector"
+      ],
+      "createdDate": 1771840326370,
+      "currentVersion": 2,
+      "customerId": "db042ec72642cc981c3c09b3b9dd5942",
+      "description": "Imported on Wed Feb 18 2026 08:47:11 GMT+0000 (Coordinated Universal Time)",
+      "flowStatus": "enabled",
+      "isOutputSchemaSaved": false,
+      "name": "Sub Flow for CIBA-123",
+      "publishedVersion": 1,
+      "settings": {
+        "csp": "worker-src 'self' blob:; script-src 'self' https://cdn.jsdelivr.net https://code.jquery.com https://devsdk.singularkey.com http://cdnjs.cloudflare.com 'unsafe-inline' 'unsafe-eval';",
+        "intermediateLoadingScreenCSS": "",
+        "intermediateLoadingScreenHTML": "",
+        "customTimeoutErrorScreenMessage": "",
+        "customTimeoutErrorScreenHTML": "",
+        "customTimeoutErrorScreenCSS": "",
+        "logLevel": 4,
+        "pingOneFlow": false,
+        "cibaFlow": false,
+        "validateOnSave": false
+      },
+      "trigger": {},
+      "flowId": "f1643b2754eae27063268900b2d5ba0c",
+      "versionId": 2,
+      "graphData": {
+        "elements": {
+          "nodes": [
+            {
+              "data": {
+                "id": "ndhskeucr4",
+                "nodeType": "EVAL"
+              },
+              "position": {
+                "x": 667,
+                "y": 236
+              },
+              "group": "nodes",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": false,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "59lri47lgb",
+                "nodeType": "CONNECTION",
+                "connectionId": "2581eb287bb1d9bd29ae9886d675f89f",
+                "connectorId": "flowConnector",
+                "name": "Flow Connector",
+                "label": "Flow Connector",
+                "status": "configured",
+                "capabilityName": "oobStart",
+                "type": "trigger",
+                "properties": {
+                  "nodeTitle": {
+                    "value": "Start"
+                  },
+                  "nodeDescription": {
+                    "value": "Description"
+                  }
+                }
+              },
+              "position": {
+                "x": 277,
+                "y": 236
+              },
+              "group": "nodes",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": false,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "6gnji4be3s",
+                "nodeType": "CONNECTION",
+                "connectionId": "2581eb287bb1d9bd29ae9886d675f89f",
+                "connectorId": "flowConnector",
+                "name": "Flow Connector",
+                "label": "Flow Connector",
+                "status": "configured",
+                "capabilityName": "oobContinue",
+                "type": "action",
+                "properties": {
+                  "nodeTitle": {
+                    "value": "title"
+                  },
+                  "nodeDescription": {
+                    "value": "des"
+                  }
+                }
+              },
+              "position": {
+                "x": 540,
+                "y": 120
+              },
+              "group": "nodes",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": false,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "ze5b78t283",
+                "nodeType": "EVAL"
+              },
+              "position": {
+                "x": 397,
+                "y": 236
+              },
+              "group": "nodes",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": false,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "8q32c3jndj",
+                "nodeType": "CONNECTION",
+                "connectionId": "c3e6a164bde107954e93f5c09f0c8bce",
+                "connectorId": "pingOneAuthenticationConnector",
+                "name": "PingOne Authentication",
+                "label": "PingOne Authentication",
+                "status": "configured",
+                "capabilityName": "returnErrorResponseRedirect",
+                "type": "action",
+                "properties": {
+                  "nodeTitle": {
+                    "value": "fg"
+                  },
+                  "nodeDescription": {
+                    "value": "rgv"
+                  }
+                }
+              },
+              "position": {
+                "x": 1050,
+                "y": 240
+              },
+              "group": "nodes",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": false,
+              "classes": ""
+            }
+          ],
+          "edges": [
+            {
+              "data": {
+                "id": "z0fkx02y4c",
+                "source": "6gnji4be3s",
+                "target": "ndhskeucr4"
+              },
+              "position": {
+                "x": 0,
+                "y": 0
+              },
+              "group": "edges",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": true,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "gw7o5i74h1",
+                "source": "59lri47lgb",
+                "target": "ze5b78t283"
+              },
+              "position": {
+                "x": 0,
+                "y": 0
+              },
+              "group": "edges",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": true,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "eps1lgsk3i",
+                "source": "ze5b78t283",
+                "target": "6gnji4be3s"
+              },
+              "position": {
+                "x": 0,
+                "y": 0
+              },
+              "group": "edges",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": true,
+              "classes": ""
+            },
+            {
+              "data": {
+                "id": "lma9gzyno1",
+                "source": "ndhskeucr4",
+                "target": "8q32c3jndj"
+              },
+              "position": {
+                "x": 0,
+                "y": 0
+              },
+              "group": "edges",
+              "removed": false,
+              "selected": false,
+              "selectable": true,
+              "locked": false,
+              "grabbable": true,
+              "pannable": true,
+              "classes": ""
+            }
+          ]
+        },
+        "data": {},
+        "zoomingEnabled": true,
+        "userZoomingEnabled": true,
+        "zoom": 1,
+        "minZoom": 1e-50,
+        "maxZoom": 1e+50,
+        "panningEnabled": true,
+        "userPanningEnabled": true,
+        "pan": {
+          "x": 0,
+          "y": 0
+        },
+        "boxSelectionEnabled": true,
+        "renderer": {
+          "name": "null"
+        }
+      },
+      "flowColor": "#E3F0FF",
+      "savedDate": 1771840326343,
+      "variables": []
+    }
+  ],
+  "companyId": "8c7850dc-0a2f-4b57-a92a-17afe24a217d",
+  "customerId": "db042ec72642cc981c3c09b3b9dd5942",
+  "forms": {}
+}
