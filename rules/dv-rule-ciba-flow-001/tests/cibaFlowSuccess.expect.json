@@ -1,0 +1,38 @@
+{
+    "name": "PingOne DaVinci Linter",
+    "pass": true,
+    "errorCount": 0,
+    "rulePackResults": [
+        {
+            "pass": true,
+            "errorCount": 0,
+            "lintResults": [
+                {
+                    "flowId": "4deef5f633a9fd627222cc9afe2f790f",
+                    "flowName": "Main Flow for CIBA -123",
+                    "pass": true,
+                    "errorCount": 0,
+                    "errors": [
+ 
+                    ],
+                    "rulesApplied": [
+                        "dv-rule-ciba-flow-001"
+                    ],
+                    "ruleResults": [
+                        {
+                            "ruleId": "dv-rule-ciba-flow-001",
+                            "ruleDescription": "Ensure flow is have Ciba capabilities nodes",
+                            "pass": true,
+                            "errorCount": 0,
+                            "errors": [
+                                
+                            ]
+                        }
+                    ],
+                    "rulesIgnored": []
+                }
+            ],
+            "rulesIgnored": true
+        }
+    ]
+}
