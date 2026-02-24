@@ -54,7 +54,7 @@ class CibaFlowRule extends LintRule {
                             const flowConnectorNode = mainFlowExecutionNodes.filter(n => n?.data?.properties?.subFlowId?.value?.value === flow.flowId)
                             this.addError("dv-er-ciba-flow-003", {
                                 flowId: targetFlow.flowId,
-                                nodeId: flowConnectorNode[0].data.id,
+                                nodeId: flowConnectorNode[0]?.data?.id,
                                 recommendationArgs: [`${flow.name}`],
                             });
                         }
