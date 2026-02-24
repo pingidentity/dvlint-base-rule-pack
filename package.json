@@ -35,6 +35,6 @@
     "prettier": "^2.7.1"
   },
   "dependencies": {
-    "@ping-identity/dvlint": "^1.0.6"
+    "@ping-identity/dvlint": "^1.1.0"
   }
 }
