@@ -17,7 +17,7 @@
                             "code": "dv-er-scheduleFlow-004",
                             "type": "error",
                             "message": "Unsupported node configuration in flow",
-                            "recommendation": "Remove 'End Flow Success' and 'End Flow Failure' capability nodes from this non-scheduled flow. These are specific to scheduled flow behavior and should not be used otherwise."
+                            "recommendation": "Remove 'End Flow Success' and 'End Flow Failure' capability nodes from this flow. These are specific to scheduled and batch processing flow behaviors and should not be used otherwise."
                         }
                     ],
                     "rulesApplied": [
@@ -34,7 +34,7 @@
                                     "code": "dv-er-scheduleFlow-004",
                                     "type": "error",
                                     "message": "Unsupported node configuration in flow",
-                                    "recommendation": "Remove 'End Flow Success' and 'End Flow Failure' capability nodes from this non-scheduled flow. These are specific to scheduled flow behavior and should not be used otherwise."
+                                    "recommendation": "Remove 'End Flow Success' and 'End Flow Failure' capability nodes from this flow. These are specific to scheduled and batch processing flow behaviors and should not be used otherwise."
                                 }
                             ]
                         }

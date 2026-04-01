@@ -1,0 +1,38 @@
+{
+    "name": "PingOne DaVinci Linter",
+    "pass": true,
+    "errorCount": 0,
+    "rulePackResults": [
+        {
+            "pass": true,
+            "errorCount": 0,
+            "lintResults": [
+                {
+                    "flowId": "905f358571a3cd96bcc6ad1f2e3111fb",
+                    "flowName": "nonBatchProcessingFlow",
+                    "pass": true,
+                    "errorCount": 0,
+                    "errors": [
+
+                    ],
+                    "rulesApplied": [
+                        "dv-rule-batchProcessingFlow-001"
+                    ],
+                    "ruleResults": [
+                        {
+                            "ruleDescription": "Batch processing flow rules",
+                            "ruleId": "dv-rule-batchProcessingFlow-001",
+                            "pass": true,
+                            "errorCount": 0,
+                            "errors": [
+
+                            ]
+                        }
+                    ],
+                    "rulesIgnored": []
+                }
+            ],
+            "rulesIgnored": true
+        }
+    ]
+}
