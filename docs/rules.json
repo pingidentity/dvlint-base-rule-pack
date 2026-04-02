@@ -2,7 +2,7 @@
   {
     "name": "@ping-identity/dvlint-base-rule-pack",
     "description": "Collection of base rules used to lint DaVinci flows.",
-    "version": "1.3.8",
+    "version": "1.3.9",
     "rules": [
       {
         "id": "dv-rule-AEqualsBMultipleCondition-001",
@@ -74,6 +74,42 @@
           }
         },
         "reference": "https://library.pingidentity.com/page/davinci-color-palette",
+        "cleans": false
+      },
+      {
+        "id": "dv-rule-batchProcessingFlow-001",
+        "description": "Batch processing flow rules",
+        "codes": {
+          "dv-er-batchProcessingFlow-001": {
+            "description": "Invalid start node configuration in batch processing flow",
+            "message": "Invalid start node configuration in batch processing flow",
+            "type": "error",
+            "recommendation": "Ensure the flow begins with Start Node and has exactly one outgoing edge.",
+            "code": "dv-er-batchProcessingFlow-001"
+          },
+          "dv-er-batchProcessingFlow-002": {
+            "description": "All leaf nodes must be end nodes",
+            "message": "Invalid flow termination configuration in batch processing flow",
+            "type": "error",
+            "recommendation": "Ensure every path in the batch processing flow ends with an appropriate end capability: 'End Flow Success', 'End Flow Failure', or both.",
+            "code": "dv-er-batchProcessingFlow-002"
+          },
+          "dv-er-batchProcessingFlow-003": {
+            "description": "Flow connectors are not supported in batch processing flow",
+            "message": "Flow connectors are not supported in batch processing flow",
+            "type": "error",
+            "recommendation": "Remove all flow connector nodes from this batch processing flow to ensure proper execution.",
+            "code": "dv-er-batchProcessingFlow-003"
+          },
+          "dv-er-batchProcessingFlow-005": {
+            "description": "UI capabilities are not allowed in batch processing flow",
+            "message": "UI capabilities are not allowed in batch processing flow",
+            "type": "error",
+            "recommendation": "Remove all UI capabilities from the flow. The only UI capabilities allowed are: 'End Flow Success' and 'End Flow Failure', and they must appear only as end nodes.",
+            "code": "dv-er-batchProcessingFlow-005"
+          }
+        },
+        "reference": "",
         "cleans": false
       },
       {
@@ -360,7 +396,7 @@
             "description": "Unsupported node configuration in flow",
             "message": "Unsupported node configuration in flow",
             "type": "error",
-            "recommendation": "Remove 'End Flow Success' and 'End Flow Failure' capability nodes from this non-scheduled flow. These are specific to scheduled flow behavior and should not be used otherwise.",
+            "recommendation": "Remove 'End Flow Success' and 'End Flow Failure' capability nodes from this flow. These are specific to scheduled and batch processing flow behaviors and should not be used otherwise.",
             "code": "dv-er-scheduleFlow-004"
           },
           "dv-er-scheduleFlow-005": {
