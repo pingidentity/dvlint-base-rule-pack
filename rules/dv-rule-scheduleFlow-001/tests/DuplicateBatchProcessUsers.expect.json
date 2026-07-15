@@ -1,0 +1,68 @@
+{
+    "name": "PingOne DaVinci Linter",
+    "pass": false,
+    "errorCount": 2,
+    "rulePackResults": [
+        {
+            "pass": false,
+            "errorCount": 2,
+            "lintResults": [
+                {
+                    "flowId": "dup876730b76356af1161bcde9295bd",
+                    "flowName": "DuplicateBatchProcessUsersFlow",
+                    "pass": false,
+                    "errorCount": 2,
+                    "errors": [
+                        {
+                            "code": "dv-er-scheduleFlow-006",
+                            "flowId": "dup876730b76356af1161bcde9295bd",
+                            "message": "Unsupported node configuration in flow",
+                            "nodeId": "streamNode02",
+                            "recommendation": "There are more than one \"Batch Process User\" capability in this flow. There can only be one \"Batch Process User\" capability per Scheduled Flow.",
+                            "type": "error"
+                        },
+                        {
+                            "code": "dv-er-scheduleFlow-006",
+                            "flowId": "dup876730b76356af1161bcde9295bd",
+                            "message": "Unsupported node configuration in flow",
+                            "nodeId": "streamNode03",
+                            "recommendation": "There are more than one \"Batch Process User\" capability in this flow. There can only be one \"Batch Process User\" capability per Scheduled Flow.",
+                            "type": "error"
+                        }
+                    ],
+                    "rulesApplied": [
+                        "dv-rule-scheduleFlow-001"
+                    ],
+                    "ruleResults": [
+                        {
+                            "ruleDescription": "Schedule flow rules",
+                            "ruleId": "dv-rule-scheduleFlow-001",
+                            "pass": false,
+                            "errorCount": 2,
+                            "errors": [
+                                {
+                                    "code": "dv-er-scheduleFlow-006",
+                                    "flowId": "dup876730b76356af1161bcde9295bd",
+                                    "message": "Unsupported node configuration in flow",
+                                    "nodeId": "streamNode02",
+                                    "recommendation": "There are more than one \"Batch Process User\" capability in this flow. There can only be one \"Batch Process User\" capability per Scheduled Flow.",
+                                    "type": "error"
+                                },
+                                {
+                                    "code": "dv-er-scheduleFlow-006",
+                                    "flowId": "dup876730b76356af1161bcde9295bd",
+                                    "message": "Unsupported node configuration in flow",
+                                    "nodeId": "streamNode03",
+                                    "recommendation": "There are more than one \"Batch Process User\" capability in this flow. There can only be one \"Batch Process User\" capability per Scheduled Flow.",
+                                    "type": "error"
+                                }
+                            ]
+                        }
+                    ],
+                    "rulesIgnored": []
+                }
+            ],
+            "rulesIgnored": true
+        }
+    ]
+}

@@ -39,6 +39,12 @@ class ScheduleFlowRule extends LintRule {
             type: "error",
             recommendation: "Remove all UI capabilities from the flow. The only UI capabilities allowed are: 'End Flow Success' and 'End Flow Failure', and they must appear only as end nodes.",
         });
+        this.addCode("dv-er-scheduleFlow-006", {
+            description: "Multiple Batch Process Users capabilities in scheduled flow",
+            message: "Unsupported node configuration in flow",
+            type: "error",
+            recommendation: 'There are more than one "Batch Process User" capability in this flow. There can only be one "Batch Process User" capability per Scheduled Flow.',
+        });
 
     }
 
@@ -47,6 +53,22 @@ class ScheduleFlowRule extends LintRule {
             const endNodesCapabilities = ["endFlowSuccess", "endFlowFailure"];
             for (const flow of this.allFlows) {
                 const { nodes, edges } = flow?.graphData?.elements
+
+                if (flow.trigger?.type === "SCHEDULE") {
+                    const streamingNodes = nodes?.filter((node) => {
+                        const { data } = node;
+                        return data?.capabilityClass === "streaming"
+                            || (data?.capabilityClass === undefined && data?.capabilityName === "streamingListUsers");
+                    }) || [];
+
+                    streamingNodes.slice(1).forEach((node) => {
+                        this.addError("dv-er-scheduleFlow-006", {
+                            flowId: flow.flowId,
+                            nodeId: node.data.id,
+                        });
+                    });
+                }
+
                 nodes?.forEach((node) => {
                     const { data } = node;
                     const isScheduleOrBatchProcessingFlow = ["SCHEDULE", "BATCH_PROCESSING_SUBFLOW"].includes(flow.trigger?.type);
