@@ -43,7 +43,7 @@ class ScheduleFlowRule extends LintRule {
             description: "Multiple Batch Process Users capabilities in scheduled flow",
             message: "Unsupported node configuration in flow",
             type: "error",
-            recommendation: 'There are more than one "Batch Process User" capability in this flow. There can only be one "Batch Process User" capability per Scheduled Flow.',
+            recommendation: 'This flow has multiple "Batch Process User" capabilities. Only one is allowed per Scheduled Flow.',
         });
 
     }
