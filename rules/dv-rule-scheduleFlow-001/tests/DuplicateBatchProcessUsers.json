@@ -1,0 +1,260 @@
+{
+    "flows": [
+        {
+            "companyId": "6YWgejhFHGFyhZM57KfdhnYf7fmeMZKM",
+            "connectorIds": [
+                "pingOneSsoConnector",
+                "flowCanvasToolsConnector"
+            ],
+            "createdDate": 1751263460856,
+            "currentVersion": 1,
+            "customerId": "1576bd3c19c0fb0a828342b21d46a57e",
+            "description": "",
+            "flowStatus": "enabled",
+            "name": "DuplicateBatchProcessUsersFlow",
+            "settings": {
+                "logLevel": 3
+            },
+            "trigger": {
+                "type": "SCHEDULE"
+            },
+            "flowId": "dup876730b76356af1161bcde9295bd",
+            "versionId": 1,
+            "graphData": {
+                "elements": {
+                    "nodes": [
+                        {
+                            "data": {
+                                "id": "startNode01",
+                                "nodeType": "START",
+                                "name": "Start Node",
+                                "label": "Start Node",
+                                "status": "configured",
+                                "type": "action"
+                            },
+                            "position": {
+                                "x": 100,
+                                "y": 100
+                            },
+                            "group": "nodes",
+                            "removed": false,
+                            "selected": false,
+                            "selectable": false,
+                            "locked": true,
+                            "grabbable": false,
+                            "pannable": false,
+                            "classes": ""
+                        },
+                        {
+                            "data": {
+                                "id": "streamNode01",
+                                "nodeType": "CONNECTION",
+                                "connectionId": "1234567890abcdef1234567890abcdef",
+                                "connectorId": "pingOneSsoConnector",
+                                "name": "PingOne SSO",
+                                "label": "Batch Process Users",
+                                "status": "configured",
+                                "capabilityName": "streamingListUsers",
+                                "capabilityClass": "streaming",
+                                "type": "action",
+                                "properties": {}
+                            },
+                            "position": {
+                                "x": 250,
+                                "y": 100
+                            },
+                            "group": "nodes",
+                            "removed": false,
+                            "selected": false,
+                            "selectable": true,
+                            "locked": false,
+                            "grabbable": true,
+                            "pannable": false,
+                            "classes": ""
+                        },
+                        {
+                            "data": {
+                                "id": "streamNode02",
+                                "nodeType": "CONNECTION",
+                                "connectionId": "1234567890abcdef1234567890abcdef",
+                                "connectorId": "pingOneSsoConnector",
+                                "name": "PingOne SSO",
+                                "label": "Batch Process Users",
+                                "status": "configured",
+                                "capabilityName": "streamingListUsers",
+                                "capabilityClass": "streaming",
+                                "type": "action",
+                                "properties": {}
+                            },
+                            "position": {
+                                "x": 400,
+                                "y": 100
+                            },
+                            "group": "nodes",
+                            "removed": false,
+                            "selected": false,
+                            "selectable": true,
+                            "locked": false,
+                            "grabbable": true,
+                            "pannable": false,
+                            "classes": ""
+                        },
+                        {
+                            "data": {
+                                "id": "streamNode03",
+                                "nodeType": "CONNECTION",
+                                "connectionId": "1234567890abcdef1234567890abcdef",
+                                "connectorId": "pingOneSsoConnector",
+                                "name": "PingOne SSO",
+                                "label": "Batch Process Users",
+                                "status": "configured",
+                                "capabilityName": "streamingListUsers",
+                                "capabilityClass": "streaming",
+                                "type": "action",
+                                "properties": {}
+                            },
+                            "position": {
+                                "x": 550,
+                                "y": 100
+                            },
+                            "group": "nodes",
+                            "removed": false,
+                            "selected": false,
+                            "selectable": true,
+                            "locked": false,
+                            "grabbable": true,
+                            "pannable": false,
+                            "classes": ""
+                        },
+                        {
+                            "data": {
+                                "id": "endNode01",
+                                "nodeType": "CONNECTION",
+                                "connectionId": "f576602770a3d518c08814b59820fd25",
+                                "connectorId": "flowCanvasToolsConnector",
+                                "name": "Flow Canvas Tools",
+                                "label": "Flow Canvas Tools",
+                                "status": "configured",
+                                "capabilityName": "endFlowSuccess",
+                                "type": "action",
+                                "properties": {}
+                            },
+                            "position": {
+                                "x": 700,
+                                "y": 100
+                            },
+                            "group": "nodes",
+                            "removed": false,
+                            "selected": false,
+                            "selectable": true,
+                            "locked": false,
+                            "grabbable": true,
+                            "pannable": false,
+                            "classes": ""
+                        }
+                    ],
+                    "edges": [
+                        {
+                            "data": {
+                                "id": "edge01",
+                                "source": "startNode01",
+                                "target": "streamNode01"
+                            },
+                            "position": {
+                                "x": 0,
+                                "y": 0
+                            },
+                            "group": "edges",
+                            "removed": false,
+                            "selected": false,
+                            "selectable": true,
+                            "locked": false,
+                            "grabbable": true,
+                            "pannable": true,
+                            "classes": ""
+                        },
+                        {
+                            "data": {
+                                "id": "edge02",
+                                "source": "streamNode01",
+                                "target": "streamNode02"
+                            },
+                            "position": {
+                                "x": 0,
+                                "y": 0
+                            },
+                            "group": "edges",
+                            "removed": false,
+                            "selected": false,
+                            "selectable": true,
+                            "locked": false,
+                            "grabbable": true,
+                            "pannable": true,
+                            "classes": ""
+                        },
+                        {
+                            "data": {
+                                "id": "edge03",
+                                "source": "streamNode02",
+                                "target": "streamNode03"
+                            },
+                            "position": {
+                                "x": 0,
+                                "y": 0
+                            },
+                            "group": "edges",
+                            "removed": false,
+                            "selected": false,
+                            "selectable": true,
+                            "locked": false,
+                            "grabbable": true,
+                            "pannable": true,
+                            "classes": ""
+                        },
+                        {
+                            "data": {
+                                "id": "edge04",
+                                "source": "streamNode03",
+                                "target": "endNode01"
+                            },
+                            "position": {
+                                "x": 0,
+                                "y": 0
+                            },
+                            "group": "edges",
+                            "removed": false,
+                            "selected": false,
+                            "selectable": true,
+                            "locked": false,
+                            "grabbable": true,
+                            "pannable": true,
+                            "classes": ""
+                        }
+                    ]
+                },
+                "data": {},
+                "zoomingEnabled": true,
+                "userZoomingEnabled": true,
+                "zoom": 1,
+                "minZoom": 1e-50,
+                "maxZoom": 1e+50,
+                "panningEnabled": true,
+                "userPanningEnabled": true,
+                "pan": {
+                    "x": 0,
+                    "y": 0
+                },
+                "boxSelectionEnabled": true,
+                "renderer": {
+                    "name": "null"
+                }
+            },
+            "savedDate": 1751263460776,
+            "variables": [],
+            "connections": [],
+            "parentFlowId": "dup876730b76356af1161bcde9295bd"
+        }
+    ],
+    "companyId": "6YWgejhFHGFyhZM57KfdhnYf7fmeMZKM",
+    "customerId": "1576bd3c19c0fb0a828342b21d46a57e"
+}

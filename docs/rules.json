@@ -2,7 +2,7 @@
   {
     "name": "@ping-identity/dvlint-base-rule-pack",
     "description": "Collection of base rules used to lint DaVinci flows.",
-    "version": "1.3.9",
+    "version": "1.4.0",
     "rules": [
       {
         "id": "dv-rule-AEqualsBMultipleCondition-001",
@@ -405,6 +405,13 @@
             "type": "error",
             "recommendation": "Remove all UI capabilities from the flow. The only UI capabilities allowed are: 'End Flow Success' and 'End Flow Failure', and they must appear only as end nodes.",
             "code": "dv-er-scheduleFlow-005"
+          },
+          "dv-er-scheduleFlow-006": {
+            "description": "Multiple Batch Process Users capabilities in scheduled flow",
+            "message": "Unsupported node configuration in flow",
+            "type": "error",
+            "recommendation": "This flow has multiple \"Batch Process User\" capabilities. Only one is allowed per Scheduled Flow.",
+            "code": "dv-er-scheduleFlow-006"
           }
         },
         "reference": "",
