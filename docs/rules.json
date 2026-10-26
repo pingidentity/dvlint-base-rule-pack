@@ -142,6 +142,21 @@
         "cleans": false
       },
       {
+        "id": "dv-rule-customHtml-001",
+        "description": "Detect duplicate element ids in custom HTML across nodes",
+        "codes": {
+          "dv-bp-customHtml-001": {
+            "description": "Duplicate element ids across custom HTML nodes",
+            "message": "Duplicate element ids across custom HTML nodes",
+            "type": "best-practice",
+            "recommendation": "The element id '%' is used in multiple nodes (%). Use unique element ids across nodes.",
+            "code": "dv-bp-customHtml-001"
+          }
+        },
+        "reference": "",
+        "cleans": false
+      },
+      {
         "id": "dv-rule-debug-off-001",
         "description": "Ensure the flow has debug mode turned off",
         "codes": {

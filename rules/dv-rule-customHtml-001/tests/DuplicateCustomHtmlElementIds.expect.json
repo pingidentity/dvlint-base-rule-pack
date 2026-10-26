@@ -1,0 +1,57 @@
+{
+  "name": "PingOne DaVinci Linter",
+  "version": "v1.1.0",
+  "pass": false,
+  "errorCount": 1,
+  "rulePackResults": [
+    {
+      "name": "@ping-identity/dvlint-base-rule-pack",
+      "version": "v1.4.0",
+      "pass": false,
+      "errorCount": 1,
+      "lintResults": [
+        {
+          "flowId": "a8e186f9f857973f46014a50cf1d1971",
+          "flowName": "DuplicateCustomHtmlElementIds",
+          "pass": false,
+          "errorCount": 1,
+          "errors": [
+            {
+              "code": "dv-bp-customHtml-001",
+              "message": "Duplicate element ids across custom HTML nodes",
+              "type": "best-practice",
+              "recommendation": "The element id 'autosubmit' is used in multiple nodes (Read Branding Cookies (mbrma503jw), Init marketing scripts (nh0ivzxo1g)). Use unique element ids across nodes.",
+              "flowId": "a8e186f9f857973f46014a50cf1d1971",
+              "nodeId": "nh0ivzxo1g"
+            }
+          ],
+          "rulesApplied": [
+            "dv-rule-customHtml-001"
+          ],
+          "ruleResults": [
+            {
+              "ruleId": "dv-rule-customHtml-001",
+              "ruleDescription": "Detect duplicate element ids in custom HTML across nodes",
+              "pass": false,
+              "errorCount": 1,
+              "errors": [
+                {
+                  "code": "dv-bp-customHtml-001",
+                  "message": "Duplicate element ids across custom HTML nodes",
+                  "type": "best-practice",
+                  "recommendation": "The element id 'autosubmit' is used in multiple nodes (Read Branding Cookies (mbrma503jw), Init marketing scripts (nh0ivzxo1g)). Use unique element ids across nodes.",
+                  "flowId": "a8e186f9f857973f46014a50cf1d1971",
+                  "nodeId": "nh0ivzxo1g"
+                }
+              ],
+              "codesExcluded": [],
+              "flowId": "a8e186f9f857973f46014a50cf1d1971"
+            }
+          ],
+          "rulesIgnored": []
+        }
+      ],
+      "rulesIgnored": true
+    }
+  ]
+}
