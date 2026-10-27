@@ -5,8 +5,6 @@
   "errorCount": 0,
   "rulePackResults": [
     {
-      "name": "@ping-identity/dvlint-base-rule-pack",
-      "version": "v1.4.0",
       "pass": true,
       "errorCount": 0,
       "lintResults": [
