@@ -1,0 +1,37 @@
+{
+  "name": "PingOne DaVinci Linter",
+  "version": "v1.1.0",
+  "pass": true,
+  "errorCount": 0,
+  "rulePackResults": [
+    {
+      "pass": true,
+      "errorCount": 0,
+      "lintResults": [
+        {
+          "flowId": "b8e186f9f857973f46014a50cf1d1972",
+          "flowName": "NoDuplicateCustomHtmlElementIds",
+          "pass": true,
+          "errorCount": 0,
+          "errors": [],
+          "rulesApplied": [
+            "dv-rule-customHtml-001"
+          ],
+          "ruleResults": [
+            {
+              "ruleId": "dv-rule-customHtml-001",
+              "ruleDescription": "Detect duplicate element ids in custom HTML across nodes",
+              "pass": true,
+              "errorCount": 0,
+              "errors": [],
+              "codesExcluded": [],
+              "flowId": "b8e186f9f857973f46014a50cf1d1972"
+            }
+          ],
+          "rulesIgnored": []
+        }
+      ],
+      "rulesIgnored": true
+    }
+  ]
+}

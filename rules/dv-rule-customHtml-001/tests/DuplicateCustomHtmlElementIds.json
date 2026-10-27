@@ -1,0 +1,59 @@
+{
+  "flowId": "a8e186f9f857973f46014a50cf1d1971",
+  "name": "DuplicateCustomHtmlElementIds",
+  "graphData": {
+    "elements": {
+      "nodes": [
+        {
+          "data": {
+            "id": "mbrma503jw",
+            "nodeType": "CONNECTION",
+            "connectorId": "httpConnector",
+            "capabilityName": "customHTMLTemplate",
+            "properties": {
+              "nodeTitle": { "value": "Read Branding Cookies" },
+              "customHTML": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"<form id=\\\"autoSubmitForm\\\" method=\\\"post\\\">\\n    <input type=\\\"hidden\\\" id=\\\"language\\\" data-id=\\\"language-input\\\" />\\n    <button type=\\\"hidden\\\" data-skcomponent=\\\"skbutton\\\" data-skbuttontype=\\\"form-submit\\\" class=\\\"hidden\\\" data-skform=\\\"autoSubmitForm\\\" id=\\\"autoSubmit\\\">Next</button>\\n</form>\"\n      }\n    ]\n  }\n]"
+              }
+            }
+          }
+        },
+        {
+          "data": {
+            "id": "nh0ivzxo1g",
+            "nodeType": "CONNECTION",
+            "connectorId": "httpConnector",
+            "capabilityName": "customHTMLTemplate",
+            "properties": {
+              "nodeTitle": { "value": "Init marketing scripts" },
+              "customHTML": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"<form id=\\\"gtmInit\\\" method=\\\"post\\\">    <button type=\\\"hidden\\\" data-skcomponent=\\\"skbutton\\\" data-skbuttontype=\\\"form-submit\\\" class=\\\"hidden\\\" data-skbuttonvalue=\\\"submit\\\" data-skform=\\\"gtmInit\\\" id=\\\"autoSubmit\\\">Next</button></form>\"\n      }\n    ]\n  }\n]"
+              }
+            }
+          }
+        },
+        {
+          "data": {
+            "id": "vwrgoghtws",
+            "nodeType": "CONNECTION",
+            "connectorId": "httpConnector",
+            "capabilityName": "customHtmlMessage",
+            "properties": {
+              "message": {
+                "value": "[\n  {\n    \"children\": [\n      {\n        \"text\": \"<div id=\\\"done\\\">Flow Completed!!!</div>\"\n      }\n    ]\n  }\n]"
+              }
+            }
+          }
+        }
+      ],
+      "edges": [
+        {
+          "data": { "source": "mbrma503jw", "target": "nh0ivzxo1g" }
+        },
+        {
+          "data": { "source": "nh0ivzxo1g", "target": "vwrgoghtws" }
+        }
+      ]
+    }
+  }
+}

@@ -2,7 +2,7 @@
   {
     "name": "@ping-identity/dvlint-base-rule-pack",
     "description": "Collection of base rules used to lint DaVinci flows.",
-    "version": "1.4.0",
+    "version": "1.4.1",
     "rules": [
       {
         "id": "dv-rule-AEqualsBMultipleCondition-001",
@@ -136,6 +136,21 @@
             "type": "error",
             "recommendation": "Remove the 'Return CIBA Success' and 'Return CIBA Failure' capabilities from subflow - '%'. These nodes must be present only in the main CIBA flow to ensure proper response handling.",
             "code": "dv-er-ciba-flow-003"
+          }
+        },
+        "reference": "",
+        "cleans": false
+      },
+      {
+        "id": "dv-rule-customHtml-001",
+        "description": "Detect duplicate element ids in custom HTML across nodes",
+        "codes": {
+          "dv-bp-customHtml-001": {
+            "description": "Duplicate element ids across custom HTML nodes",
+            "message": "Duplicate element ids across custom HTML nodes",
+            "type": "best-practice",
+            "recommendation": "The element id '%' is used in multiple nodes (%). Use unique element ids across nodes.",
+            "code": "dv-bp-customHtml-001"
           }
         },
         "reference": "",
